@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Feature Name] · [DF-ID] — Atlas of Diagnostic Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../templates.css">
+</head>
+<body>
+
+<header class="nav-bar">
+  <div class="container">
+    <a href="../index.html" class="nav-bar__wordmark">Atlas <span>/ Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item active"><a href="../features/index.html">Diagnostic Atlas</a></li>
+        <li class="nav-bar__item"><a href="../objects/index.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="../kilns/index.html">Kilns</a></li>
+        <li class="nav-bar__item"><a href="../periods/index.html">Periods</a></li>
+        <li class="nav-bar__item"><a href="../methodology/index.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="../publications/index.html">Publications</a></li>
+        <li class="nav-bar__item"><a href="../about/index.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="container">
+
+  <div class="domain-strip domain-strip--features"></div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../features/index.html" class="breadcrumb__link">Diagnostic Features</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../features/[category]/index.html" class="breadcrumb__link">[Feature category]</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">[Feature name]</span>
+  </nav>
+
+  <div class="entity-page">
+    <article class="entity-page__main">
+
+      <header class="entity-header">
+        <div class="entity-header__type-row">
+          <span class="entity-header__type">Diagnostic Feature</span>
+          <span class="entity-header__id">DF-[CAT]-[SLUG]</span>
+        </div>
+        <h1 class="entity-header__title">[Feature Name]</h1>
+        <p class="entity-header__subtitle">[Feature category] · [Classification hierarchy position]</p>
+        <div class="entity-header__tags">
+          <span class="tag">[Category]</span>
+          <span class="tag">[Kiln association]</span>
+          <span class="tag">[Dynasty range]</span>
+          <span class="tag">[Identification method]</span>
+        </div>
+      </header>
+
+      <!-- Definition -->
+      <section id="definition">
+        <div class="abstract-block">
+          <p class="abstract-block__label">Scientific definition</p>
+          <p class="abstract-block__text">
+            [Precise scientific definition of the feature. One or two sentences.
+            Specifies what the feature is, how it is produced, and what
+            diagnostic value it carries. No subjective language.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Formation mechanism -->
+      <section id="formation" aria-labelledby="form-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 1</p>
+          <h2 class="sci-section__heading" id="form-heading">Formation Mechanism</h2>
+        </div>
+        <div class="mechanism-block">
+          <div class="body-text">
+            <p>
+              [Physical, chemical, or thermal process that produces this feature.
+              Covers: raw material composition factors, firing atmosphere, firing
+              temperature range, kiln technology requirements. Quantitative
+              parameters where established.]
+            </p>
+            <p>
+              [Secondary factors that modify the feature's expression: cooling rate,
+              glaze thickness, body composition interaction.]
+            </p>
+          </div>
+          <div>
+            <svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;border:1px solid var(--border);background:var(--parchment);" aria-label="Formation mechanism diagram placeholder">
+              <rect width="240" height="260" fill="#ede8df"/>
+              <text x="120" y="120" font-family="'Inter',sans-serif" font-size="9" fill="#9b917f" text-anchor="middle" font-weight="500" letter-spacing="1">MECHANISM</text>
+              <text x="120" y="136" font-family="'Cormorant Garamond',Georgia,serif" font-size="10" fill="#9b917f" text-anchor="middle" font-weight="300">Diagram placeholder</text>
+              <text x="120" y="152" font-family="'Inter',sans-serif" font-size="8" fill="#ccc4b4" text-anchor="middle">SVG diagram in production</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual characteristics -->
+      <section id="visual-characteristics" aria-labelledby="vis-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 2</p>
+          <h2 class="sci-section__heading" id="vis-heading">Visual Characteristics</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Macroscopic description. What the feature looks like at naked eye and
+            low magnification. Controlled vocabulary. Covers colour, texture,
+            geometry, spatial distribution, dimensional range.]
+          </p>
+        </div>
+        <div class="gallery-grid gallery-grid--3" style="margin-top:var(--space-4);">
+          <div class="gallery-item">
+            <svg class="gallery-item__image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#e4ddd1"/>
+              <text x="100" y="100" font-family="'Inter',sans-serif" font-size="9" fill="#9b917f" text-anchor="middle" letter-spacing="1">REFERENCE IMAGE A</text>
+            </svg>
+            <p class="gallery-item__label">Type A · Fig. 1</p>
+          </div>
+          <div class="gallery-item">
+            <svg class="gallery-item__image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#e4ddd1"/>
+              <text x="100" y="100" font-family="'Inter',sans-serif" font-size="9" fill="#9b917f" text-anchor="middle" letter-spacing="1">REFERENCE IMAGE B</text>
+            </svg>
+            <p class="gallery-item__label">Type B · Fig. 2</p>
+          </div>
+          <div class="gallery-item">
+            <svg class="gallery-item__image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#e4ddd1"/>
+              <text x="100" y="100" font-family="'Inter',sans-serif" font-size="9" fill="#9b917f" text-anchor="middle" letter-spacing="1">REFERENCE IMAGE C</text>
+            </svg>
+            <p class="gallery-item__label">Atypical variant · Fig. 3</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Microscopic indicators -->
+      <section id="microscopic-indicators" aria-labelledby="micro-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 3</p>
+          <h2 class="sci-section__heading" id="micro-heading">Microscopic Indicators</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [What the feature looks like in cross-section or at high magnification.
+            Specific microstructural correlates. Which analytical technique reveals
+            the most diagnostically useful information.]
+          </p>
+        </div>
+        <div class="micro-block">
+          <div class="micro-block__image-area" style="min-height:240px;" aria-label="Microscopic image placeholder">
+            <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+              <rect width="700" height="280" fill="#080808"/>
+              <text x="350" y="132" font-family="'Inter',sans-serif" font-size="10" fill="#3a3a3a" text-anchor="middle" font-weight="500" letter-spacing="2">MICROSCOPIC IMAGE PLACEHOLDER</text>
+              <text x="350" y="152" font-family="'Cormorant Garamond',Georgia,serif" font-size="11" fill="#2a2a2a" text-anchor="middle" font-weight="300" font-style="italic">Feature at [×magnification]</text>
+              <rect x="574" y="254" width="80" height="2" fill="white"/>
+              <text x="614" y="247" font-family="'Inter',sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="500">50 μm</text>
+            </svg>
+          </div>
+          <div class="micro-block__meta">
+            <div class="micro-block__meta-cell"><p class="micro-block__meta-label">Technique</p><p class="micro-block__meta-value">[MTH-ID]</p></div>
+            <div class="micro-block__meta-cell"><p class="micro-block__meta-label">Magnification</p><p class="micro-block__meta-value">×[value]</p></div>
+            <div class="micro-block__meta-cell"><p class="micro-block__meta-label">Scale</p><p class="micro-block__meta-value">[value] μm</p></div>
+            <div class="micro-block__meta-cell"><p class="micro-block__meta-label">Object ID</p><p class="micro-block__meta-value">[RO-DYN-KLN-SEQ]</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diagnostic significance -->
+      <section id="diagnostic-significance" aria-labelledby="diag-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 4</p>
+          <h2 class="sci-section__heading" id="diag-heading">Diagnostic Significance</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Statement of attribution value. What kilns and periods this feature
+            is associated with. Whether it is exclusive to a single source or
+            shared across multiple production contexts.]
+          </p>
+        </div>
+        <div class="criteria-grid">
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Kiln associations (confirmed)</p>
+            <p class="criteria-cell__content">
+              [List of kilns where this feature is analytically confirmed,
+              with certainty level and documentary basis for each.]
+            </p>
+          </div>
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Period range</p>
+            <p class="criteria-cell__content">
+              [Dynasties and sub-periods in which this feature is documented.
+              Note: earliest and latest documented occurrence.]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Misinterpretations -->
+      <section id="misinterpretations" aria-labelledby="mis-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 5</p>
+          <h2 class="sci-section__heading" id="mis-heading">Common Misinterpretations</h2>
+        </div>
+        <div class="warning-block">
+          <span class="warning-block__label">Attribution risk</span>
+          <p class="warning-block__text">
+            [Most common misidentification: which other feature or kiln is
+            confused with this one and why. What observation prevents the error.]
+          </p>
+        </div>
+        <div class="body-text" style="margin-top:var(--space-3);">
+          <p>
+            [Forgery detection: known imitation strategies. Which analytical
+            method reliably distinguishes period originals from later copies.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Period distribution table -->
+      <section id="distribution" aria-labelledby="dist-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 6</p>
+          <h2 class="sci-section__heading" id="dist-heading">Distribution by Period and Kiln</h2>
+        </div>
+        <table class="compare-table" aria-label="Feature distribution by period and kiln">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>[Kiln A]</th>
+              <th>[Kiln B]</th>
+              <th>[Kiln C]</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>[Dynasty 1]</td><td class="cell--match">Present</td><td class="cell--absent">Absent</td><td class="cell--uncertain">Variable</td><td>[note]</td></tr>
+            <tr><td>[Dynasty 2]</td><td class="cell--match">Present</td><td class="cell--match">Present</td><td class="cell--absent">Absent</td><td>[note]</td></tr>
+            <tr><td>[Dynasty 3]</td><td class="cell--absent">Absent</td><td class="cell--match">Present</td><td class="cell--match">Present</td><td>[note]</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Hierarchy position -->
+      <section id="hierarchy" aria-labelledby="hier-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 7</p>
+          <h2 class="sci-section__heading" id="hier-heading">Classification Hierarchy</h2>
+        </div>
+        <div class="note-block">
+          <span class="note-block__label">Position</span>
+          <p class="note-block__text">
+            <strong>Domain:</strong> Diagnostic Features ›
+            <strong>Category:</strong> [Glaze / Microstructure / Firing Trace / Form / Decoration / Material] ›
+            <strong>Sub-category:</strong> [Sub-category name] ›
+            <strong>Feature:</strong> [Feature name] (DF-[CAT]-[SLUG])
+          </p>
+        </div>
+      </section>
+
+      <div class="bibliography-block">
+        <p class="bibliography-block__title">References</p>
+        <p class="bibliography-entry">
+          <span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>
+          [Full citation].
+        </p>
+        <p class="bibliography-entry">
+          <span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>
+          [Full citation].
+        </p>
+      </div>
+
+    </article>
+
+    <aside class="entity-page__sidebar" aria-label="Related entities">
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">On this page</p>
+        <nav class="sidebar-section__body">
+          <a href="#definition" class="sidebar-anchor active">Definition</a>
+          <a href="#formation" class="sidebar-anchor">1. Formation mechanism</a>
+          <a href="#visual-characteristics" class="sidebar-anchor">2. Visual characteristics</a>
+          <a href="#microscopic-indicators" class="sidebar-anchor">3. Microscopic indicators</a>
+          <a href="#diagnostic-significance" class="sidebar-anchor">4. Diagnostic significance</a>
+          <a href="#misinterpretations" class="sidebar-anchor">5. Misinterpretations</a>
+          <a href="#distribution" class="sidebar-anchor">6. Distribution</a>
+          <a href="#hierarchy" class="sidebar-anchor">7. Classification position</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Objects exhibiting this feature</p>
+        <div class="sidebar-section__body">
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-001</span>
+          </a>
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-002</span>
+          </a>
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-003</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Associated kilns</p>
+        <div class="sidebar-section__body">
+          <a href="../kilns/[region]/[kiln]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Kiln name]</span>
+            <span class="sidebar-link__id">KLN-XXX</span>
+          </a>
+          <a href="../kilns/[region]/[kiln]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Kiln name]</span>
+            <span class="sidebar-link__id">KLN-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Period range</p>
+        <div class="sidebar-section__body">
+          <a href="../periods/[dynasty]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Dynasty name]</span>
+            <span class="sidebar-link__id">DYN-XXX</span>
+          </a>
+          <a href="../periods/[dynasty]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Dynasty name]</span>
+            <span class="sidebar-link__id">DYN-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Identification method</p>
+        <div class="sidebar-section__body">
+          <a href="../methodology/analytical-techniques/[method]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Method name]</span>
+            <span class="sidebar-link__id">MTH-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Related features</p>
+        <div class="sidebar-section__body">
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Related feature]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Related feature]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__brand-name">Atlas of Diagnostic Features<br><span style="font-weight:300;color:var(--muted);">Chinese Ceramics and Porcelain</span></p>
+        <p class="footer__brand-desc">Scientific reference system for ceramic attribution and analysis.</p>
+        <p class="footer__version">Version 3.0 — Stage 4 Templates</p>
+      </div>
+      <div><p class="footer__col-title">Domains</p><ul class="footer__links"><li><a href="../features/index.html">Diagnostic Features</a></li><li><a href="../objects/index.html">Reference Objects</a></li><li><a href="../kilns/index.html">Kilns</a></li><li><a href="../periods/index.html">Periods</a></li><li><a href="../methodology/index.html">Methodology</a></li><li><a href="../publications/index.html">Publications</a></li></ul></div>
+      <div><p class="footer__col-title">Templates</p><ul class="footer__links"><li><a href="scientific-article.html">Scientific Article</a></li><li><a href="reference-object.html">Reference Object</a></li><li><a href="diagnostic-feature.html">Diagnostic Feature</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="publication.html">Publication</a></li><li><a href="dynasty.html">Dynasty</a></li><li><a href="kiln.html">Kiln</a></li><li><a href="author-profile.html">Author Profile</a></li></ul></div>
+      <div><p class="footer__col-title">System</p><ul class="footer__links"><li><a href="../about/index.html">About the Atlas</a></li><li><a href="../about/editorial-methodology/index.html">Editorial methodology</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Atlas of Diagnostic Features. Template: DF (Diagnostic Feature)</p>
+      <nav class="footer__legal" aria-label="Legal"><a href="../about/terms-of-use/index.html">Terms of Use</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
