@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Publication title] · [PUB-ID] — Atlas of Diagnostic Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../templates.css">
+</head>
+<body>
+
+<header class="nav-bar">
+  <div class="container">
+    <a href="../index.html" class="nav-bar__wordmark">Atlas <span>/ Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item"><a href="../features/index.html">Diagnostic Atlas</a></li>
+        <li class="nav-bar__item"><a href="../objects/index.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="../kilns/index.html">Kilns</a></li>
+        <li class="nav-bar__item"><a href="../periods/index.html">Periods</a></li>
+        <li class="nav-bar__item"><a href="../methodology/index.html">Methodology</a></li>
+        <li class="nav-bar__item active"><a href="../publications/index.html">Publications</a></li>
+        <li class="nav-bar__item"><a href="../about/index.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="container">
+
+  <div class="domain-strip domain-strip--pubs"></div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../publications/index.html" class="breadcrumb__link">Publications</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">PUB-[YEAR]-[AUTHOR]-[SHORT]</span>
+  </nav>
+
+  <div class="entity-page">
+    <article class="entity-page__main">
+
+      <header class="entity-header">
+        <div class="entity-header__type-row">
+          <span class="entity-header__type">Publication</span>
+          <span class="entity-header__id">PUB-[YEAR]-[AUTHOR]-[SHORT]</span>
+          <span class="tag">[Article / Book / Excavation report / Exhibition catalogue]</span>
+        </div>
+        <h1 class="entity-header__title" style="font-style:italic;">
+          [Full publication title]
+        </h1>
+        <p class="entity-header__subtitle">
+          [Author Surname, Forename] · [Year] · <a href="../publications/authors/[author-slug]/index.html">[AUT-ID]</a>
+        </p>
+        <div class="entity-header__tags">
+          <span class="tag">[subject tag 1]</span>
+          <span class="tag">[subject tag 2]</span>
+          <span class="tag">[subject tag 3]</span>
+        </div>
+      </header>
+
+      <!-- Citation block -->
+      <div style="background:var(--parchment); border:1px solid var(--border); padding:var(--space-4); margin-bottom:var(--space-5);">
+        <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:var(--space-2);">Cite as</p>
+        <p style="font-family:var(--font-body); font-size:var(--text-sm); color:var(--ink); line-height:1.6; padding-left:2em; text-indent:-2em;">
+          [Author Surname, Forename]. <em>[Title]</em>. [Place]: [Publisher], [Year].
+          DOI: <a href="#" style="color:var(--muted2);">[doi placeholder if available]</a>
+        </p>
+      </div>
+
+      <!-- Metadata grid -->
+      <div class="pub-meta-grid">
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Author(s)</p>
+          <p class="pub-meta-cell__value">
+            <a href="../publications/authors/[author-slug]/index.html">[Author name]</a>
+          </p>
+        </div>
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Year</p>
+          <p class="pub-meta-cell__value">[YYYY]</p>
+        </div>
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Publication type</p>
+          <p class="pub-meta-cell__value">[Article / Monograph / Report / Catalogue]</p>
+        </div>
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Publisher / Journal</p>
+          <p class="pub-meta-cell__value">[Publisher name] / [Journal name, vol., pp.]</p>
+        </div>
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Language</p>
+          <p class="pub-meta-cell__value">[English / Chinese / Other]</p>
+        </div>
+        <div class="pub-meta-cell">
+          <p class="pub-meta-cell__label">Atlas ID</p>
+          <p class="pub-meta-cell__value">PUB-[YEAR]-[AUTHOR]-[SHORT]</p>
+        </div>
+      </div>
+
+      <!-- DOI / stable link -->
+      <div class="doi-block">
+        <span class="doi-block__label">DOI</span>
+        <span class="doi-block__value">[DOI or stable URL if available · Leave blank if none]</span>
+      </div>
+
+      <!-- Keywords -->
+      <div class="keywords-strip">
+        <span class="keyword">[keyword 1]</span>
+        <span class="keyword">[keyword 2]</span>
+        <span class="keyword">[keyword 3]</span>
+        <span class="keyword">[keyword 4]</span>
+      </div>
+
+      <!-- Abstract -->
+      <section id="abstract">
+        <div class="abstract-block" style="margin-top:var(--space-5);">
+          <p class="abstract-block__label">Abstract / Scope note</p>
+          <p class="abstract-block__text">
+            [Author's abstract if available, reproduced with permission. Otherwise:
+            a scope note written by the Atlas editors describing the content, focus,
+            and relevance of this publication to the Atlas. Clearly indicated as
+            editorial summary if not the author's abstract.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section id="introduction" aria-labelledby="intro-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 1</p>
+          <h2 class="sci-section__heading" id="intro-heading">Introduction</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Editorial introduction to this publication. Contextualises the work
+            within the field. Notes the publication's place in the scholarly
+            literature. Only for major publications — not required for all records.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Methodology (of the publication) -->
+      <section id="pub-methodology" aria-labelledby="pub-meth-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 2</p>
+          <h2 class="sci-section__heading" id="pub-meth-heading">Methodology</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Summary of analytical or research methods used in the publication.
+            Links to relevant Atlas Methodology pages for each method mentioned.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results" aria-labelledby="res-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 3</p>
+          <h2 class="sci-section__heading" id="res-heading">Key Results</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Summary of principal findings. Stated in terms of what entities
+            in the Atlas are documented or affected by these results.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Discussion -->
+      <section id="discussion" aria-labelledby="disc-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 4</p>
+          <h2 class="sci-section__heading" id="disc-heading">Discussion</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Editorial discussion of the publication's significance. How it has
+            affected attribution practice. Whether subsequent scholarship has
+            confirmed, refined, or challenged its conclusions.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section id="conclusion" aria-labelledby="conc-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 5</p>
+          <h2 class="sci-section__heading" id="conc-heading">Conclusion</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Summary of the publication's contribution to the field. Current
+            status of its conclusions within the Atlas.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Atlas entities documented -->
+      <section id="entities-documented" aria-labelledby="ent-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 6</p>
+          <h2 class="sci-section__heading" id="ent-heading">Atlas Entities Documented</h2>
+        </div>
+        <p style="font-size:var(--text-sm); color:var(--muted); margin-bottom:var(--space-3);">
+          The following entities in the Atlas cite this publication as a primary reference.
+        </p>
+        <table class="data-table" aria-label="Entities documented by this publication">
+          <tbody>
+            <tr>
+              <th scope="row">Reference Objects</th>
+              <td>
+                <a href="../objects/[dynasty]/[kiln]/[id]/index.html">[RO-DYN-KLN-001]</a> ·
+                <a href="../objects/[dynasty]/[kiln]/[id]/index.html">[RO-DYN-KLN-002]</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Diagnostic Features</th>
+              <td>
+                <a href="../features/[cat]/[feature]/index.html">[DF-CAT-001]</a> ·
+                <a href="../features/[cat]/[feature]/index.html">[DF-CAT-002]</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Kilns</th>
+              <td>
+                <a href="../kilns/[region]/[kiln]/index.html">[KLN-REG-001]</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Methodologies</th>
+              <td>
+                <a href="../methodology/[cat]/[method]/index.html">[MTH-XXX]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- References (of the publication itself) -->
+      <div class="bibliography-block">
+        <p class="bibliography-block__title">References cited in this publication (selection)</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+      </div>
+
+    </article>
+
+    <aside class="entity-page__sidebar" aria-label="Related entities">
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">On this page</p>
+        <nav class="sidebar-section__body">
+          <a href="#abstract" class="sidebar-anchor active">Abstract</a>
+          <a href="#introduction" class="sidebar-anchor">1. Introduction</a>
+          <a href="#pub-methodology" class="sidebar-anchor">2. Methodology</a>
+          <a href="#results" class="sidebar-anchor">3. Results</a>
+          <a href="#discussion" class="sidebar-anchor">4. Discussion</a>
+          <a href="#conclusion" class="sidebar-anchor">5. Conclusion</a>
+          <a href="#entities-documented" class="sidebar-anchor">6. Atlas entities</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Author(s)</p>
+        <div class="sidebar-section__body">
+          <a href="../publications/authors/[author-slug]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Author name]</span>
+            <span class="sidebar-link__id">AUT-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Objects documented</p>
+        <div class="sidebar-section__body">
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-001</span>
+          </a>
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-002</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Features documented</p>
+        <div class="sidebar-section__body">
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">By the same author</p>
+        <div class="sidebar-section__body">
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Title short]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Title short]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><p class="footer__brand-name">Atlas of Diagnostic Features<br><span style="font-weight:300;color:var(--muted);">Chinese Ceramics and Porcelain</span></p><p class="footer__brand-desc">Scientific reference system.</p><p class="footer__version">Stage 4 Templates</p></div>
+      <div><p class="footer__col-title">Domains</p><ul class="footer__links"><li><a href="../features/index.html">Diagnostic Features</a></li><li><a href="../objects/index.html">Reference Objects</a></li><li><a href="../kilns/index.html">Kilns</a></li><li><a href="../periods/index.html">Periods</a></li><li><a href="../methodology/index.html">Methodology</a></li><li><a href="../publications/index.html">Publications</a></li></ul></div>
+      <div><p class="footer__col-title">Templates</p><ul class="footer__links"><li><a href="scientific-article.html">Scientific Article</a></li><li><a href="reference-object.html">Reference Object</a></li><li><a href="diagnostic-feature.html">Diagnostic Feature</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="publication.html">Publication</a></li><li><a href="dynasty.html">Dynasty</a></li><li><a href="kiln.html">Kiln</a></li><li><a href="author-profile.html">Author Profile</a></li></ul></div>
+      <div><p class="footer__col-title">System</p><ul class="footer__links"><li><a href="../about/index.html">About</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Atlas of Diagnostic Features. Template: PUB (Publication)</p>
+      <nav class="footer__legal" aria-label="Legal"><a href="../about/terms-of-use/index.html">Terms of Use</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
