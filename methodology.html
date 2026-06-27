@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Method Name] · [MTH-ID] — Atlas of Diagnostic Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../templates.css">
+</head>
+<body>
+
+<header class="nav-bar">
+  <div class="container">
+    <a href="../index.html" class="nav-bar__wordmark">Atlas <span>/ Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item"><a href="../features/index.html">Diagnostic Atlas</a></li>
+        <li class="nav-bar__item"><a href="../objects/index.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="../kilns/index.html">Kilns</a></li>
+        <li class="nav-bar__item"><a href="../periods/index.html">Periods</a></li>
+        <li class="nav-bar__item active"><a href="../methodology/index.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="../publications/index.html">Publications</a></li>
+        <li class="nav-bar__item"><a href="../about/index.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="container">
+
+  <div class="domain-strip domain-strip--method"></div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../methodology/index.html" class="breadcrumb__link">Methodology</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../methodology/[category]/index.html" class="breadcrumb__link">[Method category]</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">[Method name]</span>
+  </nav>
+
+  <div class="entity-page">
+    <article class="entity-page__main">
+
+      <header class="entity-header">
+        <div class="entity-header__type-row">
+          <span class="entity-header__type">Analytical Methodology</span>
+          <span class="entity-header__id">MTH-[SLUG]</span>
+        </div>
+        <h1 class="entity-header__title">[Method Full Name]</h1>
+        <p class="entity-header__subtitle">[Abbreviation] · [Method category: Elemental / Structural / Visual / Dating]</p>
+        <div class="entity-header__tags">
+          <span class="tag">[technique type]</span>
+          <span class="tag">[non-destructive | micro-destructive]</span>
+          <span class="tag">[information type]</span>
+        </div>
+      </header>
+
+      <!-- Overview -->
+      <section id="overview">
+        <div class="abstract-block">
+          <p class="abstract-block__label">Method overview</p>
+          <p class="abstract-block__text">
+            [Concise statement of what this method does, what information it yields,
+            and its primary application within ceramic analysis. States the physical
+            principle on which it operates. Two to three sentences maximum.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Quick reference table -->
+      <table class="data-table" aria-label="Method quick reference" style="margin-bottom:var(--space-6);">
+        <tbody>
+          <tr><th scope="row">Full name</th><td>[Full formal name]</td></tr>
+          <tr><th scope="row">Abbreviation</th><td>[Abbreviation]</td></tr>
+          <tr><th scope="row">Method category</th><td>[Elemental analysis / Phase analysis / Visual examination / Thermoluminescence dating]</td></tr>
+          <tr><th scope="row">Information yielded</th><td>[Primary outputs: elemental composition / phase composition / morphological data]</td></tr>
+          <tr><th scope="row">Destructive?</th><td>[Non-destructive / Micro-destructive (sample ≤ [x] mg) / Destructive]</td></tr>
+          <tr><th scope="row">Precision (typical)</th><td>[±x wt% for major elements / detection limit x ppm]</td></tr>
+          <tr><th scope="row">Atlas method ID</th><td>MTH-[SLUG]</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Scientific principles -->
+      <section id="principles" aria-labelledby="prin-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 1</p>
+          <h2 class="sci-section__heading" id="prin-heading">Scientific Principles</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Physical or chemical principle on which the method operates.
+            Precise and accurate. For example, for XRF: the emission of
+            characteristic X-rays following excitation by a primary X-ray beam,
+            with emitted energies specific to each element.]
+          </p>
+          <p>
+            [Explains why this principle yields the specific type of information
+            (elemental, structural, etc.) and what its fundamental limits are.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Analytical workflow -->
+      <section id="workflow" aria-labelledby="work-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 2</p>
+          <h2 class="sci-section__heading" id="work-heading">Analytical Workflow</h2>
+        </div>
+        <div class="workflow" role="list">
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-step__num" aria-hidden="true">1</span>
+            <div class="workflow-step__content">
+              <p class="workflow-step__title">Sample preparation / specimen setup</p>
+              <p class="workflow-step__desc">
+                [Description of required preparation: surface cleaning, mounting,
+                polishing, coating if needed. Specifies non-destructive or
+                sampling protocols.]
+              </p>
+            </div>
+          </div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-step__num" aria-hidden="true">2</span>
+            <div class="workflow-step__content">
+              <p class="workflow-step__title">Instrument configuration</p>
+              <p class="workflow-step__desc">
+                [Instrument settings: accelerating voltage, beam current, detector
+                type, working distance, acquisition time. References standard
+                operating parameters.]
+              </p>
+            </div>
+          </div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-step__num" aria-hidden="true">3</span>
+            <div class="workflow-step__content">
+              <p class="workflow-step__title">Data acquisition</p>
+              <p class="workflow-step__desc">
+                [Measurement protocol: number of measurement points, area vs. point
+                analysis, line scan vs. map, acquisition duration. Describes what
+                is recorded and in what format.]
+              </p>
+            </div>
+          </div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-step__num" aria-hidden="true">4</span>
+            <div class="workflow-step__content">
+              <p class="workflow-step__title">Data processing and calibration</p>
+              <p class="workflow-step__desc">
+                [Standardisation and calibration procedures. Reference materials
+                used. Correction algorithms applied. Software used for data
+                reduction.]
+              </p>
+            </div>
+          </div>
+          <div class="workflow-step" role="listitem">
+            <span class="workflow-step__num" aria-hidden="true">5</span>
+            <div class="workflow-step__content">
+              <p class="workflow-step__title">Interpretation and diagnostic application</p>
+              <p class="workflow-step__desc">
+                [How output data is interpreted in the context of ceramic attribution.
+                What comparative reference datasets are used. How results are
+                classified according to the Atlas certainty system.]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Glaze analysis application -->
+      <section id="glaze-application" aria-labelledby="glaze-app-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 3</p>
+          <h2 class="sci-section__heading" id="glaze-app-heading">Application: Glaze Analysis</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Specific application of this method to glaze characterisation.
+            What glaze properties it reveals: elemental composition, phase
+            assemblage, thickness, interface character. Limitations specific
+            to glaze substrates.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Microstructure analysis application -->
+      <section id="micro-application" aria-labelledby="micro-app-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 4</p>
+          <h2 class="sci-section__heading" id="micro-app-heading">Application: Microstructure Analysis</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Specific application to body microstructure analysis. What the method
+            reveals about paste texture, inclusion types, vitrification, firing
+            temperature range. Cross-reference to relevant Diagnostic Feature pages.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Limitations -->
+      <section id="limitations" aria-labelledby="lim-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 5</p>
+          <h2 class="sci-section__heading" id="lim-heading">Limitations and Constraints</h2>
+        </div>
+        <div class="warning-block">
+          <span class="warning-block__label">Limitations</span>
+          <p class="warning-block__text">
+            [Primary technical limitations of this method. What it cannot determine.
+            Common sources of error. Conditions under which results are unreliable.]
+          </p>
+        </div>
+        <div class="body-text" style="margin-top:var(--space-3);">
+          <p>
+            [Sampling requirements, if any. Access restrictions (requires surface
+            preparation, sampling, specialist facility). Cost and availability
+            considerations.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Diagnostic decision flow -->
+      <section id="decision-flow" aria-labelledby="dec-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 6</p>
+          <h2 class="sci-section__heading" id="dec-heading">Diagnostic Decision Flow</h2>
+        </div>
+        <div class="note-block">
+          <span class="note-block__label">Logic</span>
+          <p class="note-block__text">
+            [When to apply this method: what question needs answering, at what
+            stage of the diagnostic process this method is appropriate, what
+            prior information is needed before this method adds value.]
+          </p>
+        </div>
+        <div class="body-text" style="margin-top:var(--space-3);">
+          <p>
+            [Decision tree: If [observation], apply this method to determine [outcome].
+            If result is [A], interpretation is [X]. If result is [B], interpretation
+            is [Y]. Cross-references to cases where this method resolved attribution
+            disputes.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Case study placeholders -->
+      <section id="case-studies" aria-labelledby="case-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 7</p>
+          <h2 class="sci-section__heading" id="case-heading">Case Studies</h2>
+        </div>
+        <div class="criteria-grid">
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Case study 1 — [Object type]</p>
+            <p class="criteria-cell__content">
+              [Brief description of a representative application. Object: [RO-ID].
+              Question addressed. Method applied. Outcome. Link to full object record.]
+            </p>
+          </div>
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Case study 2 — [Object type]</p>
+            <p class="criteria-cell__content">
+              [Second representative application, ideally demonstrating a
+              different aspect of the method's diagnostic utility.]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="bibliography-block">
+        <p class="bibliography-block__title">References</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+      </div>
+
+    </article>
+
+    <aside class="entity-page__sidebar" aria-label="Related entities">
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">On this page</p>
+        <nav class="sidebar-section__body">
+          <a href="#overview" class="sidebar-anchor active">Overview</a>
+          <a href="#principles" class="sidebar-anchor">1. Scientific principles</a>
+          <a href="#workflow" class="sidebar-anchor">2. Analytical workflow</a>
+          <a href="#glaze-application" class="sidebar-anchor">3. Glaze analysis</a>
+          <a href="#micro-application" class="sidebar-anchor">4. Microstructure analysis</a>
+          <a href="#limitations" class="sidebar-anchor">5. Limitations</a>
+          <a href="#decision-flow" class="sidebar-anchor">6. Decision flow</a>
+          <a href="#case-studies" class="sidebar-anchor">7. Case studies</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Objects analyzed (Atlas)</p>
+        <div class="sidebar-section__body">
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-001</span>
+          </a>
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-002</span>
+          </a>
+          <a href="../objects/[dynasty]/[kiln]/[id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Object name]</span>
+            <span class="sidebar-link__id">RO-XXX-003</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Features identified by this method</p>
+        <div class="sidebar-section__body">
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Key publications</p>
+        <div class="sidebar-section__body">
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Author, Year]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Author, Year]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Related methods</p>
+        <div class="sidebar-section__body">
+          <a href="../methodology/[cat]/[method]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Related method]</span>
+            <span class="sidebar-link__id">MTH-XXX</span>
+          </a>
+          <a href="../methodology/[cat]/[method]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Related method]</span>
+            <span class="sidebar-link__id">MTH-XXX</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><p class="footer__brand-name">Atlas of Diagnostic Features<br><span style="font-weight:300;color:var(--muted);">Chinese Ceramics and Porcelain</span></p><p class="footer__brand-desc">Scientific reference system.</p><p class="footer__version">Stage 4 Templates</p></div>
+      <div><p class="footer__col-title">Domains</p><ul class="footer__links"><li><a href="../features/index.html">Diagnostic Features</a></li><li><a href="../objects/index.html">Reference Objects</a></li><li><a href="../kilns/index.html">Kilns</a></li><li><a href="../periods/index.html">Periods</a></li><li><a href="../methodology/index.html">Methodology</a></li><li><a href="../publications/index.html">Publications</a></li></ul></div>
+      <div><p class="footer__col-title">Templates</p><ul class="footer__links"><li><a href="scientific-article.html">Scientific Article</a></li><li><a href="reference-object.html">Reference Object</a></li><li><a href="diagnostic-feature.html">Diagnostic Feature</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="publication.html">Publication</a></li><li><a href="dynasty.html">Dynasty</a></li><li><a href="kiln.html">Kiln</a></li><li><a href="author-profile.html">Author Profile</a></li></ul></div>
+      <div><p class="footer__col-title">System</p><ul class="footer__links"><li><a href="../about/index.html">About</a></li><li><a href="../about/editorial-methodology/index.html">Editorial policy</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Atlas of Diagnostic Features. Template: MTH (Methodology)</p>
+      <nav class="footer__legal" aria-label="Legal"><a href="../about/terms-of-use/index.html">Terms of Use</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
