@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template System — Stage 4 — Atlas of Diagnostic Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="templates.css">
+
+  <style>
+    /* Index-page only additions */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: var(--space-6);
+    }
+    .template-card {
+      background: var(--stone);
+      padding: var(--space-5) var(--space-4);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      transition: background var(--transition-medium);
+      position: relative;
+    }
+    .template-card:hover { background: var(--parchment); }
+    .template-card:hover .template-card__arrow { opacity: 1; }
+    .template-card__num {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+    .template-card__id {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .template-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .template-card__desc {
+      font-size: var(--text-sm);
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 50ch;
+    }
+    .template-card__sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: var(--space-1);
+      border-top: 1px solid var(--border2);
+      padding-top: var(--space-2);
+    }
+    .template-card__arrow {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--muted);
+      opacity: 0;
+      transition: opacity var(--transition-medium);
+    }
+    .data-model-section {
+      margin-top: var(--space-10);
+      padding-top: var(--space-6);
+      border-top: 2px solid var(--border);
+    }
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      margin: var(--space-3) 0 var(--space-6);
+    }
+    .field-table thead th {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      background: var(--parchment);
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+    }
+    .field-table tbody td {
+      padding: 9px 16px;
+      border-bottom: 1px solid var(--border2);
+      vertical-align: top;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .field-table tbody tr:last-child td { border-bottom: none; }
+    .field-table tbody tr:nth-child(even) td { background: #faf8f5; }
+    .field-req  { color: #3a6b3a; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .field-opt  { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .field-rel  { color: var(--qing-cob); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .nav-matrix {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      margin: var(--space-4) 0;
+      overflow-x: auto;
+    }
+    .nav-matrix-header {
+      background: var(--parchment2);
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-right: 1px solid var(--border2);
+      border-bottom: 2px solid var(--border);
+    }
+    .nav-matrix-cell {
+      padding: 8px 4px;
+      text-align: center;
+      border-right: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+      font-size: 11px;
+    }
+    .nav-matrix-cell.link { background: #eaf4ea; color: #3a6b3a; font-weight: 600; }
+    .nav-matrix-cell.self { background: var(--parchment2); color: var(--muted); }
+    .nav-matrix-label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      background: var(--parchment);
+      padding: 8px 12px;
+      border-right: 2px solid var(--border);
+      border-bottom: 1px solid var(--border2);
+    }
+    @media (max-width: 768px) {
+      .template-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav-bar">
+  <div class="container">
+    <a href="index.html" class="nav-bar__wordmark">Atlas <span>/ Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item"><a href="features/index.html">Diagnostic Atlas</a></li>
+        <li class="nav-bar__item"><a href="objects/index.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="kilns/index.html">Kilns</a></li>
+        <li class="nav-bar__item"><a href="periods/index.html">Periods</a></li>
+        <li class="nav-bar__item"><a href="methodology/index.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="publications/index.html">Publications</a></li>
+        <li class="nav-bar__item"><a href="about/index.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="container">
+
+  <!-- Status bar -->
+  <div style="background:var(--parchment2); border:1px solid var(--border); padding:10px var(--space-3); margin-bottom:var(--space-5); display:flex; align-items:center; gap:var(--space-2);">
+    <span style="width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0;"></span>
+    <span style="font-size:var(--text-xs); font-weight:500; letter-spacing:0.04em; color:var(--muted);">
+      Stage 4 — Scientific Page Templates · 8 templates · Locked structure · No content yet
+    </span>
+  </div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">Template System — Stage 4</span>
+  </nav>
+
+  <!-- Page header -->
+  <div style="padding: var(--space-8) 0 var(--space-6); border-bottom: 1px solid var(--border); margin-bottom:var(--space-8);">
+    <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:var(--space-2);">
+      System documentation — Stage 4
+    </p>
+    <h1 style="font-family:var(--font-display); font-size:var(--text-5xl); font-weight:300; color:var(--ink); line-height:1.0; letter-spacing:-0.02em; margin-bottom:var(--space-4);">
+      Scientific Page<br>Template System
+    </h1>
+    <p style="font-family:var(--font-body); font-size:var(--text-md); font-weight:300; color:var(--muted2); line-height:1.65; max-width:58ch;">
+      8 reusable structural templates. Each template is an entity type in the
+      knowledge graph. Every page in the Atlas is an instance of one of these
+      templates. No new templates may be created without a versioned revision
+      to this specification.
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,auto); gap:var(--space-5); margin-top:var(--space-5); padding-top:var(--space-4); border-top:1px solid var(--border2); width:fit-content;">
+      <div>
+        <p style="font-family:var(--font-display); font-size:var(--text-3xl); font-weight:300; color:var(--ink); line-height:1;">8</p>
+        <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">Templates</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-display); font-size:var(--text-3xl); font-weight:300; color:var(--ink); line-height:1;">300+</p>
+        <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">Pages at scale</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-display); font-size:var(--text-3xl); font-weight:300; color:var(--ink); line-height:1;">7</p>
+        <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">Entity types</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-display); font-size:var(--text-3xl); font-weight:300; color:var(--ink); line-height:1;">0</p>
+        <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">Redesigns needed</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEMPLATE CARDS ──────────────────────────────── -->
+  <section aria-labelledby="templates-heading">
+    <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:400; color:var(--ink); padding-bottom:var(--space-2); border-bottom:1px solid var(--border); margin-bottom:0;" id="templates-heading">
+      Template Library
+    </h2>
+
+    <div class="template-grid" role="list">
+
+      <!-- Template 1: Scientific Article -->
+      <a href="templates/scientific-article.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">01</span>
+        <span class="template-card__id">ART · Scientific Article</span>
+        <h3 class="template-card__name">Scientific<br>Article</h3>
+        <p class="template-card__desc">
+          Long-form analytical studies: glaze analysis, crackle analysis,
+          microstructure research, diagnostic frameworks, comparative studies.
+          Full peer-review structure with image documentation.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Abstract</span>
+          <span class="tag">Introduction</span>
+          <span class="tag">Historical context</span>
+          <span class="tag">Material analysis</span>
+          <span class="tag">Macroscopic obs.</span>
+          <span class="tag">Microscopic analysis</span>
+          <span class="tag">Diagnostic criteria</span>
+          <span class="tag">Comparative analysis</span>
+          <span class="tag">Forgery detection</span>
+          <span class="tag">Image gallery</span>
+          <span class="tag">Bibliography</span>
+        </div>
+      </a>
+
+      <!-- Template 2: Reference Object -->
+      <a href="templates/reference-object.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">02</span>
+        <span class="template-card__id">RO · Reference Object</span>
+        <h3 class="template-card__name">Reference<br>Object</h3>
+        <p class="template-card__desc">
+          Individual ceramic artifact records. Primary data entry: the
+          empirical core of the Atlas. Full physical, analytical, and
+          interpretive documentation with mandatory image set.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Object ID</span>
+          <span class="tag">Image documentation</span>
+          <span class="tag">Physical description</span>
+          <span class="tag">Provenance</span>
+          <span class="tag">Material composition</span>
+          <span class="tag">Glaze analysis</span>
+          <span class="tag">Microstructure</span>
+          <span class="tag">Diagnostic interpretation</span>
+          <span class="tag">Attribution certainty</span>
+        </div>
+      </a>
+
+      <!-- Template 3: Diagnostic Feature -->
+      <a href="templates/diagnostic-feature.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">03</span>
+        <span class="template-card__id">DF · Diagnostic Feature</span>
+        <h3 class="template-card__name">Diagnostic<br>Feature</h3>
+        <p class="template-card__desc">
+          Observable or measurable properties with attribution value.
+          Categories: glaze, microstructure, firing traces, form morphology,
+          decoration, material. Includes forgery detection notes.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Definition</span>
+          <span class="tag">Formation mechanism</span>
+          <span class="tag">Visual characteristics</span>
+          <span class="tag">Microscopic indicators</span>
+          <span class="tag">Diagnostic significance</span>
+          <span class="tag">Misinterpretations</span>
+          <span class="tag">Forgery detection</span>
+          <span class="tag">Distribution by period/kiln</span>
+          <span class="tag">Classification position</span>
+        </div>
+      </a>
+
+      <!-- Template 4: Methodology -->
+      <a href="templates/methodology.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">04</span>
+        <span class="template-card__id">MTH · Methodology</span>
+        <h3 class="template-card__name">Analytical<br>Methodology</h3>
+        <p class="template-card__desc">
+          Technical reference for analytical and examination techniques.
+          Operating principles, instrumentation, step-by-step workflow,
+          limitations, and diagnostic decision logic.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Method overview</span>
+          <span class="tag">Scientific principles</span>
+          <span class="tag">Workflow (5 steps)</span>
+          <span class="tag">Glaze application</span>
+          <span class="tag">Microstructure application</span>
+          <span class="tag">Limitations</span>
+          <span class="tag">Decision flow</span>
+          <span class="tag">Case studies</span>
+        </div>
+      </a>
+
+      <!-- Template 5: Publication -->
+      <a href="templates/publication.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">05</span>
+        <span class="template-card__id">PUB · Publication</span>
+        <h3 class="template-card__name">Scholarly<br>Publication</h3>
+        <p class="template-card__desc">
+          Structured bibliographic records for all works cited in the Atlas.
+          Covers articles, monographs, excavation reports, exhibition
+          catalogues. Links to all documented Atlas entities.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Citation block</span>
+          <span class="tag">Metadata grid</span>
+          <span class="tag">DOI / stable URL</span>
+          <span class="tag">Abstract</span>
+          <span class="tag">Methodology</span>
+          <span class="tag">Results</span>
+          <span class="tag">Discussion</span>
+          <span class="tag">Atlas entities documented</span>
+        </div>
+      </a>
+
+      <!-- Template 6: Dynasty -->
+      <a href="templates/dynasty.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">06</span>
+        <span class="template-card__id">DYN · Dynasty / Period</span>
+        <h3 class="template-card__name">Dynasty<br>/ Period</h3>
+        <p class="template-card__desc">
+          Chronological scaffolding of the Atlas. Structured index pages,
+          not art-historical narratives. Active kilns, characteristic features,
+          material properties, and representative objects per period.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Timeline structure</span>
+          <span class="tag">Ceramic history (200w max)</span>
+          <span class="tag">Kiln development</span>
+          <span class="tag">Material characteristics</span>
+          <span class="tag">Diagnostic relevance</span>
+          <span class="tag">Reference objects</span>
+          <span class="tag">Prev / Next dynasty</span>
+        </div>
+      </a>
+
+      <!-- Template 7: Kiln -->
+      <a href="templates/kiln.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">07</span>
+        <span class="template-card__id">KLN · Kiln</span>
+        <h3 class="template-card__name">Production<br>Kiln</h3>
+        <p class="template-card__desc">
+          Ceramic production sites as knowledge entities. Geographic location,
+          active periods, production techniques, material signatures, typical
+          defects, and attributed objects with certainty levels.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Geographic context</span>
+          <span class="tag">Activity timeline</span>
+          <span class="tag">Production techniques</span>
+          <span class="tag">Material characteristics</span>
+          <span class="tag">Defects / variations</span>
+          <span class="tag">Kiln technology</span>
+          <span class="tag">Attributed objects</span>
+          <span class="tag">Glaze systems</span>
+        </div>
+      </a>
+
+      <!-- Template 8: Author Profile -->
+      <a href="templates/author-profile.html" class="template-card" role="listitem">
+        <span class="template-card__arrow" aria-hidden="true">→</span>
+        <span class="template-card__num" aria-hidden="true">08</span>
+        <span class="template-card__id">AUT · Author Profile</span>
+        <h3 class="template-card__name">Author<br>Profile</h3>
+        <p class="template-card__desc">
+          Researcher records. Academic identity, ORCID and external
+          identifiers, research focus, methodological contributions,
+          publication list, and Atlas entity contributions.
+        </p>
+        <div class="template-card__sections">
+          <span class="tag">Academic identity</span>
+          <span class="tag">ORCID / identifiers</span>
+          <span class="tag">Research focus</span>
+          <span class="tag">Methodological contribution</span>
+          <span class="tag">Publications list</span>
+          <span class="tag">Atlas role</span>
+          <span class="tag">Co-authors</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── DATA MODEL: REQUIRED FIELDS ────────────────── -->
+  <div class="data-model-section">
+    <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:400; color:var(--ink); margin-bottom:var(--space-2);">
+      Data Model — Required Fields per Template
+    </h2>
+    <p style="font-size:var(--text-sm); color:var(--muted); margin-bottom:var(--space-4);">
+      <span class="field-req">REQ</span> = required &nbsp;·&nbsp;
+      <span class="field-opt">OPT</span> = optional &nbsp;·&nbsp;
+      <span class="field-rel">REL</span> = relationship field (cross-link, must be bidirectional)
+    </p>
+
+    <!-- ART fields -->
+    <h3 style="font-family:var(--font-body); font-size:var(--text-sm); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:var(--space-1);">ART — Scientific Article</h3>
+    <table class="field-table">
+      <thead><tr><th>Field</th><th>Type</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>ART-ID</td><td>String</td><td><span class="field-req">REQ</span></td><td>Format: ART-{CAT}-{SLUG}-{SEQ}</td></tr>
+        <tr><td>Title</td><td>String</td><td><span class="field-req">REQ</span></td><td>Scientific title, no abbreviations</td></tr>
+        <tr><td>Author(s)</td><td>AUT-ID[]</td><td><span class="field-req">REQ</span></td><td>Links to Author Profile entities</td></tr>
+        <tr><td>Published date</td><td>Date</td><td><span class="field-req">REQ</span></td><td>YYYY-MM-DD</td></tr>
+        <tr><td>Classification</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>Controlled vocabulary</td></tr>
+        <tr><td>Abstract</td><td>Text</td><td><span class="field-req">REQ</span></td><td>Max 250 words</td></tr>
+        <tr><td>Keywords</td><td>String[]</td><td><span class="field-req">REQ</span></td><td>Controlled vocabulary, min 3</td></tr>
+        <tr><td>Body sections</td><td>Section[]</td><td><span class="field-req">REQ</span></td><td>All 9 sections required</td></tr>
+        <tr><td>Images</td><td>Image[]</td><td><span class="field-req">REQ</span></td><td>Min 2; microscopy must have metadata</td></tr>
+        <tr><td>Bibliography</td><td>PUB-ID[]</td><td><span class="field-req">REQ</span></td><td>Min 3 citations</td></tr>
+        <tr><td>Related features</td><td>DF-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; min 1</td></tr>
+        <tr><td>Related objects</td><td>RO-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; min 1</td></tr>
+        <tr><td>Methodology applied</td><td>MTH-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional</td></tr>
+        <tr><td>Historical context</td><td>DYN-ID / KLN-ID</td><td><span class="field-rel">REL</span></td><td>At least one of dynasty or kiln</td></tr>
+        <tr><td>DOI</td><td>String</td><td><span class="field-opt">OPT</span></td><td>If available</td></tr>
+      </tbody>
+    </table>
+
+    <!-- RO fields -->
+    <h3 style="font-family:var(--font-body); font-size:var(--text-sm); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:var(--space-1);">RO — Reference Object</h3>
+    <table class="field-table">
+      <thead><tr><th>Field</th><th>Type</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>RO-ID</td><td>String</td><td><span class="field-req">REQ</span></td><td>Format: RO-{DYN}-{KLN}-{SEQ}</td></tr>
+        <tr><td>Object name</td><td>String</td><td><span class="field-req">REQ</span></td><td>Vessel form + defining characteristic</td></tr>
+        <tr><td>Dynasty</td><td>DYN-ID</td><td><span class="field-req">REQ</span></td><td>One dynasty required; sub-period optional</td></tr>
+        <tr><td>Kiln attribution</td><td>KLN-ID + Enum</td><td><span class="field-req">REQ</span></td><td>Must include certainty level</td></tr>
+        <tr><td>Certainty level</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>confirmed / probable / proposed / disputed</td></tr>
+        <tr><td>Vessel form</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>Controlled vocabulary</td></tr>
+        <tr><td>Ware type</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>Controlled vocabulary</td></tr>
+        <tr><td>Dimensions</td><td>Object</td><td><span class="field-req">REQ</span></td><td>Height, max diameter; weight optional</td></tr>
+        <tr><td>Condition</td><td>String</td><td><span class="field-req">REQ</span></td><td>Standardised condition statement</td></tr>
+        <tr><td>Collection</td><td>String</td><td><span class="field-req">REQ</span></td><td>Institution + accession number</td></tr>
+        <tr><td>Images (overall)</td><td>Image</td><td><span class="field-req">REQ</span></td><td>Primary overall photograph mandatory</td></tr>
+        <tr><td>Images (foot rim)</td><td>Image</td><td><span class="field-req">REQ</span></td><td>Foot rim detail mandatory</td></tr>
+        <tr><td>Images (glaze detail)</td><td>Image</td><td><span class="field-req">REQ</span></td><td>Surface detail mandatory</td></tr>
+        <tr><td>Glaze data</td><td>Object</td><td><span class="field-req">REQ</span></td><td>At minimum: colour, thickness, crackle classification</td></tr>
+        <tr><td>Compositional data</td><td>Table</td><td><span class="field-req">REQ</span></td><td>At minimum glaze; body if available</td></tr>
+        <tr><td>Analytical method</td><td>MTH-ID[]</td><td><span class="field-req">REQ</span></td><td>Method used for compositional data</td></tr>
+        <tr><td>Diagnostic features</td><td>DF-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; min 1</td></tr>
+        <tr><td>Bibliography</td><td>PUB-ID[]</td><td><span class="field-rel">REL</span></td><td>Min 1</td></tr>
+        <tr><td>Provenance</td><td>Text</td><td><span class="field-opt">OPT</span></td><td>When absent: state "undocumented prior to [year]"</td></tr>
+        <tr><td>Images (cross-section)</td><td>Image</td><td><span class="field-opt">OPT</span></td><td>If analytical section available</td></tr>
+        <tr><td>Images (UV fluorescence)</td><td>Image</td><td><span class="field-opt">OPT</span></td><td>If examined</td></tr>
+      </tbody>
+    </table>
+
+    <!-- DF fields -->
+    <h3 style="font-family:var(--font-body); font-size:var(--text-sm); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:var(--space-1);">DF — Diagnostic Feature</h3>
+    <table class="field-table">
+      <thead><tr><th>Field</th><th>Type</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>DF-ID</td><td>String</td><td><span class="field-req">REQ</span></td><td>Format: DF-{CAT}-{SLUG}</td></tr>
+        <tr><td>Feature name</td><td>String</td><td><span class="field-req">REQ</span></td><td>Scientific name in controlled vocabulary</td></tr>
+        <tr><td>Category</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>glaze / microstructure / firing-trace / form / decoration / material</td></tr>
+        <tr><td>Scientific definition</td><td>Text</td><td><span class="field-req">REQ</span></td><td>Max 2 sentences; no subjective language</td></tr>
+        <tr><td>Formation mechanism</td><td>Text</td><td><span class="field-req">REQ</span></td><td>Physical / chemical process description</td></tr>
+        <tr><td>Diagnostic significance</td><td>Text</td><td><span class="field-req">REQ</span></td><td>What attribution value does presence carry</td></tr>
+        <tr><td>Identification method</td><td>MTH-ID[]</td><td><span class="field-req">REQ</span></td><td>Min 1 method; bidirectional</td></tr>
+        <tr><td>Reference images</td><td>Image[]</td><td><span class="field-req">REQ</span></td><td>Min 2; at least 1 macro + 1 microscopic</td></tr>
+        <tr><td>Kiln associations</td><td>KLN-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; min 1</td></tr>
+        <tr><td>Period range</td><td>DYN-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; min 1</td></tr>
+        <tr><td>Objects exhibiting feature</td><td>RO-ID[]</td><td><span class="field-rel">REL</span></td><td>Bidirectional; auto-populated from RO data</td></tr>
+        <tr><td>Bibliography</td><td>PUB-ID[]</td><td><span class="field-rel">REL</span></td><td>Min 2</td></tr>
+        <tr><td>Classification position</td><td>Enum</td><td><span class="field-req">REQ</span></td><td>Full hierarchy path from root</td></tr>
+        <tr><td>Misinterpretation notes</td><td>Text</td><td><span class="field-opt">OPT</span></td><td>Recommended for all features with attribution risk</td></tr>
+        <tr><td>Forgery detection notes</td><td>Text</td><td><span class="field-opt">OPT</span></td><td>Required for all features of high-value wares</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Condensed: remaining 5 templates -->
+    <h3 style="font-family:var(--font-body); font-size:var(--text-sm); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin:var(--space-5) 0 var(--space-1);">MTH / PUB / DYN / KLN / AUT — Field Summary</h3>
+    <table class="field-table">
+      <thead>
+        <tr>
+          <th>Template</th>
+          <th>ID format</th>
+          <th>Required fields (count)</th>
+          <th>Relationship fields</th>
+          <th>Optional fields</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MTH</strong> — Methodology</td>
+          <td style="font-family:monospace; font-size:12px;">MTH-{SLUG}</td>
+          <td>8 required: ID, name, abbreviation, category, principles, workflow, information yielded, destructive status</td>
+          <td>RO-ID[] (applied to), DF-ID[] (identifies), PUB-ID[]</td>
+          <td>Instruments, beam parameters, case studies, cost/access notes</td>
+        </tr>
+        <tr>
+          <td><strong>PUB</strong> — Publication</td>
+          <td style="font-family:monospace; font-size:12px;">PUB-{Y}-{A}-{S}</td>
+          <td>9 required: ID, title, author(s), year, type, publisher/journal, language, abstract/scope note, subject tags</td>
+          <td>AUT-ID[] (authors), RO-ID[] (documents), DF-ID[] (documents), KLN-ID[], MTH-ID[]</td>
+          <td>DOI, full text link, co-author list, editorial introduction</td>
+        </tr>
+        <tr>
+          <td><strong>DYN</strong> — Dynasty</td>
+          <td style="font-family:monospace; font-size:12px;">DYN-{SLUG}</td>
+          <td>6 required: ID, name, date range, ruling house, ceramic characterisation (max 200w), sub-period structure</td>
+          <td>KLN-ID[] (active kilns), DF-ID[] (characteristic features), RO-ID[] (representative objects), PUB-ID[]</td>
+          <td>Capital cities, archaeological notes, political context</td>
+        </tr>
+        <tr>
+          <td><strong>KLN</strong> — Kiln</td>
+          <td style="font-family:monospace; font-size:12px;">KLN-{R}-{S}</td>
+          <td>8 required: ID, name, region, location, active period(s), administrative status, primary wares, excavation status</td>
+          <td>DYN-ID[] (active during), RO-ID[] (attributed objects + certainty), DF-ID[] (characteristic features), PUB-ID[]</td>
+          <td>Geographic coordinates, kiln structure dimensions, raw material sources</td>
+        </tr>
+        <tr>
+          <td><strong>AUT</strong> — Author Profile</td>
+          <td style="font-family:monospace; font-size:12px;">AUT-{S}-{I}</td>
+          <td>4 required: ID, full name, current affiliation, research specialization</td>
+          <td>PUB-ID[] (authored), MTH-ID[] (contributed), RO-ID[] (primarily documented), KLN-ID[]</td>
+          <td>ORCID, ResearcherID, Google Scholar, previous affiliations, co-authors</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── CROSS-LINKING MATRIX ───────────────────────── -->
+  <div class="data-model-section">
+    <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:400; color:var(--ink); margin-bottom:var(--space-2);">
+      Cross-Linking Matrix
+    </h2>
+    <p style="font-size:var(--text-sm); color:var(--muted); margin-bottom:var(--space-3);">
+      Every cell indicates whether a link from the row entity to the column entity is
+      <span class="field-req">required</span>, <span style="color:var(--ming-yel); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:0.04em;">recommended</span>, or absent.
+      All links are bidirectional — if A links to B, B must list A.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table style="border-collapse:collapse; border:1px solid var(--border); min-width:700px; width:100%; font-family:var(--font-body); font-size:var(--text-xs);">
+        <thead>
+          <tr>
+            <th style="background:var(--parchment2); padding:10px 12px; text-align:left; border-right:2px solid var(--border); border-bottom:2px solid var(--border); font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted2);">From ↓ · To →</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">RO</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">DF</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">KLN</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">DYN</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">MTH</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">PUB</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-right:1px solid var(--border2); border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">AUT</th>
+            <th style="background:var(--parchment); padding:10px 8px; text-align:center; border-bottom:2px solid var(--border); color:var(--muted2); font-weight:600;">ART</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- RO row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Reference Object (RO)</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:var(--muted);">auto</td>
+          </tr>
+          <!-- DF row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Diagnostic Feature (DF)</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+          </tr>
+          <!-- KLN row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Kiln (KLN)</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:var(--muted);">auto</td>
+          </tr>
+          <!-- DYN row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Dynasty (DYN)</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:var(--muted);">auto</td>
+          </tr>
+          <!-- MTH row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Methodology (MTH)</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:var(--muted);">auto</td>
+          </tr>
+          <!-- PUB row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border); border-bottom:1px solid var(--border2);">Publication (PUB)</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); border-bottom:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="text-align:center; padding:9px; border-bottom:1px solid var(--border2); color:var(--muted);">—</td>
+          </tr>
+          <!-- AUT row -->
+          <tr>
+            <td style="background:var(--parchment); font-weight:600; color:var(--muted2); padding:9px 12px; border-right:2px solid var(--border);">Author Profile (AUT)</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; border-right:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:#eaf4ea; text-align:center; padding:9px; border-right:1px solid var(--border2); color:#3a6b3a; font-weight:600;">REQ</td>
+            <td style="background:var(--parchment2); text-align:center; padding:9px; border-right:1px solid var(--border2); color:var(--muted);">—</td>
+            <td style="text-align:center; padding:9px; color:var(--muted);">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:var(--text-xs); color:var(--muted); margin-top:var(--space-2);">
+      REQ = required bidirectional link · auto = auto-populated from other entity's data · — = no direct link
+    </p>
+  </div>
+
+  <!-- ── NAVIGATION RULES ───────────────────────────── -->
+  <div class="data-model-section">
+    <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:400; color:var(--ink); margin-bottom:var(--space-4);">
+      Navigation Logic
+    </h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border);">
+
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2); letter-spacing:0.02em;">Breadcrumb logic (canonical path)</h3>
+        <div style="font-family:monospace; font-size:12px; color:var(--muted2); background:var(--parchment); padding:var(--space-2); border:1px solid var(--border2); display:flex; flex-direction:column; gap:6px;">
+          <span>Atlas › Objects › [Dynasty] › [Kiln] › [RO-ID]</span>
+          <span>Atlas › Features › [Category] › [Feature name]</span>
+          <span>Atlas › Kilns › [Region] › [Kiln name]</span>
+          <span>Atlas › Periods › [Dynasty] › [Sub-period]</span>
+          <span>Atlas › Methodology › [Category] › [Method]</span>
+          <span>Atlas › Publications › [PUB-ID]</span>
+          <span>Atlas › Publications › Authors › [AUT-ID]</span>
+        </div>
+        <p style="font-size:var(--text-xs); color:var(--muted); margin-top:var(--space-2);">
+          Breadcrumb reflects canonical URL path, not session history.
+          Current page item is not a link. Mobile: collapses to parent + current.
+        </p>
+      </div>
+
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2); letter-spacing:0.02em;">Sidebar panel structure (all entity pages)</h3>
+        <div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border); font-size:var(--text-xs); font-family:var(--font-body);">
+          <div style="background:var(--parchment); padding:6px 12px; font-weight:600; color:var(--muted2);">1 — On this page (anchor links to H2 sections)</div>
+          <div style="background:var(--stone); padding:6px 12px; color:var(--muted2);">2 — Related entities of type A (with IDs)</div>
+          <div style="background:var(--stone); padding:6px 12px; color:var(--muted2);">3 — Related entities of type B (with IDs)</div>
+          <div style="background:var(--stone); padding:6px 12px; color:var(--muted2);">4 — Related entities of type C (with IDs)</div>
+          <div style="background:var(--stone); padding:6px 12px; color:var(--muted2);">5 — Key publications</div>
+        </div>
+        <p style="font-size:var(--text-xs); color:var(--muted); margin-top:var(--space-2);">
+          Entity type sequence in sidebar varies by template type.
+          Relationship panel is always complete — all linked entities displayed,
+          not just those mentioned in body text.
+        </p>
+      </div>
+
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2); letter-spacing:0.02em;">Cross-link display rule</h3>
+        <p style="font-size:var(--text-sm); color:var(--muted2); line-height:1.6;">
+          Every cross-link displays: entity name + entity ID. Attribution
+          certainty is shown at every RO→KLN link (not only on the RO page).
+          Links use the <code>.sidebar-link</code> component from templates.css.
+          Orphan pages (no cross-links) are a data quality error.
+        </p>
+      </div>
+
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2); letter-spacing:0.02em;">URL permanence rule</h3>
+        <p style="font-size:var(--text-sm); color:var(--muted2); line-height:1.6;">
+          URLs are defined by entity type + identifier. If an attribution
+          changes, the URL does not change. Revisions are documented in
+          <code>config/redirects.json</code>. URLs must remain valid for
+          the lifetime of the Atlas.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── EDITORIAL CHECKLIST ────────────────────────── -->
+  <div class="data-model-section" style="margin-bottom:var(--space-16);">
+    <h2 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:400; color:var(--ink); margin-bottom:var(--space-4);">
+      Pre-Publication Checklist (all templates)
+    </h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border);">
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2);">Data integrity</h3>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:var(--text-sm); color:var(--muted2);">
+          <div>☐ &nbsp; All required fields populated</div>
+          <div>☐ &nbsp; Entity identifier unique in system</div>
+          <div>☐ &nbsp; All controlled vocabulary fields use approved terms</div>
+          <div>☐ &nbsp; Attribution certainty level set on all RO→KLN links</div>
+          <div>☐ &nbsp; All cross-links verified (target pages exist)</div>
+          <div>☐ &nbsp; All cross-links bidirectional (target lists this entity)</div>
+          <div>☐ &nbsp; Entity reachable from at least 2 paths (index + min 1 cross-link)</div>
+          <div>☐ &nbsp; No orphan cross-links</div>
+        </div>
+      </div>
+      <div style="background:var(--stone); padding:var(--space-4);">
+        <h3 style="font-size:var(--text-sm); font-weight:600; color:var(--muted2); margin-bottom:var(--space-2);">Content quality</h3>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:var(--text-sm); color:var(--muted2);">
+          <div>☐ &nbsp; No subjective or marketing language in body text</div>
+          <div>☐ &nbsp; Microscopy images include all 4 required metadata fields</div>
+          <div>☐ &nbsp; Scale bars present on all microscopy images</div>
+          <div>☐ &nbsp; All citations linked to PUB entity pages</div>
+          <div>☐ &nbsp; Dynasty characterisation ≤ 200 words</div>
+          <div>☐ &nbsp; All forgery detection notes completed (high-value wares)</div>
+          <div>☐ &nbsp; Compositional data source cited (MTH-ID referenced)</div>
+          <div>☐ &nbsp; Entity log status updated: draft → review → published</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__brand-name">Atlas of Diagnostic Features<br><span style="font-weight:300;color:var(--muted);">Chinese Ceramics and Porcelain</span></p>
+        <p class="footer__brand-desc">Stage 4 — Scientific Page Template System. 8 templates. Locked structure.</p>
+        <p class="footer__version">Version 4.0 — Stage 4 Complete</p>
+      </div>
+      <div><p class="footer__col-title">Domains</p><ul class="footer__links"><li><a href="features/index.html">Diagnostic Features</a></li><li><a href="objects/index.html">Reference Objects</a></li><li><a href="kilns/index.html">Kilns</a></li><li><a href="periods/index.html">Periods</a></li><li><a href="methodology/index.html">Methodology</a></li><li><a href="publications/index.html">Publications</a></li></ul></div>
+      <div><p class="footer__col-title">Templates</p><ul class="footer__links"><li><a href="templates/scientific-article.html">Scientific Article</a></li><li><a href="templates/reference-object.html">Reference Object</a></li><li><a href="templates/diagnostic-feature.html">Diagnostic Feature</a></li><li><a href="templates/methodology.html">Methodology</a></li><li><a href="templates/publication.html">Publication</a></li><li><a href="templates/dynasty.html">Dynasty</a></li><li><a href="templates/kiln.html">Kiln</a></li><li><a href="templates/author-profile.html">Author Profile</a></li></ul></div>
+      <div><p class="footer__col-title">System</p><ul class="footer__links"><li><a href="about/index.html">About the Atlas</a></li><li><a href="about/editorial-methodology/index.html">Editorial methodology</a></li><li><a href="index.html">← Homepage (Stage 3)</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Atlas of Diagnostic Features of Chinese Ceramics and Porcelain. Stage 4 complete.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="about/terms-of-use/index.html">Terms of Use</a>
+        <a href="about/editorial-methodology/index.html">Editorial Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
