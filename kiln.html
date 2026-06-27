@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Kiln Name] · [KLN-ID] — Atlas of Diagnostic Features</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../templates.css">
+</head>
+<body>
+
+<header class="nav-bar">
+  <div class="container">
+    <a href="../index.html" class="nav-bar__wordmark">Atlas <span>/ Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item"><a href="../features/index.html">Diagnostic Atlas</a></li>
+        <li class="nav-bar__item"><a href="../objects/index.html">Reference Objects</a></li>
+        <li class="nav-bar__item active"><a href="../kilns/index.html">Kilns</a></li>
+        <li class="nav-bar__item"><a href="../periods/index.html">Periods</a></li>
+        <li class="nav-bar__item"><a href="../methodology/index.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="../publications/index.html">Publications</a></li>
+        <li class="nav-bar__item"><a href="../about/index.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="container">
+
+  <div class="domain-strip domain-strip--kilns"></div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../kilns/index.html" class="breadcrumb__link">Kilns</a>
+    <span class="breadcrumb__sep">›</span>
+    <a href="../kilns/[region]/index.html" class="breadcrumb__link">[Region]</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">[Kiln name]</span>
+  </nav>
+
+  <div class="entity-page">
+    <article class="entity-page__main">
+
+      <header class="entity-header">
+        <div class="entity-header__type-row">
+          <span class="entity-header__type">Production Kiln</span>
+          <span class="entity-header__id">KLN-[REGION]-[SLUG]</span>
+        </div>
+        <h1 class="entity-header__title">[Kiln Name] Kiln</h1>
+        <p class="entity-header__subtitle">
+          [Region] · <a href="../periods/[dynasty]/index.html">[Active dynasties]</a> · [Administrative status: Imperial / Commercial / Regional]
+        </p>
+        <div class="entity-header__tags">
+          <span class="tag">[region]</span>
+          <span class="tag">[primary ware type]</span>
+          <span class="tag">[active period]</span>
+          <span class="tag">[excavation status]</span>
+        </div>
+      </header>
+
+      <!-- Quick reference -->
+      <table class="data-table" aria-label="Kiln quick reference">
+        <tbody>
+          <tr><th scope="row">Atlas ID</th><td>KLN-[REGION]-[SLUG]</td></tr>
+          <tr><th scope="row">Location</th><td>[Province, district]. Coordinates: [lat, long] (if published)</td></tr>
+          <tr><th scope="row">Active period(s)</th><td>[Dynasty] ([dates CE]) — [Dynasty] ([dates CE])</td></tr>
+          <tr><th scope="row">Administrative status</th><td>[Imperial / Commercial / Regional]</td></tr>
+          <tr><th scope="row">Primary wares</th><td>[Ware type 1] · [Ware type 2]</td></tr>
+          <tr><th scope="row">Excavation status</th><td>[Excavated [year] / Under study / Not excavated]</td></tr>
+          <tr><th scope="row">Objects in Atlas</th><td>[n] reference objects attributed to this kiln</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Geographic context -->
+      <section id="geography" aria-labelledby="geo-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 1</p>
+          <h2 class="sci-section__heading" id="geo-heading">Geographic Context</h2>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="kiln-map" style="height:300px;" aria-label="Kiln location map placeholder">
+          <span class="kiln-map__label">Map placeholder — geographic data in Stage 6</span>
+          <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;" aria-hidden="true">
+            <rect width="900" height="300" fill="#e4ddd1"/>
+            <!-- Simplified map form -->
+            <path d="M100 80 Q200 60 350 90 Q500 110 600 80 Q700 55 800 90 L800 220 Q700 200 600 210 Q500 225 350 200 Q200 180 100 210 Z" fill="#ddd7cc" stroke="#ccc4b4" stroke-width="1"/>
+            <!-- Kiln marker -->
+            <circle cx="450" cy="150" r="6" fill="var(--gold)" stroke="var(--muted2)" stroke-width="1.5"/>
+            <text x="462" y="147" font-family="'Inter',sans-serif" font-size="10" fill="#3a342c" font-weight="600">[Kiln name]</text>
+            <text x="450" y="260" font-family="'Inter',sans-serif" font-size="9" fill="#6b6255" text-anchor="middle" letter-spacing="1">MAP PLACEHOLDER — [Province name], China</text>
+          </svg>
+        </div>
+
+        <div class="body-text" style="margin-top:var(--space-3);">
+          <p>
+            [Geographic description of the kiln site's location. Province, district,
+            proximity to raw material sources (clay, wood fuel, water). Geographic
+            factors that influenced production characteristics.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Historical period -->
+      <section id="historical-period" aria-labelledby="hist-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 2</p>
+          <h2 class="sci-section__heading" id="hist-heading">Historical Activity Period</h2>
+        </div>
+        <div class="dynasty-timeline" role="list">
+          <div class="timeline-period" role="listitem">
+            <p class="timeline-period__dates">[Start year] – [End year] CE</p>
+            <p class="timeline-period__name"><a href="../periods/[dynasty]/index.html">[Dynasty name]</a> — [Early / Peak / Late] production phase</p>
+            <p class="timeline-period__note">[Key characteristics of production in this phase.]</p>
+          </div>
+          <div class="timeline-period active" role="listitem">
+            <p class="timeline-period__dates">[Start year] – [End year] CE</p>
+            <p class="timeline-period__name"><a href="../periods/[dynasty]/index.html">[Dynasty name]</a> — Peak production</p>
+            <p class="timeline-period__note">[Peak production characteristics. Key developments.]</p>
+          </div>
+          <div class="timeline-period" role="listitem">
+            <p class="timeline-period__dates">[Start year] – [End year] CE</p>
+            <p class="timeline-period__name"><a href="../periods/[dynasty]/index.html">[Dynasty name]</a> — Decline / Cessation</p>
+            <p class="timeline-period__note">[Reasons for decline if known.]</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Production techniques -->
+      <section id="production-techniques" aria-labelledby="prod-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 3</p>
+          <h2 class="sci-section__heading" id="prod-heading">Production Techniques</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Description of forming methods (wheel-thrown, mould-made, coiled),
+            decorating techniques, kiln type (dragon kiln, horseshoe kiln, etc.),
+            saggar types and firing support systems, firing atmosphere control.]
+          </p>
+          <p>
+            [Raw material sourcing: clay body composition, glaze raw materials,
+            fuel type. Links to relevant Material entity pages.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Material characteristics -->
+      <section id="material-characteristics" aria-labelledby="mat-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 4</p>
+          <h2 class="sci-section__heading" id="mat-heading">Material Characteristics</h2>
+        </div>
+        <table class="data-table" aria-label="Kiln material characteristics">
+          <tbody>
+            <tr><th scope="row">Body paste type</th><td>[Stoneware / Porcelain / Earthenware — with description]</td></tr>
+            <tr><th scope="row">Body composition (typical)</th><td>SiO₂: [range] · Al₂O₃: [range] · Fe₂O₃: [range] (wt%)</td></tr>
+            <tr><th scope="row">Glaze system</th><td>[Lime glaze / Lime-alkali glaze / etc.]</td></tr>
+            <tr><th scope="row">Glaze composition (typical)</th><td>SiO₂: [range] · CaO: [range] · Fe₂O₃: [range] (wt%)</td></tr>
+            <tr><th scope="row">Firing atmosphere</th><td>[Reduction / Oxidation / Variable]</td></tr>
+            <tr><th scope="row">Firing temperature range</th><td>[x°C] – [y°C] (estimated)</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:var(--text-xs); color:var(--muted); margin-top:-8px;">
+          Compositional data compiled from: [PUB-ID], [PUB-ID]. All values in wt%.
+        </p>
+      </section>
+
+      <!-- Typical defects and variations -->
+      <section id="defects-variations" aria-labelledby="def-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 5</p>
+          <h2 class="sci-section__heading" id="def-heading">Typical Defects and Production Variations</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Systematic description of production defects characteristic of
+            this kiln: glaze pooling patterns, firing warps, kiln furniture
+            adhesions, glaze application variations. Distinguishes systematic
+            characteristics from random defects.]
+          </p>
+        </div>
+        <div class="note-block">
+          <span class="note-block__label">Diagnostic</span>
+          <p class="note-block__text">
+            [Production variations that are diagnostically significant: which
+            defects are characteristic of this kiln and can be used to
+            distinguish its output from similar productions.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Kiln technology -->
+      <section id="kiln-technology" aria-labelledby="tech-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 6</p>
+          <h2 class="sci-section__heading" id="tech-heading">Kiln Technology</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Kiln structure type, dimensions if known from excavation, firing
+            arrangement, saggar and support systems, kiln furniture typology.
+            Links to relevant Diagnostic Feature pages for firing trace features
+            associated with this kiln's technology.]
+          </p>
+        </div>
+      </section>
+
+      <!-- Diagnostic significance -->
+      <section id="diagnostic-significance" aria-labelledby="ds-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 7</p>
+          <h2 class="sci-section__heading" id="ds-heading">Diagnostic Significance</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Summary of what distinguishes this kiln's output. The combination
+            of features that enables secure attribution. Which attributes are
+            shared with other kilns and require additional analysis to resolve.]
+          </p>
+        </div>
+
+        <div class="criteria-grid">
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Characteristic diagnostic features</p>
+            <p class="criteria-cell__content">
+              [Features specific to or strongly associated with this kiln.
+              Links to Diagnostic Feature pages.]
+            </p>
+          </div>
+          <div class="criteria-cell">
+            <p class="criteria-cell__level">Potential confusion with</p>
+            <p class="criteria-cell__content">
+              [Other kilns whose output may be confused with this one.
+              What distinguishes them.]
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Linked reference objects -->
+      <section id="linked-objects" aria-labelledby="lo-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 8</p>
+          <h2 class="sci-section__heading" id="lo-heading">Attributed Reference Objects</h2>
+        </div>
+        <p style="font-size:var(--text-sm); color:var(--muted); margin-bottom:var(--space-3);">
+          [n] objects in the Atlas attributed to this kiln. Attribution certainty displayed at each entry.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border);">
+          <!-- Object row placeholder 1 -->
+          <div style="background:var(--stone); display:grid; grid-template-columns:80px 1fr;">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:80px;height:80px;background:var(--parchment2);border-right:1px solid var(--border);" aria-label="Thumbnail placeholder">
+              <rect width="80" height="80" fill="#e4ddd1"/>
+            </svg>
+            <div style="padding:12px 16px;">
+              <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">RO-[DYN]-[KLN]-001</p>
+              <p style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--ink);">[Object name]</p>
+              <span class="certainty-badge certainty-badge--confirmed">Confirmed</span>
+              <span style="font-size:var(--text-sm); color:var(--muted2); margin-left:6px;">[Dynasty] · [date range]</span>
+            </div>
+          </div>
+          <!-- Object row placeholder 2 -->
+          <div style="background:var(--stone); display:grid; grid-template-columns:80px 1fr;">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:80px;height:80px;background:var(--parchment2);border-right:1px solid var(--border);" aria-label="Thumbnail placeholder">
+              <rect width="80" height="80" fill="#e4ddd1"/>
+            </svg>
+            <div style="padding:12px 16px;">
+              <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);">RO-[DYN]-[KLN]-002</p>
+              <p style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--ink);">[Object name]</p>
+              <span class="certainty-badge certainty-badge--probable">Probable</span>
+              <span style="font-size:var(--text-sm); color:var(--muted2); margin-left:6px;">[Dynasty] · [date range]</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="../objects/index.html?kiln=[KLN-SLUG]" class="btn-secondary" style="display:inline-block; margin-top:var(--space-3);">
+          View all attributed objects
+        </a>
+      </section>
+
+      <!-- Linked glaze systems -->
+      <section id="glaze-systems" aria-labelledby="gs-heading">
+        <div class="sci-section">
+          <p class="sci-section__number">Section 9</p>
+          <h2 class="sci-section__heading" id="gs-heading">Associated Glaze Systems</h2>
+        </div>
+        <div class="body-text">
+          <p>
+            [Description of the glaze types produced at this kiln. Links to
+            relevant Diagnostic Feature pages for each distinct glaze system.
+            Notes any evolution in glaze technology across the active period.]
+          </p>
+        </div>
+      </section>
+
+      <div class="bibliography-block">
+        <p class="bibliography-block__title">References</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Full citation].</p>
+        <p class="bibliography-entry"><span class="bibliography-entry__id">PUB-[YEAR]-[AUTHOR]</span>[Excavation report citation].</p>
+      </div>
+
+    </article>
+
+    <aside class="entity-page__sidebar" aria-label="Related entities">
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">On this page</p>
+        <nav class="sidebar-section__body">
+          <a href="#geography" class="sidebar-anchor active">1. Geographic context</a>
+          <a href="#historical-period" class="sidebar-anchor">2. Historical activity</a>
+          <a href="#production-techniques" class="sidebar-anchor">3. Production techniques</a>
+          <a href="#material-characteristics" class="sidebar-anchor">4. Material characteristics</a>
+          <a href="#defects-variations" class="sidebar-anchor">5. Defects and variations</a>
+          <a href="#kiln-technology" class="sidebar-anchor">6. Kiln technology</a>
+          <a href="#diagnostic-significance" class="sidebar-anchor">7. Diagnostic significance</a>
+          <a href="#linked-objects" class="sidebar-anchor">8. Attributed objects</a>
+          <a href="#glaze-systems" class="sidebar-anchor">9. Glaze systems</a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Active during</p>
+        <div class="sidebar-section__body">
+          <a href="../periods/[dynasty]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Dynasty name]</span>
+            <span class="sidebar-link__id">DYN-XXX</span>
+          </a>
+          <a href="../periods/[dynasty]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Dynasty name]</span>
+            <span class="sidebar-link__id">DYN-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Characteristic features</p>
+        <div class="sidebar-section__body">
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+          <a href="../features/[cat]/[feature]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Feature name]</span>
+            <span class="sidebar-link__id">DF-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Kilns in same region</p>
+        <div class="sidebar-section__body">
+          <a href="../kilns/[region]/[kiln]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Kiln name]</span>
+            <span class="sidebar-link__id">KLN-XXX</span>
+          </a>
+          <a href="../kilns/[region]/[kiln]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Kiln name]</span>
+            <span class="sidebar-link__id">KLN-XXX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section__header">Key publications</p>
+        <div class="sidebar-section__body">
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Author, Year]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+          <a href="../publications/[pub-id]/index.html" class="sidebar-link">
+            <span class="sidebar-link__name">[Author, Year]</span>
+            <span class="sidebar-link__id">PUB-YEAR</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><p class="footer__brand-name">Atlas of Diagnostic Features<br><span style="font-weight:300;color:var(--muted);">Chinese Ceramics and Porcelain</span></p><p class="footer__brand-desc">Scientific reference system.</p><p class="footer__version">Stage 4 Templates</p></div>
+      <div><p class="footer__col-title">Domains</p><ul class="footer__links"><li><a href="../features/index.html">Diagnostic Features</a></li><li><a href="../objects/index.html">Reference Objects</a></li><li><a href="../kilns/index.html">Kilns</a></li><li><a href="../periods/index.html">Periods</a></li><li><a href="../methodology/index.html">Methodology</a></li><li><a href="../publications/index.html">Publications</a></li></ul></div>
+      <div><p class="footer__col-title">Templates</p><ul class="footer__links"><li><a href="scientific-article.html">Scientific Article</a></li><li><a href="reference-object.html">Reference Object</a></li><li><a href="diagnostic-feature.html">Diagnostic Feature</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="publication.html">Publication</a></li><li><a href="dynasty.html">Dynasty</a></li><li><a href="kiln.html">Kiln</a></li><li><a href="author-profile.html">Author Profile</a></li></ul></div>
+      <div><p class="footer__col-title">System</p><ul class="footer__links"><li><a href="../about/index.html">About</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2025 Atlas of Diagnostic Features. Template: KLN (Kiln)</p>
+      <nav class="footer__legal" aria-label="Legal"><a href="../about/terms-of-use/index.html">Terms of Use</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="../main.js"></script>
+</body>
+</html>
