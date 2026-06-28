@@ -1,739 +1,852 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reference Collection — Atlas of Diagnostic Features of Ancient Chinese Ceramics</title>
-  <meta name="description" content="The reference collection of the Global Diagnostic Atlas of Ancient Chinese Ceramics. 23 authenticated objects across Tang, Song, and Yuan dynasties.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="images.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference Collection — Atlas of Chinese Porcelain Diagnostics</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #faf8f4;
+    --muted: #6b6460;
+    --rule: #d4cec8;
+    --accent: #8b2e2e;
+    --tang-hue: #c8a96e;
+    --song-hue: #6b8e7f;
+    --yuan-hue: #5c7a9e;
+    --qing-hue: #8e6b9e;
+  }
 
-  <style>
-    .collection-page { padding: var(--space-10) 0 var(--space-16); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .collection-header {
-      padding-bottom: var(--space-8);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: var(--space-10);
-      max-width: 800px;
-    }
-    .collection-header__eyebrow {
-      font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-3);
-      display: flex; align-items: center; gap: var(--space-2);
-    }
-    .collection-header__eyebrow::before {
-      content: ''; display: inline-block; width: 24px; height: 1px; background: var(--gold);
-    }
-    .collection-header__title {
-      font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 300;
-      color: var(--ink); line-height: 1.0; letter-spacing: -0.025em; margin-bottom: var(--space-6);
-    }
-    .collection-header__intro {
-      font-size: var(--text-base); line-height: 1.8; color: var(--muted2); max-width: 68ch;
-    }
-    .collection-header__intro p + p { margin-top: var(--space-3); }
-    .collection-header__stats {
-      display: flex; gap: var(--space-8); margin-top: var(--space-5);
-      padding-top: var(--space-4); border-top: 1px solid var(--border2);
-    }
-    .stat { display: flex; flex-direction: column; gap: 3px; }
-    .stat__num {
-      font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 300;
-      color: var(--ink); line-height: 1;
-    }
-    .stat__label {
-      font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted);
-    }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+  }
 
-    /* Filter bar */
-    .filter-bar {
-      display: flex; gap: var(--space-2); flex-wrap: wrap;
-      margin-bottom: var(--space-8);
-    }
-    .filter-btn {
-      font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted2);
-      background: var(--stone); border: 1px solid var(--border);
-      padding: 6px 16px; cursor: pointer;
-      transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
-    }
-    .filter-btn:hover { background: var(--parchment); border-color: var(--muted); }
-    .filter-btn.active { background: var(--ink); color: var(--stone); border-color: var(--ink); }
+  /* ── HEADER ── */
+  header {
+    border-bottom: 2px solid var(--rule);
+    padding: 2rem 3rem 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  header a.home {
+    font-size: .85rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  header a.home:hover { color: var(--accent); }
+  header h1 {
+    font-size: 1.45rem;
+    font-weight: normal;
+    letter-spacing: .03em;
+  }
+  header span.sub {
+    font-size: .9rem;
+    color: var(--muted);
+    margin-left: auto;
+  }
 
-    /* Dynasty section header */
-    .dynasty-header {
-      display: flex; align-items: baseline; gap: var(--space-3);
-      margin-bottom: var(--space-6); padding-bottom: var(--space-2);
-      border-bottom: 2px solid var(--border);
-    }
-    .dynasty-header__name {
-      font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; color: var(--ink);
-    }
-    .dynasty-header__dates {
-      font-family: var(--font-body); font-size: var(--text-sm); color: var(--muted);
-    }
-    .dynasty-header__count {
-      font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
-      margin-left: auto;
-    }
+  /* ── FILTER BAR ── */
+  nav.filters {
+    padding: 1.2rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav.filters span.label {
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: .4rem;
+  }
+  nav.filters button {
+    padding: .35rem .9rem;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: transparent;
+    font-family: inherit;
+    font-size: .82rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  nav.filters button:hover,
+  nav.filters button.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
 
-    /* Gallery grid — 4 columns */
-    .museum-gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-6) var(--space-4);
-      margin-bottom: var(--space-12);
-    }
+  /* ── DYNASTY SECTIONS ── */
+  section.dynasty {
+    padding: 2.5rem 3rem 0;
+  }
+  section.dynasty h2 {
+    font-size: .78rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  section.dynasty h2 .dynasty-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  section.dynasty h2 .dynasty-years {
+    font-weight: normal;
+    opacity: .65;
+  }
 
-    /* Object card */
-    .object-card {
-      display: flex; flex-direction: column; text-decoration: none;
-      color: inherit; cursor: pointer;
-    }
-    .object-card:hover .object-card__image-wrap { border-color: var(--muted); }
-    .object-card:hover .object-card__title { color: var(--muted2); }
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 750px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
 
-    .object-card__image-wrap {
-      width: 100%; aspect-ratio: 3 / 4;
-      background: var(--parchment2); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-      transition: border-color var(--transition-medium);
-      margin-bottom: var(--space-3); position: relative;
-    }
-    .object-card__image-wrap img {
-      width: 100%; height: 100%;
-      object-fit: contain; display: block;
-      padding: var(--space-2); box-sizing: border-box;
-    }
-    .object-card__id-badge {
-      position: absolute; top: 8px; left: 8px;
-      font-family: var(--font-body); font-size: 10px; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
-      background: rgba(247,244,239,0.92); padding: 2px 7px;
-      border: 1px solid var(--border2);
-    }
-    .object-card__certainty {
-      position: absolute; bottom: 8px; right: 8px;
-      font-family: var(--font-body); font-size: 10px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 6px;
-      border: 1px solid currentColor; background: rgba(247,244,239,0.92);
-    }
-    .certainty--confirmed { color: #3a6b3a; }
-    .certainty--probable  { color: #2d5a8e; }
-    .certainty--proposed  { color: #c9a227; }
+  .card {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+  }
+  .card .img-wrap {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: #e8e4df;
+    position: relative;
+  }
+  .card .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease;
+  }
+  .card:hover .img-wrap img { transform: scale(1.04); }
+  .card .img-wrap .no-img {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    color: var(--muted);
+    letter-spacing: .06em;
+  }
+  .card .meta {
+    padding: .7rem 0 0;
+  }
+  .card .meta .obj-id {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .card .meta .obj-name {
+    font-size: .88rem;
+    margin-top: .2rem;
+    line-height: 1.35;
+  }
+  .card .meta .obj-detail {
+    font-size: .75rem;
+    color: var(--muted);
+    margin-top: .15rem;
+  }
 
-    .object-card__body { flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 0 2px; }
-    .object-card__dynasty {
-      font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted);
-    }
-    .object-card__title {
-      font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400;
-      color: var(--ink); line-height: 1.2;
-      transition: color var(--transition-fast);
-    }
-    .object-card__period {
-      font-family: var(--font-display); font-size: var(--text-sm); font-weight: 400;
-      font-style: italic; color: var(--muted2);
-    }
-
-    /* Hidden state for filtering */
-    .dynasty-section { transition: opacity 200ms ease; }
-    .dynasty-section.hidden { display: none; }
-
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .museum-gallery { grid-template-columns: repeat(3, 1fr); }
-      .collection-header__title { font-size: var(--text-4xl); }
-    }
-    @media (max-width: 768px) {
-      .museum-gallery { grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-3); }
-      .collection-header__title { font-size: var(--text-3xl); }
-      .collection-header__stats { flex-wrap: wrap; gap: var(--space-4); }
-    }
-    @media (max-width: 480px) {
-      .museum-gallery { grid-template-columns: 1fr; }
-    }
-  </style>
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 2rem;
+    border-top: 1px solid var(--rule);
+    padding: 1.5rem 3rem;
+    font-size: .78rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
 </head>
 <body>
 
-<header class="nav-bar" role="banner">
-  <div class="container">
-    <a href="index.html" class="nav-bar__wordmark">Atlas <span>/ Ancient Chinese Ceramics</span></a>
-    <nav aria-label="Main navigation">
-      <ul class="nav-bar__items">
-        <li class="nav-bar__item active"><a href="reference-collection.html">Reference Objects</a></li>
-        <li class="nav-bar__item"><a href="methodology.html">Methodology</a></li>
-        <li class="nav-bar__item"><a href="index.html#entry-points">Domains</a></li>
-        <li class="nav-bar__item"><a href="template-index.html">Templates</a></li>
-        <li class="nav-bar__item"><a href="author-profile.html">About</a></li>
-      </ul>
-    </nav>
-    <div class="nav-bar__search">
-      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
-      <button class="nav-search-btn" type="button">Search</button>
-    </div>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<header>
+  <a class="home" href="index.html">← Atlas</a>
+  <h1>Reference Collection</h1>
+  <span class="sub">47 objects · Tang — Qing</span>
 </header>
 
-<main class="page-body" id="main-content">
-<div class="container">
+<nav class="filters">
+  <span class="label">Dynasty</span>
+  <button class="active" onclick="filterDynasty('all', this)">All</button>
+  <button onclick="filterDynasty('tang', this)">Tang</button>
+  <button onclick="filterDynasty('song', this)">Song</button>
+  <button onclick="filterDynasty('yuan', this)">Yuan</button>
+  <button onclick="filterDynasty('qing', this)">Qing</button>
+</nav>
 
-  <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-top:var(--space-4);">
-    <a href="index.html" class="breadcrumb__link">Atlas</a>
-    <span class="breadcrumb__sep">›</span>
-    <span class="breadcrumb__current">Reference Collection</span>
-  </nav>
+<!-- ═══════════════════ TANG ═══════════════════ -->
+<section class="dynasty" data-dynasty="tang" id="sec-tang">
+  <h2>
+    <span class="dynasty-dot" style="background:var(--tang-hue)"></span>
+    Tang Dynasty
+    <span class="dynasty-years">618 – 907 CE</span>
+  </h2>
+  <div class="grid">
 
-  <div class="collection-page">
-
-    <!-- Header -->
-    <header class="collection-header">
-      <p class="collection-header__eyebrow">Scientific Reference Collection</p>
-      <h1 class="collection-header__title">Reference Objects</h1>
-      <div class="collection-header__intro">
-        <p>The Atlas is based on a unique reference collection of authentic ancient Chinese ceramics and porcelain. Each object included in this collection has undergone comprehensive scholarly investigation. Every reference object has received professional art-historical attribution, has been examined by recognised specialists in Chinese ceramics and works of art, and has also undergone instrumental diagnostic research, including macro- and microstructural analysis.</p>
-        <p>Each object is supported by a comprehensive body of scientific documentation, including high-resolution photography, microscopic observations, diagnostic descriptions, and a series of peer-discussed scientific publications available in open access.</p>
-        <p>These reference objects constitute the scientific foundation of the Atlas and provide reliable comparative material for researchers, museum professionals, conservators, collectors, and specialists in Chinese ceramics.</p>
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-tang-001-overall.jpg" alt="Tang amphora" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">001</div>
       </div>
-      <div class="collection-header__stats">
-        <div class="stat"><span class="stat__num">31</span><span class="stat__label">Objects published</span></div>
-        <div class="stat"><span class="stat__num">4</span><span class="stat__label">Dynasties</span></div>
-        <div class="stat"><span class="stat__num">70+</span><span class="stat__label">Planned</span></div>
+      <div class="meta">
+        <div class="obj-id">RO-TANG-001</div>
+        <div class="obj-name">Amphora with strap handles</div>
+        <div class="obj-detail">Straw glaze · Tang dynasty</div>
       </div>
-    </header>
-
-    <!-- Filter bar -->
-    <div class="filter-bar" role="group" aria-label="Filter by dynasty">
-      <button class="filter-btn active" onclick="filterDynasty('all', this)">All dynasties</button>
-      <button class="filter-btn" onclick="filterDynasty('tang', this)">Tang Dynasty</button>
-      <button class="filter-btn" onclick="filterDynasty('song', this)">Song Dynasty</button>
-      <button class="filter-btn" onclick="filterDynasty('yuan', this)">Yuan Dynasty</button>
-      <button class="filter-btn" onclick="filterDynasty('ming', this)">Ming Dynasty</button>
     </div>
-
-    <!-- ── TANG DYNASTY ── -->
-    <section class="dynasty-section" id="section-tang" aria-labelledby="tang-heading">
-      <div class="dynasty-header">
-        <h2 class="dynasty-header__name" id="tang-heading">Tang Dynasty <span style="font-weight:300; font-style:italic; color:var(--muted2);">· 唐朝</span></h2>
-        <span class="dynasty-header__dates">618 – 907 CE</span>
-        <span class="dynasty-header__count">1 object</span>
-      </div>
-      <div class="museum-gallery">
-
-        <a href="index.html#reference-object" class="object-card" aria-label="Tang Dynasty Amphora with Sancai Glaze">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-tang-001-overall.jpg" alt="Amphora with Applied Female Figures and Paired Dragon Handles, Sancai Glaze. Tang Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-TANG-001</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Tang Dynasty · 唐朝</p>
-            <h3 class="object-card__title">Amphora with Applied Figures and Dragon Handles</h3>
-            <p class="object-card__period">Sancai Glaze · 7th – 10th century</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ── SONG DYNASTY ── -->
-    <section class="dynasty-section" id="section-song" aria-labelledby="song-heading">
-      <div class="dynasty-header">
-        <h2 class="dynasty-header__name" id="song-heading">Song Dynasty <span style="font-weight:300; font-style:italic; color:var(--muted2);">· 宋朝</span></h2>
-        <span class="dynasty-header__dates">960 – 1279 CE</span>
-        <span class="dynasty-header__count">15 objects</span>
-      </div>
-      <div class="museum-gallery">
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-002-overall.jpg" alt="Ru-type Vase with Sky-blue Glaze. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-002</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Ru-type Vase with Sky-blue Glaze</h3>
-            <p class="object-card__period">Northern Song · 960 – 1127</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-003-overall.jpg" alt="White Baluster Vase with Incised Floral Scroll, Ding-type. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-003</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">White Baluster Vase with Incised Floral Scroll</h3>
-            <p class="object-card__period">Ding-type · Northern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-004-overall.jpg" alt="Bottle Vase with Dense Crackle Pattern, Ge-type Glaze. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-004</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Bottle Vase with Dense Crackle Pattern</h3>
-            <p class="object-card__period">Ge-type Glaze · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-005-overall.jpg" alt="Brush Washer with Celadon Glaze and Spur Marks, Guan Yao. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-005</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Brush Washer with Celadon Glaze and Spur Marks</h3>
-            <p class="object-card__period">Guan Yao · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-006-overall.jpg" alt="Jizhou Meiping with Black Glaze and Prunus Decoration. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-006</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Jizhou Meiping with Black Glaze and Prunus Decoration</h3>
-            <p class="object-card__period">Jizhou Kiln · Song Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-007-overall.jpg" alt="Ribbed-neck Vase with Matte Guan-type Glaze. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-007</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Ribbed-neck Vase with Matte Guan-type Glaze</h3>
-            <p class="object-card__period">Guan Yao · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-008-overall.jpg" alt="Archaic-form Vase with Paired Handles, Guan Yao. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-008</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Archaic-form Vase with Paired Handles</h3>
-            <p class="object-card__period">Guan Yao · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-009-overall.jpg" alt="Vessel with Ge-type Double Crackle Glaze. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-009</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Vessel with Ge-type Double Crackle Glaze</h3>
-            <p class="object-card__period">Ge Yao · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-010-overall.jpg" alt="Bowl with Ge-Guan Crackle Glaze. Song / Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-010</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Bowl with Ge-Guan Crackle Glaze</h3>
-            <p class="object-card__period">Song / Yuan · Double crackle</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-011-overall.jpg" alt="Qingbai Ewer with Carved Peony Scrolls, Jingdezhen. Northern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-011</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Qingbai Ewer with Carved Peony Scrolls</h3>
-            <p class="object-card__period">Jingdezhen · Northern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-012-overall.jpg" alt="Baluster Vase with Black Glaze and Partridge-Feather Spots, Jizhou. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-012</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Baluster Vase with Black Glaze and Leaf Decoration</h3>
-            <p class="object-card__period">Jizhou Kiln · Song Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-013-overall.jpg" alt="Monumental Vase with Black Glaze and Spotted Decoration. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-013</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Vase with Black Glaze and Spotted Decoration</h3>
-            <p class="object-card__period">Song Dynasty · Partridge-feather spots</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-014-overall.jpg" alt="Slender Bottle Vase with Black Glaze and Leaf Decoration, Jizhou. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-014</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Slender Bottle Vase with Leaf Decoration</h3>
-            <p class="object-card__period">Jizhou Kiln · Black glaze</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-015-overall.jpg" alt="Bowl with Grey-green Tianqing Glaze, Guan-type. Southern Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-015</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Bowl with Grey-green Tianqing Glaze</h3>
-            <p class="object-card__period">Guan-type · Southern Song</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-song-016-overall.jpg" alt="Tenmoku Bowl with Hare's Fur Glaze, Jian Kiln. Song Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-SONG-016</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Song Dynasty · 宋朝</p>
-            <h3 class="object-card__title">Tenmoku Bowl with Hare's Fur Glaze</h3>
-            <p class="object-card__period">Jian Kiln · Song Dynasty</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ── YUAN DYNASTY ── -->
-    <section class="dynasty-section" id="section-yuan" aria-labelledby="yuan-heading">
-      <div class="dynasty-header">
-        <h2 class="dynasty-header__name" id="yuan-heading">Yuan Dynasty <span style="font-weight:300; font-style:italic; color:var(--muted2);">· 元朝</span></h2>
-        <span class="dynasty-header__dates">1271 – 1368 CE</span>
-        <span class="dynasty-header__count">7 objects</span>
-      </div>
-      <div class="museum-gallery">
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-017-overall.jpg" alt="Meiping with Dragon Design in Reserve Technique on Black Glaze. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-017</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Meiping with Dragon Design in Reserve on Black Glaze</h3>
-            <p class="object-card__period">Yuan Dynasty · 1271 – 1368</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-018-overall.jpg" alt="Ceramic Headrest with Lion Decoration, Cizhou-type. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-018</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Ceramic Headrest with Lion Decoration</h3>
-            <p class="object-card__period">Cizhou-type · Yuan Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-019-overall.jpg" alt="Qingbai Double Gourd Ewer. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-019</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Qingbai Double Gourd Ewer</h3>
-            <p class="object-card__period">Jingdezhen · Yuan Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-020-overall.jpg" alt="Celadon Vase with Phoenix Bird Handles, Longquan. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-020</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Celadon Vase with Phoenix Bird Handles</h3>
-            <p class="object-card__period">Longquan · Yuan Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-021-overall.jpg" alt="Gourd-shaped Vessel with Twin Loop Handles, Longquan. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-021</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Gourd-shaped Vessel with Twin Loop Handles</h3>
-            <p class="object-card__period">Longquan Celadon · Yuan Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-022-overall.jpg" alt="Blue-and-white Dish with Phoenix and Floral Scrolls, Jingdezhen. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-022</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Blue-and-white Dish with Phoenix and Floral Scrolls</h3>
-            <p class="object-card__period">Jingdezhen · Yuan Dynasty</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-yuan-023-overall.jpg" alt="Bottle with Scrolling Grass Design, Cizhou-type. Yuan Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-YUAN-023</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Yuan Dynasty · 元朝</p>
-            <h3 class="object-card__title">Bottle with Scrolling Grass Design</h3>
-            <p class="object-card__period">Cizhou-type · Yuan Dynasty</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ── MING DYNASTY ── -->
-    <section class="dynasty-section" id="section-ming" aria-labelledby="ming-heading">
-      <div class="dynasty-header">
-        <h2 class="dynasty-header__name" id="ming-heading">Ming Dynasty <span style="font-weight:300; font-style:italic; color:var(--muted2);">· 明朝</span></h2>
-        <span class="dynasty-header__dates">1368 – 1644 CE</span>
-        <span class="dynasty-header__count">8 objects</span>
-      </div>
-      <div class="museum-gallery">
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-024-overall.jpg" alt="Copper-Red Underglaze Stem Cup. Ming Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-024</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Copper-Red Underglaze Stem Cup</h3>
-            <p class="object-card__period">Ming Dynasty · Xuande context</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-025-overall.jpg" alt="Doucai Meiping with Aquatic Landscape and Duck. Ming Dynasty, Chenghua Period." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-025</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Doucai Meiping with Aquatic Landscape and Duck</h3>
-            <p class="object-card__period">Chenghua Period · 1464–1487</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-026-overall.jpg" alt="Doucai Tianqiuping Bottle Vase with Dragon and Phoenix. Ming Dynasty, Chenghua Period." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-026</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Doucai Tianqiuping Bottle Vase with Dragon and Phoenix</h3>
-            <p class="object-card__period">Chenghua Period · 1464–1487</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-027-overall.jpg" alt="Blue-and-white Bowl with Fish and Aquatic Plants, Chenghua mark. Ming Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-027</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Blue-and-white Bowl with Fish and Aquatic Plants</h3>
-            <p class="object-card__period">Chenghua Period · 大明成化年製</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-028-overall.jpg" alt="Imperial Sacrificial Yellow Bottle Vase with Dragon and Phoenix. Ming Dynasty, Chenghua Period." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-JDZ-001</span>
-            <span class="object-card__certainty certainty--confirmed">Confirmed</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Imperial Sacrificial Yellow Bottle Vase with Dragon and Phoenix</h3>
-            <p class="object-card__period">Chenghua Period · 1464–1487</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-029-overall.jpg" alt="Blue-and-white Dish with Deer in Landscape. Ming Dynasty, Chenghua Period." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-029</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Blue-and-white Dish with Deer in Landscape</h3>
-            <p class="object-card__period">Chenghua Period · 1464–1487</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-030-overall.jpg" alt="Meiping with Green and Amber Glazes and Twisted Handles. Ming Dynasty." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-030</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Meiping with Green and Amber Glazes and Twisted Handles</h3>
-            <p class="object-card__period">Ming Dynasty · Polychrome glaze</p>
-          </div>
-        </a>
-
-        <a href="index.html#reference-object" class="object-card">
-          <div class="object-card__image-wrap">
-            <img src="images/ro-ming-031-overall.jpg" alt="Imperial Yellow Glaze Ewer with Incised Floral Decoration. Ming Dynasty, Hongzhi Period." loading="lazy">
-            <span class="object-card__id-badge">RO-MING-031</span>
-            <span class="object-card__certainty certainty--probable">Probable</span>
-          </div>
-          <div class="object-card__body">
-            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
-            <h3 class="object-card__title">Imperial Yellow Glaze Ewer with Incised Floral Decoration</h3>
-            <p class="object-card__period">Hongzhi Period · 1487–1505</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
 
   </div>
-</div>
-</main>
+</section>
 
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <p class="footer__brand-name">Global Diagnostic Atlas<br><span style="font-weight:300;color:var(--muted);">of Ancient Chinese Ceramics</span></p>
-        <p class="footer__brand-desc">An independent scientific platform dedicated to the authentication and technological investigation of ancient Chinese ceramics and porcelain.</p>
-        <p style="font-size:var(--text-xs);color:var(--muted);margin-top:var(--space-2);line-height:1.6;">Scientific Director and Founder:<br><strong style="color:var(--muted2);">Professor Nona Dmitrievna Dronova</strong></p>
+<!-- ═══════════════════ SONG ═══════════════════ -->
+<section class="dynasty" data-dynasty="song" id="sec-song">
+  <h2>
+    <span class="dynasty-dot" style="background:var(--song-hue)"></span>
+    Song Dynasty
+    <span class="dynasty-years">960 – 1279 CE</span>
+  </h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-002-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">002</div>
       </div>
-      <div class="footer__col">
-        <p class="footer__col-title">Collection</p>
-        <ul class="footer__links">
-          <li><a href="reference-collection.html">All reference objects</a></li>
-          <li><a href="#section-tang">Tang Dynasty</a></li>
-          <li><a href="#section-song">Song Dynasty</a></li>
-          <li><a href="#section-yuan">Yuan Dynasty</a></li>
-          <li><a href="#section-ming">Ming Dynasty</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <p class="footer__col-title">Domains</p>
-        <ul class="footer__links">
-          <li><a href="diagnostic-feature.html">Diagnostic Features</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li><a href="dynasty.html">Dynasty System</a></li>
-          <li><a href="publication.html">Publications</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <p class="footer__col-title">About</p>
-        <ul class="footer__links">
-          <li><a href="author-profile.html">Professor Dronova</a></li>
-          <li><a href="index.html">Homepage</a></li>
-        </ul>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-002</div>
+        <div class="obj-name">Ding ware bowl</div>
+        <div class="obj-detail">Ivory glaze · Ding kiln</div>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copyright">© 2026 International Foundation — Global Archive for Authentication of Antique Porcelain. Scientific Director: Professor Nona Dmitrievna Dronova.</p>
-      <nav class="footer__legal" aria-label="Legal"><a href="#">Terms of Use</a><a href="#">Editorial Policy</a></nav>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-003-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">003</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-003</div>
+        <div class="obj-name">Qingbai ewer</div>
+        <div class="obj-detail">Bluish-white glaze · Jingdezhen</div>
+      </div>
     </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-004-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">004</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-004</div>
+        <div class="obj-name">Longquan celadon vase</div>
+        <div class="obj-detail">Mei-tzu green · Longquan kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-005-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">005</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-005</div>
+        <div class="obj-name">Jun ware dish</div>
+        <div class="obj-detail">Lavender glaze · Jun kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-006-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">006</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-006</div>
+        <div class="obj-name">Cizhou pillow</div>
+        <div class="obj-detail">Painted slip · Cizhou kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-007-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">007</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-007</div>
+        <div class="obj-name">Jian temmoku tea bowl</div>
+        <div class="obj-detail">Hare's fur glaze · Jian kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-008-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">008</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-008</div>
+        <div class="obj-name">Ru ware brush washer</div>
+        <div class="obj-detail">Pale celadon · Ru kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-009-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">009</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-009</div>
+        <div class="obj-name">Guan ware vase</div>
+        <div class="obj-detail">Crackle glaze · Guan kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-010-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">010</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-010</div>
+        <div class="obj-name">Yaozhou celadon bowl</div>
+        <div class="obj-detail">Olive-green glaze · Yaozhou kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-011-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">011</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-011</div>
+        <div class="obj-name">Ge ware incense burner</div>
+        <div class="obj-detail">Iron-wire crackle · Ge kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-012-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">012</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-012</div>
+        <div class="obj-name">Qingbai meiping</div>
+        <div class="obj-detail">Bluish-white glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-013-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">013</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-013</div>
+        <div class="obj-name">Longquan vase with phoenix ears</div>
+        <div class="obj-detail">Powder-green glaze · Longquan</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-014-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">014</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-014</div>
+        <div class="obj-name">Ding ware vase</div>
+        <div class="obj-detail">Ivory glaze with moulded décor · Ding kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-015-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">015</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-015</div>
+        <div class="obj-name">Jun ware jardinière</div>
+        <div class="obj-detail">Purple-splashed glaze · Jun kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-song-016-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">016</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-SONG-016</div>
+        <div class="obj-name">Jian oil-spot tea bowl</div>
+        <div class="obj-detail">Oil-spot glaze · Jian kiln</div>
+      </div>
+    </div>
+
   </div>
+</section>
+
+<!-- ═══════════════════ YUAN ═══════════════════ -->
+<section class="dynasty" data-dynasty="yuan" id="sec-yuan">
+  <h2>
+    <span class="dynasty-dot" style="background:var(--yuan-hue)"></span>
+    Yuan Dynasty
+    <span class="dynasty-years">1271 – 1368 CE</span>
+  </h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-017-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">017</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-017</div>
+        <div class="obj-name">Blue-and-white jar</div>
+        <div class="obj-detail">Underglaze cobalt blue · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-018-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">018</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-018</div>
+        <div class="obj-name">Longquan celadon dish</div>
+        <div class="obj-detail">Blue-green glaze · Longquan</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-019-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">019</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-019</div>
+        <div class="obj-name">Underglaze red meiping</div>
+        <div class="obj-detail">Copper red underglaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-020-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">020</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-020</div>
+        <div class="obj-name">Shufu ware bowl</div>
+        <div class="obj-detail">Milky-white glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-021-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">021</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-021</div>
+        <div class="obj-name">Blue-and-white vase</div>
+        <div class="obj-detail">Sumali cobalt · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-022-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">022</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-022</div>
+        <div class="obj-name">Cizhou sgraffiato jar</div>
+        <div class="obj-detail">Carved black slip · Cizhou</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-023-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">023</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-023</div>
+        <div class="obj-name">Longquan celadon vase with dragons</div>
+        <div class="obj-detail">Powder-blue celadon · Longquan</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-024-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">024</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-024</div>
+        <div class="obj-name">Blue-and-white stem cup</div>
+        <div class="obj-detail">Cobalt blue · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-025-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">025</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-025</div>
+        <div class="obj-name">Qingbai ewer with dragon spout</div>
+        <div class="obj-detail">Pale blue glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-026-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">026</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-026</div>
+        <div class="obj-name">Blue-and-white dish with peony</div>
+        <div class="obj-detail">Sumali cobalt · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-027-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">027</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-027</div>
+        <div class="obj-name">Jun ware bowl</div>
+        <div class="obj-detail">Flambe glaze · Jun kiln</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-028-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">028</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-028</div>
+        <div class="obj-name">Underglaze red jar</div>
+        <div class="obj-detail">Copper red underglaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-029-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">029</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-029</div>
+        <div class="obj-name">Blue-and-white pilgrim flask</div>
+        <div class="obj-detail">Cobalt blue · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-030-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">030</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-030</div>
+        <div class="obj-name">Longquan celadon jar with lugs</div>
+        <div class="obj-detail">Sea-green glaze · Longquan</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-yuan-031-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">031</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-YUAN-031</div>
+        <div class="obj-name">Blue-and-white platter</div>
+        <div class="obj-detail">Sumali cobalt · Jingdezhen</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ QING — KANGXI ═══════════════════ -->
+<section class="dynasty" data-dynasty="qing" id="sec-qing">
+  <h2>
+    <span class="dynasty-dot" style="background:var(--qing-hue)"></span>
+    Qing Dynasty · Kangxi reign
+    <span class="dynasty-years">1662 – 1722</span>
+  </h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-032-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">032</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-032</div>
+        <div class="obj-name">Yellow glaze vase</div>
+        <div class="obj-detail">Imperial yellow glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-033-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">033</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-033</div>
+        <div class="obj-name">Peachbloom double gourd</div>
+        <div class="obj-detail">Peachbloom (langyaohong) glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-034-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">034</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-034</div>
+        <div class="obj-name">Flambe double gourd</div>
+        <div class="obj-detail">Flambe (juntao) glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-035-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">035</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-035</div>
+        <div class="obj-name">Peachbloom brush washer</div>
+        <div class="obj-detail">Peachbloom glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-036-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">036</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-036</div>
+        <div class="obj-name">Lichen glaze brush pot</div>
+        <div class="obj-detail">Robin's-egg glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-037-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">037</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-037</div>
+        <div class="obj-name">Famille verte meiping</div>
+        <div class="obj-detail">Wucai famille verte · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-038-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">038</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-038</div>
+        <div class="obj-name">Box with scholar in landscape</div>
+        <div class="obj-detail">Famille verte enamel · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-039-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">039</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-039</div>
+        <div class="obj-name">Box with carp</div>
+        <div class="obj-detail">Famille verte enamel · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-040-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">040</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-040</div>
+        <div class="obj-name">Box with peaches</div>
+        <div class="obj-detail">Famille verte enamel · Jingdezhen</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ QING — YONGZHENG ═══════════════════ -->
+<section class="dynasty" data-dynasty="qing" id="sec-yongzheng">
+  <h2>
+    <span class="dynasty-dot" style="background:var(--qing-hue)"></span>
+    Qing Dynasty · Yongzheng reign
+    <span class="dynasty-years">1723 – 1735</span>
+  </h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-041-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">041</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-041</div>
+        <div class="obj-name">Doucai Bajixiang vase</div>
+        <div class="obj-detail">Doucai (contrasting colours) · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-042-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">042</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-042</div>
+        <div class="obj-name">Yellow-ground famille rose bowl</div>
+        <div class="obj-detail">Famille rose on yellow · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-043-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">043</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-043</div>
+        <div class="obj-name">Coral-red bowl with medallions</div>
+        <div class="obj-detail">Coral-red ground, famille rose · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-044-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">044</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-044</div>
+        <div class="obj-name">Mirror-black bowl with medallions</div>
+        <div class="obj-detail">Wujin black glaze, gold enamel · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-045-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">045</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-045</div>
+        <div class="obj-name">Okra-green bowl with medallions</div>
+        <div class="obj-detail">Okra-green (qiuhuise) ground · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-046-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">046</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-046</div>
+        <div class="obj-name">Apple-green bowl with medallions</div>
+        <div class="obj-detail">Apple-green (pingguolü) ground · Jingdezhen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="img-wrap">
+        <img src="images/ro-qing-047-overall.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="no-img" style="display:none">047</div>
+      </div>
+      <div class="meta">
+        <div class="obj-id">RO-QING-047</div>
+        <div class="obj-name">Dark green glaze vase</div>
+        <div class="obj-detail">Emerald green (meiguicui) glaze · Jingdezhen</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span>Atlas of Chinese Porcelain Diagnostics</span>
+  <a href="index.html">← Return to main page</a>
 </footer>
 
-<script src="main.js"></script>
 <script>
-function filterDynasty(dynasty, btn) {
-  // Update buttons
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+function filterDynasty(key, btn) {
+  // update buttons
+  document.querySelectorAll('nav.filters button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // Show/hide sections
-  document.querySelectorAll('.dynasty-section').forEach(section => {
-    if (dynasty === 'all') {
-      section.classList.remove('hidden');
+
+  // show/hide sections
+  document.querySelectorAll('section.dynasty').forEach(sec => {
+    if (key === 'all' || sec.dataset.dynasty === key) {
+      sec.style.display = '';
     } else {
-      section.id === 'section-' + dynasty
-        ? section.classList.remove('hidden')
-        : section.classList.add('hidden');
+      sec.style.display = 'none';
     }
   });
 }
