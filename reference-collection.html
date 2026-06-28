@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference Collection — Atlas of Diagnostic Features of Ancient Chinese Ceramics</title>
+  <meta name="description" content="The reference collection of the Global Diagnostic Atlas of Ancient Chinese Ceramics. Authenticated objects with comprehensive scientific documentation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="images.css">
+
+  <style>
+
+    /* ── Page layout ─────────────────────────────────── */
+    .collection-page {
+      padding: var(--space-10) 0 var(--space-16);
+    }
+
+    /* ── Page header ─────────────────────────────────── */
+    .collection-header {
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-10);
+      max-width: 800px;
+    }
+
+    .collection-header__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .collection-header__eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .collection-header__title {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      margin-bottom: var(--space-6);
+    }
+
+    .collection-header__intro {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.8;
+      color: var(--muted2);
+      max-width: 68ch;
+    }
+
+    .collection-header__intro p + p {
+      margin-top: var(--space-3);
+    }
+
+    .collection-header__count {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-5);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border2);
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .collection-header__count-num {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    /* ── Museum gallery grid ─────────────────────────── */
+    .museum-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8) var(--space-6);
+    }
+
+    /* ── Object card ─────────────────────────────────── */
+    .object-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .object-card:hover .object-card__image-wrap {
+      border-color: var(--muted);
+    }
+
+    .object-card:hover .object-card__title {
+      color: var(--muted2);
+    }
+
+    /* Image container — fixed proportions, no crop */
+    .object-card__image-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: var(--parchment2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: border-color var(--transition-medium);
+      margin-bottom: var(--space-4);
+      position: relative;
+    }
+
+    .object-card__image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* Never crop — full object always visible */
+      display: block;
+      padding: var(--space-3);
+      box-sizing: border-box;
+    }
+
+    /* Object ID badge */
+    .object-card__id-badge {
+      position: absolute;
+      top: var(--space-2);
+      left: var(--space-2);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(247, 244, 239, 0.92);
+      padding: 3px 8px;
+      border: 1px solid var(--border2);
+    }
+
+    /* Attribution badge */
+    .object-card__certainty {
+      position: absolute;
+      bottom: var(--space-2);
+      right: var(--space-2);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border: 1px solid currentColor;
+      background: rgba(247, 244, 239, 0.92);
+    }
+
+    .object-card__certainty--confirmed { color: #3a6b3a; }
+    .object-card__certainty--probable  { color: #2d5a8e; }
+    .object-card__certainty--proposed  { color: #c9a227; }
+
+    /* Card text block */
+    .object-card__body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      padding: 0 var(--space-1);
+    }
+
+    .object-card__dynasty {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .object-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      transition: color var(--transition-fast);
+    }
+
+    .object-card__period {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--muted2);
+    }
+
+    .object-card__significance {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: var(--space-1);
+      padding-top: var(--space-2);
+      border-top: 1px solid var(--border2);
+    }
+
+    /* Placeholder card (coming soon) */
+    .object-card--placeholder .object-card__image-wrap {
+      background: var(--parchment);
+      border-style: dashed;
+    }
+
+    .object-card--placeholder .object-card__image-wrap img {
+      opacity: 0.3;
+    }
+
+    .object-card--placeholder .object-card__title {
+      color: var(--muted);
+    }
+
+    .object-card--placeholder .object-card__significance {
+      color: var(--border);
+      font-style: italic;
+    }
+
+    /* Coming soon label */
+    .coming-soon-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--border);
+    }
+
+    /* ── Divider between sections ────────────────────── */
+    .gallery-section-title {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid var(--border2);
+      grid-column: span 3;
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .museum-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6) var(--space-5);
+      }
+      .gallery-section-title { grid-column: span 2; }
+      .collection-header__title { font-size: var(--text-4xl); }
+    }
+
+    @media (max-width: 768px) {
+      .museum-gallery {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+      .gallery-section-title { grid-column: span 1; }
+      .collection-header__title { font-size: var(--text-3xl); }
+      .object-card__image-wrap {
+        aspect-ratio: 3 / 4;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<header class="nav-bar" role="banner">
+  <div class="container">
+    <a href="index.html" class="nav-bar__wordmark">Atlas <span>/ Ancient Chinese Ceramics</span></a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-bar__items">
+        <li class="nav-bar__item active"><a href="reference-collection.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="methodology.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="index.html#entry-points">Domains</a></li>
+        <li class="nav-bar__item"><a href="template-index.html">Templates</a></li>
+        <li class="nav-bar__item"><a href="author-profile.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="nav-bar__search">
+      <input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search">
+      <button class="nav-search-btn" type="button">Search</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="page-body" id="main-content">
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-top:var(--space-4);">
+    <a href="index.html" class="breadcrumb__link">Atlas</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">Reference Collection</span>
+  </nav>
+
+  <div class="collection-page">
+
+    <!-- ── PAGE HEADER ────────────────────────────────── -->
+    <header class="collection-header">
+
+      <p class="collection-header__eyebrow">Scientific Reference Collection</p>
+
+      <h1 class="collection-header__title">
+        Reference<br>Objects
+      </h1>
+
+      <div class="collection-header__intro">
+        <p>
+          The Atlas is based on a unique reference collection of authentic
+          ancient Chinese ceramics and porcelain. Each object included in
+          this collection has undergone comprehensive scholarly investigation.
+        </p>
+        <p>
+          Every reference object has received professional art-historical
+          attribution, has been examined by recognised specialists in Chinese
+          ceramics and works of art, and has also undergone instrumental
+          diagnostic research, including macro- and microstructural analysis.
+        </p>
+        <p>
+          Each object is supported by a comprehensive body of scientific
+          documentation, including high-resolution photography, microscopic
+          observations, diagnostic descriptions, and a series of peer-discussed
+          scientific publications available in open access.
+        </p>
+        <p>
+          These reference objects constitute the scientific foundation of the
+          Atlas and provide reliable comparative material for researchers,
+          museum professionals, conservators, collectors, and specialists
+          in Chinese ceramics.
+        </p>
+      </div>
+
+      <div class="collection-header__count">
+        <span class="collection-header__count-num">1</span>
+        object published &nbsp;·&nbsp; collection in active development
+      </div>
+
+    </header>
+
+    <!-- ── MUSEUM GALLERY ─────────────────────────────── -->
+    <section aria-label="Reference object gallery">
+      <div class="museum-gallery" role="list">
+
+        <!-- ── PUBLISHED OBJECTS ── -->
+        <p class="gallery-section-title">Published reference objects</p>
+
+        <!-- Object 1: Chenghua Yellow Vase -->
+        <a
+          href="index.html#reference-object"
+          class="object-card"
+          role="listitem"
+          aria-label="Imperial Sacrificial Yellow Bottle Vase with Dragon and Phoenix — Ming Dynasty, Chenghua Period"
+        >
+          <div class="object-card__image-wrap">
+            <img
+              src="images/vase-overall.jpg"
+              alt="Imperial Sacrificial Yellow Bottle Vase with Dragon and Phoenix. Ming Dynasty, Chenghua Period, 1464–1487. Imperial Kilns, Jingdezhen."
+              loading="eager"
+            >
+            <span class="object-card__id-badge">RO-MING-JDZ-001</span>
+            <span class="object-card__certainty object-card__certainty--confirmed">Confirmed</span>
+          </div>
+
+          <div class="object-card__body">
+            <p class="object-card__dynasty">Ming Dynasty · 明朝</p>
+            <h2 class="object-card__title">
+              Imperial Sacrificial Yellow Bottle Vase with Dragon and Phoenix
+            </h2>
+            <p class="object-card__period">Chenghua Period · 1464–1487</p>
+            <p class="object-card__significance">
+              A principal reference object for the study of Chenghua imperial
+              porcelain. Documents the characteristic yellow sacrificial glaze,
+              natural age-related crackle, and underglaze cobalt reign mark
+              as diagnostic standards.
+            </p>
+          </div>
+        </a>
+
+        <!-- ── FORTHCOMING OBJECTS ── -->
+        <p class="gallery-section-title" style="margin-top:var(--space-10);">
+          Forthcoming additions to the collection
+        </p>
+
+        <!-- Placeholder 2 -->
+        <div class="object-card object-card--placeholder" role="listitem" aria-label="Reference object in preparation">
+          <div class="object-card__image-wrap">
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;padding:var(--space-4);" aria-hidden="true">
+              <rect width="300" height="400" fill="none"/>
+              <!-- Bowl silhouette -->
+              <path d="M60 160 Q60 280 150 295 Q240 280 240 160 Z" fill="none" stroke="#ccc4b4" stroke-width="1.5"/>
+              <line x1="60" y1="160" x2="240" y2="160" stroke="#ccc4b4" stroke-width="1.5"/>
+              <path d="M120 295 L120 315 L180 315 L180 295 Z" fill="none" stroke="#ccc4b4" stroke-width="1.5"/>
+              <line x1="90" y1="315" x2="210" y2="315" stroke="#ccc4b4" stroke-width="1.5"/>
+            </svg>
+            <span class="coming-soon-label">In preparation</span>
+          </div>
+          <div class="object-card__body">
+            <p class="object-card__dynasty">To be announced</p>
+            <h2 class="object-card__title" style="color:var(--border);">Reference Object II</h2>
+            <p class="object-card__period" style="color:var(--border);">Dynasty · Period</p>
+            <p class="object-card__significance">
+              This object is currently undergoing documentation and will be
+              added to the collection upon completion of scientific analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Placeholder 3 -->
+        <div class="object-card object-card--placeholder" role="listitem" aria-label="Reference object in preparation">
+          <div class="object-card__image-wrap">
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;padding:var(--space-4);" aria-hidden="true">
+              <rect width="300" height="400" fill="none"/>
+              <!-- Vase silhouette -->
+              <path d="M130 60 Q100 100 95 180 Q90 240 105 280 L195 280 Q210 240 205 180 Q200 100 170 60 Z" fill="none" stroke="#ccc4b4" stroke-width="1.5"/>
+              <path d="M120 280 L120 310 L180 310 L180 280 Z" fill="none" stroke="#ccc4b4" stroke-width="1.5"/>
+              <ellipse cx="150" cy="62" rx="22" ry="8" fill="none" stroke="#ccc4b4" stroke-width="1.5"/>
+            </svg>
+            <span class="coming-soon-label">In preparation</span>
+          </div>
+          <div class="object-card__body">
+            <p class="object-card__dynasty">To be announced</p>
+            <h2 class="object-card__title" style="color:var(--border);">Reference Object III</h2>
+            <p class="object-card__period" style="color:var(--border);">Dynasty · Period</p>
+            <p class="object-card__significance">
+              This object is currently undergoing documentation and will be
+              added to the collection upon completion of scientific analysis.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__brand-name">
+          Global Diagnostic Atlas<br>
+          <span style="font-weight:300;color:var(--muted);">of Ancient Chinese Ceramics</span>
+        </p>
+        <p class="footer__brand-desc">
+          An independent scientific platform dedicated to the authentication
+          and technological investigation of ancient Chinese ceramics and porcelain.
+        </p>
+        <p style="font-size:var(--text-xs);color:var(--muted);margin-top:var(--space-2);line-height:1.6;">
+          Scientific Director and Founder:<br>
+          <strong style="color:var(--muted2);">Professor Nona Dmitrievna Dronova</strong><br>
+          Doctor of Technical Sciences · Ph.D. in Geology and Mineralogy
+        </p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Collection</p>
+        <ul class="footer__links">
+          <li><a href="reference-collection.html">All reference objects</a></li>
+          <li><a href="index.html#reference-object">RO-MING-JDZ-001</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">Domains</p>
+        <ul class="footer__links">
+          <li><a href="diagnostic-feature.html">Diagnostic Features</a></li>
+          <li><a href="methodology.html">Methodology</a></li>
+          <li><a href="dynasty.html">Dynasty System</a></li>
+          <li><a href="kiln.html">Production Kilns</a></li>
+          <li><a href="publication.html">Publications</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">About</p>
+        <ul class="footer__links">
+          <li><a href="author-profile.html">Professor Dronova</a></li>
+          <li><a href="template-index.html">Template System</a></li>
+          <li><a href="index.html">Homepage</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        © 2026 International Foundation — Global Archive for Authentication
+        of Antique Porcelain. Scientific Director: Professor Nona Dmitrievna Dronova.
+      </p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#">Terms of Use</a>
+        <a href="#">Editorial Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
