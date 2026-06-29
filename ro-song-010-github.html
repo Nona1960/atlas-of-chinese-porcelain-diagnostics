@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tripod Vessel — ro-song-010 — Atlas of Chinese Porcelain Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    /* NAVBAR */
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    /* BREADCRUMB */
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    /* LAYOUT */
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    /* PAGE HEADER */
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    /* TAGS */
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    /* FIGURES */
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    /* HEADINGS */
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    /* BODY TEXT */
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    /* MICROSCOPY */
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    /* NOTE */
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    /* TABLE */
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    /* DIAGNOSTIC CHECKLIST */
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    /* CROSSREF */
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    /* BIBLIOGRAPHY */
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    /* PAGINATION */
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    /* SIDEBAR */
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    /* FOOTER */
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    /* RESPONSIVE */
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="../collection/index.html" class="active">Collection</a></li>
+      <li><a href="../diagnostics/index.html">Diagnostics</a></li>
+      <li><a href="../kilns/index.html">Kilns</a></li>
+      <li><a href="../dynasties/index.html">Dynasties</a></li>
+      <li><a href="../methodology/index.html">Methodology</a></li>
+      <li><a href="../publications/index.html">Publications</a></li>
+      <li><a href="../about/index.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="../collection/index.html">Collection</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../dynasties/song.html">Song Dynasty</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">ro-song-010 — Tripod Vessel with Ge Yao Glaze</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+
+    <main class="col-main" id="main-content">
+
+      <p class="object-id">Reference Object <span>ro-song-010</span></p>
+      <h1>Tripod Vessel with Ge Yao Glaze</h1>
+      <p class="object-subtitle">哥窑 &mdash; Southern Song &ndash; Yuan Dynasty, 12th&ndash;14th century</p>
+      <hr class="header-rule" />
+
+      <div class="tag-row">
+        <span class="tag">Song Dynasty</span>
+        <span class="tag">Yuan Dynasty</span>
+        <span class="tag">Ge Ware</span>
+        <span class="tag">Guan Tradition</span>
+        <span class="tag">Crackle Glaze</span>
+        <span class="tag">GOM Examined</span>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="../images/ro-song-010-overall.jpg"
+             alt="Tripod vessel with Ge Yao crackle glaze, base view — ro-song-010" />
+        <figcaption class="figure-caption">
+          <span class="figure-number">Fig. 1.</span>
+          Base view of the tripod vessel. The double crackle network (金丝铁线) is fully visible across the circular disc: large polygonal primary cells with dark iron-rich patination, subdivided by a finer secondary network carrying reddish oxidation products.
+        </figcaption>
+      </figure>
+
+      <section id="description">
+        <h2>Object Description</h2>
+        <p>A tripod censer of compact circular form, supported on three bulbous feet and fitted with three small loop handles at the rim. The body is covered overall with a thick, opaque Ge-type glaze of warm ivory-grey tone. The entire exterior surface, including feet and handles, carries a dense and well-preserved crackle network of exceptional clarity.</p>
+        <p>The glaze exhibits the characteristic jade-like, non-vitreous optical quality associated with authentic Southern Song Guan and Ge wares, produced by a dense population of enclosed microbubbles within the glaze matrix. Glaze application is even and controlled throughout; no pooling or drips are present.</p>
+
+        <div class="figure-row">
+          <figure class="figure">
+            <img src="../images/ro-song-010-base.jpg"
+                 alt="Detail view showing crackle network and loop handle — ro-song-010" />
+            <figcaption class="figure-caption">
+              <span class="figure-number">Fig. 2.</span>
+              Detail view. The two-level crack hierarchy is clearly differentiated: dark primary channels and finer reddish secondary lines.
+            </figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/ro-song-010-body.jpg"
+                 alt="Lateral view showing bulbous feet and body crackle — ro-song-010" />
+            <figcaption class="figure-caption">
+              <span class="figure-number">Fig. 3.</span>
+              Lateral view. The granular matte glaze surface texture is perceptible at this scale; feet show localised glaze accumulation consistent with original kiln positioning.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="microscopy">
+        <h2>Microscopic Diagnostic Analysis</h2>
+        <p>The object was examined using a non-destructive Gemmological Optical Microscopy (GOM) protocol at magnifications from 50&times; to 200&times;. Observations document glaze microstructure, crack architecture, surface microtexture, firing traces, and long-term ageing. Results were compared with published SEM&ndash;EDS, XRF, and XRD studies of authenticated Southern Song Guan and Ge tradition wares.</p>
+
+        <div class="micro-block">
+          <p class="micro-header">Gemmological Optical Microscopy &mdash; GOM Documentation</p>
+          <div class="micro-grid">
+            <div class="micro-item">
+              <span class="micro-mag">~100&times;</span>
+              <img class="micro-image"
+                   src="../images/ro-song-010-glaze-micro.jpg"
+                   alt="GOM ~100x: granular glaze microtexture and crack channels" />
+              <p class="micro-caption">
+                <span class="figure-number">Fig. 4.</span>
+                Granular glaze surface microtexture. Primary crack channels visible with iron-manganese patination.
+              </p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">~150&times;</span>
+              <img class="micro-image"
+                   src="../images/ro-song-010-spur-mark.jpg"
+                   alt="GOM ~150x: kiln spur contact zone with iron-enriched halo" />
+              <p class="micro-caption">
+                <span class="figure-number">Fig. 5.</span>
+                Kiln spur contact zone. Vitrified central area with iron-enriched peripheral halo. No secondary alteration.
+              </p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">~200&times;</span>
+              <img class="micro-image"
+                   src="../images/ro-song-010-microbubbles.jpg"
+                   alt="GOM ~200x: dense sealed microbubble population in glaze matrix" />
+              <p class="micro-caption">
+                <span class="figure-number">Fig. 6.</span>
+                Dense sealed microbubble population (50&ndash;300 &mu;m). Homogeneous distribution; partial collapse at surface boundary.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>1. Double Crackle Morphology &mdash; 双线开片</h3>
+        <p>GOM examination reveals two structurally independent crack systems at different optical depths. The primary network forms large polygonal cells with dark brown to near-black iron-rich patination in deep channels. The secondary network subdivides these primary fields into finer, shallower units carrying lighter reddish oxidation products. This hierarchical bipartite architecture corresponds to the classical Golden Thread and Iron Wire (金丝铁线) structure canonical for authenticated Ge ware.</p>
+
+        <h3>2. Iron&ndash;Manganese Diffusion within Crackles</h3>
+        <p>Each crack demonstrates a graduated chromatic transition: dark brown to near-black mineral deposits in deeper zones, reddish-orange oxidation products near the glaze surface, with a continuous colour gradient throughout crack depth. This diffusion profile reflects centuries of natural oxidation and cannot be reproduced by surface application of colourants, which would produce uniform staining without depth differentiation.</p>
+
+        <h3>3. Glaze Microbubble Structure</h3>
+        <p>At 100&times;&ndash;200&times;, the glaze matrix displays a dense population of sealed spherical microbubbles (estimated 50&ndash;300 &mu;m diameter), distributed homogeneously throughout. These enclosed gas voids represent gases trapped during repeated thick glaze application and high-temperature firing. The dense bubble population acts as a distributed light-scattering medium, producing the characteristic jade-like optical effect of authentic Guan wares.</p>
+
+        <h3>4. Granular Glaze Microtexture</h3>
+        <p>The glaze surface presents a fine granular microrelief with an extremely fine crystalline texture and subtle sugar-like granulation producing gentle optical scattering. No mechanical polishing marks or modern treatment traces are observed. This microtexture is consistent with slow controlled cooling of thick Song dynasty glazes and is not reproducible by modern rapid-firing schedules.</p>
+
+        <h3>5. Firing Support Marks</h3>
+        <p>Microscopic examination of the base identifies original kiln support scars: a vitrified central contact zone, an iron-enriched peripheral halo, locally thickened glaze around the scar perimeter, and complete absence of secondary mechanical alteration. These traces correspond to refractory spur supports used in Southern Song imperial kilns.</p>
+
+        <h3>6. Optical Ageing</h3>
+        <p>Long-term natural ageing is expressed through progressive infilling of crack channels with mineral precipitates, stable crack margins with no fresh fracture surfaces, and integrated weathering across the full glaze area. The ageing pattern is internally consistent throughout the entire object, indicating a unified long-term environmental history.</p>
+      </section>
+
+      <section id="interpretation">
+        <h2>Diagnostic Interpretation</h2>
+        <p>Authentication is established through the mutual agreement of multiple independent diagnostic indicators. No single feature alone constitutes proof; it is the convergence of all markers that is diagnostically decisive.</p>
+
+        <div class="note">
+          The double crackle architecture, natural iron&ndash;manganese diffusion profiles, dense sealed microbubble population, granular glaze microtexture, original kiln support scars, and integrated optical ageing form a technologically coherent and mutually reinforcing system. All indicators are consistent with authenticated Southern Song Guan/Ge tradition ceramics.
+        </div>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead>
+              <tr>
+                <th>Diagnostic Feature</th>
+                <th>Category</th>
+                <th>Diagnostic Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Double crackle architecture (金丝铁线)</td><td>Crackle</td><td>Very High</td></tr>
+              <tr><td>Iron&ndash;manganese diffusion profile</td><td>Crackle / Ageing</td><td>Very High</td></tr>
+              <tr><td>Sealed glaze microbubbles (50&ndash;300 &mu;m)</td><td>Microstructure</td><td>High</td></tr>
+              <tr><td>Granular glaze microtexture</td><td>Glaze surface</td><td>High</td></tr>
+              <tr><td>Original kiln support scars</td><td>Firing traces</td><td>High</td></tr>
+              <tr><td>Integrated natural ageing</td><td>Ageing</td><td>High</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="diagnostic-checklist">
+          <p class="diagnostic-checklist-title">Key Diagnostic Markers</p>
+          <div class="diagnostic-item">Double crackle architecture &mdash; 金丝铁线</div>
+          <div class="diagnostic-item">Iron&ndash;manganese diffusion profile (depth-graduated, naturally formed)</div>
+          <div class="diagnostic-item">Sealed glaze microbubbles (50&ndash;300 &mu;m, homogeneous distribution)</div>
+          <div class="diagnostic-item">Granular glaze microtexture (consistent with Song slow-cooling technology)</div>
+          <div class="diagnostic-item">Original kiln support scars (vitrified zone with iron-enriched halo)</div>
+          <div class="diagnostic-item">Natural long-term glaze ageing (integrated, internally consistent)</div>
+          <div class="diagnostic-item">High internal diagnostic consistency &mdash; multi-category convergence</div>
+          <p class="diagnostic-confidence">Diagnostic Confidence: <span class="confidence-value">Very High</span></p>
+        </div>
+      </section>
+
+      <section id="cross-references">
+        <h2>Related Entities</h2>
+
+        <div class="crossref-block">
+          <p class="crossref-title">Diagnostic Features</p>
+          <div class="crossref-list">
+            <a href="../diagnostics/glaze/double-crackle-morphology.html" class="crossref-link">Double Crackle Morphology</a>
+            <a href="../diagnostics/glaze/iron-manganese-diffusion.html" class="crossref-link">Iron&ndash;Manganese Diffusion</a>
+            <a href="../diagnostics/microstructure/microbubble-structure.html" class="crossref-link">Glaze Microbubble Structure</a>
+            <a href="../diagnostics/body-paste/granular-texture.html" class="crossref-link">Granular Glaze Microtexture</a>
+            <a href="../diagnostics/firing-traces/spur-marks.html" class="crossref-link">Firing Support Marks</a>
+          </div>
+        </div>
+
+        <div class="crossref-block">
+          <p class="crossref-title">Kiln Tradition</p>
+          <div class="crossref-list">
+            <a href="../kilns/ge-ware.html" class="crossref-link">Ge Ware &mdash; 哥窑</a>
+            <a href="../kilns/guan-ware.html" class="crossref-link">Guan Ware &mdash; 官窑</a>
+          </div>
+        </div>
+
+        <div class="crossref-block">
+          <p class="crossref-title">Dynasty</p>
+          <div class="crossref-list">
+            <a href="../dynasties/song.html" class="crossref-link">Southern Song Dynasty</a>
+            <a href="../dynasties/yuan.html" class="crossref-link">Yuan Dynasty</a>
+          </div>
+        </div>
+
+        <div class="crossref-block">
+          <p class="crossref-title">Methodology Applied</p>
+          <div class="crossref-list">
+            <a href="../methodology/gom.html" class="crossref-link">Gemmological Optical Microscopy &mdash; GOM</a>
+            <a href="../methodology/sem-eds.html" class="crossref-link">SEM&ndash;EDS (comparative)</a>
+            <a href="../methodology/xrf.html" class="crossref-link">XRF (comparative)</a>
+            <a href="../methodology/xrd.html" class="crossref-link">XRD (comparative)</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="bibliography" id="bibliography">
+        <p class="bibliography-title">Comparative References</p>
+        <p class="biblio-entry">Published instrumental studies of authenticated Southern Song Guan and Ge wares using SEM&ndash;EDS, XRF, and XRD were consulted for comparative calibration of GOM observations. Full citations to be added.</p>
+      </div>
+
+      <nav class="pagination">
+        <a href="ro-song-009.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Previous Object</span>
+          <span class="pagination-title">ro-song-009</span>
+        </a>
+        <a href="ro-song-011.html" class="pagination-link next">
+          <span class="pagination-label">Next Object &rarr;</span>
+          <span class="pagination-title">ro-song-011</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Object Record</p>
+        <div class="meta-row"><span class="meta-label">Identifier</span><span class="meta-value">ro-song-010</span></div>
+        <div class="meta-row"><span class="meta-label">Object Type</span><span class="meta-value">Tripod Vessel</span></div>
+        <div class="meta-row"><span class="meta-label">Ware Type</span><span class="meta-value"><a href="../kilns/ge-ware.html">Ge Yao &mdash; 哥窑</a></span></div>
+        <div class="meta-row"><span class="meta-label">Dynasty</span><span class="meta-value"><a href="../dynasties/song.html">Southern Song</a> &ndash; <a href="../dynasties/yuan.html">Yuan</a></span></div>
+        <div class="meta-row"><span class="meta-label">Date</span><span class="meta-value">12th&ndash;14th century</span></div>
+        <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Ge-type crackle glaze, ivory-grey</span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a></span></div>
+        <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">On This Page</p>
+        <ul>
+          <li><a href="#description">Object Description</a></li>
+          <li><a href="#microscopy">Microscopic Analysis</a></li>
+          <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#cross-references">Related Entities</a></li>
+          <li><a href="#bibliography">References</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="../collection/index.html">Collection</a>
+        <a href="../diagnostics/index.html">Diagnostics</a>
+        <a href="../kilns/index.html">Kilns</a>
+        <a href="../dynasties/index.html">Dynasties</a>
+        <a href="../methodology/index.html">Methodology</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="../publications/index.html">Publications</a>
+        <a href="../about/index.html">About</a>
+        <a href="../about/author-profile.html">Author</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-song-010 &mdash; Southern Song &ndash; Yuan Dynasty</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
