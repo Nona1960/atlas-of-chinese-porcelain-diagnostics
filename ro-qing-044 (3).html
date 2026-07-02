@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ro-qing-044 · Mirror-Black Glazed Vase with Underglaze Blue Reserves — Atlas of Chinese Porcelain Diagnostics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1410; --stone:#f7f4ef; --parchment:#ede8df; --parchment2:#e4ddd1;
+    --gold:#b8860b; --gold-lt:#d4a843; --border:#ccc4b4; --border2:#ddd7cc;
+    --muted:#6b6255; --muted2:#3a342c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--parchment); color:var(--ink);
+    font-family:'Inter',sans-serif; font-weight:400; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{ font-family:'Cormorant Garamond',serif; font-weight:600; }
+  a{ color:var(--gold); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  .navbar{
+    background:var(--stone); border-bottom:2px solid var(--gold);
+    padding:0.9rem 2rem; display:flex; align-items:center; justify-content:space-between;
+    position:sticky; top:0; z-index:50;
+  }
+  .navbar .brand{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.25rem; color:var(--ink); letter-spacing:0.02em; }
+  .navbar .brand .cn{ color:var(--gold); font-weight:400; margin-left:0.4rem; font-size:1rem;}
+  .navbar nav a{ margin-left:1.5rem; color:var(--muted2); font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:500; letter-spacing:0.03em; text-transform:uppercase;}
+  .navbar nav a:hover{ color:var(--gold); text-decoration:none; }
+
+  .breadcrumb{
+    max-width:1100px; margin:0 auto; padding:1rem 2rem 0;
+    font-size:0.82rem; color:var(--muted);
+  }
+  .breadcrumb a{ color:var(--muted); }
+  .breadcrumb a:hover{ color:var(--gold); }
+  .breadcrumb .sep{ margin:0 0.4rem; color:var(--border);}
+
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 2rem; }
+
+  header.obj-header{ padding:1.6rem 0 1.8rem; border-bottom:1px solid var(--border2); }
+  .obj-id{ font-size:0.78rem; letter-spacing:0.08em; color:var(--gold); text-transform:uppercase; font-weight:500; }
+  header.obj-header h1{ font-size:2.3rem; margin:0.4rem 0 0.3rem; color:var(--ink); font-weight:600; line-height:1.2;}
+  .subtitle{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--muted2); margin:0 0 0.9rem; font-weight:400;}
+  .tag-row{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .tag{
+    font-size:0.75rem; padding:0.3rem 0.7rem; border:1px solid var(--border);
+    border-radius:2px; color:var(--muted2); background:var(--stone); letter-spacing:0.02em;
+  }
+  .tag.gold{ border-color:var(--gold-lt); color:#8a6607; background:#fbf5e6; }
+
+  .layout{ display:grid; grid-template-columns:1fr 280px; gap:2.5rem; padding:2.2rem 0 3rem; align-items:start; }
+  main{ min-width:0; }
+  aside{ position:sticky; top:calc(56px + 2rem); }
+
+  .hero-figure{ margin:0 0 2.2rem; }
+  .hero-figure img{ width:100%; height:auto; display:block; border:1px solid var(--border2); background:var(--stone); }
+  .hero-figure figcaption{ font-size:0.82rem; color:var(--muted); margin-top:0.6rem; font-style:italic; font-family:'Cormorant Garamond',serif;}
+
+  section{ margin-bottom:2.4rem; }
+  section h2{
+    font-size:1.5rem; color:var(--ink); margin:0 0 0.9rem; padding-bottom:0.5rem;
+    border-bottom:1px solid var(--gold-lt); font-weight:600;
+  }
+  section h3{ font-size:1.15rem; color:var(--muted2); margin:1.4rem 0 0.6rem; font-weight:600; }
+  p{ margin:0 0 1rem; color:var(--muted2); font-size:0.98rem;}
+
+  figure.inline-fig{ margin:1.2rem 0; }
+  figure.inline-fig img{ width:100%; max-width:520px; height:auto; display:block; border:1px solid var(--border2); }
+  figure.inline-fig figcaption{ font-size:0.8rem; color:var(--muted); margin-top:0.5rem; font-style:italic; font-family:'Cormorant Garamond',serif;}
+
+  .note{
+    background:var(--parchment2); border-left:3px solid var(--gold); padding:0.8rem 1rem;
+    font-size:0.85rem; color:var(--muted2); margin:1rem 0; font-style:italic;
+  }
+
+  ul.checklist{ list-style:none; padding:0; margin:0 0 1rem; }
+  ul.checklist li{
+    padding:0.5rem 0 0.5rem 1.6rem; position:relative; font-size:0.95rem; color:var(--muted2);
+    border-bottom:1px solid var(--border2);
+  }
+  ul.checklist li:before{
+    content:"✓"; position:absolute; left:0; color:var(--gold); font-weight:600;
+  }
+  ul.checklist li:last-child{ border-bottom:none; }
+
+  table.sci-table{ width:100%; border-collapse:collapse; font-size:0.9rem; margin:1rem 0; }
+  table.sci-table th, table.sci-table td{
+    border:1px solid var(--border2); padding:0.6rem 0.8rem; text-align:left;
+  }
+  table.sci-table th{ background:var(--parchment2); color:var(--muted2); font-weight:600; font-family:'Inter',sans-serif; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.02em;}
+  table.sci-table td{ color:var(--muted2); }
+  table.sci-table tr:nth-child(even) td{ background:#faf8f4; }
+
+  .conclusion-box{
+    background:var(--stone); border:1px solid var(--border); padding:1.4rem 1.6rem;
+    border-top:3px solid var(--gold);
+  }
+  .conclusion-box p:last-child{ margin-bottom:0; }
+  .conclusion-final{
+    margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border);
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.02rem; color:var(--ink);
+  }
+
+  .side-box{
+    background:var(--stone); border:1px solid var(--border); padding:1.3rem 1.4rem; margin-bottom:1.3rem;
+  }
+  .side-box h3{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold);
+    margin:0 0 0.9rem; font-family:'Inter',sans-serif; font-weight:600;
+  }
+  .meta-list{ list-style:none; padding:0; margin:0; font-size:0.85rem; }
+  .meta-list li{ display:flex; justify-content:space-between; gap:0.6rem; padding:0.45rem 0; border-bottom:1px solid var(--border2); color:var(--muted2);}
+  .meta-list li:last-child{ border-bottom:none; }
+  .meta-list .k{ color:var(--muted); }
+  .meta-list .v{ text-align:right; }
+
+  footer{
+    background:var(--parchment2); border-top:2px solid var(--gold);
+    padding:2rem; margin-top:2rem; text-align:center;
+  }
+  footer p{ font-size:0.8rem; color:var(--muted); margin:0; }
+  footer .fchars{ font-family:'Cormorant Garamond',serif; color:var(--gold); font-size:1rem; margin-bottom:0.4rem; }
+
+  @media (max-width: 860px){
+    .layout{ grid-template-columns:1fr; }
+    aside{ position:static; }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="brand">Atlas of Chinese Porcelain Diagnostics <span class="cn">瓷鑑</span></div>
+  <nav>
+    <a href="index.html">Catalogue</a>
+    <a href="about.html">About</a>
+  </nav>
+</div>
+
+<div class="breadcrumb wrap">
+  <a href="index.html">Catalogue</a><span class="sep">/</span>
+  <a href="index.html#qing">Qing Dynasty</a><span class="sep">/</span>
+  <span>ro-qing-044</span>
+</div>
+
+<div class="wrap">
+  <header class="obj-header">
+    <div class="obj-id">RO-QING-044</div>
+    <h1>Mirror-Black Glazed Vase with Underglaze Blue Archaistic and Dragon Reserves</h1>
+    <p class="subtitle">Baluster vase with trumpet neck, black ground with white reserve medallions</p>
+    <div class="tag-row">
+      <span class="tag gold">Qing Dynasty · Yongzheng Period, 1723–1735</span>
+      <span class="tag">Jingdezhen</span>
+      <span class="tag">Mirror-black (wujin) glaze</span>
+      <span class="tag">Underglaze cobalt Co²⁺ reserves</span>
+      <span class="tag">Mark: 大清雍正年製</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+
+      <figure class="hero-figure">
+        <img src="ro-qing-044-overall.jpg" alt="Overall view of the mirror-black glazed vase with underglaze blue reserves, ro-qing-044">
+        <figcaption>Fig. 1. Overall view. A baluster vase with a trumpet neck, covered in a dense mirror-black glaze, with two white reserve medallions painted in underglaze cobalt blue.</figcaption>
+      </figure>
+
+      <section id="description">
+        <h2>Description</h2>
+        <p>This vase is a baluster-form vessel with a flaring trumpet neck, entirely covered in a dense, high-gloss black glaze. Set into this black ground are two white reserve panels painted in underglaze cobalt blue: a smaller oval medallion at the neck, carrying a landscape scene, and a larger panel on the body containing an archaistic composition — a baluster vessel with ring handles rendered in the antiquarian (bogu) manner, accompanied by a scaled dragon or qilin moving through clouds and waves below.</p>
+        <p>The drawing within the reserve panels is fine and controlled, with dense scalework on the dragon's body, curling cloud-scrolls, and spiral wave motifs rendered in confident, unbroken cobalt line — consistent with high-quality underglaze painting of the early-to-mid Qing court workshops.</p>
+      </section>
+
+      <section id="technology">
+        <h2>Chemical and Technological Interpretation</h2>
+        <p>The black ground is consistent with a mirror-black glaze (wujin you 烏金釉), a glaze type dominated by iron oxide, typically combined with manganese, producing a dense, near-opaque black with a subtle warm or purplish undertone in reflected light — distinct in composition from cobalt-based blue grounds. This glaze was applied around the reserved white panels, which were left in a clear glaze over underglaze cobalt-blue painting, requiring careful control of glaze boundaries prior to firing.</p>
+        <p>The coexistence of an iron-rich black ground and a cobalt-painted reserve on the same vessel implies a controlled single high-temperature firing in which both colorants matured together, rather than a later overpainting — a technically demanding combination to execute cleanly at the boundary between the two glaze types.</p>
+
+        <h3>Base Mark</h3>
+        <p>The base carries an underglaze cobalt-blue mark in a double circular cartouche, four characters in two columns: 大清雍正年製 ("Made during the Yongzheng reign of the Great Qing"). The unglazed foot rim shows the dark, uneven staining typical of a black-glazed vessel, with the black ground pooling irregularly toward the foot.</p>
+        <figure class="inline-fig">
+          <img src="ro-qing-044-base.jpg" alt="Base of the vase with underglaze Yongzheng mark">
+          <figcaption>Fig. 2. Base with the underglaze cobalt mark 大清雍正年製 in a double circular cartouche.</figcaption>
+        </figure>
+      </section>
+
+      <section id="microscopy">
+        <h2>Microscopy</h2>
+        <p>Optical microscopy of the black glaze at the boundary with the blue reserve panel shows a dense network of fine surface crazing (craquelure) running through the black glaze, with scattered light-coloured specks consistent with trapped bubbles or firing impurities near the boundary. The transition from black to blue is not a sharp mechanical line but a gradual colour shift, consistent with both glazes maturing in the same firing.</p>
+        <figure class="inline-fig">
+          <img src="ro-qing-044-glaze-boundary.jpg" alt="Micrograph of the mirror-black glaze at the boundary with the underglaze blue reserve, showing fine crazing">
+          <figcaption>Fig. 3. Micrograph of the mirror-black glaze at the boundary zone: fine craquelure network and gradual colour transition into the cobalt-blue reserve.</figcaption>
+        </figure>
+        <p>A second micrograph, taken across the same boundary zone, shows a dense, granular, crystalline texture with metallic speckling on the black side, against a smoother, lighter surface on the reserve side. This crystalline speckling is consistent with iron-rich crystallisation typical of mirror-black glazes, which often develop a subtle metallic sheen at the glaze surface upon cooling.</p>
+        <figure class="inline-fig">
+          <img src="ro-qing-044-micrograph.jpg" alt="Micrograph showing dense pigment accumulation and crystalline metallic speckling at the glaze boundary">
+          <figcaption>Fig. 4. Micrograph of the boundary zone: dense pigment accumulation and crystalline, metallic speckling characteristic of an iron-rich black glaze.</figcaption>
+        </figure>
+        <div class="note">Figures 3 and 4 are presented as optical microscopy of the glaze surface. They document surface texture, craquelure, and crystalline speckling at the black/blue boundary; they do not by themselves establish elemental composition, which would require XRF or Raman analysis for confirmation.</div>
+      </section>
+
+      <section id="interpretation">
+        <h2>Interpretation</h2>
+
+        <h3>Diagnostic Features</h3>
+        <ul class="checklist">
+          <li>underglaze cobalt mark 大清雍正年製 in a double circular cartouche, without sharp mechanical brush-stroke boundaries</li>
+          <li>dense, near-opaque mirror-black ground consistent with an iron-rich (wujin) glaze, distinct from a cobalt blue ground</li>
+          <li>fine, controlled underglaze cobalt painting within the reserve panels — dense dragon scalework, cloud-scrolls, spiral waves</li>
+          <li>gradual, non-mechanical colour transition between the black ground and the blue-and-white reserve, suggesting a single controlled firing</li>
+          <li>fine craquelure network across the black glaze surface, visible under magnification</li>
+          <li>crystalline, metallic speckling at the glaze boundary, consistent with iron-rich glaze crystallisation</li>
+          <li>dark, uneven staining of the unglazed foot rim, consistent with age and glaze pooling at the base</li>
+        </ul>
+
+        <h3>Comparative Feature Table</h3>
+        <table class="sci-table">
+          <thead>
+            <tr><th>Parameter</th><th>Observation</th><th>Diagnostic Significance</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Ground glaze</td><td>Dense mirror-black, likely iron-rich (wujin)</td><td>Distinguishes from cobalt-blue grounds; requires controlled firing</td></tr>
+            <tr><td>Reserve decoration</td><td>Underglaze cobalt blue, archaistic vessel and dragon motifs</td><td>Fine, confident linework consistent with court-quality painting</td></tr>
+            <tr><td>Mark</td><td>Underglaze, cobalt, 大清雍正年製</td><td>Consistent with standard official Yongzheng marks</td></tr>
+            <tr><td>Glaze boundary (microscopy)</td><td>Craquelure network, gradual colour transition</td><td>Consistent with co-maturation of both glazes in one firing</td></tr>
+            <tr><td>Glaze surface (microscopy)</td><td>Crystalline, metallic speckling</td><td>Consistent with iron-rich glaze crystallisation on cooling</td></tr>
+            <tr><td>Foot rim</td><td>Dark, uneven staining</td><td>Consistent with the object's age; requires TL confirmation</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <div class="conclusion-box">
+          <p>This mirror-black glazed vase, with underglaze cobalt reserve panels depicting an archaistic vessel and a dragon amid clouds and waves, presents a technically demanding combination of an iron-rich black ground and cobalt-blue underglaze painting matured within a single firing. The character of the base mark, the quality of the cobalt linework, and the glaze microstructure at the black/blue boundary are consistent with a Yongzheng-period attribution.</p>
+          <p>Full confirmation of the attribution requires further analysis: XRF or Raman elemental analysis to confirm the iron/manganese composition of the black glaze and the cobalt source of the blue reserves, and thermoluminescence (TL) dating of the body for independent confirmation of firing age.</p>
+          <p class="conclusion-final">China, Jingdezhen, Yongzheng period, 1723–1735. A porcelain baluster vase with a dense mirror-black (wujin) ground and two white reserve panels painted in underglaze cobalt blue with an archaistic vessel, dragon, clouds, and waves. The attribution is supported by the character of the underglaze mark, the quality and control of the cobalt painting, and the glaze microtexture at the black/blue boundary; XRF/Raman analysis and TL dating are recommended for final confirmation.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <aside>
+      <div class="side-box">
+        <h3>Object Data</h3>
+        <ul class="meta-list">
+          <li><span class="k">Inv. No.</span><span class="v">ro-qing-044</span></li>
+          <li><span class="k">Dynasty</span><span class="v">Qing</span></li>
+          <li><span class="k">Period</span><span class="v">Yongzheng, 1723–1735</span></li>
+          <li><span class="k">Kiln</span><span class="v">Jingdezhen</span></li>
+          <li><span class="k">Glaze</span><span class="v">Mirror-black (wujin)</span></li>
+          <li><span class="k">Mark</span><span class="v">大清雍正年製</span></li>
+          <li><span class="k">Chromophores</span><span class="v">Fe (ground) / Co²⁺ (reserves)</span></li>
+        </ul>
+      </div>
+
+      <div class="side-box">
+        <h3>Diagnostic Method</h3>
+        <ul class="meta-list">
+          <li><span class="k">Microscopy</span><span class="v">optical</span></li>
+          <li><span class="k">Analysis</span><span class="v">glaze boundary structure</span></li>
+          <li><span class="k">Required</span><span class="v">XRF/Raman, TL</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="fchars">瓷鑑</div>
+  <p>Atlas of Chinese Porcelain Diagnostics — a scholarly catalogue of diagnostic features in Chinese porcelain</p>
+</footer>
+
+</body>
+</html>
