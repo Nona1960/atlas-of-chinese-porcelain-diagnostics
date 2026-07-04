@@ -17,6 +17,8 @@ body{font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:var(--i
 .navbar-links{display:flex;gap:1.5rem;margin-left:auto}
 .navbar-links a{font-size:.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
 .navbar-links a:hover{color:var(--gold)}
+.navbar-back{font-size:.8rem;font-weight:500;color:var(--gold);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem;padding-right:1.5rem;border-right:1px solid var(--border)}
+.navbar-back:hover{color:var(--ink)}
 .page-wrap{max-width:1100px;margin:0 auto;padding:0 2rem}
 .main-grid{display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start;padding:2.5rem 0 4rem}
 .breadcrumb{padding:.9rem 0 0;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
@@ -79,12 +81,14 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
   .sidebar{position:static}
   .figure-row{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
+  .navbar-back{border-right:none;padding-right:0;margin-right:1rem}
 }
 </style>
 </head>
 <body>
 <nav class="navbar">
   <div class="navbar-inner">
+    <a class="navbar-back" href="index.html">← Collection</a>
     <a class="navbar-logo" href="index.html">Atlas <span>◆</span> Chinese Porcelain Diagnostics</a>
     <div class="navbar-links">
       <a href="index.html">Collection</a>
