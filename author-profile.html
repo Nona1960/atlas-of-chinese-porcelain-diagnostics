@@ -290,10 +290,10 @@
     <a href="index.html" class="nav-bar__wordmark">Atlas <span>/ Ancient Chinese Ceramics</span></a>
     <nav aria-label="Main navigation">
       <ul class="nav-bar__items">
-        <li class="nav-bar__item"><a href="index.html#reference-object">Reference Objects</a></li>
-        <li class="nav-bar__item"><a href="index.html#methodology">Methodology</a></li>
-        <li class="nav-bar__item"><a href="index.html#entry-points">Domains</a></li>
-        <li class="nav-bar__item"><a href="template-index.html">Templates</a></li>
+        <li class="nav-bar__item"><a href="reference-collection.html">Reference Objects</a></li>
+        <li class="nav-bar__item"><a href="methodology.html">Methodology</a></li>
+        <li class="nav-bar__item"><a href="book.html">Book</a></li>
+        <li class="nav-bar__item"><a href="publications.html">Publications</a></li>
         <li class="nav-bar__item active"><a href="author-profile.html">About</a></li>
       </ul>
     </nav>
@@ -317,7 +317,7 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="index.html" class="breadcrumb__link">Atlas</a>
     <span class="breadcrumb__sep">›</span>
-    <a href="index.html#entry-points" class="breadcrumb__link">Authors</a>
+    <span class="breadcrumb__current" style="color:var(--muted);">Authors</span>
     <span class="breadcrumb__sep">›</span>
     <span class="breadcrumb__current">Dronova, Nona Dmitrievna</span>
   </nav>
@@ -545,13 +545,15 @@
 
   </div><!-- /author-page -->
 
+  <a href="index.html" style="display:inline-block; font-family:'Inter',sans-serif; font-size:15px; color:#1a1410; text-decoration:none; margin-top:50px; border:none; background:none; padding:0;">← Back to Atlas</a>
+
 </div><!-- /container -->
 </main>
 
 <!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <div class="footer__grid">
+    <div class="footer__grid" style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--space-8);">
       <div class="footer__brand">
         <p class="footer__brand-name">
           Global Diagnostic Atlas<br>
@@ -567,33 +569,14 @@
           Doctor of Technical Sciences · Ph.D. in Geology and Mineralogy
         </p>
       </div>
-      <div class="footer__col">
-        <p class="footer__col-title">Knowledge Domains</p>
-        <ul class="footer__links">
-          <li><a href="diagnostic-feature.html">Diagnostic Features</a></li>
-          <li><a href="reference-object.html">Reference Objects</a></li>
-          <li><a href="kiln.html">Production Kilns</a></li>
-          <li><a href="dynasty.html">Dynasty System</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li><a href="publication.html">Publications</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <p class="footer__col-title">About</p>
-        <ul class="footer__links">
-          <li><a href="author-profile.html">Professor Dronova</a></li>
-          <li><a href="template-index.html">Template System</a></li>
-          <li><a href="ATLAS_IA_Stage1_Architecture.md">Architecture</a></li>
-          <li><a href="ATLAS_DS_Stage2_DesignSystem.md">Design System</a></li>
-        </ul>
-      </div>
+      <div></div>
       <div class="footer__col">
         <p class="footer__col-title">Organisation</p>
-        <ul class="footer__links">
-          <li><a href="#">International Foundation</a></li>
-          <li><a href="#">Global Archive for Authentication<br>of Antique Porcelain</a></li>
-          <li><a href="#">College of Experts and Appraisers<br>of Antique Arts</a></li>
-        </ul>
+        <p style="font-size:var(--text-sm); color:var(--muted2); line-height:1.7; margin:0;">
+          International Foundation<br>
+          Global Archive for Authentication of Antique Porcelain<br>
+          College of Experts and Appraisers of Antique Arts
+        </p>
       </div>
     </div>
     <div class="footer__bottom">
@@ -601,10 +584,7 @@
         © 2026 International Foundation — Global Archive for Authentication of Antique Porcelain.
         Scientific Director: Professor Nona Dmitrievna Dronova.
       </p>
-      <nav class="footer__legal" aria-label="Legal">
-        <a href="#">Terms of Use</a>
-        <a href="#">Editorial Policy</a>
-      </nav>
+      <p class="footer__legal" style="font-size:var(--text-xs); color:var(--muted); margin:0;">Terms of Use · Editorial Policy</p>
     </div>
   </div>
 </footer>
