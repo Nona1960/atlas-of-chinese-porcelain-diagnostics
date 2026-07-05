@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference Collection — Atlas of Chinese Porcelain Diagnostics</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #faf8f4;
+    --muted: #6b6460;
+    --rule: #d4cec8;
+    --accent: #8b2e2e;
+    --tang-hue: #c8a96e;
+    --song-hue: #6b8e7f;
+    --yuan-hue: #5c7a9e;
+    --ming-hue: #9e5c5c;
+    --qing-hue: #8e6b9e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+
+  .site-nav { border-bottom: 2px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 20; }
+  .site-nav__inner { padding: 1rem 3rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .site-nav__wordmark { font-size: 1.1rem; letter-spacing: .02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .site-nav__wordmark span { color: var(--muted); font-weight: normal; }
+  .site-nav__links { display: flex; gap: 1.6rem; flex-wrap: wrap; list-style: none; margin-left: 1rem; }
+  .site-nav__links a { font-size: .85rem; letter-spacing: .03em; color: var(--muted); text-decoration: none; padding-bottom: 2px; }
+  .site-nav__links a:hover { color: var(--ink); }
+  .site-nav__links li.active a { color: var(--accent); border-bottom: 1px solid var(--accent); }
+  .site-nav__search { margin-left: auto; display: flex; gap: .4rem; }
+  .site-nav__search input { border: 1px solid var(--rule); background: transparent; font-family: inherit; font-size: .8rem; padding: .35rem .6rem; }
+  .site-nav__search button { border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-family: inherit; font-size: .78rem; padding: .35rem .8rem; cursor: pointer; }
+  @media (max-width: 900px) { .site-nav__search { display: none; } }
+
+  header { border-bottom: 1px solid var(--rule); padding: 1.6rem 3rem 1.5rem; display: flex; align-items: baseline; gap: 2rem; flex-wrap: wrap; }
+  header a.home { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  header a.home:hover { color: var(--accent); }
+  header h1 { font-size: 1.45rem; font-weight: normal; letter-spacing: .03em; }
+  header span.sub { font-size: .9rem; color: var(--muted); margin-left: auto; }
+
+  nav.filters { padding: 1.2rem 3rem; border-bottom: 1px solid var(--rule); display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+  nav.filters span.label { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: .4rem; }
+  nav.filters button { padding: .35rem .9rem; border: 1px solid var(--rule); border-radius: 2px; background: transparent; font-family: inherit; font-size: .82rem; color: var(--ink); cursor: pointer; }
+  nav.filters button:hover, nav.filters button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  section.dynasty { padding: 2.5rem 3rem 0; }
+  section.dynasty h2 { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule); }
+  section.dynasty h2 .dynasty-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  section.dynasty h2 .dynasty-years { font-weight: normal; opacity: .65; }
+
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; margin-bottom: 3rem; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 750px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .card { display: flex; flex-direction: column; cursor: default; }
+  .card a { text-decoration: none; color: inherit; }
+  .card .img-wrap { aspect-ratio: 3/4; overflow: hidden; background: #e8e4df; position: relative; }
+  .card .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+  .card:hover .img-wrap img { transform: scale(1.04); }
+  .card .img-wrap .no-img { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: .75rem; color: var(--muted); letter-spacing: .06em; }
+  .card .meta { padding: .7rem 0 0; }
+  .card .meta .obj-id { font-size: .7rem; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+  .card .meta .obj-name { font-size: .88rem; margin-top: .2rem; line-height: 1.35; }
+  .card .meta .obj-detail { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+
+  footer { margin-top: 2rem; border-top: 1px solid var(--rule); padding: 1.5rem 3rem; font-size: .78rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__wordmark">Atlas <span>/ Ancient Chinese Ceramics</span></a>
+    <ul class="site-nav__links">
+      <li class="active"><a href="reference-collection.html">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+    <div class="site-nav__search">
+      <input type="search" placeholder="Search atlas…" aria-label="Search atlas">
+      <button type="button">Search</button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <a class="home" href="index.html">← Atlas</a>
+  <h1>Reference Collection</h1>
+  <span class="sub">94 objects · Tang — Late Qing</span>
+</header>
+
+<nav class="filters">
+  <span class="label">Dynasty</span>
+  <button class="active" onclick="filterDynasty('all', this)">All</button>
+  <button onclick="filterDynasty('tang', this)">Tang</button>
+  <button onclick="filterDynasty('song', this)">Song</button>
+  <button onclick="filterDynasty('yuan', this)">Yuan</button>
+  <button onclick="filterDynasty('ming', this)">Ming</button>
+  <button onclick="filterDynasty('qing', this)">Qing</button>
+</nav>
+
+<!-- TANG -->
+<section class="dynasty" id="section-tang" data-dynasty="tang">
+  <h2><span class="dynasty-dot" style="background:var(--tang-hue)"></span>Tang Dynasty <span class="dynasty-years">618 – 907 CE</span></h2>
+  <div class="grid">
+    <div class="card">
+      <a href="ro-tang-001.html">
+        <div class="img-wrap">
+          <img src="images/ro-tang-001-overall.jpg" alt="Tang Amphora" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="no-img" style="display:none">001</div>
+        </div>
+      </a>
+      <div class="meta">
+        <div class="obj-id">RO-TANG-001</div>
+        <div class="obj-name">Tang Dynasty Sancai Jia Lan Amphora with Dragon Handles</div>
+        <div class="obj-detail">Sancai Jia Lan · Tang Dynasty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SONG -->
+<section class="dynasty" id="section-song" data-dynasty="song">
+  <h2><span class="dynasty-dot" style="background:var(--song-hue)"></span>Song Dynasty <span class="dynasty-years">960 – 1279 CE</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-song-002.html"><div class="img-wrap"><img src="images/ro-song-002-overall.jpg" alt="Ru-type Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">002</div></div></a><div class="meta"><div class="obj-id">RO-SONG-002</div><div class="obj-name">Ru-type Vase with Sky-blue Glaze</div><div class="obj-detail">Northern Song · 960 – 1127</div></div></div>
+    <div class="card"><a href="ro-song-003.html"><div class="img-wrap"><img src="images/ro-song-003-overall.jpg" alt="White Baluster Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">003</div></div></a><div class="meta"><div class="obj-id">RO-SONG-003</div><div class="obj-name">White Baluster Vase with Incised Floral Scroll</div><div class="obj-detail">Ding-type · Northern Song</div></div></div>
+    <div class="card"><a href="ro-song-004.html"><div class="img-wrap"><img src="images/ro-song-004-overall.jpg" alt="Bottle Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">004</div></div></a><div class="meta"><div class="obj-id">RO-SONG-004</div><div class="obj-name">Bottle Vase with Dense Crackle Pattern</div><div class="obj-detail">Ge-type Glaze · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-005.html"><div class="img-wrap"><img src="images/ro-song-005-overall.jpg" alt="Brush Washer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">005</div></div></a><div class="meta"><div class="obj-id">RO-SONG-005</div><div class="obj-name">Brush Washer with Celadon Glaze and Spur Marks</div><div class="obj-detail">Guan Yao · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-006.html"><div class="img-wrap"><img src="images/ro-song-006-overall.jpg" alt="Jizhou Meiping" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">006</div></div></a><div class="meta"><div class="obj-id">RO-SONG-006</div><div class="obj-name">Jizhou Meiping with Black Glaze and Prunus Decoration</div><div class="obj-detail">Jizhou Kiln · Song Dynasty</div></div></div>
+    <div class="card"><a href="ro-song-007.html"><div class="img-wrap"><img src="images/ro-song-007-overall.jpg" alt="Ribbed-neck Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">007</div></div></a><div class="meta"><div class="obj-id">RO-SONG-007</div><div class="obj-name">Ribbed-neck Vase with Matte Guan-type Glaze</div><div class="obj-detail">Guan Yao · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-008.html"><div class="img-wrap"><img src="images/ro-song-008-overall.jpg" alt="Archaic-form Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">008</div></div></a><div class="meta"><div class="obj-id">RO-SONG-008</div><div class="obj-name">Archaic-form Vase with Paired Handles</div><div class="obj-detail">Guan Yao · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-009.html"><div class="img-wrap"><img src="images/ro-song-009-overall.jpg" alt="Vessel with Ge-type Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">009</div></div></a><div class="meta"><div class="obj-id">RO-SONG-009</div><div class="obj-name">Vessel with Ge-type Double Crackle Glaze</div><div class="obj-detail">Ge Yao · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-010.html"><div class="img-wrap"><img src="images/ro-song-010-overall.jpg" alt="Bowl with Crackle Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">010</div></div></a><div class="meta"><div class="obj-id">RO-SONG-010</div><div class="obj-name">Bowl with Ge-Guan Crackle Glaze</div><div class="obj-detail">Song / Yuan · Double crackle</div></div></div>
+    <div class="card"><a href="ro-song-011.html"><div class="img-wrap"><img src="images/ro-song-011-overall.jpg" alt="Qingbai Ewer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">011</div></div></a><div class="meta"><div class="obj-id">RO-SONG-011</div><div class="obj-name">Qingbai Ewer with Carved Peony Scrolls</div><div class="obj-detail">Jingdezhen · Northern Song</div></div></div>
+    <div class="card"><a href="ro-song-012.html"><div class="img-wrap"><img src="images/ro-song-012-overall.jpg" alt="Baluster Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">012</div></div></a><div class="meta"><div class="obj-id">RO-SONG-012</div><div class="obj-name">Baluster Vase with Black Glaze and Leaf Decoration</div><div class="obj-detail">Jizhou Kiln · Song Dynasty</div></div></div>
+    <div class="card"><a href="ro-song-013.html"><div class="img-wrap"><img src="images/ro-song-013-overall.jpg" alt="Monumental Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">013</div></div></a><div class="meta"><div class="obj-id">RO-SONG-013</div><div class="obj-name">Vase with Black Glaze and Spotted Decoration</div><div class="obj-detail">Song Dynasty · Partridge-feather spots</div></div></div>
+    <div class="card"><a href="ro-song-014.html"><div class="img-wrap"><img src="images/ro-song-014-overall.jpg" alt="Slender Bottle Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">014</div></div></a><div class="meta"><div class="obj-id">RO-SONG-014</div><div class="obj-name">Slender Bottle Vase with Leaf Decoration</div><div class="obj-detail">Jizhou Kiln · Black glaze</div></div></div>
+    <div class="card"><a href="ro-song-015.html"><div class="img-wrap"><img src="images/ro-song-015-overall.jpg" alt="Bowl with Guan-type Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">015</div></div></a><div class="meta"><div class="obj-id">RO-SONG-015</div><div class="obj-name">Bowl with Grey-green Tianqing Glaze</div><div class="obj-detail">Guan-type · Southern Song</div></div></div>
+    <div class="card"><a href="ro-song-016.html"><div class="img-wrap"><img src="images/ro-song-016-overall.jpg" alt="Tenmoku Bowl" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">016</div></div></a><div class="meta"><div class="obj-id">RO-SONG-016</div><div class="obj-name">Tenmoku Bowl with Hare's Fur Glaze</div><div class="obj-detail">Jian Kiln · Song Dynasty</div></div></div>
+  </div>
+</section>
+
+<!-- YUAN -->
+<section class="dynasty" id="section-yuan" data-dynasty="yuan">
+  <h2><span class="dynasty-dot" style="background:var(--yuan-hue)"></span>Yuan Dynasty <span class="dynasty-years">1271 – 1368 CE</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-yuan-017.html"><div class="img-wrap"><img src="images/ro-yuan-017-overall.jpg" alt="Meiping" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">017</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-017</div><div class="obj-name">Meiping with Dragon Design in Reserve on Black Glaze</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+    <div class="card"><a href="ro-yuan-018.html"><div class="img-wrap"><img src="images/ro-yuan-018-overall.jpg" alt="Ceramic Headrest" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">018</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-018</div><div class="obj-name">Ceramic Headrest with Lion Decoration</div><div class="obj-detail">Cizhou-type · Yuan Dynasty</div></div></div>
+    <div class="card"><a href="ro-yuan-019.html"><div class="img-wrap"><img src="images/ro-yuan-019-overall.jpg" alt="Qingbai Double Gourd Ewer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">019</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-019</div><div class="obj-name">Qingbai Double Gourd Ewer</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+    <div class="card"><a href="ro-yuan-020.html"><div class="img-wrap"><img src="images/ro-yuan-020-overall.jpg" alt="Celadon Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">020</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-020</div><div class="obj-name">Celadon Vase</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+    <div class="card"><a href="ro-yuan-021.html"><div class="img-wrap"><img src="images/ro-yuan-021-overall.jpg" alt="Gourd-shaped Vessel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">021</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-021</div><div class="obj-name">Gourd-shaped Vessel</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+    <div class="card"><a href="ro-yuan-022.html"><div class="img-wrap"><img src="images/ro-yuan-022-overall.jpg" alt="Blue-and-white Dish" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">022</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-022</div><div class="obj-name">Blue-and-white Dish</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+    <div class="card"><a href="ro-yuan-023.html"><div class="img-wrap"><img src="images/ro-yuan-023-overall.jpg" alt="Bottle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">023</div></div></a><div class="meta"><div class="obj-id">RO-YUAN-023</div><div class="obj-name">Bottle</div><div class="obj-detail">Yuan Dynasty · 1271 – 1368</div></div></div>
+  </div>
+</section>
+
+<!-- MING -->
+<section class="dynasty" id="section-ming" data-dynasty="ming">
+  <h2><span class="dynasty-dot" style="background:var(--ming-hue)"></span>Ming Dynasty <span class="dynasty-years">1368 – 1644 CE</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-ming-024.html"><div class="img-wrap"><img src="images/ro-ming-024-overall.jpg" alt="Copper-Red Stem Cup" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">024</div></div></a><div class="meta"><div class="obj-id">RO-MING-024</div><div class="obj-name">Copper-Red Stem Cup</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-025.html"><div class="img-wrap"><img src="images/ro-ming-025-overall.jpg" alt="Doucai Meiping" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">025</div></div></a><div class="meta"><div class="obj-id">RO-MING-025</div><div class="obj-name">Doucai Meiping</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-026.html"><div class="img-wrap"><img src="images/ro-ming-026-overall.jpg" alt="Doucai Tianqiuping" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">026</div></div></a><div class="meta"><div class="obj-id">RO-MING-026</div><div class="obj-name">Doucai Tianqiuping</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-027.html"><div class="img-wrap"><img src="images/ro-ming-027-overall.jpg" alt="Blue-and-white Bowl" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">027</div></div></a><div class="meta"><div class="obj-id">RO-MING-027</div><div class="obj-name">Blue-and-white Bowl</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-028.html"><div class="img-wrap"><img src="images/ro-ming-028-overall.jpg" alt="Imperial Yellow Bottle Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">028</div></div></a><div class="meta"><div class="obj-id">RO-MING-028</div><div class="obj-name">Imperial Yellow Bottle Vase</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-029.html"><div class="img-wrap"><img src="images/ro-ming-029-overall.jpg" alt="Blue-and-white Dish" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">029</div></div></a><div class="meta"><div class="obj-id">RO-MING-029</div><div class="obj-name">Blue-and-white Dish</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-030.html"><div class="img-wrap"><img src="images/ro-ming-030-overall.jpg" alt="Meiping" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">030</div></div></a><div class="meta"><div class="obj-id">RO-MING-030</div><div class="obj-name">Meiping</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+    <div class="card"><a href="ro-ming-031.html"><div class="img-wrap"><img src="images/ro-ming-031-overall.jpg" alt="Imperial Yellow Ewer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">031</div></div></a><div class="meta"><div class="obj-id">RO-MING-031</div><div class="obj-name">Imperial Yellow Ewer</div><div class="obj-detail">Ming Dynasty · 1368 – 1644</div></div></div>
+  </div>
+</section>
+
+<!-- QING KANGXI -->
+<section class="dynasty" id="section-qing-kangxi" data-dynasty="qing">
+  <h2><span class="dynasty-dot" style="background:var(--qing-hue)"></span>Qing Dynasty · Kangxi reign <span class="dynasty-years">1662 – 1722</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-qing-032.html"><div class="img-wrap"><img src="images/ro-qing-032-overall.jpg" alt="Vase with Honey-Yellow Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">032</div></div></a><div class="meta"><div class="obj-id">RO-QING-032</div><div class="obj-name">Vase with Honey-Yellow Glaze</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-033.html"><div class="img-wrap"><img src="images/ro-qing-033-overall.jpg" alt="“Horse-Liver” Red-Glazed Double-Gourd Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">033</div></div></a><div class="meta"><div class="obj-id">RO-QING-033</div><div class="obj-name">“Horse-Liver” Red-Glazed Double-Gourd Vase</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-034.html"><div class="img-wrap"><img src="images/ro-qing-034-overall.jpg" alt="Brush Pot with Copper “Lichen-Spot” Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">034</div></div></a><div class="meta"><div class="obj-id">RO-QING-034</div><div class="obj-name">Brush Pot with Copper “Lichen-Spot” Glaze</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-035.html"><div class="img-wrap"><img src="images/ro-qing-035-overall.jpg" alt="Brush Washer with Copper “Lichen-Spot” Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">035</div></div></a><div class="meta"><div class="obj-id">RO-QING-035</div><div class="obj-name">Brush Washer with Copper “Lichen-Spot” Glaze</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-036.html"><div class="img-wrap"><img src="images/ro-qing-036-overall.jpg" alt="Covered Vessel with Copper “Lichen-Spot” Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">036</div></div></a><div class="meta"><div class="obj-id">RO-QING-036</div><div class="obj-name">Covered Vessel with Copper “Lichen-Spot” Glaze</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-037.html"><div class="img-wrap"><img src="images/ro-qing-037-overall.jpg" alt="Famille Verte Vase on Bronze Stand" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">037</div></div></a><div class="meta"><div class="obj-id">RO-QING-037</div><div class="obj-name">Famille Verte Vase on Bronze Stand</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-038.html"><div class="img-wrap"><img src="images/ro-qing-038-overall.jpg" alt="Covered Box, Famille Verte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">038</div></div></a><div class="meta"><div class="obj-id">RO-QING-038</div><div class="obj-name">Covered Box, Famille Verte</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-039.html"><div class="img-wrap"><img src="images/ro-qing-039-overall.jpg" alt="Covered Box, Famille Verte (matching pair)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">039</div></div></a><div class="meta"><div class="obj-id">RO-QING-039</div><div class="obj-name">Covered Box, Famille Verte (matching pair)</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+    <div class="card"><a href="ro-qing-040.html"><div class="img-wrap"><img src="images/ro-qing-040-overall.jpg" alt="Covered Box, Famille Verte (matching set)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">040</div></div></a><div class="meta"><div class="obj-id">RO-QING-040</div><div class="obj-name">Covered Box, Famille Verte (matching set)</div><div class="obj-detail">Kangxi Reign · 1662–1722</div></div></div>
+  </div>
+</section>
+
+<!-- QING YONGZHENG -->
+<section class="dynasty" id="section-qing-yongzheng" data-dynasty="qing">
+  <h2><span class="dynasty-dot" style="background:var(--qing-hue)"></span>Qing Dynasty · Yongzheng reign <span class="dynasty-years">1723 – 1735</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-qing-041.html"><div class="img-wrap"><img src="images/ro-qing-041-overall.jpg" alt="Doucai Tianqiuping Vase with Eight Buddhist Symbols" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">041</div></div></a><div class="meta"><div class="obj-id">RO-QING-041</div><div class="obj-name">Doucai Tianqiuping Vase with Eight Buddhist Symbols</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-042.html"><div class="img-wrap"><img src="images/ro-qing-042-overall.jpg" alt="Yellow-Ground Vase with Butterfly Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">042</div></div></a><div class="meta"><div class="obj-id">RO-QING-042</div><div class="obj-name">Yellow-Ground Vase with Butterfly Motifs</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-043.html"><div class="img-wrap"><img src="images/ro-qing-043-overall.jpg" alt="Celadon Vase, ‘Memory of Kangxi’ Series (I)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">043</div></div></a><div class="meta"><div class="obj-id">RO-QING-043</div><div class="obj-name">Celadon Vase, ‘Memory of Kangxi’ Series (I)</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-044.html"><div class="img-wrap"><img src="images/ro-qing-044-overall.jpg" alt="Celadon Vase, ‘Memory of Kangxi’ Series (II)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">044</div></div></a><div class="meta"><div class="obj-id">RO-QING-044</div><div class="obj-name">Celadon Vase, ‘Memory of Kangxi’ Series (II)</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-045.html"><div class="img-wrap"><img src="images/ro-qing-045-overall.jpg" alt="Celadon Vase, ‘Memory of Kangxi’ Series (III)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">045</div></div></a><div class="meta"><div class="obj-id">RO-QING-045</div><div class="obj-name">Celadon Vase, ‘Memory of Kangxi’ Series (III)</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-046.html"><div class="img-wrap"><img src="images/ro-qing-046-overall.jpg" alt="Celadon Vase, ‘Memory of Kangxi’ Series (IV)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">046</div></div></a><div class="meta"><div class="obj-id">RO-QING-046</div><div class="obj-name">Celadon Vase, ‘Memory of Kangxi’ Series (IV)</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-047.html"><div class="img-wrap"><img src="images/ro-qing-047-overall.jpg" alt="Vase with Matte “Pine-Needle Green” Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">047</div></div></a><div class="meta"><div class="obj-id">RO-QING-047</div><div class="obj-name">Vase with Matte “Pine-Needle Green” Glaze</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-048.html"><div class="img-wrap"><img src="images/ro-qing-048-overall.jpg" alt="Vase with Experimental “Quail-Egg” (Lujun) Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">048</div></div></a><div class="meta"><div class="obj-id">RO-QING-048</div><div class="obj-name">Vase with Experimental “Quail-Egg” (Lujun) Glaze</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-049.html"><div class="img-wrap"><img src="images/ro-qing-049-overall.jpg" alt="Vase with Underglaze Cobalt-Blue Decoration" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">049</div></div></a><div class="meta"><div class="obj-id">RO-QING-049</div><div class="obj-name">Vase with Underglaze Cobalt-Blue Decoration</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-050.html"><div class="img-wrap"><img src="images/ro-qing-050-overall.jpg" alt="Vase with Iris Painting in Relief" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">050</div></div></a><div class="meta"><div class="obj-id">RO-QING-050</div><div class="obj-name">Vase with Iris Painting in Relief</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-051.html"><div class="img-wrap"><img src="images/ro-qing-051-overall.jpg" alt="Vase with Matte “Peacock-Green” Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">051</div></div></a><div class="meta"><div class="obj-id">RO-QING-051</div><div class="obj-name">Vase with Matte “Peacock-Green” Glaze</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+    <div class="card"><a href="ro-qing-052.html"><div class="img-wrap"><img src="images/ro-qing-052-overall.jpg" alt="Vase with Matte Blue Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">052</div></div></a><div class="meta"><div class="obj-id">RO-QING-052</div><div class="obj-name">Vase with Matte Blue Glaze</div><div class="obj-detail">Yongzheng Reign · 1723–1735</div></div></div>
+  </div>
+</section>
+
+<!-- QING QIANLONG -->
+<section class="dynasty" id="section-qing-qianlong" data-dynasty="qing">
+  <h2><span class="dynasty-dot" style="background:var(--qing-hue)"></span>Qing Dynasty · Qianlong reign <span class="dynasty-years">1736 – 1795</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-qing-053.html"><div class="img-wrap"><img src="images/ro-qing-053-overall.jpg" alt="Lavender-Glazed Vase on a Stand" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">053</div></div></a><div class="meta"><div class="obj-id">RO-QING-053</div><div class="obj-name">Lavender-Glazed Vase on a Stand</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-054.html"><div class="img-wrap"><img src="images/ro-qing-054-overall.jpg" alt="Yellow-Ground Bottle Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">054</div></div></a><div class="meta"><div class="obj-id">RO-QING-054</div><div class="obj-name">Yellow-Ground Bottle Vase</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-055.html"><div class="img-wrap"><img src="images/ro-qing-055-overall.jpg" alt="Turquoise-Ground Vase (nicknamed ‘Radish’)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">055</div></div></a><div class="meta"><div class="obj-id">RO-QING-055</div><div class="obj-name">Turquoise-Ground Vase (nicknamed ‘Radish’)</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-056.html"><div class="img-wrap"><img src="images/ro-qing-056-overall.jpg" alt="Blue-Glazed Vase with Dragon Handles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">056</div></div></a><div class="meta"><div class="obj-id">RO-QING-056</div><div class="obj-name">Blue-Glazed Vase with Dragon Handles</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-057.html"><div class="img-wrap"><img src="images/ro-qing-057-overall.jpg" alt="Vase with Robin’s-Egg Glaze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">057</div></div></a><div class="meta"><div class="obj-id">RO-QING-057</div><div class="obj-name">Vase with Robin’s-Egg Glaze</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-058.html"><div class="img-wrap"><img src="images/ro-qing-058-overall.jpg" alt="Doucai Vase with Painted Panels" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">058</div></div></a><div class="meta"><div class="obj-id">RO-QING-058</div><div class="obj-name">Doucai Vase with Painted Panels</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-059.html"><div class="img-wrap"><img src="images/ro-qing-059-overall.jpg" alt="Grey-Blue Celadon Vase with Deer Handles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">059</div></div></a><div class="meta"><div class="obj-id">RO-QING-059</div><div class="obj-name">Grey-Blue Celadon Vase with Deer Handles</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-060.html"><div class="img-wrap"><img src="images/ro-qing-060-overall.jpg" alt="Coral-Red Ground Vase with Pomegranate Motif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">060</div></div></a><div class="meta"><div class="obj-id">RO-QING-060</div><div class="obj-name">Coral-Red Ground Vase with Pomegranate Motif</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-061.html"><div class="img-wrap"><img src="images/ro-qing-061-overall.jpg" alt="Celadon Vase with Carved Dragon Motif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">061</div></div></a><div class="meta"><div class="obj-id">RO-QING-061</div><div class="obj-name">Celadon Vase with Carved Dragon Motif</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-062.html"><div class="img-wrap"><img src="images/ro-qing-062-overall.jpg" alt="Doucai Vase with Dragon Motif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">062</div></div></a><div class="meta"><div class="obj-id">RO-QING-062</div><div class="obj-name">Doucai Vase with Dragon Motif</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-063.html"><div class="img-wrap"><img src="images/ro-qing-063-overall.jpg" alt="Flask-Form Vase with Tubular Handles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">063</div></div></a><div class="meta"><div class="obj-id">RO-QING-063</div><div class="obj-name">Flask-Form Vase with Tubular Handles</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-064.html"><div class="img-wrap"><img src="images/ro-qing-064-overall.jpg" alt="Large Vase with Landscape Decoration" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">064</div></div></a><div class="meta"><div class="obj-id">RO-QING-064</div><div class="obj-name">Large Vase with Landscape Decoration</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-065.html"><div class="img-wrap"><img src="images/ro-qing-065-overall.jpg" alt="Sapphire-Blue Ground Vase with Red Dragon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">065</div></div></a><div class="meta"><div class="obj-id">RO-QING-065</div><div class="obj-name">Sapphire-Blue Ground Vase with Red Dragon</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-066.html"><div class="img-wrap"><img src="images/ro-qing-066-overall.jpg" alt="Yellow-Ground Covered Vase with Bird-and-Flower Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">066</div></div></a><div class="meta"><div class="obj-id">RO-QING-066</div><div class="obj-name">Yellow-Ground Covered Vase with Bird-and-Flower Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-067.html"><div class="img-wrap"><img src="images/ro-qing-067-overall.jpg" alt="Flask-Shaped Vase with Court Life Scenes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">067</div></div></a><div class="meta"><div class="obj-id">RO-QING-067</div><div class="obj-name">Flask-Shaped Vase with Court Life Scenes</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-068.html"><div class="img-wrap"><img src="images/ro-qing-068-overall.jpg" alt="Turquoise-Ground Square Vase with Elephant Handles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">068</div></div></a><div class="meta"><div class="obj-id">RO-QING-068</div><div class="obj-name">Turquoise-Ground Square Vase with Elephant Handles</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-069.html"><div class="img-wrap"><img src="images/ro-qing-069-overall.jpg" alt="Black-Ground Vase with Landscape Decoration" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">069</div></div></a><div class="meta"><div class="obj-id">RO-QING-069</div><div class="obj-name">Black-Ground Vase with Landscape Decoration</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-070.html"><div class="img-wrap"><img src="images/ro-qing-070-overall.jpg" alt="Gilt Ginger Jar with Cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">070</div></div></a><div class="meta"><div class="obj-id">RO-QING-070</div><div class="obj-name">Gilt Ginger Jar with Cover</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-071.html"><div class="img-wrap"><img src="images/ro-qing-071-overall.jpg" alt="Lavender-Glazed Vase with Inscribed Poem" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">071</div></div></a><div class="meta"><div class="obj-id">RO-QING-071</div><div class="obj-name">Lavender-Glazed Vase with Inscribed Poem</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-072.html"><div class="img-wrap"><img src="images/ro-qing-072-overall.jpg" alt="Underglaze-Blue Vase with Elephant Handles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">072</div></div></a><div class="meta"><div class="obj-id">RO-QING-072</div><div class="obj-name">Underglaze-Blue Vase with Elephant Handles</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-073.html"><div class="img-wrap"><img src="images/ro-qing-073-overall.jpg" alt="Yellow-Ground Double-Gourd Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">073</div></div></a><div class="meta"><div class="obj-id">RO-QING-073</div><div class="obj-name">Yellow-Ground Double-Gourd Vase</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-074.html"><div class="img-wrap"><img src="images/ro-qing-074-overall.jpg" alt="Vase with Scenes of Sages" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">074</div></div></a><div class="meta"><div class="obj-id">RO-QING-074</div><div class="obj-name">Vase with Scenes of Sages</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-075.html"><div class="img-wrap"><img src="images/ro-qing-075-overall.jpg" alt="Famille Rose Vase with Crane Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">075</div></div></a><div class="meta"><div class="obj-id">RO-QING-075</div><div class="obj-name">Famille Rose Vase with Crane Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-076.html"><div class="img-wrap"><img src="images/ro-qing-076-overall.jpg" alt="Vase with Peony Motifs on Sage-Green and Red Ground" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">076</div></div></a><div class="meta"><div class="obj-id">RO-QING-076</div><div class="obj-name">Vase with Peony Motifs on Sage-Green and Red Ground</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-077.html"><div class="img-wrap"><img src="images/ro-qing-077-overall.jpg" alt="Vase with Fish and Swastika (Wan) Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">077</div></div></a><div class="meta"><div class="obj-id">RO-QING-077</div><div class="obj-name">Vase with Fish and Swastika (Wan) Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-078.html"><div class="img-wrap"><img src="images/ro-qing-078-overall.jpg" alt="Large Blue-Ground Vase with Bird Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">078</div></div></a><div class="meta"><div class="obj-id">RO-QING-078</div><div class="obj-name">Large Blue-Ground Vase with Bird Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-079.html"><div class="img-wrap"><img src="images/ro-qing-079-overall.jpg" alt="Large Imperial Vase with Yellow Ground" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">079</div></div></a><div class="meta"><div class="obj-id">RO-QING-079</div><div class="obj-name">Large Imperial Vase with Yellow Ground</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-080.html"><div class="img-wrap"><img src="images/ro-qing-080-overall.jpg" alt="Vase with Pink-Toned Landscape Decoration" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">080</div></div></a><div class="meta"><div class="obj-id">RO-QING-080</div><div class="obj-name">Vase with Pink-Toned Landscape Decoration</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-081.html"><div class="img-wrap"><img src="images/ro-qing-081-overall.jpg" alt="Sapphire-Ground Hexagonal Vase with Koi Carp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">081</div></div></a><div class="meta"><div class="obj-id">RO-QING-081</div><div class="obj-name">Sapphire-Ground Hexagonal Vase with Koi Carp</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-082.html"><div class="img-wrap"><img src="images/ro-qing-082-overall.jpg" alt="Gilt Carved Vase with Landscape Decoration" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">082</div></div></a><div class="meta"><div class="obj-id">RO-QING-082</div><div class="obj-name">Gilt Carved Vase with Landscape Decoration</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-083.html"><div class="img-wrap"><img src="images/ro-qing-083-overall.jpg" alt="Lavender Monochrome-Glazed Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">083</div></div></a><div class="meta"><div class="obj-id">RO-QING-083</div><div class="obj-name">Lavender Monochrome-Glazed Vase</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-084.html"><div class="img-wrap"><img src="images/ro-qing-084-overall.jpg" alt="Vase with Red Ground and Dark Green Celadon Accents" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">084</div></div></a><div class="meta"><div class="obj-id">RO-QING-084</div><div class="obj-name">Vase with Red Ground and Dark Green Celadon Accents</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-085.html"><div class="img-wrap"><img src="images/ro-qing-085-overall.jpg" alt="Yellow-Ground Garlic-Head Vase with Bird Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">085</div></div></a><div class="meta"><div class="obj-id">RO-QING-085</div><div class="obj-name">Yellow-Ground Garlic-Head Vase with Bird Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-086.html"><div class="img-wrap"><img src="images/ro-qing-086-overall.jpg" alt="Sage-Green Double-Gourd Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">086</div></div></a><div class="meta"><div class="obj-id">RO-QING-086</div><div class="obj-name">Sage-Green Double-Gourd Vase</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-087.html"><div class="img-wrap"><img src="images/ro-qing-087-overall.jpg" alt="Carved Vase with Red and Blue Ground Ornament" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">087</div></div></a><div class="meta"><div class="obj-id">RO-QING-087</div><div class="obj-name">Carved Vase with Red and Blue Ground Ornament</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-088.html"><div class="img-wrap"><img src="images/ro-qing-088-overall.jpg" alt="Carved Red-Ground Double-Gourd Vase" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">088</div></div></a><div class="meta"><div class="obj-id">RO-QING-088</div><div class="obj-name">Carved Red-Ground Double-Gourd Vase</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-089.html"><div class="img-wrap"><img src="images/ro-qing-089-overall.jpg" alt="Red-Ground Vase with Bird Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">089</div></div></a><div class="meta"><div class="obj-id">RO-QING-089</div><div class="obj-name">Red-Ground Vase with Bird Motifs</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+    <div class="card"><a href="ro-qing-090.html"><div class="img-wrap"><img src="images/ro-qing-090-overall.jpg" alt="Famille Rose Vase with ‘Mother and Child’ Motif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">090</div></div></a><div class="meta"><div class="obj-id">RO-QING-090</div><div class="obj-name">Famille Rose Vase with ‘Mother and Child’ Motif</div><div class="obj-detail">Qianlong Reign · 1736–1795</div></div></div>
+  </div>
+</section>
+
+<!-- LATE QING -->
+<section class="dynasty" id="section-qing-late" data-dynasty="qing">
+  <h2><span class="dynasty-dot" style="background:var(--qing-hue)"></span>Late Qing Dynasty · Daoguang · Tongzhi · Guangxu <span class="dynasty-years">1821 – 1908</span></h2>
+  <div class="grid">
+    <div class="card"><a href="ro-qing-091.html"><div class="img-wrap"><img src="images/ro-qing-091-overall.jpg" alt="Vase with Grasshopper Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">091</div></div></a><div class="meta"><div class="obj-id">RO-QING-091</div><div class="obj-name">Vase with Grasshopper Motifs</div><div class="obj-detail">Daoguang Reign · 1821–1850</div></div></div>
+    <div class="card"><a href="ro-qing-092.html"><div class="img-wrap"><img src="images/ro-qing-092-overall.jpg" alt="Yellow-Ground Vase with Blue Peach Motifs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">092</div></div></a><div class="meta"><div class="obj-id">RO-QING-092</div><div class="obj-name">Yellow-Ground Vase with Blue Peach Motifs</div><div class="obj-detail">Tongzhi Reign · 1862–1874</div></div></div>
+    <div class="card"><a href="ro-qing-093.html"><div class="img-wrap"><img src="images/ro-qing-093-overall.jpg" alt="Famille Rose Plate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">093</div></div></a><div class="meta"><div class="obj-id">RO-QING-093</div><div class="obj-name">Famille Rose Plate</div><div class="obj-detail">Guangxu Reign · 1875–1908</div></div></div>
+    <div class="card"><a href="ro-qing-094.html"><div class="img-wrap"><img src="images/ro-qing-094-overall.jpg" alt="Archaistic-Form Vessel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="no-img" style="display:none">094</div></div></a><div class="meta"><div class="obj-id">RO-QING-094</div><div class="obj-name">Archaistic-Form Vessel</div><div class="obj-detail">Guangxu Reign · 1875–1908</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <span>Atlas of Chinese Porcelain Diagnostics</span>
+  <a href="index.html">← Return to main page</a>
+</footer>
+
+<script>
+function filterDynasty(key, btn) {
+  document.querySelectorAll('nav.filters button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('section.dynasty').forEach(sec => {
+    sec.style.display = (key === 'all' || sec.dataset.dynasty === key) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
