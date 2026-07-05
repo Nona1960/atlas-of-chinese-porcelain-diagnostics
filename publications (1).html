@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zenodo Publications — structured index of scientific articles published by Professor Nona Dronova on the Global Diagnostic Atlas of Ancient Chinese Ceramics, organized by dynasty.">
+<title>Zenodo Publications — Global Diagnostic Atlas of Ancient Chinese Ceramics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="images.css">
+<style>
+/* ── Publications page additions ── */
+.pub-intro {
+  padding: var(--space-6) 0 var(--space-4);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-8);
+}
+.pub-intro__count-row {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+.pub-intro__count {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pub-intro__count-value {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+}
+.pub-intro__count-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pub-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border2);
+}
+.pub-jump a.tag {
+  text-decoration: none;
+}
+.dynasty-block {
+  margin-bottom: var(--space-10);
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+.dynasty-block__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-3);
+}
+.dynasty-block__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+.dynasty-span {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-style: italic;
+  color: var(--muted2);
+}
+.dynasty-block__count {
+  margin-left: auto;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pub-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+}
+.pub-table thead th {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  background: var(--parchment);
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.pub-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border2);
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.pub-table tbody tr:nth-child(even) td { background: #faf8f5; }
+.pub-table tbody tr:last-child td { border-bottom: none; }
+.pub-obj-cell {
+  font-style: italic;
+  color: var(--muted2);
+  white-space: nowrap;
+  max-width: 220px;
+  white-space: normal;
+}
+.pub-objnum {
+  font-style: normal;
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+.pub-title-cell {
+  min-width: 260px;
+}
+.pub-year-cell {
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pub-doi-cell a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.pub-doi-cell a:hover { text-decoration: underline; }
+/* Sidebar (reuse method-sidebar pattern) */
+.pub-page {
+  padding: var(--space-8) 0 var(--space-16);
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: var(--space-10);
+  align-items: start;
+}
+.pub-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.sidebar-box__body .sidebar-anchor {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--muted2);
+  padding: 8px var(--space-3);
+  border-bottom: 1px solid var(--border2);
+  text-decoration: none;
+}
+.sidebar-box__body .sidebar-anchor:last-child { border-bottom: none; }
+.sidebar-box__body .sidebar-anchor:hover { background: var(--parchment); color: var(--ink); }
+/* Back link */
+.back-link {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #1a1410;
+  text-decoration: none;
+  margin-top: 50px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 1100px) {
+  .pub-page { grid-template-columns: 1fr; }
+  .pub-sidebar { position: static; order: -1; }
+}
+@media (max-width: 768px) {
+  .pub-table thead { display: none; }
+  .pub-table tbody tr { display: block; border-bottom: 2px solid var(--border); }
+  .pub-table tbody td { display: block; border-bottom: none; padding: 4px 14px; }
+  .pub-table tbody td.pub-obj-cell::before { content: "Object: "; font-weight:600; color:var(--muted); }
+  .pub-table tbody td.pub-title-cell { padding-top:8px; padding-bottom:8px; font-weight:500; }
+  .pub-table tbody td.pub-year-cell::before { content: "Year: "; font-weight:600; color:var(--muted); }
+  .pub-table tbody td.pub-doi-cell { padding-bottom:12px; }
+}
+</style>
+</head>
+<body>
+<!-- NAV BAR -->
+<header class="nav-bar" role="banner">
+<div class="container">
+<a href="index.html" class="nav-bar__wordmark" aria-label="Atlas homepage">
+Atlas <span>/ Ancient Chinese Ceramics</span>
+</a>
+<nav aria-label="Main navigation">
+<ul class="nav-bar__items">
+<li class="nav-bar__item"><a href="reference-collection.html">Reference Objects</a></li>
+<li class="nav-bar__item"><a href="methodology.html">Methodology</a></li>
+<li class="nav-bar__item"><a href="book.html">Book</a></li>
+<li class="nav-bar__item active"><a href="publications.html">Publications</a></li>
+<li class="nav-bar__item"><a href="author-profile.html">About</a></li>
+</ul>
+</nav>
+<div class="nav-bar__search">
+<input type="search" class="nav-search-field" placeholder="Search atlas…" aria-label="Search the atlas" autocomplete="off">
+<button class="nav-search-btn" type="button">Search</button>
+</div>
+<button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+
+<main class="page-body" id="main-content">
+<div class="container">
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="index.html" class="breadcrumb__link">Atlas</a>
+<span class="breadcrumb__sep">›</span>
+<span class="breadcrumb__current">Publications</span>
+</nav>
+
+<!-- Page header -->
+<div class="pub-intro">
+<p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:var(--space-2);">Scholarly Publications</p>
+<h1 style="font-family:var(--font-display); font-size:var(--text-5xl); font-weight:300; color:var(--ink); line-height:1.05; letter-spacing:-0.02em; margin-bottom:var(--space-3);">
+Zenodo Publications
+</h1>
+<p style="font-family:var(--font-display); font-size:var(--text-xl); font-weight:400; font-style:italic; color:var(--muted2); margin-bottom:var(--space-3); max-width:62ch;">
+A structured index of open-access scientific articles accompanying the Atlas, organized by dynasty
+</p>
+<p style="font-size:var(--text-sm); line-height:1.75; color:var(--muted2); max-width:66ch;">
+Each publication listed below is an open-access record on Zenodo, prepared by
+Professor Nona Dronova as part of the "Global Archive for Authentication of
+Antique Porcelain" community (CC BY 4.0). Publications are grouped by dynasty
+and linked to the corresponding reference object(s) in this Atlas where applicable.
+</p>
+<div class="pub-intro__count-row">
+<div class="pub-intro__count">
+<span class="pub-intro__count-value">240</span>
+<span class="pub-intro__count-label">Publications</span>
+</div>
+<div class="pub-intro__count">
+<span class="pub-intro__count-value">10</span>
+<span class="pub-intro__count-label">Dynasty / period groups</span>
+</div>
+</div>
+<div class="pub-jump" role="list" aria-label="Jump to dynasty">
+<a href="#tang" class="tag">Tang</a>
+<a href="#song" class="tag">Song</a>
+<a href="#yuan" class="tag">Yuan</a>
+<a href="#ming" class="tag">Ming</a>
+<a href="#qing-early-kangxi" class="tag">Kangxi</a>
+<a href="#qing-yongzheng" class="tag">Yongzheng</a>
+<a href="#qing-qianlong" class="tag">Qianlong</a>
+<a href="#qing-daoguang" class="tag">Daoguang</a>
+<a href="#qing-tongzhi" class="tag">Tongzhi</a>
+<a href="#qing-guangxu" class="tag">Guangxu</a>
+</div>
+</div>
+
+<div class="pub-page">
+<!-- MAIN CONTENT -->
+<article class="pub-main">
+
+<section class="dynasty-block" id="tang" aria-labelledby="tang-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="tang-title">Tang Dynasty</h2>
+<span class="dynasty-span">618–907</span>
+<span class="dynasty-block__count">4 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Tang Dynasty">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">General / methodological <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Amphora with Applied Female Figures and Paired Dragon Handles; Deep Cobalt Underglaze Blue with Polychrome Lead &quot;Sancai&quot; Glazes. China, Tang Dynasty, 8th--9th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17078456" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17078456">Zenodo record 17078456 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">General / methodological <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Diagnostic Markers of Authentic Tang Dynasty Sancai Vases with Cobalt Blue Glaze: Technological, Spectral, and Stylistic Analysis</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16752624" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16752624">Zenodo record 16752624 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">General / methodological <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Destructive Diagnostic Method for Authenticating Tang Dynasty Sancai with Cobalt Underglaze Blue (Sancai Jia Lan): Microstructural and Stratigraphic Evidence from a Large Amphora with Applied Court Ladies and Dragon Handles</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20786659" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20786659">Zenodo record 20786659 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">General / methodological <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Professor Nona Dronova --- BEINOS Method for the Scientific Authentication of a Tang Dynasty Sancai Amphora with Female Relief Figures and Rare Cobalt Glaze (8th--9th Century China). With Dronova NONA,</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16814142" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16814142">Zenodo record 16814142 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="song" aria-labelledby="song-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="song-title">Song Dynasty</h2>
+<span class="dynasty-span">960–1279</span>
+<span class="dynasty-block__count">63 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Song Dynasty">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Analysis of the Most Important Scientific Studies for Diagnosing Ru Yao</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16689332" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16689332">Zenodo record 16689332 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Anorthite Phase as the Primary Diagnostic Feature of Authentic Ru Ware from the Northern Song Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16678677" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16678677">Zenodo record 16678677 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Blue-Glazed Tianqing Celadon Vase (Ru Yao), Northern Song Dynasty, Qingliangsi Kilns, Baofeng, Henan Province, China</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29901359" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29901359">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Destructive Diagnostic Method for Authenticating Ru Yao Ceramics of the Northern Song Dynasty: Phase Separation and Crystalline Microstructure Revealed Through Surface Glaze Examination</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20777296" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20777296">Zenodo record 20777296 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002; Хунджи желтая с зелеными пятнами 030; Ченхуа желтая 028 <span class="pub-objnum">(No. 002, 028, 030)</span></td>
+<td class="pub-title-cell">Methodological Foundations of Genetic Analysis in Authenticity Diagnostics of Ancient Chinese Porcelain (New Approaches by Prof. Nona Dronova)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16755260" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16755260">Zenodo record 16755260 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Optical Phenomenon of the Blue Color in Ru Yao Glaze from the Northern Song Dynasty: Microstructure, Scattering, and Interface Effects</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16696723" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16696723">Zenodo record 16696723 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Phase-Separated Glaze Microstructure in Ru-Type Celadon: Scientific Evidence from Microscopic Imaging and Comparison with Official Song Dynasty Standards. With Dronova NONA,</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16676581" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16676581">Zenodo record 16676581 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Ru-Type Vase with Sky-Blue Glaze and Crackle. China, Song Dynasty (Northern Song), 11th--12th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17095284" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17095284">Zenodo record 17095284 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Scientific Basis for Diagnostic Protocol of Authentic Ru Yao Ceramics: Review of Confirmed Literature</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16688585" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16688585">Zenodo record 16688585 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Scientific Investigation and Authentication of a Blue-Glazed Tianqing Ru Yao Vase from the Official Qingliangsi Kilns, Northern Song Dynasty (ca. 1100--1127 AD)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16846745" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16846745">Zenodo record 16846745 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002 <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">Scientific Protocol for the Authentication of Genuine Ru Yao Wares from the Northern Song Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16732395" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16732395">Zenodo record 16732395 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ру яо 002; С листом черные <span class="pub-objnum">(No. 002)</span></td>
+<td class="pub-title-cell">The Dry Earth Effect (DEE) and Optical Depth in Ru Yao Glaze: A New Diagnostic Framework</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16724189" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16724189">Zenodo record 16724189 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Белая с лотосами 003 <span class="pub-objnum">(No. 003)</span></td>
+<td class="pub-title-cell">Diagnostic Investigation of a Northern Song Ding Ware Vase with Carved Lotus Leaf Motif --- Beinos Method Applied</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16786407" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16786407">Zenodo record 16786407 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Белая с лотосами 003 <span class="pub-objnum">(No. 003)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy as a Diagnostic Tool for Authentication of Chinese Ding-Ware Porcelain: A Case Study of a White Baluster Vase with Incised Floral Scroll and Lotus-Lappet Band (12th--13th Century)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20797807" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20797807">Zenodo record 20797807 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Белая с лотосами 003 <span class="pub-objnum">(No. 003)</span></td>
+<td class="pub-title-cell">Optical Microstructural Diagnostics of Chinese Porcelain Glazes: Six Criteria for Distinguishing Authentic Song--Yuan Production from Modern Reproduction</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.21196249" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.21196249">Zenodo record 21196249 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Белая с лотосами 003 <span class="pub-objnum">(No. 003)</span></td>
+<td class="pub-title-cell">Scientific Diagnostic Framework for Authenticating Ancient Chinese Porcelain</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.21081327" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.21081327">Zenodo record 21081327 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Белая с лотосами 003 <span class="pub-objnum">(No. 003)</span></td>
+<td class="pub-title-cell">White Baluster Vase with Incised Floral Scroll and Lotus-Lappet Band. Northern Chinese &quot;Ding / Ding-Type&quot; Tradition, 12th--13th Century (Late Northern Song -- Jin / Early Yuan)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17093924" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17093924">Zenodo record 17093924 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая большая кракле. 004 <span class="pub-objnum">(No. 004)</span></td>
+<td class="pub-title-cell">Bottle Vase with Dense Crackle Pattern. Southern Song (1127--1279)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073999" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073999">Zenodo record 17073999 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая большая кракле. 004 <span class="pub-objnum">(No. 004)</span></td>
+<td class="pub-title-cell">GEMOLOGICAL OPTICAL MICROSCOPY AND VISUAL DIAGNOSTICS OF A SOUTHERN SONG BOTTLE VASE WITH DENSE CRACKLE GLAZE Attributed to the Guan/Ge-Type Official Kiln Tradition, Jiangnan (1127--1279 CE)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20788310" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20788310">Zenodo record 20788310 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая большая кракле. 004 <span class="pub-objnum">(No. 004)</span></td>
+<td class="pub-title-cell">Reconstruction of Dual-Crackle Glaze Technology in Southern Song Ge Yao Ware: A Case Study of a Large Monochrome Vase</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16650073" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16650073">Zenodo record 16650073 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005)</span></td>
+<td class="pub-title-cell">A Turquoise-Green Relief Bowl of the Southern Song: Scientific Analysis of a Rare Guan Ware Glaze and Form</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16732160" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16732160">Zenodo record 16732160 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005)</span></td>
+<td class="pub-title-cell">Bowl with Relief Lotus and Stamen Decor --- Provenance: Official Guan Yao Kiln (官窑), Dating: Southern Song -- Early Yuan Period, 12th--13th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29885903" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29885903">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005; Ченхуа дракон 026; Ченхуа желтая 028; Ченхуа уточки 025 <span class="pub-objnum">(No. 005, 025, 026, 028)</span></td>
+<td class="pub-title-cell">Classification of Chinese Porcelain by Artistic Level and Diagnostic Features: From the Tang Dynasty to the Republic Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16784657" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16784657">Zenodo record 16784657 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтоватая с кракле 010; Кистемойка с лотосом 005; Миска серая с кракле 015; СУН бамбук 007; Серая полосатая с кольцами 008 <span class="pub-objnum">(No. 005, 007, 008, 010, 015)</span></td>
+<td class="pub-title-cell">GUAN YAO DIAGNOSTIC PROTOCOL</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16732927" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16732927">Zenodo record 16732927 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Diagnostic Method for Authentication of Southern Song Guan Ware: A Case Study of a Tianqing-Glazed Lotus Brush Washer (Cha Shui Pan, 茶水盘)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20788395" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20788395">Zenodo record 20788395 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005; Миска серая с кракле 015 <span class="pub-objnum">(No. 005, 015)</span></td>
+<td class="pub-title-cell">How to Assess Artistic Value and Prepare an Expert Report on Porcelain from the Official Guan Kilns of the Southern Song Dynasty: Aesthetics, Relief, Proportions</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16738473" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16738473">Zenodo record 16738473 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси пятна лишайника 034,035, 036; Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Imperial Guan-Type Brush Washer with Moulded Lotus Medallion. Attribution: Southern Song (1127--1279), Official Guan Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073369" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073369">Zenodo record 17073369 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005)</span></td>
+<td class="pub-title-cell">Scientific Research Summary Bowl with Relief Lotus and Stamen Decor --- Provenance: Official Guan Yao Kiln (官窑), Dating: Southern Song -- Early Yuan Period, 12th--13th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16845756" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16845756">Zenodo record 16845756 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кистемойка с лотосом 005 <span class="pub-objnum">(No. 005)</span></td>
+<td class="pub-title-cell">Why Thermoluminescence and Spectral Analysis Cannot Serve as Scientific Proof of Authenticity of Ancient Chinese Porcelain and Ceramics: The Necessity of an Integrated Approach with Emphasis on Microscopic Investigation</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16736965" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16736965">Zenodo record 16736965 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Слива 006 <span class="pub-objnum">(No. 006)</span></td>
+<td class="pub-title-cell">Art-Historical and Technical Examination of a Black-Glazed Stoneware Vase with Sgraffito Plum Blossom Decoration: Evidence for Attribution to the Jizhou Kilns, Jiangxi Province, Southern Song Dynasty (1127--1279)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20793884" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20793884">Zenodo record 20793884 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Слива 006 <span class="pub-objnum">(No. 006)</span></td>
+<td class="pub-title-cell">Black-Glazed Stoneware Vase with Sgraffito Plum Blossom</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29908274" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29908274">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Слива 006 <span class="pub-objnum">(No. 006)</span></td>
+<td class="pub-title-cell">Black-Glazed Vase with Sgraffito Plum Blossom Decoration Southern Song -- Early Yuan, Jizhou Kilns, Jiangxi, China</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17104193" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17104193">Zenodo record 17104193 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Слива 006; Темокки 016 <span class="pub-objnum">(No. 006, 016)</span></td>
+<td class="pub-title-cell">Comparative Study of a Southern Song / Early Yuan Black-Glazed Vase with Plum Blossom Motif from Jizhou Kilns and Museum Analogues</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16870907" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16870907">Zenodo record 16870907 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">СУН бамбук 007 <span class="pub-objnum">(No. 007)</span></td>
+<td class="pub-title-cell">Example of Scientific Expert Report on an Authentic Guan Yao Vase (Bamboo-Form Bottle), Based on the Diagnostic Protocol (2025.08)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16733333" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16733333">Zenodo record 16733333 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">СУН бамбук 007 <span class="pub-objnum">(No. 007)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy of a Ribbed-Neck Vase with Matte &quot;Silky&quot; Guan-Type Glaze: Attribution to the Southern Song Official Kilns (12th--13th Century)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20794614" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20794614">Zenodo record 20794614 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">СУН бамбук 007 <span class="pub-objnum">(No. 007)</span></td>
+<td class="pub-title-cell">Ribbed-Neck Vase with Matte &quot;Silky&quot; Guan-Type Glaze (Guan Yao), Southern Song Dynasty, 12th-- 13th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17080837" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17080837">Zenodo record 17080837 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая полосатая с кольцами 008 <span class="pub-objnum">(No. 008)</span></td>
+<td class="pub-title-cell">Authentic Guan Yao. Archaic-Form Vase Imitating Bronze, Covered with Matte Anorthite Glaze Southern Song Dynasty (1127--1279), Imperial Kilns, Stoneware</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17076001" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17076001">Zenodo record 17076001 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая полосатая с кольцами 008 <span class="pub-objnum">(No. 008)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy of an Anorthite-Glazed Vase from the Southern Song Dynasty (1127--1279): Microstructural Evidence of High-Calcium Glaze Crystallisation. With Нона Дронова,</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20794177" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20794177">Zenodo record 20794177 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая полосатая с кольцами 008 <span class="pub-objnum">(No. 008)</span></td>
+<td class="pub-title-cell">Gunmetal Sheen and Dust-Bronze Hue in Guan Ware: Optical Effects and a New Chromatic Typology</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16729414" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16729414">Zenodo record 16729414 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая полосатая с кольцами 008 <span class="pub-objnum">(No. 008)</span></td>
+<td class="pub-title-cell">Matte Anorthite-Rich Glaze on Official Guan-Type Ware: Experimental Southern Song--Yuan Transitional Technology</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16628967" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16628967">Zenodo record 16628967 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Три ноги 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">Authenticating a Southern Song--Yuan Tripod Vessel with Double Crackle Glaze: Microscopic and Technological Diagnostics of Ge Yao Ware</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16620302" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16620302">Zenodo record 16620302 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтоватая с кракле 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">Diagnostic Methodology for Differentiating Southern Song Guan Yao from Ge Yao Wares: A Case Study of an Olive-Yellow Vase with Double Crackle Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16640502" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16640502">Zenodo record 16640502 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтоватая с кракле 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">GEMMOLOGICAL OPTICAL MICROSCOPY AS AN AUTHENTICATION METHOD FOR SOUTHERN SONG IMPERIAL CERAMICS: DIAGNOSTICS OF A GUAN YAO BOTTLE VASE WITH MIHUANG GLAZE (蜜黄釉)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20793713" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20793713">Zenodo record 20793713 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Три ноги 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Diagnostic Method for Authentication of Southern Song--Yuan Ge/Guan-Type Crackle-Glazed Ceramics: A Case Study of a Tripod Vessel</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20797501" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20797501">Zenodo record 20797501 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтоватая с кракле 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">Guan Yao Vessel with &quot;Ge&quot;-Type Glaze and Double Crackle (Shuang Siwen), Southern Song Dynasty, 12th--13th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17091778" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17091778">Zenodo record 17091778 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Три ноги 010 <span class="pub-objnum">(No. 010)</span></td>
+<td class="pub-title-cell">Tripod Vessel with Ge Yao Glaze (哥窑). China, Southern Song -- Yuan Dynasty (12th--14th Centuries)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17095288" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17095288">Zenodo record 17095288 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшин цинбай - 011 <span class="pub-objnum">(No. 011)</span></td>
+<td class="pub-title-cell">Expert Object Passport: Qingbai Ewer, Late Southern Song -- Early Yuan, Hutian Jingdezhen Kilns (Catalogue No. DRN-QB-EWER-2025-SY)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16788535" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16788535">Zenodo record 16788535 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшин цинбай - 011 <span class="pub-objnum">(No. 011)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy and Typological Analysis for Authentication of a Song Dynasty Qingbai Porcelain Ewer with Carved Peony Relief (Jingdezhen, 10th--13th Century CE)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20798010" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20798010">Zenodo record 20798010 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшин цинбай - 011 <span class="pub-objnum">(No. 011)</span></td>
+<td class="pub-title-cell">Qingbai Ewer with Carved Peony Scrolls. China, Song Dynasty (960--1279), Probably Northern Song; Jingdezhen Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17096928" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17096928">Zenodo record 17096928 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшин цинбай - 011 <span class="pub-objnum">(No. 011)</span></td>
+<td class="pub-title-cell">Qingbai Ware from the Song--Yuan Period: Expert Attribution Using the Beynos Method with Museum and Archaeometric Comparisons</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16788480" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16788480">Zenodo record 16788480 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С листом черные 012-014 <span class="pub-objnum">(No. 012, 014)</span></td>
+<td class="pub-title-cell">Black Glaze with Impressed Leaf from the Song Dynasty: Unique Large-Scale Jizhou Kiln Vases with Philosophical Decoration</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16651600" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16651600">Zenodo record 16651600 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С листом черные; С листом черные 012-014 <span class="pub-objnum">(No. 012, 014)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy of Song-Dynasty Black-Glazed Stoneware Vases with Botanical Leaf Impressions from Jizhou Kilns (Jiangxi Province, China, ca. 12th--13th Century): Multi-Scale Characterisation of Glaze Chemistry, Craquelure Pattern, and Leaf-Resist Technology</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20791848" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20791848">Zenodo record 20791848 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С листом черные 012-014 <span class="pub-objnum">(No. 012, 014)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy of Song-Dynasty Black-Glazed Stoneware Vases with Botanical Leaf Impressions from Jizhou Kilns --- Glaze Diagnostic Atlas</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.21196339" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.21196339">Zenodo record 21196339 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С листом черные; С листом черные 012-014 <span class="pub-objnum">(No. 012, 014)</span></td>
+<td class="pub-title-cell">Pair of Black-Glazed Vases with Naturalistic Leaf Impressions (Southern Song Dynasty, Jizhou Kilns, Jiangxi Province, China, ca. 12th--13th Century)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17102215" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17102215">Zenodo record 17102215 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Черная с пятнами 013 <span class="pub-objnum">(No. 013)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Destructive Authentication Method for Song Dynasty Black-Glazed Stoneware with Partridge-Feather Spots (Zhegu Ban): A Case Study of a Monumental Iron-Glaze Vase</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20791953" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20791953">Zenodo record 20791953 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Черная с пятнами 013 <span class="pub-objnum">(No. 013)</span></td>
+<td class="pub-title-cell">Monumental Vase with Black Glaze and &quot;Partridge-Feather Spots&quot; Authentic. Song Dynasty (960--1279). Stoneware, Black Iron Glaze with Partridge-Feather Spot Effect</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17107557" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17107557">Zenodo record 17107557 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Черная с пятнами 013 <span class="pub-objnum">(No. 013)</span></td>
+<td class="pub-title-cell">Northern Song Dynasty Black-Glazed Vase with Partridge Feather Spots</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29900990" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29900990">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Черная с пятнами 013 <span class="pub-objnum">(No. 013)</span></td>
+<td class="pub-title-cell">Rare Song Dynasty Black-Glazed Vase with Partridge Feather Spots (鷓鴣斑): Jian Ware Tradition and Comparative Analysis</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16838895" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16838895">Zenodo record 16838895 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Миска серая с кракле 015 <span class="pub-objnum">(No. 015)</span></td>
+<td class="pub-title-cell">Celadon Bowl with Golden Crackle Glaze, Guan Yao, Southern Song Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29914367" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29914367">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Миска серая с кракле 015 <span class="pub-objnum">(No. 015)</span></td>
+<td class="pub-title-cell">Chrysanthemum-Shaped Bowl with Tianqing Glaze and Pronounced Crackle. China, Southern Song -- Early Yuan (12th--13th c.)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17093292" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17093292">Zenodo record 17093292 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Миска серая с кракле 015 <span class="pub-objnum">(No. 015)</span></td>
+<td class="pub-title-cell">Diagnostic Study of a Flower-Shaped Bowl with Icy Tianqing Glaze (Guan Yao, Late Southern Song -- Early Yuan)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16617765" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16617765">Zenodo record 16617765 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Миска серая с кракле 015 <span class="pub-objnum">(No. 015)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Destructive Diagnostic Method for Authenticating a Southern Song Dynasty Guan Yao Chrysanthemum-Lobed Bowl: Glaze Phase Separation, Double Crackle Stratigraphy, and Burial Signatures Revealed Through Intact Surface Examination</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20788118" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20788118">Zenodo record 20788118 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Темокки 016 <span class="pub-objnum">(No. 016)</span></td>
+<td class="pub-title-cell">Scientific Analysis of a Song Dynasty Temmoku Tea Bowl with &quot;Hare&#x27;s Fur&quot; Glaze (Jian Yao Tradition)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16644662" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16644662">Zenodo record 16644662 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="yuan" aria-labelledby="yuan-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="yuan-title">Yuan Dynasty</h2>
+<span class="dynasty-span">1271–1368</span>
+<span class="dynasty-block__count">25 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Yuan Dynasty">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Дракон 3 когтя 017 <span class="pub-objnum">(No. 3, 017)</span></td>
+<td class="pub-title-cell">Black-Glazed Meiping Vase with Incised Three-Claw Dragon -- Yuan Dynasty, Jizhou or Jingdezhen Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29896235" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29896235">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Дракон 3 когтя 017 <span class="pub-objnum">(No. 3, 017)</span></td>
+<td class="pub-title-cell">Diagnostic Criteria for Authenticating Yuan Dynasty Black-Glazed Stoneware with Reserve-Incised Three-Claw Dragon Decoration: A Multi-Evidence Protocol</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20802014" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20802014">Zenodo record 20802014 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Дракон 3 когтя 017 <span class="pub-objnum">(No. 3, 017)</span></td>
+<td class="pub-title-cell">Meiping Vase with Dragon Design in Reserve Technique on Black Glaze. China, Yuan Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17096901" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17096901">Zenodo record 17096901 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Дракон 3 когтя 017 <span class="pub-objnum">(No. 3, 017)</span></td>
+<td class="pub-title-cell">Scientific Authentication of a Yuan Dynasty Black-Glazed Meiping with Incised Three-Claw Dragon from Jizhou or Jingdezhen Kilns Based on Microscopic Craquelure and Base Analysis</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16815644" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16815644">Zenodo record 16815644 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Подушка 018 <span class="pub-objnum">(No. 018)</span></td>
+<td class="pub-title-cell">An Authentic Ceramic Headrest with Lion Decoration from the Yuan Dynasty (1279--1368): Art-Historical Analysis, Iconographic Programme, and Authentication</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20798598" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20798598">Zenodo record 20798598 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Подушка 018 <span class="pub-objnum">(No. 018)</span></td>
+<td class="pub-title-cell">Attribution and Technical Study of a Yuan Dynasty Cizhou Ceramic Pillow with Lion Motifs</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16837813" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16837813">Zenodo record 16837813 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Подушка 018 <span class="pub-objnum">(No. 018)</span></td>
+<td class="pub-title-cell">Rectangular Cizhou-Type Ceramic Headrest, Yuan Dynasty (1279--1368), Hebei/Shanxi Kiln Region: White Slip, Sgraffito and Underglaze Iron-Brown Decoration of Lion Dogs (Shishi) with Brocade Ball among Peony and Lotus Scrolls; Transparent Glaze; Vent Hole; High-Fired Stoneware</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29900114" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29900114">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшинчик с черными пятнами 019 <span class="pub-objnum">(No. 019)</span></td>
+<td class="pub-title-cell">Authentic Yuan Dynasty Porcelain Ewer in the Form of a &quot;Double Gourd&quot; with Black Iron-Rich Spots beneath the Glaze. Yuan Dynasty (1279--1368)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17100487" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17100487">Zenodo record 17100487 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшинчик с черными пятнами 019 <span class="pub-objnum">(No. 019)</span></td>
+<td class="pub-title-cell">Qingbai Double-Gourd Ewer with Iron-Spot Decoration: Yuan Dynasty (1279--1368), Jingdezhen Kilns --- Morphological, Microstructural, and Comparative Study</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16789541" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16789541">Zenodo record 16789541 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кувшинчик с черными пятнами 019 <span class="pub-objnum">(No. 019)</span></td>
+<td class="pub-title-cell">Qingbai Double-Gourd Ewer with Iron-Spot Decoration: Yuan Dynasty (1279--1368), Jingdezhen Kilns --- Morphological, Microstructural, and Comparative Study</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20800634" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20800634">Zenodo record 20800634 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Зеленая с фениксами 020 <span class="pub-objnum">(No. 020)</span></td>
+<td class="pub-title-cell">Green Vase with Handles in the Form of Phoenix Birds. China, Yuan Dynasty (1271--1368)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17094718" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17094718">Zenodo record 17094718 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Зеленая с фениксами 020 <span class="pub-objnum">(No. 020)</span></td>
+<td class="pub-title-cell">Green Vase with Handles in the Form of Phoenix Birds: A Longquan Celadon of the Yuan Dynasty (1271--1368)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20798768" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20798768">Zenodo record 20798768 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Зеленая с фениксами 020 <span class="pub-objnum">(No. 020)</span></td>
+<td class="pub-title-cell">Scientific Diagnostic Study of a Longquan Celadon Phoenix-Handled Vase (Late Yuan Dynasty)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16628643" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16628643">Zenodo record 16628643 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая тыква 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Chromatic and Microscopic Diagnostics of a Gourd-Shaped Celadon Vase with Fenqing Glaze (粉青釉)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16620845" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16620845">Zenodo record 16620845 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая тыква 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Destructive Authentication Tool for Yuan Dynasty Longquan Celadon: A Case Study of a Gourd-Shaped Vessel with Twin Loop Handles</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20823218" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20823218">Zenodo record 20823218 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серая тыква 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Gourd-Shaped Vessel with Twin Loop Handles. China, Yuan Dynasty (1271--1368). Longquan Celadon</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17101931" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17101931">Zenodo record 17101931 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тарелка с утками 022 <span class="pub-objnum">(No. 022)</span></td>
+<td class="pub-title-cell">A Yuan Dynasty (1271--1368) Blue-and-White Lobed Dish with Double Geese Motif: Morphological, Iconographic, and Macro-Visual Analysis of Authenticity Markers</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20800221" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20800221">Zenodo record 20800221 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тарелка с утками 022 <span class="pub-objnum">(No. 022)</span></td>
+<td class="pub-title-cell">Porcelain Dish with Flying Cranes, Underglaze Cobalt-Blue Decoration Yuan Dynasty (1271 -- 1368), Jingdezhen Kilns, China</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17104210" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17104210">Zenodo record 17104210 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тарелка с утками 022 <span class="pub-objnum">(No. 022)</span></td>
+<td class="pub-title-cell">The Use of Blue Cobalt in Yuan Dynasty Porcelain: Historical Context and Diagnostic Features</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16854943" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16854943">Zenodo record 16854943 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тарелка с утками 022 <span class="pub-objnum">(No. 022)</span></td>
+<td class="pub-title-cell">Yuan Dynasty Jingdezhen Dish with Underglaze Blue Cobalt</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29903639" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29903639">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тарелка с утками 022 <span class="pub-objnum">(No. 022)</span></td>
+<td class="pub-title-cell">Yuan Dynasty Porcelain Plate with Underglaze Cobalt Decoration of Cranes</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16619252" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16619252">Zenodo record 16619252 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Завитки 023 <span class="pub-objnum">(No. 023)</span></td>
+<td class="pub-title-cell">A Yuan Dynasty Stoneware Vase with Islamic-Influenced Scrollwork Decoration: Formal, Technical, and Cross-Cultural Analysis</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20798244" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20798244">Zenodo record 20798244 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Завитки 023 <span class="pub-objnum">(No. 023)</span></td>
+<td class="pub-title-cell">Bottle with &quot;Scrolling Grass&quot; Design (卷草纹). Yuan Dynasty, ca. 1300--1350. Northern China, Cizhou-Type Kilns; with Ornamental Affinities to the Jizhou Tradition (Jiangxi)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17098422" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17098422">Zenodo record 17098422 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Завитки 023 <span class="pub-objnum">(No. 023)</span></td>
+<td class="pub-title-cell">Compilation of an Expert Passport for a Yuan Dynasty Vase with Scrollwork Decoration</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16837330" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16837330">Zenodo record 16837330 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Завитки 023 <span class="pub-objnum">(No. 023)</span></td>
+<td class="pub-title-cell">Technical and Stylistic Analysis of a Yuan Dynasty Vase with Underglaze Scrollwork Decoration -This Research Presents a Detailed Technical, Stylistic, and Comparative Study of a Pear-Shaped Ceramic Vase Attributed to the Yuan Dynasty (1279--1368 AD)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29898401" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29898401">Figshare record ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="ming" aria-labelledby="ming-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="ming-title">Ming Dynasty</h2>
+<span class="dynasty-span">1368–1644</span>
+<span class="dynasty-block__count">33 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Ming Dynasty">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Храмовая чаша 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">A Copper-Red Underglaze Stem Cup Attributed to the Xuande Period (1426--1435): Material Characterisation, Glaze Physics, and Attribution Framework</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20800970" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20800970">Zenodo record 20800970 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Храмовая чаша 021; Ченхуа дракон 026; Ченхуа уточки 025 <span class="pub-objnum">(No. 021, 025, 026)</span></td>
+<td class="pub-title-cell">Mechanisms of Red Color Formation in Copper-Based Glazes: A Comparative Study of Xuande Temple Ceramics and Chenghua Doucai Porcelain</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16778589" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16778589">Zenodo record 16778589 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Храмовая чаша 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Study of Potential Authenticity Indicators of a Xuande Period (1426--1435) Temple Bowl with Copper-Red Underglaze. With professor Nona Dronova,</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.19981156" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.19981156">Zenodo record 19981156 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Храмовая чаша 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Visual Diagnostic Study of a Copper-Red Underglaze Glaze System (Ming-Type, Xuande Attribution Context)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20022599" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20022599">Zenodo record 20022599 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Храмовая чаша 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Visual and Microstructural Diagnostic Features of a Copper-Red Underglaze Stem Cup Attributed to the Xuande Period (1426--1435)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20065164" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20065164">Zenodo record 20065164 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Храмовая чаша 021 <span class="pub-objnum">(No. 021)</span></td>
+<td class="pub-title-cell">Visual and Microstructural Diagnostic Features of a Ming Xuande-Type Under-Glaze Copper-Red and Cobalt-Decorated Ceramic Bowl: Optical Gradient, Diffusion Traces, and Bubble-Glass Interaction in High-Temperature Jingdezhen Glaze Systems. Zenodo,</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.19975854" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.19975854">Zenodo record 19975854 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа уточки 025 <span class="pub-objnum">(No. 025)</span></td>
+<td class="pub-title-cell">Imperial Meiping Vase in Doucai Technique with Duck among Lotuses Ming Dynasty, Chenghua Reign (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17093794" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17093794">Zenodo record 17093794 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа дракон 026; Ченхуа уточки 025 <span class="pub-objnum">(No. 025, 026)</span></td>
+<td class="pub-title-cell">Microstructural and Visual Authentication of Doucai Glazes from the Chenghua Period: Red, Green, Yellow, and Underglaze Cobalt Painting on a Meiping Vase with Ducks</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16762103" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16762103">Zenodo record 16762103 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа уточки 025 <span class="pub-objnum">(No. 025)</span></td>
+<td class="pub-title-cell">Visual-Microscopic Diagnostic Protocol for an Imperial Chenghua Doucai Meiping Vase with Duck among Lotuses: Microstructural Evidence and Scientific Validation</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20802163" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20802163">Zenodo record 20802163 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа дракон 026 <span class="pub-objnum">(No. 026)</span></td>
+<td class="pub-title-cell">Full Scientific Museum Attribution Report (Reference Protocol) Doucai Bottle Vase with Dragon and Phoenix, Ming Dynasty, Chenghua Period (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16781445" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16781445">Zenodo record 16781445 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа дракон 026 <span class="pub-objnum">(No. 026)</span></td>
+<td class="pub-title-cell">Imperial Bottle Vase in Doucai Enamels with Dragon and Phoenix. China, Ming Dynasty, Chenghua Period (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17096876" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17096876">Zenodo record 17096876 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа дракон 026 <span class="pub-objnum">(No. 026)</span></td>
+<td class="pub-title-cell">MULTI-SCALE OPTICAL MICROSCOPY AS A NON-DESTRUCTIVE METHOD FOR AUTHENTICATION OF CHINESE DOUCAI PORCELAIN WITH CHENGHUA-TYPE MARK: A CASE STUDY OF A DRAGON-AND-PHOENIX VASE</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20802322" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20802322">Zenodo record 20802322 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа дракон 026 <span class="pub-objnum">(No. 026)</span></td>
+<td class="pub-title-cell">The Purple Enamel on the Imperial Chenghua Dragon Vase: Historical Context, Technological Reconstruction, and Early Use</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16781910" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16781910">Zenodo record 16781910 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа - миска рыбы 027 <span class="pub-objnum">(No. 027)</span></td>
+<td class="pub-title-cell">Imperial Bowl with Fishes and Aquatic Plants. Ming Dynasty, Chenghua Period (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17095267" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17095267">Zenodo record 17095267 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа - миска рыбы 027 <span class="pub-objnum">(No. 027)</span></td>
+<td class="pub-title-cell">Imperial Chenghua &quot;Fish among Lotus&quot; Bowl</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29902340" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29902340">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа - миска рыбы 027 <span class="pub-objnum">(No. 027)</span></td>
+<td class="pub-title-cell">Imperial Chenghua Blue-and-White Porcelain: A Diagnostic Study of Authentic Cobalt Painting on a &quot;Fish among Lotus&quot; Bowl</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16851854" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16851854">Zenodo record 16851854 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа - миска рыбы 027; Ченхуа желтая 028 <span class="pub-objnum">(No. 027, 028)</span></td>
+<td class="pub-title-cell">Yellow Sacrificial Glaze Vase --- Chenghua Period (1464--1487), Scientific Dossier by N.D. Dronova</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16602935" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16602935">Zenodo record 16602935 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">Authentic Ming Dynasty Chenghua Yellow Sacrificial Glaze Vase: Diagnostic Imaging, Glaze Analysis, and Provenance Documentation</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16615345" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16615345">Zenodo record 16615345 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">How We Verified the Authenticity of a Chenghua Period Vase with Imperial Sacrificial Yellow Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16740088" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16740088">Zenodo record 16740088 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">Imperial Sacrificial-Yellow Bottle Vase with Anhua Incision of Dragon and Phoenix. China, Ming Dynasty, Chenghua Reign (1465--1487). Jingdezhen Imperial Kilns. Six-Character Underglaze-Blue Mark &quot;Da Ming Chenghua Nian Zhi&quot; within Double Circles</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17079391" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17079391">Zenodo record 17079391 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">Imperial Yellow Glaze of the Ming Dynasty: History, Chemical Evolution, and Gemological Optical Microscopy of a Chenghua-Period Tianqiu Bottle Vase with Anhua Incised Dragon and Phoenix Decoration</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20785217" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20785217">Zenodo record 20785217 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">Sacrificial Yellow Glaze of the Ming Chenghua Period: Meaning, Dragon and Phoenix Symbolism, and Ritual Use in Beijing Imperial Altars</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16877806" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16877806">Zenodo record 16877806 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа желтая 028 <span class="pub-objnum">(No. 028)</span></td>
+<td class="pub-title-cell">The Beinos Method: Integrated Microstructural, Chemical, Aesthetic, and Historical Evaluation System for Authentication of Ancient Chinese Porcelain</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16786915" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16786915">Zenodo record 16786915 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа олень 029 <span class="pub-objnum">(No. 029)</span></td>
+<td class="pub-title-cell">Authentic Chenghua Period Dish, Exported to Japan Porcelain with Underglaze Cobalt-Blue Decoration. Ming Dynasty, Chenghua Reign (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108520" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108520">Zenodo record 17108520 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа олень 029 <span class="pub-objnum">(No. 029)</span></td>
+<td class="pub-title-cell">Chinese Porcelain Export to Japan during the Chenghua Reign (1465--1487)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16952735" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16952735">Zenodo record 16952735 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ченхуа олень 029 <span class="pub-objnum">(No. 029)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as an Authentication Tool for Ming Dynasty Ko-Sometsuke Blue-and-White Export Porcelain: A Case Study of a Chenghua-Marked Deer-and-Forest Dish Exported to Japan</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20823408" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20823408">Zenodo record 20823408 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи желтая с зелеными пятнами 030 <span class="pub-objnum">(No. 030)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy of a Ming Dynasty Hongzhi-Period Yellow-Glazed Vase with Green Enamel Spots: Phase Separation and Iridescence Phenomena</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20823540" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20823540">Zenodo record 20823540 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи желтая с зелеными пятнами 030; Хунджи кувшин 031 <span class="pub-objnum">(No. 030, 031)</span></td>
+<td class="pub-title-cell">Imperial Yellow Sacrificial Glaze Ewer, Hongzhi Period, Ming Dynasty (1488--1505)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29894762" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29894762">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи желтая с зелеными пятнами 030 <span class="pub-objnum">(No. 030)</span></td>
+<td class="pub-title-cell">Scientific Authentication of a Yellow-Green Lead Glazed Vase Attributed to the Hongzhi Period (1488--1505) of the Ming Dynasty: Microstructural and Chromatic Evidence</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16754235" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16754235">Zenodo record 16754235 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси медовая 032; Хунджи желтая с зелеными пятнами 030 <span class="pub-objnum">(No. 030, 032)</span></td>
+<td class="pub-title-cell">Vase with Yellow--Green Glaze and Four Twisted Loop Handles. Hongzhi Mark and Period (1488-- 1505), Ming Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073981" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073981">Zenodo record 17073981 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи кувшин 031 <span class="pub-objnum">(No. 031)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as an Authenticating Tool for Ming Dynasty Hongzhi (1488--1505) Imperial Yellow Sacrificial-Glaze Ewers: Evidence of Phase Separation, Iridescence, Craquelure Aging, and Glaze-Body Interaction</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20823705" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20823705">Zenodo record 20823705 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи кувшин 031 <span class="pub-objnum">(No. 031)</span></td>
+<td class="pub-title-cell">Imperial Libation Ewer with &quot;Sacrificial&quot; Yellow Glaze (祭黄釉) and Anhua (Underglaze Incised) Decoration; Six-Character Underglaze-Blue Mark &quot;大明弘治年製&quot;. China, Ming Dynasty, Hongzhi Period (1488--1505). Jingdezhen Imperial Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17078793" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17078793">Zenodo record 17078793 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хунджи кувшин 031 <span class="pub-objnum">(No. 031)</span></td>
+<td class="pub-title-cell">Microstructural Analysis of the Glaze (Hongzhi-Marked Yellow Ewer)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16790289" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16790289">Zenodo record 16790289 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-early-kangxi" aria-labelledby="qing-early-kangxi-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-early-kangxi-title">Qing Dynasty — Kangxi Period</h2>
+<span class="dynasty-span">1662–1722</span>
+<span class="dynasty-block__count">17 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Kangxi Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Канси медовая 032 <span class="pub-objnum">(No. 032)</span></td>
+<td class="pub-title-cell">Honey-Yellow Monochrome Vase with Incised Phoenix and Cloud Motifs. Kangxi Period (1662--1722), circa 1690--</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17074019" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17074019">Zenodo record 17074019 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси медовая 032 <span class="pub-objnum">(No. 032)</span></td>
+<td class="pub-title-cell">Varieties of Monochrome Yellow Lead Glazes in the Kangxi Period: A Study with Instrumental Color Measurement</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16880774" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16880774">Zenodo record 16880774 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси медовая 032 <span class="pub-objnum">(No. 032)</span></td>
+<td class="pub-title-cell">Yellow Porcelain Vase with Incised Design</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29919584" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29919584">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Печень лошади 033,034,035, 036 <span class="pub-objnum">(No. 033, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Authentic Kangxi Langyao Hong Double-Gourd Vase: Microstructural, Stylistic, and Typological Authentication of Qing Dynasty Monochrome Copper-Red Glazes</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16785807" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16785807">Zenodo record 16785807 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси пятна лишайника 034,035, 036; Печень лошади 033,034,035, 036 <span class="pub-objnum">(No. 033, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Copper Red Monochrome Glazes in Chinese Porcelain: From Early Experiments to Kangxi Perfection</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16878237" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16878237">Zenodo record 16878237 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси пятна лишайника 034,035, 036; Печень лошади 033,034,035, 036 <span class="pub-objnum">(No. 033, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Copper-Red Glaze Double-Gourd Vase, Kangxi Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29914064" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29914064">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Печень лошади 033,034,035, 036 <span class="pub-objnum">(No. 033, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Invasive Authentication Method for Qing Dynasty Imperial Porcelain: A Case Study of an Imperial Double-Gourd Vase (Shuang Hulu Ping) with Copper-Red Langyao Hong (Sang-de-Boeuf) Glaze, Kangxi Reign (1662--1722)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20863748" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20863748">Zenodo record 20863748 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Печень лошади 033,034,035, 036 <span class="pub-objnum">(No. 033, 034, 035, 036)</span></td>
+<td class="pub-title-cell">Imperial Double-Gourd Vase (Shuang Hulu Ping) with Copper-Red Langyao Hong (&quot;sang-de-Boeuf&quot;) Glaze. Kangxi Reign (1662--1722). Imperial Kilns, Jingdezhen</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17100507" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17100507">Zenodo record 17100507 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси пятна лишайника 034,035, 036 <span class="pub-objnum">(No. 034, 035, 036)</span></td>
+<td class="pub-title-cell">China, Qing Dynasty, Kangxi Reign (1662--1722). Brush Pot and Brush Washer, Porcelain with Copper &quot;Lichen-Spot&quot; Glaze and Crackled Interior. Scholar&#x27;s Desk Objects with Irreplicable Copper &quot;Lichen-Spot&quot; Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17105052" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17105052">Zenodo record 17105052 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси пятна лишайника 034,035, 036 <span class="pub-objnum">(No. 034, 035, 036)</span></td>
+<td class="pub-title-cell">The Scholar&#x27;s Desk in the Kangxi Period: Prestige, Literati Culture, and the Role of Porcelain and Inkstones</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17063724" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17063724">Zenodo record 17063724 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси на бронзе 037 <span class="pub-objnum">(No. 037)</span></td>
+<td class="pub-title-cell">Features of Decoration and Narrative Themes in Kangxi Period Famille Verte Porcelain</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16816393" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16816393">Zenodo record 16816393 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси на бронзе 037 <span class="pub-objnum">(No. 037)</span></td>
+<td class="pub-title-cell">GEMOLOGICAL OPTICAL MICROSCOPY AS A PRIMARY NON-INVASIVE ATTRIBUTION METHOD FOR CHINESE KANGXI FAMILLE VERTE PORCELAIN (1662--1722): A LARGE VASE ON BRONZE ORMOLU MOUNTS</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20840514" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20840514">Zenodo record 20840514 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси на бронзе 037 <span class="pub-objnum">(No. 037)</span></td>
+<td class="pub-title-cell">Kangxi Period Famille Verte Porcelain Vase with Bronze Mounts</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29896331" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29896331">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси на бронзе 037 <span class="pub-objnum">(No. 037)</span></td>
+<td class="pub-title-cell">Key Diagnostic Features of Kangxi Period &quot;Famille Verte&quot; Porcelain, Early 18th Century (China)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16791803" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16791803">Zenodo record 16791803 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси на бронзе 037; Канси шкатулки 038,039, 040 <span class="pub-objnum">(No. 037, 038, 039, 040)</span></td>
+<td class="pub-title-cell">Large Floor Vase Painted in Famille Verte Overglaze Enamels, Set on a Cast Bronze Stand. China, Qing Dynasty, Kangxi Period (1662--1722)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17098497" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17098497">Zenodo record 17098497 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси шкатулки 038,039, 040 <span class="pub-objnum">(No. 038, 039, 040)</span></td>
+<td class="pub-title-cell">Optical Gemmological Microscopy Analysis of Three Kangxi-Period Seal Paste Boxes (印色盒 Yínse Hé) from a Private Scholarly Collection</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20935539" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20935539">Zenodo record 20935539 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Канси шкатулки 038,039, 040 <span class="pub-objnum">(No. 038, 039, 040)</span></td>
+<td class="pub-title-cell">The Symbolism of Lotus and Carp in a Kangxi Doucai Scholar&#x27;s Box</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16874165" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16874165">Zenodo record 16874165 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-yongzheng" aria-labelledby="qing-yongzheng-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-yongzheng-title">Qing Dynasty — Yongzheng Period</h2>
+<span class="dynasty-span">1723–1735</span>
+<span class="dynasty-block__count">28 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Yongzheng Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Круглая доуцай 041 <span class="pub-objnum">(No. 041)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy as a Tool for Authentication and Chronological Attribution of Qing Dynasty Imperial Doucai Porcelain: A Case Study of a Large Tianqiuping Vase with the Eight Buddhist Symbols (Bajixiang)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20862844" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20862844">Zenodo record 20862844 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Круглая доуцай 041 <span class="pub-objnum">(No. 041)</span></td>
+<td class="pub-title-cell">Imperial Yongzheng Vase with the Eight Buddhist Symbols in Doucai Enamels</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16935177" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16935177">Zenodo record 16935177 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Круглая доуцай 041; Матовые голубые 052 <span class="pub-objnum">(No. 041, 052)</span></td>
+<td class="pub-title-cell">Large Doucai Vase &quot;Eight Buddhist Symbols&quot; (Bajixiang)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17107026" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17107026">Zenodo record 17107026 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Голубая с оленями 056 -059 - 061; Селадон зеленоватый 056; Серия -Память о Канси 043,044,045,046 <span class="pub-objnum">(No. 043, 044, 045, 046, 056, 059, 061)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy of Three Imperial Celadon Vases of the Qianlong Period (1736--1795): Comparative Analysis and Diagnostic Criteria for Authentication</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.21196148" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.21196148">Zenodo record 21196148 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Серия -Память о Канси 043,044,045,046 <span class="pub-objnum">(No. 043, 044, 045, 046)</span></td>
+<td class="pub-title-cell">Memorial Porcelain Vases in Commemoration of the Kangxi Emperor: Rare Okra-Green and &quot;Black Gold&quot; Glazes with Famille Verte and Underglaze Cobalt Motifs</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16927842" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16927842">Zenodo record 16927842 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пыль чайного листа; Серия -Память о Канси 043,044,045,046 <span class="pub-objnum">(No. 043, 044, 045, 046)</span></td>
+<td class="pub-title-cell">The Scarlet Ground Enamel on a Large Memorial Famille Verte Vase of the Yongzheng Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16894544" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16894544">Zenodo record 16894544 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Хвоя сосны 047 <span class="pub-objnum">(No. 047)</span></td>
+<td class="pub-title-cell">Authentic Yongzheng Period Vase (1723--1735) with Monochrome Matte &quot;Pine-Needle Green&quot; Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17080566" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17080566">Zenodo record 17080566 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Павлин матовый 051; Хвоя сосны 047 <span class="pub-objnum">(No. 047, 051)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy of Two Experimental Monochrome Glazes of the Yongzheng Period (1723--1735): &quot;Peacock Green&quot; (Kongque Lü) and &quot;Pine Needle Green&quot; (Songhua Lü)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20921734" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20921734">Zenodo record 20921734 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Павлин матовый 051; Хвоя сосны 047 <span class="pub-objnum">(No. 047, 051)</span></td>
+<td class="pub-title-cell">Matte Imperial Chinese Porcelain Vase in Greenish-Blue &quot;Peacock Blue&quot; Glaze, Yongzheng Reign</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29921762" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29921762">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Павлин матовый 051; Хвоя сосны 047 <span class="pub-objnum">(No. 047, 051)</span></td>
+<td class="pub-title-cell">Monochrome Glazes of the Yongzheng Period: Comparative Study of the &quot;Pine Needle Green&quot; and &quot;Peacock Blue&quot; Variants in Colorimetry and Microstructure</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16889063" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16889063">Zenodo record 16889063 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Павлин матовый 051; Хвоя сосны 047 <span class="pub-objnum">(No. 047, 051)</span></td>
+<td class="pub-title-cell">Monochrome Vase with Satin &quot;Peacock-Green&quot; Glaze. Yongzheng Mark and Period (1723--1735), Qing Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073966" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073966">Zenodo record 17073966 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Яйцо перепелки 048 <span class="pub-objnum">(No. 048)</span></td>
+<td class="pub-title-cell">GEMMOLOGICAL OPTICAL MICROSCOPY AS A TOOL FOR ATTRIBUTION OF AN EXPERIMENTAL LUJUN (炉钧) MONOCHROME GLAZE ON A PORCELAIN VASE BEARING A YONGZHENG REIGN MARK (大清雍正年製, 1723--1735): MULTI-SCALE ANALYSIS OF MICROSTRUCTURE AND PHASE-SEPARATION MECHANISMS</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20861908" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20861908">Zenodo record 20861908 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Яйцо перепелки 048 <span class="pub-objnum">(No. 048)</span></td>
+<td class="pub-title-cell">Monochrome 18th-Century Chinese Imperial Porcelain Vase with Quail-Egg Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29922656" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29922656">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Яйцо перепелки 048 <span class="pub-objnum">(No. 048)</span></td>
+<td class="pub-title-cell">Monochrome Chinese Porcelain Vase with Experimental Glaze Commissioned by the Yongzheng Emperor</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16883457" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16883457">Zenodo record 16883457 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Яйцо перепелки 048 <span class="pub-objnum">(No. 048)</span></td>
+<td class="pub-title-cell">Yuhuchunping Vase with &quot;Quail-Egg&quot; Monochrome Glaze (Anchun Dan You / Zhegu Ban). Yongzheng Mark and Period (1723--1735), Qing Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073452" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073452">Zenodo record 17073452 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ирисы 050 <span class="pub-objnum">(No. 050)</span></td>
+<td class="pub-title-cell">Ancient Imperial Chinese Porcelain Vase with Floral Painting and Relief Background</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29924441" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29924441">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ирисы 050 <span class="pub-objnum">(No. 050)</span></td>
+<td class="pub-title-cell">Imperial Porcelain Vase with Falangcai Enamels and a Four-Character Yongzheng Mark: Evidence for the First Systematic Use of Falangcai and Relief Grounds in the Late Yongzheng Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16886698" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16886698">Zenodo record 16886698 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Ирисы 050 <span class="pub-objnum">(No. 050)</span></td>
+<td class="pub-title-cell">Imperial Square-Section Vase with Irises and Peonies on a Relief &quot;Brocade/Pearl&quot; Ground. Yongzheng Mark and Period (1723--1735), Qing Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073053" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073053">Zenodo record 17073053 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Павлин матовый 051 <span class="pub-objnum">(No. 051)</span></td>
+<td class="pub-title-cell">Microstructural and Chromatic Analysis of the Peacock-Blue Matte Glaze --- Yongzheng Imperial Monochrome Vase</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16882538" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16882538">Zenodo record 16882538 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Матовые голубые 052; Сапфировые 065 <span class="pub-objnum">(No. 052, 065)</span></td>
+<td class="pub-title-cell">A Matched Pair of Imperial Monochrome Vases with Matte Turquoise Glaze (Songshi-Lü). Yongzheng Reign (1723--1735). Imperial Kilns, Jingdezhen. a) Double-Gourd Vase (Shuang Hulu Ping). b) Baluster Vase with Flared Mouth</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17098624" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17098624">Zenodo record 17098624 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Матовые голубые 052 <span class="pub-objnum">(No. 052)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy as a Non-Invasive Authentication Method for Chinese Imperial Porcelain: A Case Study of a Yongzheng-Period Clair-de-Lune Double-Gourd Vase</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20850597" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20850597">Zenodo record 20850597 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Матовые голубые 052; Сапфировые 065 <span class="pub-objnum">(No. 052, 065)</span></td>
+<td class="pub-title-cell">Microstructural Analysis Protocol -- Yongzheng Monochrome Matte Turquoise Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16885522" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16885522">Zenodo record 16885522 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кобальт Юнчжген; Кобальт бутылка Цянлун 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">A Yongzheng Imperial Kiln Vase in the Form of a Lotus Bud (Lianbao Ping) with Underglaze Cobalt Decoration</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16928229" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16928229">Zenodo record 16928229 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кобальт Юнчжген; Кобальт бутылка Цянлун 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">Imperial Blue-and-White &quot;Lotus-Bud Mouth&quot; Bottle Vase with Six-Character Yongzheng Mark Qing Dynasty, Yongzheng Period (1723--1735)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108231" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108231">Zenodo record 17108231 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пыль чайного листа -- <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Dark Green Antique Chinese Monochrome Vase with &quot;Tea-Dust&quot; Glaze</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29957480" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29957480">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пыль чайного листа -- <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">GEMMOLOGICAL OPTICAL MICROSCOPY OF AN IMPERIAL VASE JUN-WARE TYPE (鈞窯) WITH MONOCHROME MATTE &quot;TEA-DUST&quot; GLAZE (茶葉末釉, Chá Yè Mò Yòu)</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20853911" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20853911">Zenodo record 20853911 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пыль чайного листа; Пыль чайного листа -- <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Monochrome Dǎnpíng (&quot;gallbladder&quot; Vase) with Cha-Ye-Mo (Tea-Dust) Glaze; Six-Character Yongzheng Nianzhi Seal Mark to Base. China, Qing Dynasty, Yongzheng Reign (1723--1735); Jingdezhen Imperial Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17093602" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17093602">Zenodo record 17093602 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пыль чайного листа; Пыль чайного листа -- <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">Reconstruction, Literature Review, and Diagnostic Study of the Tea-Dust Glaze (Cha Ye Mo You) of the Yongzheng Period (1723--1735)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16917472" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16917472">Zenodo record 16917472 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-qianlong" aria-labelledby="qing-qianlong-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-qianlong-title">Qing Dynasty — Qianlong Period</h2>
+<span class="dynasty-span">1736–1795</span>
+<span class="dynasty-block__count">62 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Qianlong Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Желтая с бабочками 042 -072 <span class="pub-objnum">(No. 042, 072)</span></td>
+<td class="pub-title-cell">Imperial Famille Rose Vase with Blue Ground, Qianlong Period (1736 -- 1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108954" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108954">Zenodo record 17108954 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтая двойная тыква 072; Желтая с бабочками 042 -072; С женщиной 089 <span class="pub-objnum">(No. 042, 072, 089)</span></td>
+<td class="pub-title-cell">Imperial Tenderness by the Seashore: A Famille Rose Vase with &quot;Mother and Child&quot; Motif from the Qianlong Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16977877" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16977877">Zenodo record 16977877 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Сиреневая на ножках 053 <span class="pub-objnum">(No. 053)</span></td>
+<td class="pub-title-cell">Attribution of a Chinese Vase with Purple Enamel from the Qianlong Period (ca. 1770--1790)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16904076" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16904076">Zenodo record 16904076 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Редиска 055; Сиреневая на ножках 053 <span class="pub-objnum">(No. 053, 055)</span></td>
+<td class="pub-title-cell">Imperial Qianlong Vase with Purple and Pink Enamels, Bat and Lotus</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29941892" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29941892">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Сиреневая на ножках 053 <span class="pub-objnum">(No. 053)</span></td>
+<td class="pub-title-cell">Vase with Cloisonné-Style Falangcai Decoration, Bat Motifs, and Yellow Leaf Border. China, Qing Dynasty, Reign of Emperor Qianlong</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17072520" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17072520">Zenodo record 17072520 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтая бутылка Сардиния 054 <span class="pub-objnum">(No. 054)</span></td>
+<td class="pub-title-cell">Technological and Artistic Features of Imperial Qianlong Famille Rose Painting: A Study of a Yellow-Ground Bottle Vase</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20083420" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20083420">Zenodo record 20083420 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Редиска 055 <span class="pub-objnum">(No. 055)</span></td>
+<td class="pub-title-cell">Gemological Optical Microscopy of an Imperial Famille-Rose (Yangcai) Bottle Vase with Pink Ground, Bat-and-Floral Scroll Decoration, Turquoise Interior and Base: A Multiscale Visual Authentication Study</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20937671" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20937671">Zenodo record 20937671 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Редиска 055 <span class="pub-objnum">(No. 055)</span></td>
+<td class="pub-title-cell">Imperial Famille-Rose (Yangcai) Bottle Vase with Pink Ground and Bat-and-Floral Scroll; Turquoise Interior and Base; Four-Character Qianlong Seal Mark in Blue Enamel. China, Qing, Qianlong Period (1736--1795). Jingdezhen Imperial Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17079570" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17079570">Zenodo record 17079570 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Прямоугольная со слонами 068; Редиска 055 <span class="pub-objnum">(No. 055, 068)</span></td>
+<td class="pub-title-cell">Imperial Turquoise-Ground Square Vase of the Qianlong Period: Archaistic Cong Form, Elephant Handles, and the Typological Evolution of an Imperial Court Series</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20071012" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20071012">Zenodo record 20071012 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Голубая с оленями 056 -059 - 061 <span class="pub-objnum">(No. 056, 059, 061)</span></td>
+<td class="pub-title-cell">Ancient Chinese Imperial Celadon Vase, Grey-Blue, with Deer Handles</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29930159" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29930159">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Селадон зеленоватый 056 <span class="pub-objnum">(No. 056)</span></td>
+<td class="pub-title-cell">Carved Dragon Motifs under Celadon Glaze: Instrumental Color and Microscopic Authentication of a Qianlong Period Vase</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16912804" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16912804">Zenodo record 16912804 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Голубая с оленями 056 -059 - 061; Селадон зеленоватый 056 <span class="pub-objnum">(No. 056, 059, 061)</span></td>
+<td class="pub-title-cell">Diagnostic Criteria for the Authentication of Imperial Qianlong Celadon Vases with Carved Underglaze Decoration</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16919626" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16919626">Zenodo record 16919626 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Голубая с оленями 056 -059 - 061 <span class="pub-objnum">(No. 056, 059, 061)</span></td>
+<td class="pub-title-cell">Imperial Celadon Vase with Deer Handles, Qianlong Period (1736--1795): Technological Diagnostics, Microstructural Analysis, and Symbolism of Relief Decoration</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16893188" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16893188">Zenodo record 16893188 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Голубая с оленями 056 -059 - 061 <span class="pub-objnum">(No. 056, 059, 061)</span></td>
+<td class="pub-title-cell">Pale-Blue Celadon Vase of Archaistic Form with Applied Deer-Head Handles and Relief Decoration under a Translucent Glaze. Qianlong Period (1736--1795). Imperial Kilns, Jingdezhen. Six-Character Reign Mark &quot;Da Qing Qianlong Nian Zhi&quot; in Underglaze-Blue Seal Script within a Square Panel</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17080672" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17080672">Zenodo record 17080672 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Селадон зеленоватый 056 <span class="pub-objnum">(No. 056)</span></td>
+<td class="pub-title-cell">Tall Ovoid Celadon Vase with Relief Dragon under Glaze. Late Qianlong Reign (1736--1795), Imperial Kilns, Jingdezhen</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17074007" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17074007">Zenodo record 17074007 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Яйцо малиновки 057 <span class="pub-objnum">(No. 057)</span></td>
+<td class="pub-title-cell">Archaistic Vase with Paired Handles and Robin&#x27;s-Egg Monochrome Glaze. Qianlong Reign (1736--1795), Imperial Kilns, Jingdezhen</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17075214" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17075214">Zenodo record 17075214 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Дауган 090; Яйцо малиновки 057 <span class="pub-objnum">(No. 057, 090)</span></td>
+<td class="pub-title-cell">Scientific Study of the &quot;Robin&#x27;s Egg&quot; Glaze on an Imperial Vase of the Qianlong Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16887529" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16887529">Zenodo record 16887529 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Доуцай с драконом 058,-062 058 <span class="pub-objnum">(No. 058, 062)</span></td>
+<td class="pub-title-cell">Antique Chinese Porcelain Doucai Vase with a Dragon Motif</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29966341" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29966341">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Доуцай с драконом 058,-062 058 <span class="pub-objnum">(No. 058, 062)</span></td>
+<td class="pub-title-cell">Globular Baluster Vase with Dragons amid Lotus Scroll. Qianlong Mark and Period (1736--1795), Qing Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17073105" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17073105">Zenodo record 17073105 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Доуцай с панелями 058 <span class="pub-objnum">(No. 058)</span></td>
+<td class="pub-title-cell">Imperial Doucai Vase with Bats and Ruyi Emblems, Qing Dynasty, Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17102055" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17102055">Zenodo record 17102055 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Доуцай с панелями 058 <span class="pub-objnum">(No. 058)</span></td>
+<td class="pub-title-cell">Methodology for Attribution and Analogue Search of Qianlong Imperial Vases (Case Study: Doucai, Palace Museum No. 97)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16905105" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16905105">Zenodo record 16905105 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Доуцай с драконом 058,-062 058 <span class="pub-objnum">(No. 058, 062)</span></td>
+<td class="pub-title-cell">Technological Analysis of a Qianlong Doucai Vase with Dragon Motifs: Manufacturing Stages and Diagnostic Micro-Traces</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16925297" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16925297">Zenodo record 16925297 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красная гранат 060 088 <span class="pub-objnum">(No. 060, 088)</span></td>
+<td class="pub-title-cell">Double-Gourd (Húlu) Vase with Pomegranate and Seasonal Flowers on a Coral-Red Ground, Famille-Rose Enamels. China, Qing Dynasty, Qianlong Period (1736--1795), Court Style; Probably Jingdezhen Imperial Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17076515" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17076515">Zenodo record 17076515 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красная гранат 060 088; Лаванда 071 082 <span class="pub-objnum">(No. 060, 071, 082, 088)</span></td>
+<td class="pub-title-cell">Stratigraphic and Microstructural Diagnosis of Imperial Coral-Red Ground Porcelain of the Qianlong Period: Application of the Beinos Method</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16933126" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16933126">Zenodo record 16933126 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Придворная жизнь 067; С трубами 063 <span class="pub-objnum">(No. 063, 067)</span></td>
+<td class="pub-title-cell">Court Life Scenes in the Enamel Decoration of Qianlong Porcelain: A Study of the Imperial Moon Flask</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16930918" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16930918">Zenodo record 16930918 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С трубами 063 <span class="pub-objnum">(No. 063)</span></td>
+<td class="pub-title-cell">Imperial Multi-Spouted (Five-Necked) Vase with Famille-Rose/Yangcai Enamels and Gilding. Qianlong Reign (1736--1795). Imperial Kilns, Jingdezhen</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17100454" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17100454">Zenodo record 17100454 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пейзаж золотая 064-069 081 <span class="pub-objnum">(No. 064, 069, 081)</span></td>
+<td class="pub-title-cell">Gilt-Decorated Vase with Landscape Painting Imperial Kilns, Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17107053" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17107053">Zenodo record 17107053 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пейзаж розовый 064 -069 079 081 <span class="pub-objnum">(No. 064, 069, 079, 081)</span></td>
+<td class="pub-title-cell">Imperial Famille Rose Vase with Purplish-Rose Landscape Cartouches and Lion-Mask Handles. Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17112277" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17112277">Zenodo record 17112277 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Большая пейзаж 064- 069 081; Пейзаж черная 064 -069 081 <span class="pub-objnum">(No. 064, 069, 081)</span></td>
+<td class="pub-title-cell">Imperial Porcelain Vases with Landscape Decoration from the Qianlong Period: A Comparative Study</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16966980" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16966980">Zenodo record 16966980 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красно зеленая тыква 083; Пейзаж золотая 064-069 081 <span class="pub-objnum">(No. 064, 069, 081, 083)</span></td>
+<td class="pub-title-cell">Imperial Qianlong Vase with Carved Decoration of Flowers and Birds on Red Ground and Dark Green Celadon</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17112266" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17112266">Zenodo record 17112266 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Пейзаж розовый 064 -069 079 081 <span class="pub-objnum">(No. 064, 069, 079, 081)</span></td>
+<td class="pub-title-cell">Imperial Qing Vase with Yangcai Pink Landscapes (Famille-Rose)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16979694" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16979694">Zenodo record 16979694 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Большая пейзаж 064- 069 081; Пейзаж черная 064 -069 081 <span class="pub-objnum">(No. 064, 069, 081)</span></td>
+<td class="pub-title-cell">Imperial Vase with Cobalt-Blue Ground, Gilt Ornament and Landscape Panels. Qianlong Reign (1736--1795). Imperial Kilns of Jingdezhen</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17098436" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17098436">Zenodo record 17098436 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Сапфировые 065 <span class="pub-objnum">(No. 065)</span></td>
+<td class="pub-title-cell">Blue Matte Chinese Imperial Porcelain Vases</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29924000" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29924000">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтая двойная тыква 072; Желтая с крышкой с птицами 066 072 084 <span class="pub-objnum">(No. 066, 072, 084)</span></td>
+<td class="pub-title-cell">Instrumental and Historical Study of Sgraffito Yellow Grounds on Qianlong Famille-Rose Porcelain with Bird-and-Flower Motifs</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16933856" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16933856">Zenodo record 16933856 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтая с крышкой с птицами 066 072 084 <span class="pub-objnum">(No. 066, 072, 084)</span></td>
+<td class="pub-title-cell">Lidded Meiping with Famille-Rose Bird-and-Flower Design on a Yellow Sgraffito Ground; Turquoise Base with Six-Character Qianlong Seal Mark. China, Jingdezhen Imperial Workshops. Date: Qianlong Reign (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17093449" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17093449">Zenodo record 17093449 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Придворная жизнь 067 <span class="pub-objnum">(No. 067)</span></td>
+<td class="pub-title-cell">Imperial &quot;Flask&quot;-Shaped Vase (Bianhu) of the Qianlong Period with Famille Rose Enamels and Courtly Scenes</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17080850" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17080850">Zenodo record 17080850 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Бежевая с бусами; Цянлун позолота 070 <span class="pub-objnum">(No. 070)</span></td>
+<td class="pub-title-cell">Gilded Famille-Rose Lidded Vase with Continuous Gold Ground, Late Yongzheng Period (ca. 1733--1735), Jingdezhen Imperial Workshops</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17107579" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17107579">Zenodo record 17107579 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Лаванда 071 082 <span class="pub-objnum">(No. 071, 082)</span></td>
+<td class="pub-title-cell">Imperial Lavender-Glazed Vase with Famille-Rose Decoration from the Qianlong Reign (1736--1795): A Stylistic and Microstructural Study</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16890072" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16890072">Zenodo record 16890072 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Лаванда 071 082 <span class="pub-objnum">(No. 071, 082)</span></td>
+<td class="pub-title-cell">Lavender Antique Chinese Vase with Falangcai-Style Painting and Poem, 18th Century</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29926517" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29926517">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кобальт бутылка Цянлун 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">Diagnostic Features of Authentic Underglaze Cobalt Blue Decoration on Jingdezhen Porcelain from the Yongzheng Period (1723--1735), Qing Dynasty</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16909699" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16909699">Zenodo record 16909699 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кобальт бутылка Цянлун 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">Gemmological Optical Microscopy as an Authentication Method for Qing Dynasty Blue-and-White Porcelain: A Case Study of a Yongzheng-Period Underglaze Cobalt Vase</td>
+<td class="pub-year-cell">2026</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.20848577" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.20848577">Zenodo record 20848577 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Желтая двойная тыква 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">Imperial Double-Gourd Vase with Yellow Sgraffito Ground and Famille-Rose Lotus Scrolls, Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17107904" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17107904">Zenodo record 17107904 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Огромная желтая 072 078 <span class="pub-objnum">(No. 072, 078)</span></td>
+<td class="pub-title-cell">Imperial Vase with Dragon Handles and Famille Rose Decoration. China, Qing Dynasty, Qianlong Reign (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17094682" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17094682">Zenodo record 17094682 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Кобальт бутылка Цянлун 072 <span class="pub-objnum">(No. 072)</span></td>
+<td class="pub-title-cell">Large Antique Chinese Vase with a Celadon Ground and Landscape Reserves</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29963108" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29963108">Figshare record ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Огромная желтая 072 078 <span class="pub-objnum">(No. 072, 078)</span></td>
+<td class="pub-title-cell">Microscopic Study of Enamels on a Large Imperial Qianlong Vase (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16911177" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16911177">Zenodo record 16911177 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С мудрецами 073 <span class="pub-objnum">(No. 073)</span></td>
+<td class="pub-title-cell">Imperial Narrative Vases of the Late Qianlong Period: Microscopy of Enamel Application and Gilding</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16940291" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16940291">Zenodo record 16940291 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С мудрецами 073 <span class="pub-objnum">(No. 073)</span></td>
+<td class="pub-title-cell">Imperial Vase with Sages and Famille Rose Decoration. Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108967" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108967">Zenodo record 17108967 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красно зеленая тыква 083; С журавлями 074; Салатно красная 075; Свастика 076; Синяя с птицами 077 <span class="pub-objnum">(No. 074, 075, 076, 077, 083)</span></td>
+<td class="pub-title-cell">Birds on Qing Imperial Porcelain of the 18th Century: Artistic and Symbolic Dimensions</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16942186" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16942186">Zenodo record 16942186 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С журавлями 074 <span class="pub-objnum">(No. 074)</span></td>
+<td class="pub-title-cell">Large Imperial Pink Ceremonial Vase with Sgraffito and Cranes, Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17068447" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17068447">Zenodo record 17068447 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">С журавлями 074 <span class="pub-objnum">(No. 074)</span></td>
+<td class="pub-title-cell">Microscopic and Technological Study of a Pink Famille-Rose Imperial Vase with Sgraffito Decoration and Crane Motifs of the Qianlong Period</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16936554" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16936554">Zenodo record 16936554 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Салатно красная 075 <span class="pub-objnum">(No. 075)</span></td>
+<td class="pub-title-cell">Attribution of an Imperial Chinese Vase of the 18th Century Based on the Analysis of the Base, Reign Mark, Painting Quality, and Firing Complexity (with Microphotographs)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16929464" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16929464">Zenodo record 16929464 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Салатно красная 075 <span class="pub-objnum">(No. 075)</span></td>
+<td class="pub-title-cell">Large Vase with Red Famille-Rose Panels and Qianlong Imperial Mark (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17068683" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17068683">Zenodo record 17068683 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Свастика 076 <span class="pub-objnum">(No. 076)</span></td>
+<td class="pub-title-cell">Blue Enamel Marks of the Qianlong Period as Imperial Admission</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17063510" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17063510">Zenodo record 17063510 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красная резная 087; Свастика 076; Сине красная с золотом 086 <span class="pub-objnum">(No. 076, 086, 087)</span></td>
+<td class="pub-title-cell">Rare Imperial Famille-Rose Turquoise-Ground Vase with Phoenix and Peonies</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108980" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108980">Zenodo record 17108980 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Синяя с птицами 077 <span class="pub-objnum">(No. 077)</span></td>
+<td class="pub-title-cell">Large Imperial Blue Vase with Birds</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17067380" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17067380">Zenodo record 17067380 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Карпы 080 <span class="pub-objnum">(No. 080)</span></td>
+<td class="pub-title-cell">Imperial Hexagonal Vase with Sapphire Ground and Koi Carps. Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17068592" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17068592">Zenodo record 17068592 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Карпы 080 <span class="pub-objnum">(No. 080)</span></td>
+<td class="pub-title-cell">The Symbolism of the Carp in Imperial Chinese Porcelain</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16935718" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16935718">Zenodo record 16935718 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Салатная двойная тыква 085 <span class="pub-objnum">(No. 085)</span></td>
+<td class="pub-title-cell">A Rare Imperial Famille-Rose Sgraffiatto Double-Gourd Vase, Seal Mark and Period of Qianlong (1736--1795), Qing Dynasty, China</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17108507" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17108507">Zenodo record 17108507 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Салатная двойная тыква 085 <span class="pub-objnum">(No. 085)</span></td>
+<td class="pub-title-cell">Imperial Double-Gourd Vase with Famille-Rose Decoration over a Yellow-Green Sgraffiato Ground: Diagnostics and Attribution to the Qianlong Period (1736--1795)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16994617" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16994617">Zenodo record 16994617 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Сине красная с золотом 086 <span class="pub-objnum">(No. 086)</span></td>
+<td class="pub-title-cell">Imperial Baluster Vase with Sapphire-Blue Enamel Ground, Ruyi-Shaped Red Cartouche and Raised Gilt Decoration; Paired Ruyi Scroll Handles; Turquoise Base with Raised Seal &quot;Da Qing Qianlong Nian Zhi&quot;. China, Qing Dynasty, Qianlong Period (1736--1795). Jingdezhen Imperial Kilns</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17079304" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17079304">Zenodo record 17079304 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Сине красная с золотом 086 <span class="pub-objnum">(No. 086)</span></td>
+<td class="pub-title-cell">Technological Study of Gilding on Imperial Porcelain of the Qianlong Reign: A Microscopic Examination of a Vase with Birds on a Red Ground</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16935935" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16935935">Zenodo record 16935935 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Красная резная 087 <span class="pub-objnum">(No. 087)</span></td>
+<td class="pub-title-cell">Pierced Double-Walled Vase with Red Yangcai Ground and Famille-Rose Landscape Medallions</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17106963" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17106963">Zenodo record 17106963 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-daoguang" aria-labelledby="qing-daoguang-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-daoguang-title">Qing Dynasty — Daoguang Period</h2>
+<span class="dynasty-span">1821–1850</span>
+<span class="dynasty-block__count">1 publication</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Daoguang Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Дауган 090 <span class="pub-objnum">(No. 090)</span></td>
+<td class="pub-title-cell">Vase with Grasshopper and Blossoming Branch, Pavilion Mark &quot;Shen De Tang Zhi&quot; (Hall of Prudent Virtue). Qing Dynasty, Daoguang Period (1821--1850)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17071937" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17071937">Zenodo record 17071937 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-tongzhi" aria-labelledby="qing-tongzhi-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-tongzhi-title">Qing Dynasty — Tongzhi Period</h2>
+<span class="dynasty-span">1862–1874</span>
+<span class="dynasty-block__count">4 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Tongzhi Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Тунджи 091 <span class="pub-objnum">(No. 091)</span></td>
+<td class="pub-title-cell">Grand Ceremonial Vase with Peaches, Clouds, and Elephant-Head Handles. China, Qing Dynasty, Tongzhi Period (1862--1874)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17072592" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17072592">Zenodo record 17072592 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тунджи 091 <span class="pub-objnum">(No. 091)</span></td>
+<td class="pub-title-cell">Grand Ceremonial Vase with Peaches, Clouds, and Elephant-Head Handles. China, Qing Dynasty, Tongzhi Period (1862--1874)</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17105076" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17105076">Zenodo record 17105076 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тунджи 091 <span class="pub-objnum">(No. 091)</span></td>
+<td class="pub-title-cell">Imperial Ink-Wash Style on a Yellow-Ground Vase of the Tongzhi Period: Diagnostic Study and Comparative Analysis</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16932232" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16932232">Zenodo record 16932232 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Тунджи 091 <span class="pub-objnum">(No. 091)</span></td>
+<td class="pub-title-cell">Yellow Antique Chinese Porcelain Vase with Cobalt Grisaille</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.6084/M9.FIGSHARE.29973307" target="_blank" rel="noopener" title="https://doi.org/10.6084/M9.FIGSHARE.29973307">Figshare record ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="qing-guangxu" aria-labelledby="qing-guangxu-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="qing-guangxu-title">Qing Dynasty — Guangxu Period</h2>
+<span class="dynasty-span">1875–1908</span>
+<span class="dynasty-block__count">2 publications</span>
+</div>
+<table class="pub-table" aria-label="Publications — Qing Dynasty — Guangxu Period">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Гуансюй 092 093 <span class="pub-objnum">(No. 092, 093)</span></td>
+<td class="pub-title-cell">Microscopic Analysis of Enamels on a Guangxu Period Famille-Rose Plate: Features and Quality</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17012964" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17012964">Zenodo record 17012964 ↗</a></td>
+</tr><tr>
+<td class="pub-obj-cell">Гуансюй 092 093 <span class="pub-objnum">(No. 092, 093)</span></td>
+<td class="pub-title-cell">Porcelain Dish with Yellow Ground and Floral Scrolls. Guangxu Reign, Late Qing Dynasty (1875 -- 1908)</td>
+<td class="pub-year-cell">1908</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.17112293" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.17112293">Zenodo record 17112293 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="dynasty-block" id="general---cross-period" aria-labelledby="general---cross-period-title">
+<div class="dynasty-block__header">
+<h2 class="dynasty-block__title" id="general---cross-period-title">General Methodology &amp; Cross-Period Publications</h2>
+
+<span class="dynasty-block__count">1 publication</span>
+</div>
+<table class="pub-table" aria-label="Publications — General Methodology &amp; Cross-Period Publications">
+<colgroup>
+<col style="width:18%"><col style="width:52%"><col style="width:7%"><col style="width:23%">
+</colgroup>
+<thead>
+<tr><th>Object(s)</th><th>Publication Title</th><th>Year</th><th>DOI</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="pub-obj-cell">Книга справочник профессора дроновой «Что надо знать о старинном китайском фарфоре» <span class="pub-objnum">(general)</span></td>
+<td class="pub-title-cell">What You Need to Know about Antique Chinese Porcelain: Reference Encyclopedia</td>
+<td class="pub-year-cell">2025</td>
+<td class="pub-doi-cell"><a href="https://doi.org/10.5281/ZENODO.16794377" target="_blank" rel="noopener" title="https://doi.org/10.5281/ZENODO.16794377">Zenodo record 16794377 ↗</a></td>
+</tr>
+</tbody>
+</table>
+</section></article><!-- /pub-main -->
+
+<!-- SIDEBAR -->
+<aside class="pub-sidebar" aria-label="Dynasty navigation">
+<div class="sidebar-box">
+<p class="sidebar-box__header">Jump to dynasty</p>
+<nav class="sidebar-box__body">
+<a href="#tang" class="sidebar-anchor">Tang Dynasty</a>
+<a href="#song" class="sidebar-anchor">Song Dynasty</a>
+<a href="#yuan" class="sidebar-anchor">Yuan Dynasty</a>
+<a href="#ming" class="sidebar-anchor">Ming Dynasty</a>
+<a href="#qing-early-kangxi" class="sidebar-anchor">Qing — Kangxi Period</a>
+<a href="#qing-yongzheng" class="sidebar-anchor">Qing — Yongzheng Period</a>
+<a href="#qing-qianlong" class="sidebar-anchor">Qing — Qianlong Period</a>
+<a href="#qing-daoguang" class="sidebar-anchor">Qing — Daoguang Period</a>
+<a href="#qing-tongzhi" class="sidebar-anchor">Qing — Tongzhi Period</a>
+<a href="#qing-guangxu" class="sidebar-anchor">Qing — Guangxu Period</a>
+<a href="#general-cross-period" class="sidebar-anchor">General Methodology & Cross-Period</a>
+</nav>
+</div>
+<div class="sidebar-box">
+<p class="sidebar-box__header">About this index</p>
+<div style="padding:var(--space-3);">
+<p style="font-size:var(--text-xs); color:var(--muted); line-height:1.6;">
+All records are open-access on Zenodo under CC BY 4.0, published within the
+"Global Archive for Authentication of Antique Porcelain" community.
+</p>
+</div>
+</div>
+<div class="sidebar-box">
+<p class="sidebar-box__header">Method underlying all publications</p>
+<div style="padding:var(--space-3);">
+<a href="methodology.html" style="text-decoration:none;">
+<p style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:400; color:var(--ink); margin-bottom:4px;">BEINOS Method</p>
+<p style="font-size:var(--text-xs); color:var(--muted); line-height:1.5;">Gemmological optical microscopy · Non-destructive comparative diagnostics</p>
+</a>
+</div>
+</div>
+</aside>
+</div><!-- /pub-page -->
+
+<a href="index.html" class="back-link">← Back to Atlas</a>
+
+</div><!-- /container -->
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+<div class="container">
+<div class="footer__grid">
+<div class="footer__brand">
+<p class="footer__brand-name">
+Global Diagnostic Atlas<br>
+<span style="font-weight:300; color:var(--muted);">of Ancient Chinese Ceramics</span>
+</p>
+<p class="footer__brand-desc">
+An independent scientific platform dedicated to the authentication
+and technological investigation of ancient Chinese ceramics and porcelain.
+</p>
+<p style="font-size:var(--text-xs); color:var(--muted); margin-top:var(--space-2); line-height:1.6;">
+Scientific Director and Founder:<br>
+<strong style="color:var(--muted2);">Professor Nona Dmitrievna Dronova</strong><br>
+Doctor of Technical Sciences · Ph.D. in Geology and Mineralogy
+</p>
+</div>
+<div class="footer__col">
+<p class="footer__col-title">Knowledge Domains</p>
+<ul class="footer__links">
+<li><a href="templates/diagnostic-feature.html">Diagnostic Features</a></li>
+<li><a href="templates/reference-object.html">Reference Objects</a></li>
+<li><a href="templates/kiln.html">Production Kilns</a></li>
+<li><a href="templates/dynasty.html">Dynasty System</a></li>
+<li><a href="methodology.html">Methodology</a></li>
+<li><a href="publications.html">Publications</a></li>
+</ul>
+</div>
+<div class="footer__col">
+<p class="footer__col-title">System</p>
+<ul class="footer__links">
+<li><a href="book.html">Book</a></li>
+<li><a href="author-profile.html">Author Profiles</a></li>
+<li><a href="templates/scientific-article.html">Scientific Articles</a></li>
+<li><a href="ATLAS_IA_Stage1_Architecture.md">Architecture (Stage 1)</a></li>
+<li><a href="ATLAS_DS_Stage2_DesignSystem.md">Design System (Stage 2)</a></li>
+</ul>
+</div>
+<div class="footer__col">
+<p class="footer__col-title">Organisation</p>
+<ul class="footer__links">
+<li><a href="#">International Foundation</a></li>
+<li><a href="#">Global Archive for Authentication<br>of Antique Porcelain</a></li>
+<li><a href="#">College of Experts and Appraisers<br>of Antique Arts</a></li>
+</ul>
+</div>
+</div>
+<div class="footer__bottom">
+<p class="footer__copyright">
+© 2026 International Foundation — Global Archive for Authentication of Antique Porcelain.
+Scientific Director: Professor Nona Dmitrievna Dronova.
+</p>
+<nav class="footer__legal" aria-label="Legal navigation">
+<a href="#">Terms of Use</a>
+<a href="#">Editorial Policy</a>
+</nav>
+</div>
+</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
