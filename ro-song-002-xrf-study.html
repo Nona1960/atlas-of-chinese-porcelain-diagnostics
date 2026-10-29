@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Ru-type Vase — ro-song-002 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: microscopy and portable XRF (28 October 2026) of a large grey-blue Ru-type vase, compared with Northern Song Ru ware from Qingliangsi and Zhanggongxiang." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="Microscopic and X-Ray Fluorescence Investigation of a Large Grey-Blue Ru-Type Vase: Chemical Comparisons with Northern Song Ceramics from Qingliangsi and Related Kiln Sites" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/10/29" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-song-002.html">ro-song-002 — Ru-type Vase</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-song-002</span></p>
+      <h1>Microscopic and X-Ray Fluorescence Investigation of a Large Grey-Blue Ru-Type Vase: Chemical Comparisons with Northern Song Ceramics from Qingliangsi and Related Kiln Sites</h1>
+      <p class="object-subtitle">Professor Nona Dronova &middot; pXRF examination 28 October 2026 &middot; Archaeometry, Ceramic Technology, Chinese Art History, Materials Science</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-song-002.html">&larr; Back to the Atlas entry ro-song-002</a>
+        <a class="xrf-btn" href="ro-song-002-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>This paper presents a non-destructive examination of a large grey-blue glazed ceramic vase investigated within the technological and artistic tradition of Ru ware (汝窑), historically associated with the Northern Song dynasty (960–1127 CE).</p>
+<p>The investigation combines microscopic and visual examination of the glaze surface, crackle network, optical characteristics, foot-ring construction, and apparent firing-related features with portable X-ray fluorescence (pXRF) analysis performed on 28 October 2026 using an Olympus analyser.</p>
+<p>Three locations were examined: the glazed surface at the widest part of the body, the glazed underside, and an exposed ceramic-body area on the foot ring. The resulting elemental dataset provides information on major constituents and trace elements, including Si, Al, K, Ca, Fe, Ti, Mn, Zn, Rb, Sr, Y, Zr, Nb, Ba, Ce, La, Th, and Cr.</p>
+<p>The glaze exhibits a calcium-bearing silicate composition, with measured Ca concentrations of 6.503–7.599 wt.% and Fe concentrations of 0.856–0.866 wt.%. The ceramic body contains 13.270 wt.% Al, 1.356 wt.% Fe, and 5,740 ppm Ti.</p>
+<p>Comparisons are made with published archaeological and museum investigations of Ru ware from Qingliangsi (清凉寺), celadon from Zhanggongxiang (张公巷), and related Song-period ceramic traditions. Particular attention is given to the research of Li Weidong and colleagues, Zhao Weijuan and colleagues, Wu Zhanjun and colleagues, and researchers associated with the Palace Museum and the British Museum.</p>
+<p>The investigated vase exhibits several chemical and technological characteristics comparable to Northern Chinese celadon traditions, including archaeological Northern Song Ru ware. However, differences in potassium, strontium, and certain trace-element relationships distinguish the object from some published reference groups.</p>
+<p>The paper also addresses an important methodological issue: archaeological kiln-site assemblages may contain manufacturing rejects, experimental pieces, firing failures, and fragments of originally successful vessels, whereas a complete, carefully finished vase provides access to a different range of technological evidence.</p>
+<p>The results support continued investigation of the vase within the context of Northern Song Ru-type ceramic technology while identifying specific questions requiring further analytical verification.</p>
+<p><strong>Keywords:</strong> Ru ware; Ru yao; Northern Song dynasty; Qingliangsi kiln; Zhanggongxiang kiln; grey-blue glaze; crackle; portable XRF; ceramic body; trace elements; provenance; archaeometry; anorthite; phase separation.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>Ru ware occupies a distinctive position in the history of Chinese ceramics. Its reputation rests upon the exceptional refinement of its glaze, the subtlety of its blue-green and grey-blue colouration, and its association with the courtly ceramic culture of the late Northern Song dynasty.</p>
+<p>Archaeological investigations at Qingliangsi, Baofeng County, Henan Province, have substantially expanded knowledge of Ru ceramic production. Excavations have revealed kiln structures, production debris, ceramic fragments, and technological evidence relevant to the manufacture of high-quality celadons.</p>
+<p>Scientific investigation has further demonstrated that the characteristic appearance of Ru glazes cannot be explained by chemical composition alone. Colour and translucency are influenced by iron chemistry, firing conditions, microcrystalline phases, gas inclusions, and structural heterogeneity within the glaze.</p>
+<p>The study by Li Weidong and colleagues (2005) was particularly important in establishing the relevance of crystalline phases and phase separation to the appearance of Northern Song Ru glaze.</p>
+<p>Subsequent investigations using particle-induced X-ray emission (PIXE), neutron activation analysis (NAA), energy-dispersive X-ray fluorescence (EDXRF), electron microscopy, and other analytical methods have examined the relationships among Qingliangsi, Zhanggongxiang, and other Chinese ceramic production centres.</p>
+<p>These investigations provide a substantial scientific framework for examining individual objects.</p>
+<p>Nevertheless, comparison is complicated by differences in analytical methodology, sample preparation, instrument calibration, the archaeological contexts of reference materials, and the distinction between complete vessels and excavated fragments.</p>
+<p>The present study examines a large grey-blue vase exhibiting a visually complex glaze, a developed crackle network, and a carefully formed foot ring.</p>
+<p>The principal objective is to document its elemental characteristics and compare them with published data relating to Northern Chinese celadon manufacture, especially the Ru ware tradition of the Northern Song dynasty.</p>
+<p>A further objective is to consider whether archaeological production assemblages adequately represent the technological range of carefully finished, successfully fired vessels.</p>
+<h2 id="description-of-the-investigated-vase">2. Description of the Investigated Vase</h2>
+<h3 id="general-characteristics">2.1. General characteristics</h3>
+<p>The object is a large ceramic vase with a rounded body, a developed neck, an outward-flaring mouth, and a circular supporting foot.</p>
+<p>The exterior is covered with a soft grey-blue glaze possessing considerable visual depth.</p>
+<p>The glaze extends across the principal body surfaces and is also present on the recessed central area of the underside. The foot ring includes exposed ceramic-body surfaces.</p>
+<p>The surface displays a network of fine intersecting glaze cracks, commonly described as crackle.</p>
+<p>The grey-blue colour varies subtly with viewing conditions and surface curvature.</p>
+<p>In certain areas, the glaze appears relatively translucent, whereas elsewhere it exhibits a more diffuse, jade-like optical character.</p>
+<p>The underside includes localised darker reddish marks, including apparently paired features. These are relevant to the technological examination of the object but cannot be assigned to a specific firing-support system without further documentation.</p>
+<h3 id="significance-of-the-complete-form">2.2. Significance of the complete form</h3>
+<p>Unlike isolated archaeological sherds, the vase survives as a complete vessel.</p>
+<p>This permits examination of the relationship between its overall shape, glaze distribution, crackle development, supporting structure, and exposed ceramic body.</p>
+<p>The complete form also allows analytical measurements to be made at several positions belonging to the same object.</p>
+<p>Such information is valuable for investigating technological consistency and possible variation between different areas of the glaze.</p>
+<p>The survival of a complete vessel does not, by itself, establish its date or kiln of manufacture. Its significance lies in the broader range of technological information available for examination.</p>
+<h2 id="microscopic-and-visual-examination">3. Microscopic and Visual Examination</h2>
+<h3 id="research-approach">3.1. Research approach</h3>
+<p>The microscopic examination conducted by Professor Nona Dronova forms the initial stage of the investigation.</p>
+<p>The principal subjects of observation are the glaze surface, its optical character, the crackle network, localised surface features, and the relationship between the glazed and unglazed areas of the vessel.</p>
+<p>The present manuscript records the principal morphological observations associated with the examination.</p>
+<p>Instrument model, magnification, illumination conditions, image scales, and the precise dimensions of microscopic features should be supplied from the original examination records before final publication.</p>
+<h3 id="optical-properties-of-the-glaze">3.2. Optical properties of the glaze</h3>
+<p>The glaze possesses a soft grey-blue colour and an apparent optical depth that differs from a simple opaque surface coating.</p>
+<p>Its appearance is consistent with the broad category of complex silicate glazes in which light transmission and scattering may be influenced by several interacting factors.</p>
+<p>These include the chemical state of iron, microscopic bubbles, crystalline inclusions, and heterogeneity within the glassy matrix.</p>
+<p>Previous research on excavated Ru ware has demonstrated the importance of anorthite crystallisation and phase-separated structures in the optical behaviour of certain historical glazes.</p>
+<p>The appearance of the investigated vase is compatible with the possibility of comparable structural mechanisms.</p>
+<p>However, the presence of anorthite or any particular phase-separated microstructure in this specific object has not been independently established by the available XRF measurements.</p>
+<p>Such identification would require appropriate structural or spectroscopic examination.</p>
+<h3 id="crackle-morphology">3.3. Crackle morphology</h3>
+<p>The glaze displays a developed network of intersecting cracks.</p>
+<p>The lines vary in orientation and form irregular polygonal and curvilinear patterns.</p>
+<p>Crackle formation in ceramic glazes is commonly associated with stress generated by differences in thermal expansion between the glaze and ceramic body.</p>
+<p>Additional factors may include glaze thickness, cooling history, mechanical relaxation, and subsequent environmental exposure.</p>
+<p>The crackle network is therefore a technologically relevant feature.</p>
+<p>Nevertheless, crackle alone is not diagnostic of a particular historical period, since comparable structures can occur in ceramics of different dates and manufacturing traditions.</p>
+<p>Further microscopic documentation should establish the widths, intersections, distribution, and possible secondary deposits associated with the cracks.</p>
+<h3 id="foot-ring-and-underside">3.4. Foot ring and underside</h3>
+<p>The circular foot ring provides an opportunity to examine exposed ceramic material without sampling the glazed surface.</p>
+<p>The relationship between the foot, the recessed glazed underside, and localised contact marks is relevant to reconstructing the manufacturing and firing processes.</p>
+<p>The relatively large dimensions of the vase are also important.</p>
+<p>A large ceramic vessel imposes different mechanical and thermal demands from those of small dishes or bowls.</p>
+<p>Consequently, comparisons of firing supports and foot construction should take account of vessel dimensions, weight, and geometry.</p>
+<p>The observed reddish marks warrant further microscopic and compositional examination before a specific technological interpretation is proposed.</p>
+<h2 id="portable-x-ray-fluorescence-analysis">4. Portable X-Ray Fluorescence Analysis</h2>
+<h3 id="date-and-measurement-locations">4.1. Date and measurement locations</h3>
+<p>Portable X-ray fluorescence analysis was performed on <strong>28 October 2026</strong> using an Olympus analyser.</p>
+<p>The acquisition time for each measurement was 45 seconds.</p>
+<p>Three locations were investigated:</p>
+<p><strong>G1:</strong> Glaze on the widest part of the vase body.</p>
+<p><strong>G2:</strong> Glazed area of the underside.</p>
+<p><strong>B1:</strong> Exposed ceramic body on the foot ring.</p>
+<p>The instrument reported concentrations of selected elements in weight percent or parts per million.</p>
+<p>These measurements are treated as instrumental elemental results rather than a fully normalised bulk oxide analysis.</p>
+<p>The reported category “LE” refers to the instrument’s calculated light-element component and must not be interpreted as the concentration of an individual chemical element.</p>
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">G1 &mdash; Glaze at the widest part of the body</span>
+              <a href="images/ro-song-002-xrf-g1-body-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-g1-body-glaze.jpg" alt="Olympus pXRF protocol G1 — glaze at the widest part of the vase body, 28 October 2026, 45 s acquisition. Spectrum, element table with ±3σ and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 1.</span> Olympus pXRF protocol G1 — glaze at the widest part of the vase body, 28 October 2026, 45 s acquisition. Spectrum, element table with ±3σ and aiming image. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">G2 &mdash; Glazed underside</span>
+              <a href="images/ro-song-002-xrf-g2-underside-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-g2-underside-glaze.jpg" alt="Olympus pXRF protocol G2 — glazed area of the underside, 28 October 2026, 45 s acquisition." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 2.</span> Olympus pXRF protocol G2 — glazed area of the underside, 28 October 2026, 45 s acquisition. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">B1 &mdash; Exposed body on the foot ring</span>
+              <a href="images/ro-song-002-xrf-b1-foot-ring-body.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-b1-foot-ring-body.jpg" alt="Olympus pXRF protocol B1 — exposed ceramic body on the foot ring, 28 October 2026, 45 s acquisition." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 3.</span> Olympus pXRF protocol B1 — exposed ceramic body on the foot ring, 28 October 2026, 45 s acquisition. Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+<h3 id="major-elemental-composition">4.2. Major elemental composition</h3>
+<p><strong>Table 1. Reported elemental composition of the investigated vase</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">G1: Body glaze</th>
+<th class="num">G2: Underside glaze</th>
+<th class="num">B1: Ceramic body</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Al, wt.%</td>
+<td class="num">5.050</td>
+<td class="num">4.440</td>
+<td class="num">13.270</td>
+</tr>
+<tr class="even">
+<td>Si, wt.%</td>
+<td class="num">39.280</td>
+<td class="num">34.360</td>
+<td class="num">31.630</td>
+</tr>
+<tr class="odd">
+<td>K, wt.%</td>
+<td class="num">5.816</td>
+<td class="num">4.170</td>
+<td class="num">2.411</td>
+</tr>
+<tr class="even">
+<td>Ca, wt.%</td>
+<td class="num">7.599</td>
+<td class="num">6.503</td>
+<td class="num">0.875</td>
+</tr>
+<tr class="odd">
+<td>Fe, wt.%</td>
+<td class="num">0.866</td>
+<td class="num">0.856</td>
+<td class="num">1.356</td>
+</tr>
+<tr class="even">
+<td>LE, wt.%</td>
+<td class="num">40.60</td>
+<td class="num">48.71</td>
+<td class="num">48.75</td>
+</tr>
+</tbody>
+</table></div>
+<p>The results reveal substantial differences between the glaze and ceramic body.</p>
+<p>The glaze contains considerably more calcium and potassium, whereas the body contains more aluminium and iron.</p>
+<h3 id="trace-element-composition">4.3. Trace-element composition</h3>
+<p><strong>Table 2. Trace-element measurements, ppm</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">G1</th>
+<th class="num">G2</th>
+<th class="num">B1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ti</td>
+<td class="num">1,350</td>
+<td class="num">960</td>
+<td class="num">5,740</td>
+</tr>
+<tr class="even">
+<td>Mn</td>
+<td class="num">69</td>
+<td class="num">89</td>
+<td class="num">ND</td>
+</tr>
+<tr class="odd">
+<td>Zn</td>
+<td class="num">125</td>
+<td class="num">2,091</td>
+<td class="num">2,558</td>
+</tr>
+<tr class="even">
+<td>Rb</td>
+<td class="num">129</td>
+<td class="num">114</td>
+<td class="num">108</td>
+</tr>
+<tr class="odd">
+<td>Sr</td>
+<td class="num">137</td>
+<td class="num">162</td>
+<td class="num">211</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td class="num">13</td>
+<td class="num">23</td>
+<td class="num">40</td>
+</tr>
+<tr class="odd">
+<td>Zr</td>
+<td class="num">217</td>
+<td class="num">257</td>
+<td class="num">336</td>
+</tr>
+<tr class="even">
+<td>Nb</td>
+<td class="num">4</td>
+<td class="num">9</td>
+<td class="num">17</td>
+</tr>
+<tr class="odd">
+<td>Ba</td>
+<td class="num">532</td>
+<td class="num">368</td>
+<td class="num">326</td>
+</tr>
+<tr class="even">
+<td>P</td>
+<td class="num">1,530</td>
+<td class="num">1,180</td>
+<td class="num">730</td>
+</tr>
+<tr class="odd">
+<td>S</td>
+<td class="num">3,120</td>
+<td class="num">3,830</td>
+<td class="num">5,890</td>
+</tr>
+<tr class="even">
+<td>Pb</td>
+<td class="num">5</td>
+<td class="num">16</td>
+<td class="num">31</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>ND indicates that the element was not detected under the conditions of the measurement; it does not establish a zero concentration.</em></p>
+<h3 id="additional-elements-detected-in-the-ceramic-body">4.4. Additional elements detected in the ceramic body</h3>
+<p><strong>Table 3. Additional ceramic-body measurements</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">B1, ppm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ce</td>
+<td class="num">250</td>
+</tr>
+<tr class="even">
+<td>La</td>
+<td class="num">133</td>
+</tr>
+<tr class="odd">
+<td>Th</td>
+<td class="num">27</td>
+</tr>
+<tr class="even">
+<td>Cr</td>
+<td class="num">123</td>
+</tr>
+</tbody>
+</table></div>
+<p>These elements are particularly relevant to published investigations of raw-material provenance in Northern Chinese ceramic production.</p>
+<p>However, concentrations obtained using portable XRF should not be treated as directly interchangeable with values obtained by NAA without suitable cross-method validation.</p>
+<h2 id="chemical-characteristics-of-the-glaze-and-ceramic-body">5. Chemical Characteristics of the Glaze and Ceramic Body</h2>
+<h3 id="calcium-rich-glaze-system">5.1. Calcium-rich glaze system</h3>
+<p>The two glaze measurements contain 7.599 wt.% and 6.503 wt.% calcium.</p>
+<p>Their mean is 7.051 wt.%.</p>
+<p>The exposed ceramic body contains 0.875 wt.% calcium.</p>
+<p>Accordingly, the mean measured calcium concentration in the glaze is approximately 8.1 times that of the ceramic body.</p>
+<p>This relationship is consistent with the use of a calcium-bearing glaze over a comparatively calcium-poor ceramic substrate.</p>
+<p>Calcium-rich silicate glazes are a significant technological category in historical Chinese celadon manufacture.</p>
+<p>The measured calcium enrichment therefore supports a meaningful technological comparison with Ru ware and related Northern Chinese ceramics.</p>
+<p>It does not, however, uniquely identify the Qingliangsi kiln.</p>
+<h3 id="aluminium-enrichment-in-the-ceramic-body">5.2. Aluminium enrichment in the ceramic body</h3>
+<p>The ceramic body contains 13.270 wt.% aluminium.</p>
+<p>The corresponding concentrations in the two glaze measurements are 5.050 wt.% and 4.440 wt.%.</p>
+<p>The mean glaze aluminium concentration is 4.745 wt.%.</p>
+<p>Thus, the ceramic body contains approximately 2.8 times more aluminium than the glaze.</p>
+<p>This distinction is consistent with an aluminosilicate ceramic body covered by a compositionally different glaze.</p>
+<p>The result is relevant to comparisons with archaeological Ru ware, whose ceramic bodies have been characterised as relatively alumina-rich.</p>
+<h3 id="iron-and-glaze-colour">5.3. Iron and glaze colour</h3>
+<p>The measured iron concentrations in the two glaze locations are remarkably similar:</p>
+<ul>
+<li>G1: 0.866 wt.% Fe.</li>
+<li>G2: 0.856 wt.% Fe.</li>
+</ul>
+<p>The difference is only 0.010 percentage points.</p>
+<p>This suggests local consistency in the reported iron concentration.</p>
+<p>Iron is important in the colour development of many Chinese celadon glazes.</p>
+<p>Nevertheless, the visual effect depends not only on total iron concentration but also on oxidation state, firing atmosphere, glass composition, and microstructure.</p>
+<p>The present measurements cannot independently establish the iron oxidation state or the firing atmosphere.</p>
+<h3 id="potassium-and-glaze-fluxes">5.4. Potassium and glaze fluxes</h3>
+<p>Potassium concentrations in the two glaze locations are 5.816 wt.% and 4.170 wt.%.</p>
+<p>The difference may reflect local compositional variation, glaze thickness, surface geometry, instrumental matrix effects, or a combination of these factors.</p>
+<p>Potassium is relevant to glaze melting behaviour and may reflect contributions from particular raw materials.</p>
+<p>The relatively high measured potassium concentrations are among the characteristics requiring closer examination in comparisons with archaeological Ru ware.</p>
+<h3 id="titanium-in-the-ceramic-body">5.5. Titanium in the ceramic body</h3>
+<p>The ceramic body contains 5,740 ppm Ti.</p>
+<p>If all measured titanium is expressed provisionally as TiO₂, this corresponds to approximately 0.958 wt.% TiO₂.</p>
+<p>Titanium-bearing minerals are common constituents of ceramic raw materials and may contribute useful information in provenance studies.</p>
+<p>Published analyses of excavated Ru ceramic bodies also report titanium.</p>
+<p>The investigated vase therefore provides a relevant basis for further comparison, although a reliable quantitative assessment requires comparable analytical procedures.</p>
+<h3 id="rubidium-strontium-yttrium-and-zirconium">5.6. Rubidium, strontium, yttrium, and zirconium</h3>
+<p>Rb, Sr, Y, and Zr were measured in all three locations.</p>
+<p>These elements are frequently useful in ceramic provenance studies because their relative concentrations can reflect geological differences among raw-material sources.</p>
+<p><strong>Table 4. Selected elemental ratios</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Ratio</th>
+<th class="num">G1</th>
+<th class="num">G2</th>
+<th class="num">B1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rb/Sr</td>
+<td class="num">0.942</td>
+<td class="num">0.704</td>
+<td class="num">0.512</td>
+</tr>
+<tr class="even">
+<td>Zr/Sr</td>
+<td class="num">1.584</td>
+<td class="num">1.586</td>
+<td class="num">1.592</td>
+</tr>
+<tr class="odd">
+<td>Zr/Rb</td>
+<td class="num">1.682</td>
+<td class="num">2.254</td>
+<td class="num">3.111</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Zr/Sr ratio is notably consistent across the three locations, ranging from approximately 1.584 to 1.592.</p>
+<p>This observation is potentially interesting.</p>
+<p>However, it must not be interpreted as proof of a common geological source.</p>
+<p>The similarity could also be influenced by instrumental calibration, substrate contributions to the glaze measurements, or other analytical effects.</p>
+<h3 id="zinc-heterogeneity">5.7. Zinc heterogeneity</h3>
+<p>Zinc displays the largest variation among the measured glaze trace elements.</p>
+<p>G1 contains 125 ppm Zn, whereas G2 contains 2,091 ppm.</p>
+<p>The underside glaze measurement is therefore approximately 16.7 times higher.</p>
+<p>The exposed ceramic body contains 2,558 ppm Zn.</p>
+<p>Several explanations are possible, including local compositional heterogeneity, surface contamination, differences in glaze thickness, and substrate contributions.</p>
+<p>This variation should be investigated through additional measurements before any historical or technological interpretation is attempted.</p>
+<h2 id="comparison-with-archaeological-ru-ware-from-qingliangsi">6. Comparison with Archaeological Ru Ware from Qingliangsi</h2>
+<h3 id="the-investigation-by-li-weidong-and-colleagues">6.1. The investigation by Li Weidong and colleagues</h3>
+<p>Li Weidong and colleagues investigated archaeological Ru ware from Qingliangsi using a combination of chemical and microstructural methods.</p>
+<p>Their research demonstrated the importance of crystalline phases and phase-separated structures in the formation of characteristic Ru glaze appearances.</p>
+<p>Published ceramic-body analyses included SiO₂ concentrations of approximately 62.48–65.95 wt.% and Al₂O₃ concentrations of approximately 25.91–28.95 wt.%.</p>
+<p>To provide an initial comparison, the elemental concentrations obtained for the investigated vase can be converted into provisional oxide equivalents.</p>
+<p>Such calculations are useful for orientation but must not be confused with a calibrated, normalised oxide analysis.</p>
+<p><strong>Table 5. Provisional ceramic-body comparison</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th class="num">Investigated vase: calculated oxide equivalent</th>
+<th class="num">Published Qingliangsi archaeological range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">67.67 wt.%</td>
+<td class="num">62.48–65.95 wt.%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">25.07 wt.%</td>
+<td class="num">25.91–28.95 wt.%</td>
+</tr>
+<tr class="odd">
+<td>TiO₂</td>
+<td class="num">0.958 wt.%</td>
+<td class="num">Reported in archaeological bodies</td>
+</tr>
+<tr class="even">
+<td>Fe₂O₃</td>
+<td class="num">1.94 wt.%</td>
+<td class="num">Reported in archaeological bodies</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The vase values are unnormalised oxide equivalents derived from elemental pXRF readings. They are not directly equivalent to laboratory bulk-oxide determinations.</em></p>
+<p>The comparison indicates broad similarity in the aluminosilicate character of the ceramic body.</p>
+<p>The provisional aluminium oxide equivalent lies slightly below the cited archaeological range, while the silica equivalent lies somewhat above it.</p>
+<p>These differences should be considered in relation to analytical uncertainty and possible differences in raw materials.</p>
+<p>The results support technological comparison but do not establish an exact chemical match.</p>
+<h2 id="comparison-with-pixe-studies-of-qingliangsi-and-zhanggongxiang">7. Comparison with PIXE Studies of Qingliangsi and Zhanggongxiang</h2>
+<h3 id="research-by-zhao-weijuan-and-colleagues">7.1. Research by Zhao Weijuan and colleagues</h3>
+<p>Zhao Weijuan and colleagues investigated the chemical composition of ceramic bodies from Qingliangsi and Zhanggongxiang using particle-induced X-ray emission.</p>
+<p>Their research addressed the provenance of raw materials used by these Northern Chinese ceramic production centres.</p>
+<p>The published dataset includes individual archaeological samples, providing a more informative basis for comparison than general descriptions of glaze colour or ceramic appearance.</p>
+<p>Selected reported compositions are presented below.</p>
+<p><strong>Table 6. Comparison with individual archaeological ceramic-body analyses</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th class="num">Al₂O₃, wt.%</th>
+<th class="num">SiO₂, wt.%</th>
+<th class="num">K₂O, wt.%</th>
+<th class="num">TiO₂, wt.%</th>
+<th class="num">Fe₂O₃, wt.%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Investigated vase*</td>
+<td class="num">25.07</td>
+<td class="num">67.67</td>
+<td class="num">2.90</td>
+<td class="num">0.958</td>
+<td class="num">1.94</td>
+</tr>
+<tr class="even">
+<td>R39B</td>
+<td class="num">27.91</td>
+<td class="num">64.98</td>
+<td class="num">1.68</td>
+<td class="num">1.08</td>
+<td class="num">1.77</td>
+</tr>
+<tr class="odd">
+<td>R40B</td>
+<td class="num">27.56</td>
+<td class="num">65.74</td>
+<td class="num">1.77</td>
+<td class="num">1.15</td>
+<td class="num">1.73</td>
+</tr>
+<tr class="even">
+<td>R41B</td>
+<td class="num">26.21</td>
+<td class="num">66.06</td>
+<td class="num">2.18</td>
+<td class="num">1.08</td>
+<td class="num">2.24</td>
+</tr>
+<tr class="odd">
+<td>R42B</td>
+<td class="num">28.03</td>
+<td class="num">65.25</td>
+<td class="num">1.73</td>
+<td class="num">1.28</td>
+<td class="num">1.81</td>
+</tr>
+<tr class="even">
+<td>R44B</td>
+<td class="num">26.86</td>
+<td class="num">65.77</td>
+<td class="num">1.90</td>
+<td class="num">1.13</td>
+<td class="num">2.39</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The vase values are calculated oxide equivalents derived from portable XRF elemental readings, not PIXE results.</em></p>
+<p>The investigated vase exhibits broad compositional proximity to these archaeological samples in several components.</p>
+<p>Its provisional aluminium and titanium oxide equivalents are near the lower part of the illustrated ranges, while its iron oxide equivalent overlaps the values reported for the selected archaeological specimens.</p>
+<p>The most notable difference is potassium.</p>
+<p>The provisional K₂O equivalent for the vase is 2.90 wt.%, exceeding the values of the illustrated samples.</p>
+<p>This difference should not be dismissed.</p>
+<p>It may reflect raw-material variation, analytical differences, or another technological factor requiring investigation.</p>
+<h2 id="comparison-with-palace-museum-ceramic-studies">8. Comparison with Palace Museum Ceramic Studies</h2>
+<h3 id="significance-of-museum-based-research">8.1. Significance of museum-based research</h3>
+<p>Research undertaken by the Palace Museum in Beijing has contributed substantially to the chemical classification of Song-period official ceramics and later imitations.</p>
+<p>These investigations are particularly important because they extend comparative analysis beyond excavated kiln-site fragments to include museum objects.</p>
+<p>In certain studies, the chemical composition of exposed ceramic-body surfaces was used to investigate relationships among objects attributed to different ceramic traditions.</p>
+<p>Such work demonstrates the potential of elemental analysis to complement art-historical classification.</p>
+<h3 id="comparison-with-a-northern-chinese-museum-group">8.2. Comparison with a Northern Chinese museum group</h3>
+<p>A Palace Museum study published in 2014 identified a group of seven ceramic objects with Northern Chinese compositional characteristics.</p>
+<p>Selected trace-element values for their ceramic bodies are compared with those of the investigated vase.</p>
+<p><strong>Table 7. Ceramic-body trace-element comparison, ppm</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th class="num">Rb</th>
+<th class="num">Sr</th>
+<th class="num">Y</th>
+<th class="num">Zr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Investigated vase</td>
+<td class="num">108</td>
+<td class="num">211</td>
+<td class="num">40</td>
+<td class="num">336</td>
+</tr>
+<tr class="even">
+<td>G2</td>
+<td class="num">78</td>
+<td class="num">118</td>
+<td class="num">59</td>
+<td class="num">285</td>
+</tr>
+<tr class="odd">
+<td>G4</td>
+<td class="num">81</td>
+<td class="num">135</td>
+<td class="num">30</td>
+<td class="num">241</td>
+</tr>
+<tr class="even">
+<td>G5</td>
+<td class="num">76</td>
+<td class="num">115</td>
+<td class="num">43</td>
+<td class="num">266</td>
+</tr>
+<tr class="odd">
+<td>G6</td>
+<td class="num">66</td>
+<td class="num">99</td>
+<td class="num">42</td>
+<td class="num">246</td>
+</tr>
+<tr class="even">
+<td>G7</td>
+<td class="num">66</td>
+<td class="num">107</td>
+<td class="num">45</td>
+<td class="num">252</td>
+</tr>
+<tr class="odd">
+<td>G8</td>
+<td class="num">63</td>
+<td class="num">109</td>
+<td class="num">48</td>
+<td class="num">264</td>
+</tr>
+<tr class="even">
+<td>G9</td>
+<td class="num">80</td>
+<td class="num">130</td>
+<td class="num">65</td>
+<td class="num">389</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The museum figures have been transcribed or converted from previously examined comparative data. Their original units and table entries require final verification against the primary publication.</em></p>
+<p>The investigated vase falls within the illustrated museum range for Y and Zr.</p>
+<p>Its Rb and Sr concentrations, however, exceed those of the seven illustrated museum objects.</p>
+<p>The results therefore demonstrate partial overlap rather than complete agreement.</p>
+<p>This is an important distinction.</p>
+<p>A scientifically meaningful comparison must account for both similarities and differences.</p>
+<h2 id="comparative-trace-elements-in-archaeological-glazes">9. Comparative Trace Elements in Archaeological Glazes</h2>
+<p>A separate Palace Museum publication provides comparative information on glaze trace elements from several historical ceramic production centres.</p>
+<p>The available values permit a preliminary examination of Rb, Sr, Y, and Zr.</p>
+<p><strong>Table 8. Preliminary comparison of glaze trace elements, ppm</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Sample or group</th>
+<th class="num">Rb</th>
+<th class="num">Sr</th>
+<th class="num">Y</th>
+<th class="num">Zr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Investigated vase, G1</td>
+<td class="num">129</td>
+<td class="num">137</td>
+<td class="num">13</td>
+<td class="num">217</td>
+</tr>
+<tr class="even">
+<td>Investigated vase, G2</td>
+<td class="num">114</td>
+<td class="num">162</td>
+<td class="num">23</td>
+<td class="num">257</td>
+</tr>
+<tr class="odd">
+<td>Qingliangsi, reported mean</td>
+<td class="num">119</td>
+<td class="num">261</td>
+<td class="num">26</td>
+<td class="num">195</td>
+</tr>
+<tr class="even">
+<td>Zhanggongxiang, reported mean</td>
+<td class="num">108</td>
+<td class="num">299</td>
+<td class="num">29</td>
+<td class="num">210</td>
+</tr>
+<tr class="odd">
+<td>Laohudong, Yuan-period layer</td>
+<td class="num">198</td>
+<td class="num">270</td>
+<td class="num">15</td>
+<td class="num">99</td>
+</tr>
+<tr class="even">
+<td>Jiaotanxia</td>
+<td class="num">140</td>
+<td class="num">635</td>
+<td class="num">39</td>
+<td class="num">171</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The comparative reference values and their units must be checked against the original published table before this table is treated as a final quantitative dataset.</em></p>
+<p>The Rb concentrations of the investigated vase are relatively close to those reported for Qingliangsi and Zhanggongxiang.</p>
+<p>Its Zr concentrations are also broadly comparable.</p>
+<p>However, the measured Sr concentrations are considerably lower than the cited archaeological means.</p>
+<p>Y also differs, particularly in the G1 measurement.</p>
+<p>The results suggest some shared geochemical characteristics but do not establish a unique provenance.</p>
+<p>They also highlight the importance of comparing data obtained through compatible analytical procedures.</p>
+<h2 id="neutron-activation-studies-of-raw-material-provenance">10. Neutron Activation Studies of Raw-Material Provenance</h2>
+<h3 id="research-by-wu-zhanjun-and-colleagues">10.1. Research by Wu Zhanjun and colleagues</h3>
+<p>The 2007 study by Wu Zhanjun and colleagues investigated the raw-material characteristics of ceramic bodies from Qingliangsi and Zhanggongxiang using neutron activation analysis.</p>
+<p>The study examined 83 specimens, including:</p>
+<ul>
+<li>32 official Ru ware ceramic-body samples;</li>
+<li>5 popular Ru ware samples;</li>
+<li>32 Zhanggongxiang ceramic-body samples;</li>
+<li>14 geological samples.</li>
+</ul>
+<p>Twenty-three elements were determined.</p>
+<p>The authors identified Fe, Ce, Ba, Ta, Th, La, Sm, and Cr as particularly informative elements for distinguishing the investigated raw-material groups.</p>
+<p>This finding is relevant to the present study because six of these eight elements were reported in the Olympus analysis of the vase.</p>
+<p><strong>Table 9. Elements relevant to published NAA provenance studies</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">Investigated vase, ceramic body</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fe</td>
+<td class="num">13,560 ppm</td>
+</tr>
+<tr class="even">
+<td>Ce</td>
+<td class="num">250 ppm</td>
+</tr>
+<tr class="odd">
+<td>Ba</td>
+<td class="num">326 ppm</td>
+</tr>
+<tr class="even">
+<td>Th</td>
+<td class="num">27 ppm</td>
+</tr>
+<tr class="odd">
+<td>La</td>
+<td class="num">133 ppm</td>
+</tr>
+<tr class="even">
+<td>Cr</td>
+<td class="num">123 ppm</td>
+</tr>
+<tr class="odd">
+<td>Ta</td>
+<td class="num">Not reported</td>
+</tr>
+<tr class="even">
+<td>Sm</td>
+<td class="num">Not reported</td>
+</tr>
+</tbody>
+</table></div>
+<p>The availability of these measurements creates an opportunity for future multivariate comparison.</p>
+<p>However, the individual NAA concentrations for the archaeological specimens have not yet been recovered in a form suitable for independent verification.</p>
+<p>Consequently, the present paper does not claim that the vase has been statistically assigned to the Qingliangsi or Zhanggongxiang groups.</p>
+<p>Furthermore, the reliability of portable XRF determinations of Ce, La, and Th should be evaluated with particular care because of possible spectral interference and matrix effects.</p>
+<h3 id="research-by-li-rongwu-and-colleagues">10.2. Research by Li Rongwu and colleagues</h3>
+<p>Li Rongwu and colleagues investigated the raw-material origins of ceramics from the Jiaotanxia official kiln and Qingliangsi Ru kiln using neutron activation analysis.</p>
+<p>Their work is relevant because it extends chemical comparison across different official ceramic traditions.</p>
+<p>The original publication has been identified bibliographically, but its complete individual elemental tables have not yet been independently extracted for the present study.</p>
+<p>Accordingly, it is cited as an important research source rather than used as the basis for unsupported numerical comparisons.</p>
+<h2 id="comparison-with-british-museum-research">11. Comparison with British Museum Research</h2>
+<p>The British Museum study <em>Characterising Chinese Ru ware in the Sir Percival David collection at the British Museum using handheld XRF analysis</em> examined historical Ru ware using a non-destructive analytical approach.</p>
+<p>The researchers compared Ru ware with Korean Goryeo celadons and demonstrated the potential value of elemental characteristics, including Mn and Sr, in distinguishing ceramic traditions.</p>
+<p>The investigated vase contains:</p>
+<ul>
+<li>Mn: 69 and 89 ppm in the two glaze measurements;</li>
+<li>Sr: 137 and 162 ppm in the two glaze measurements.</li>
+</ul>
+<p>These values provide a basis for future comparison.</p>
+<p>However, the British Museum study used normalised XRF signal intensities rather than directly equivalent concentrations.</p>
+<p>Therefore, numerical comparison with the Olympus ppm results cannot be undertaken without appropriate calibration or a compatible analytical framework.</p>
+<p>The principal relevance of the British Museum study lies in its demonstration that non-destructive elemental analysis can contribute to the classification of museum-quality Ru ware.</p>
+<h2 id="methodological-significance-of-comparing-a-complete-high-quality-vase-with-archaeological-sherds">12. Methodological Significance of Comparing a Complete High-Quality Vase with Archaeological Sherds</h2>
+<h3 id="the-character-of-archaeological-reference-assemblages">12.1. The character of archaeological reference assemblages</h3>
+<p>A central methodological issue concerns the nature of the archaeological materials used as chemical reference groups.</p>
+<p>Many scientific investigations of Ru ware are based on fragments recovered from kiln sites.</p>
+<p>Such material is exceptionally valuable because its archaeological context may establish a connection with a particular production centre.</p>
+<p>Nevertheless, kiln-site assemblages do not necessarily represent the entire range of products manufactured at that location.</p>
+<p>They may contain several categories of material:</p>
+<ol type="1">
+<li>Vessels damaged during firing.</li>
+<li>Pieces rejected because of glaze defects.</li>
+<li>Experimental objects produced to test raw materials or firing conditions.</li>
+<li>Technological trials and intermediate production products.</li>
+<li>Fragments of vessels that were originally successful but subsequently broken.</li>
+<li>Ordinary production debris accumulated over extended periods.</li>
+</ol>
+<p>These categories are not technologically identical.</p>
+<p>A kiln-site assemblage may therefore contain both successful and unsuccessful products, as well as evidence of experimental practice.</p>
+<p>It would be incorrect to regard every archaeological sherd as a failed experiment.</p>
+<p>Equally, it would be incorrect to assume that the average composition of all excavated production material necessarily represents every category of finished vessel.</p>
+<h3 id="why-a-complete-vessel-provides-different-evidence">12.2. Why a complete vessel provides different evidence</h3>
+<p>The investigated grey-blue vase survives as a complete object.</p>
+<p>Its preservation permits examination of technological relationships that may be difficult or impossible to reconstruct from isolated fragments.</p>
+<p>These include the overall proportions of the vessel, the distribution of glaze across curved surfaces, the relationship between the body and the foot ring, and the continuity of crackle patterns.</p>
+<p>A complete vessel also permits measurements at different positions within the same manufactured object.</p>
+<p>In the present investigation, the two glaze measurements and the exposed-body measurement provide a limited but useful basis for examining compositional differentiation.</p>
+<p>The vase therefore represents a different type of analytical object from an isolated kiln-site sherd.</p>
+<p>This difference is relevant to the design of comparative studies.</p>
+<p>It does not imply that the complete vessel is inherently older, more authentic, or chemically superior.</p>
+<h3 id="technological-selection-and-the-manufacture-of-prestigious-ceramics">12.3. Technological selection and the manufacture of prestigious ceramics</h3>
+<p>The production of high-quality ceramics requires successful control of several interacting variables.</p>
+<p>These may include the preparation of raw materials, vessel forming, glaze composition, glaze application, drying, firing atmosphere, temperature, and cooling.</p>
+<p>In the manufacture of prestigious ceramics, visual and structural quality may have influenced which objects were retained, distributed, or selected for particular uses.</p>
+<p>It is therefore reasonable to consider the hypothesis that successfully finished vessels could exhibit a narrower range of certain technological characteristics than a heterogeneous assemblage of all production outputs.</p>
+<p>For example, successfully fired objects might display greater consistency in glaze thickness, surface quality, colour development, or structural integrity.</p>
+<p>However, such a hypothesis must be tested.</p>
+<p>It cannot be assumed that aesthetic quality necessarily corresponds to a particular trace-element composition.</p>
+<p>Trace-element concentrations are often more closely related to geological sources than to the visible success of firing.</p>
+<p>Consequently, the chemical composition of a high-quality finished vessel may overlap substantially with that of rejected products made from the same raw materials.</p>
+<p>The relationship between quality selection and elemental composition is therefore an empirical question.</p>
+<h3 id="the-special-technological-demands-of-large-vessels">12.4. The special technological demands of large vessels</h3>
+<p>The size and geometry of the investigated vase are particularly important.</p>
+<p>Large ceramic vessels present manufacturing challenges that differ from those encountered in the production of small bowls or dishes.</p>
+<p>These challenges may include:</p>
+<ul>
+<li>maintaining dimensional stability during forming and drying;</li>
+<li>avoiding deformation during firing;</li>
+<li>controlling the distribution of glaze over a large curved surface;</li>
+<li>ensuring adequate support within the kiln;</li>
+<li>maintaining acceptable thermal gradients;</li>
+<li>preventing glaze defects associated with thickness and flow.</li>
+</ul>
+<p>These considerations raise the possibility that large vessels required particular technological solutions.</p>
+<p>Differences in ceramic-body preparation, glaze application, and firing support may therefore be relevant to comparisons between large vases and small archaeological objects.</p>
+<p>However, a difference in vessel size does not, by itself, establish that different raw materials were used.</p>
+<p>This question requires direct comparison with securely attributed large ceramic forms.</p>
+<h3 id="interpreting-chemical-differences-responsibly">12.5. Interpreting chemical differences responsibly</h3>
+<p>The investigated vase exhibits several characteristics comparable to published Northern Chinese celadon data.</p>
+<p>At the same time, its potassium and strontium concentrations differ from some archaeological and museum reference values.</p>
+<p>Several explanations deserve consideration.</p>
+<p><strong>Raw-material variability.</strong> Materials obtained from different deposits or geological layers may possess different trace-element signatures.</p>
+<p><strong>Glaze recipe variation.</strong> Different production batches or technological traditions may employ different proportions of glaze components.</p>
+<p><strong>Differences between vessel categories.</strong> Large vessels may require particular forming and firing procedures, although compositional differences must be independently demonstrated.</p>
+<p><strong>Archaeological sampling effects.</strong> Kiln-site assemblages may contain a heterogeneous combination of experimental material, production failures, and successfully manufactured objects.</p>
+<p><strong>Analytical differences.</strong> Portable XRF, laboratory EDXRF, PIXE, and NAA do not necessarily produce directly interchangeable results.</p>
+<p>These possibilities should be investigated rather than used as predetermined explanations.</p>
+<p>In particular, the high quality of a finished object cannot automatically account for every chemical deviation from an archaeological reference group.</p>
+<h3 id="a-three-part-comparative-framework">12.6. A three-part comparative framework</h3>
+<p>A more comprehensive approach should compare three categories of material.</p>
+<p><strong>First: securely excavated archaeological specimens.</strong></p>
+<p>These provide essential evidence of production centres, chronological contexts, and the composition of materials used at particular kilns.</p>
+<p><strong>Second: complete museum objects.</strong></p>
+<p>These provide information about finished forms, glaze quality, foot construction, and technological characteristics of surviving vessels.</p>
+<p><strong>Third: the investigated vase.</strong></p>
+<p>This object provides a documented combination of complete form, microscopic observations, and a three-location elemental dataset.</p>
+<p>The strongest comparative conclusions would emerge from combining these categories rather than relying exclusively on one.</p>
+<p>Particular value would come from analysing complete museum vessels and archaeological samples using the same instrument, calibration procedure, measurement geometry, and data-processing method.</p>
+<h3 id="implications-for-the-investigated-vase">12.7. Implications for the investigated vase</h3>
+<p>The present vase should therefore be compared not only with average chemical compositions derived from excavated kiln-site fragments, but also with carefully documented complete vessels.</p>
+<p>Its large size, grey-blue glaze, foot-ring construction, and measured elemental characteristics justify a broader comparative programme.</p>
+<p>The hypothesis that high-quality finished ceramics may differ in some technological respects from kiln-site production debris is scientifically testable.</p>
+<p>It provides a reason to expand the reference dataset, not a reason to disregard chemical discrepancies.</p>
+<h4 id="conclusion-to-section-12">Conclusion to Section 12</h4>
+<p>Archaeological sherds remain fundamental to the scientific study of Ru ware.</p>
+<p>Nevertheless, kiln-site assemblages may contain manufacturing rejects, experimental products, and fragments of originally successful vessels.</p>
+<p>A complete, carefully finished vase offers a different range of technological evidence.</p>
+<p>For this reason, the investigation of the present object should combine archaeological chemistry with the study of complete museum ceramics and securely attributed large forms.</p>
+<p><strong>Chemical similarities should be treated as evidence of technological comparability, while differences should remain part of the scientific record and be investigated through additional measurements and appropriately selected reference groups.</strong></p>
+<h2 id="discussion">13. Discussion</h2>
+<p>The results reveal several important characteristics of the investigated vase.</p>
+<p>First, the glaze contains substantially more calcium than the exposed ceramic body.</p>
+<p>This relationship is consistent with a calcium-bearing silicate glaze applied to a comparatively alumina-rich ceramic substrate.</p>
+<p>Second, the measured iron concentrations in the two glaze locations are closely similar.</p>
+<p>This finding is relevant to the study of glaze colour and possible compositional consistency, although it does not independently establish firing conditions.</p>
+<p>Third, the ceramic body contains aluminium, iron, and titanium concentrations that permit meaningful comparison with published archaeological studies of Northern Chinese ceramics.</p>
+<p>Fourth, the trace-element profile includes several elements used in provenance research, including Rb, Sr, Y, Zr, Ba, Ce, La, Th, and Cr.</p>
+<p>Fifth, some measured characteristics overlap with published Qingliangsi and related reference datasets, while others differ.</p>
+<p>The most significant discrepancies include potassium in the ceramic body, strontium in the glaze and body, and the pronounced difference in zinc between the two glaze locations.</p>
+<p>These differences should not be concealed by selective comparison.</p>
+<p>They are potentially informative observations.</p>
+<p>Sixth, the optical character of the grey-blue glaze is compatible with mechanisms previously described for complex historical celadon glazes.</p>
+<p>Nevertheless, direct evidence of specific crystalline phases and phase-separated microstructures is not yet available for this object.</p>
+<p>Seventh, the large dimensions and complete preservation of the vase make it particularly suitable for a comparative programme involving complete museum objects and large archaeological forms.</p>
+<p>Finally, the present study illustrates both the value and limitations of portable XRF.</p>
+<p>The method can provide useful non-destructive elemental information, but rigorous provenance attribution requires appropriate calibration, repeated measurements, uncertainty estimates, and compatible reference data.</p>
+<h2 id="conclusions">14. Conclusions</h2>
+<p><strong>1.</strong> Portable XRF analysis conducted on 28 October 2026 established a three-location elemental dataset for a large grey-blue Ru-type vase, including two glaze measurements and one exposed ceramic-body measurement.</p>
+<p><strong>2.</strong> The glaze is characterised by a calcium-bearing silicate composition with measurable potassium, aluminium, and iron. This technological system is broadly comparable with historical Northern Chinese celadon glazes, including those associated with Northern Song Ru ware.</p>
+<p><strong>3.</strong> The ceramic body is comparatively aluminium-rich and calcium-poor. Its measured composition provides a basis for comparison with archaeological ceramic bodies from Qingliangsi and related production centres.</p>
+<p><strong>4.</strong> Iron concentrations in the two glaze locations are closely similar, at 0.866 and 0.856 wt.%, respectively.</p>
+<p><strong>5.</strong> The measured trace-element profile includes Rb, Sr, Y, Zr, Ba, Ti, Ce, La, Th, and Cr, several of which are relevant to published provenance studies.</p>
+<p><strong>6.</strong> Selected elemental characteristics show partial correspondence with published archaeological and museum reference groups associated with Northern Chinese ceramics.</p>
+<p><strong>7.</strong> Differences in potassium, strontium, and other elements demonstrate that the vase cannot presently be described as chemically identical to the published Qingliangsi reference datasets.</p>
+<p><strong>8.</strong> The grey-blue glaze, its optical depth, and its crackle morphology are compatible with characteristics observed in historical celadon traditions. The presence of specific microcrystalline or phase-separated structures remains to be confirmed by appropriate analytical methods.</p>
+<p><strong>9.</strong> The distinction between complete high-quality vessels and archaeological kiln-site fragments is methodologically important. Archaeological assemblages may include production failures, technological trials, and fragments of originally successful ceramics, and may not represent every category of finished production equally.</p>
+<p><strong>10.</strong> The investigated vase should therefore be compared with both securely excavated archaeological material and complete museum objects, particularly large forms.</p>
+<p><strong>11.</strong> The available evidence supports continued examination of the vase within the technological and artistic context of Northern Song Ru-type ceramics. It does not yet provide an independent, conclusive determination of the vessel’s date or kiln of manufacture.</p>
+<p><strong>12.</strong> Further work should prioritise repeated calibrated XRF measurements, verification of selected trace elements by an independent laboratory method, non-destructive structural analysis of the glaze, and direct comparison with securely attributed complete vessels.</p>
+<p>The investigated grey-blue vase represents a valuable subject for further interdisciplinary research.</p>
+<p>Its elemental characteristics, visual properties, and complete form offer an opportunity to examine the relationships between ceramic chemistry, glaze technology, object quality, and the archaeological interpretation of Northern Chinese celadon production.</p>
+<hr />
+<h2 id="references">15. References</h2>
+<ol type="1">
+<li><p><strong>Li, W., Li, J., Deng, Z., Wu, J., and Guo, J.</strong> (2005). Study on Ru ware glaze of the Northern Song dynasty: One of the earliest crystalline-phase separated glazes in ancient China. <em>Ceramics International</em>, 31(3), 487–494. <a href="https://doi.org/10.1016/j.ceramint.2004.07.002" target="_blank" rel="noopener" class="uri">https://doi.org/10.1016/j.ceramint.2004.07.002</a></p></li>
+<li><p><strong>Wu, B., et al.</strong> (2022). Study on the colouring, microstructure, and glaze formula of ‘Ru-type ware’ excavated from Qingliang Temple kiln in Henan Province, China. <em>Archaeometry</em>, 64(3), 632–643. <a href="https://doi.org/10.1111/arcm.12731" target="_blank" rel="noopener" class="uri">https://doi.org/10.1111/arcm.12731</a></p></li>
+<li><p><strong>Zhao Weijuan et al.</strong> (2006). 从化学组成研究张公巷窑与清凉寺窑青瓷胎的原料产地 [Investigation of the raw-material provenance of ceramic bodies from Zhanggongxiang and Qingliangsi kilns through chemical composition]. <em>Atomic Energy Science and Technology</em>, 40(1), 106–110. <a href="https://doi.org/10.7538/yzk.2006.40.01.0106" target="_blank" rel="noopener" class="uri">https://doi.org/10.7538/yzk.2006.40.01.0106</a></p></li>
+<li><p><strong>Wu Zhanjun et al.</strong> (2007). 用NAA研究清凉寺窑和张公巷窑青瓷胎的原料特征及来源 [Investigation of the characteristics and sources of raw materials of ceramic bodies from Qingliangsi and Zhanggongxiang kilns using neutron activation analysis]. <em>Nuclear Physics Review</em>, 24(4), 284–288. <a href="https://doi.org/10.11804/NuclPhysRev.24.04.284" target="_blank" rel="noopener" class="uri">https://doi.org/10.11804/NuclPhysRev.24.04.284</a></p></li>
+<li><p><strong>Li Rongwu et al.</strong> (2004). 用中子活化分析研究郊坛下官窑与清凉寺汝窑的原料来源 [Neutron activation investigation of the raw-material sources of Jiaotanxia official ware and Qingliangsi Ru ware]. <em>Nuclear Techniques</em>, 27(8), 576–580.</p></li>
+<li><p><strong>Characterising Chinese Ru ware in the Sir Percival David collection at the British Museum using handheld XRF analysis.</strong> (2023). <em>Advances in Archaeomaterials</em>. <a href="https://www.sciencedirect.com/science/article/pii/S266713602300002X" target="_blank" rel="noopener" class="uri">https://www.sciencedirect.com/science/article/pii/S266713602300002X</a></p></li>
+<li><p><strong>Palace Museum research on Song official ware and later imitations using EDXRF.</strong> (2014). <em>Palace Museum Journal</em>. Original Chinese publication: <a href="https://www.dpm.org.cn/Uploads/File/2018/06/04/u5b1530768e4c1.pdf" target="_blank" rel="noopener" class="uri">https://www.dpm.org.cn/Uploads/File/2018/06/04/u5b1530768e4c1.pdf</a></p></li>
+<li><p><strong>Palace Museum comparative research on Ge ware and archaeological ceramic glaze compositions.</strong> (2018). Original Chinese publication: <a href="https://www.dpm.org.cn/Uploads/File/2018/12/11/u5c0f2a8559ffc.pdf" target="_blank" rel="noopener" class="uri">https://www.dpm.org.cn/Uploads/File/2018/12/11/u5c0f2a8559ffc.pdf</a></p></li>
+<li><p><strong>Comparative investigation of official and popular Ru ware bodies and glazes excavated from Qingliangsi.</strong> (2013). Original Chinese publication: <a href="https://www.dpm.org.cn/Uploads/File/2018/06/05/u5b165f0de3b3f.pdf" target="_blank" rel="noopener" class="uri">https://www.dpm.org.cn/Uploads/File/2018/06/05/u5b165f0de3b3f.pdf</a></p></li>
+<li><p><strong>Corrosion Research on Ru Porcelain Glazes Excavated at Qingliangsi, Baofeng, China.</strong> (2023). <em>Coatings</em>, 13(6), 1011.</p></li>
+</ol>
+<p><em>Bibliographic verification note: The author lists, publication metadata, and numerical transcriptions for several Chinese-language and museum studies should be checked against the original publications before release of the final version of record.</em></p>
+<hr />
+<h2 id="supplementary-materials">16. Supplementary Materials</h2>
+<p>The following supplementary files are recommended for deposit alongside the article:</p>
+<p><strong>Supplementary File S1.</strong> Overall photographs of the investigated vase, including frontal and lateral views.</p>
+<p><strong>Supplementary File S2.</strong> Detailed photographs of the mouth, neck, body, foot ring, and underside.</p>
+<p><strong>Supplementary File S3.</strong> Microscopic images of the grey-blue glaze, crackle network, and localised surface features, with scale bars and instrumental information.</p>
+<p><strong>Supplementary File S4.</strong> Original Olympus XRF report for G1: glaze at the widest part of the vase body, 28 October 2026.</p>
+<p><strong>Supplementary File S5.</strong> Original Olympus XRF report for G2: underside glaze, 28 October 2026.</p>
+<p><strong>Supplementary File S6.</strong> Original Olympus XRF report for B1: exposed ceramic body, 28 October 2026.</p>
+<p><strong>Supplementary File S7.</strong> Machine-readable elemental dataset containing all reported measurements, units, detection limits, and uncertainties where available.</p>
+<p><strong>Supplementary File S8.</strong> Comparative archaeological and museum reference dataset, with source publications, table numbers, original measurement units, and any conversion procedures.</p>
+<hr />
+<h2 id="statements-and-research-transparency">17. Statements and Research Transparency</h2>
+<h3 id="analytical-limitations">Analytical limitations</h3>
+<p>Portable XRF measurements are sensitive to surface geometry, glaze thickness, sample heterogeneity, instrument calibration, and the contribution of underlying materials.</p>
+<p>The values reported in this paper represent measurements of specific surface locations and should not automatically be interpreted as bulk compositions.</p>
+<p>Provisional oxide equivalents are identified separately from directly reported elemental concentrations.</p>
+<h3 id="data-availability">Data availability</h3>
+<p>The primary analytical data consist of three Olympus XRF measurement reports dated 28 October 2026.</p>
+<p>The complete original reports should be deposited with the publication to permit independent examination.</p>
+<h3 id="research-attribution">Research attribution</h3>
+<p>Microscopic observations and their authorship should be confirmed against the original examination records.</p>
+<p>The final author-approved manuscript should identify the responsible researcher, analytical operator, and any additional contributors according to their actual roles.</p>
+<h3 id="declaration-concerning-attribution">Declaration concerning attribution</h3>
+<p>The vase is investigated within the technological and artistic tradition of Ru ware associated with the Northern Song dynasty.</p>
+<p>Chemical and microscopic comparability is treated as evidence relevant to attribution, not as independent proof of chronological origin.</p>
+<hr />
+
+      <nav class="pagination">
+        <a href="ro-song-002.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">ro-song-002 — Ru-type Vase with Sky-Blue Glaze</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-song-002.html">ro-song-002</a></span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Microscopy &middot; pXRF (Olympus)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">28 October 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Locations</span><span class="meta-value">G1 body glaze &middot; G2 underside glaze &middot; B1 foot-ring body</span></div>
+        <div class="meta-row"><span class="meta-label">Repository</span><span class="meta-value">Zenodo</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#description-of-the-investigated-vase">2. Description of the Investigated Vase</a></li><li><a href="#microscopic-and-visual-examination">3. Microscopic and Visual Examination</a></li><li><a href="#portable-x-ray-fluorescence-analysis">4. Portable X-Ray Fluorescence Analysis</a></li><li><a href="#chemical-characteristics-of-the-glaze-and-ceramic-body">5. Chemical Characteristics of the Glaze and Ceramic Body</a></li><li><a href="#comparison-with-archaeological-ru-ware-from-qingliangsi">6. Comparison with Archaeological Ru Ware from Qingliangsi</a></li><li><a href="#comparison-with-pixe-studies-of-qingliangsi-and-zhanggongxiang">7. Comparison with PIXE Studies of Qingliangsi and Zhanggongxiang</a></li><li><a href="#comparison-with-palace-museum-ceramic-studies">8. Comparison with Palace Museum Ceramic Studies</a></li><li><a href="#comparative-trace-elements-in-archaeological-glazes">9. Comparative Trace Elements in Archaeological Glazes</a></li><li><a href="#neutron-activation-studies-of-raw-material-provenance">10. Neutron Activation Studies of Raw-Material Provenance</a></li><li><a href="#comparison-with-british-museum-research">11. Comparison with British Museum Research</a></li><li><a href="#methodological-significance-of-comparing-a-complete-high-quality-vase-with-archaeological-sherds">12. Methodological Significance of Comparing a Complete High-Quality Vase with Archaeological Sherds</a></li><li><a href="#discussion">13. Discussion</a></li><li><a href="#conclusions">14. Conclusions</a></li><li><a href="#references">15. References</a></li><li><a href="#supplementary-materials">16. Supplementary Materials</a></li><li><a href="#statements-and-research-transparency">17. Statements and Research Transparency</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-song-002 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

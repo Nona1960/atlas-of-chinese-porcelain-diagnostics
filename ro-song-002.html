@@ -148,6 +148,17 @@
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -194,6 +205,7 @@
         <span class="tag">Phase Separation</span>
         <span class="tag">Fish Scale Effect</span>
         <span class="tag">GOM Examined</span>
+        <span class="tag">pXRF Analysed</span>
         <span class="tag">Burial Alteration</span>
       </div>
 
@@ -385,6 +397,66 @@
         </div>
       </section>
 
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the vase was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, 45&nbsp;s per measurement) at three locations: <strong>G1</strong> &mdash; glaze at the widest part of the body; <strong>G2</strong> &mdash; glazed underside; <strong>B1</strong> &mdash; exposed ceramic body on the foot ring. The results and their comparison with published data on Northern Song Ru ware from Qingliangsi (清凉寺), Zhanggongxiang (张公巷) and related kilns are set out in the research article by Professor Nona Dronova.</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">G1 &mdash; body glaze</th><th class="num">G2 &mdash; underside glaze</th><th class="num">B1 &mdash; ceramic body</th></tr></thead>
+            <tbody>
+              <tr><td>Al, wt.%</td><td class="num">5.050</td><td class="num">4.440</td><td class="num">13.270</td></tr>
+              <tr><td>Si, wt.%</td><td class="num">39.280</td><td class="num">34.360</td><td class="num">31.630</td></tr>
+              <tr><td>K, wt.%</td><td class="num">5.816</td><td class="num">4.170</td><td class="num">2.411</td></tr>
+              <tr><td>Ca, wt.%</td><td class="num">7.599</td><td class="num">6.503</td><td class="num">0.875</td></tr>
+              <tr><td>Fe, wt.%</td><td class="num">0.866</td><td class="num">0.856</td><td class="num">1.356</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">1,350</td><td class="num">960</td><td class="num">5,740</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">129</td><td class="num">114</td><td class="num">108</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">137</td><td class="num">162</td><td class="num">211</td></tr>
+              <tr><td>Y, ppm</td><td class="num">13</td><td class="num">23</td><td class="num">40</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">217</td><td class="num">257</td><td class="num">336</td></tr>
+              <tr><td>Zn, ppm</td><td class="num">125</td><td class="num">2,091</td><td class="num">2,558</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">532</td><td class="num">368</td><td class="num">326</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Selected values transcribed from the original instrument protocols. Full element lists with &plusmn;3&sigma; and detection limits are given in the protocols below.</p>
+
+        <h3>Principal findings</h3>
+        <p>The glaze is a calcium-bearing silicate (Ca 6.5&ndash;7.6&nbsp;wt.%, about eight times the body value) over a comparatively alumina-rich, calcium-poor body (Al 13.27&nbsp;wt.%). Iron in the two glaze locations is almost identical (0.866 and 0.856&nbsp;wt.%). The body&rsquo;s provisional oxide equivalents (SiO&#8322; 67.67, Al&#8322;O&#8323; 25.07, TiO&#8322; 0.96, Fe&#8322;O&#8323; 1.94&nbsp;wt.%) lie close to published PIXE analyses of Qingliangsi Ru bodies. Differences remain in potassium (K&#8322;O equivalent 2.90&nbsp;wt.%) and strontium, and zinc varies strongly between the two glaze points.</p>
+
+        <div class="note-ru">
+          The chemistry is broadly comparable with Northern Chinese celadon traditions, including archaeological Northern Song Ru ware, but is not identical to every published Qingliangsi reference group. The article also discusses why a complete, carefully finished vessel may differ from kiln-site assemblages that include rejects, trials and firing failures &mdash; a hypothesis to be tested, not assumed.
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">G1 &mdash; Glaze at the widest part of the body</span>
+              <a href="images/ro-song-002-xrf-g1-body-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-g1-body-glaze.jpg" alt="Olympus pXRF protocol G1 — glaze at the widest part of the vase body, 28 October 2026, 45 s acquisition. Spectrum, element table with ±3σ and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 9.</span> Olympus pXRF protocol G1 — glaze at the widest part of the vase body, 28 October 2026, 45 s acquisition. Spectrum, element table with ±3σ and aiming image. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">G2 &mdash; Glazed underside</span>
+              <a href="images/ro-song-002-xrf-g2-underside-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-g2-underside-glaze.jpg" alt="Olympus pXRF protocol G2 — glazed area of the underside, 28 October 2026, 45 s acquisition." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 10.</span> Olympus pXRF protocol G2 — glazed area of the underside, 28 October 2026, 45 s acquisition. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">B1 &mdash; Exposed body on the foot ring</span>
+              <a href="images/ro-song-002-xrf-b1-foot-ring-body.jpg" target="_blank" rel="noopener"><img src="images/ro-song-002-xrf-b1-foot-ring-body.jpg" alt="Olympus pXRF protocol B1 — exposed ceramic body on the foot ring, 28 October 2026, 45 s acquisition." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 11.</span> Olympus pXRF protocol B1 — exposed ceramic body on the foot ring, 28 October 2026, 45 s acquisition. Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-002-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-song-002-xrf-protocols.pdf" target="_blank" rel="noopener">Download all three XRF protocols (PDF)</a>
+        </div>
+      </section>
+
       <section id="cross-references">
         <h2>Related Entities</h2>
 
@@ -421,6 +493,7 @@
             <a href="../methodology/gom.html" class="crossref-link">Gemmological Optical Microscopy &mdash; GOM</a>
             <a href="../methodology/sem-eds.html" class="crossref-link">SEM&ndash;EDS (comparative)</a>
             <a href="../methodology/xrd.html" class="crossref-link">XRD (comparative)</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 28 Oct 2026</a>
           </div>
         </div>
       </section>
@@ -452,7 +525,7 @@
         <div class="meta-row"><span class="meta-label">Dynasty</span><span class="meta-value"><a href="../dynasties/song.html">Northern Song</a></span></div>
         <div class="meta-row"><span class="meta-label">Date</span><span class="meta-value">Late 11th &ndash; early 12th century</span></div>
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Ru sky-blue crackle glaze</span></div>
-        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a></span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a> &middot; <a href="#xrf">pXRF</a> (28 Oct 2026)</span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
       </div>
 
@@ -462,6 +535,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Microscopic Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>
