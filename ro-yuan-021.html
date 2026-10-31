@@ -97,7 +97,23 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 .footer-col h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.6rem}
 .footer-col p,.footer-col a{font-size:.78rem;color:var(--muted);text-decoration:none;line-height:1.7;display:block}
 .footer-bottom{max-width:1100px;margin:.8rem auto 0;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border2);padding-top:.8rem}
+.xrf-table-wrap{overflow-x:auto;border:1px solid var(--border);margin:1.2rem 0}
+.xrf-table-wrap .sci-table{margin:0}
+.num{text-align:right!important;font-variant-numeric:tabular-nums;white-space:nowrap}
+.xrf-caption{font-size:.78rem!important;font-style:italic;color:var(--muted)!important;line-height:1.55}
+.section h3.xrf-h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin:1.8rem 0 .6rem}
+.section p a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+.xrf-protocol-block{background:var(--parchment);border:1px solid var(--border);padding:1.2rem;margin:1.8rem 0}
+.xrf-protocol-header{font-size:.72rem!important;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)!important;border-bottom:1px solid var(--border2);padding-bottom:.5rem}
+.xrf-protocols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff;display:block}
+.xrf-label{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ink);padding:.2rem .5rem}
+.xrf-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.xrf-btn{display:inline-block;font-size:.8rem;font-weight:500;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);text-decoration:none}
+.xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+.xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
 @media(max-width:800px){
+  .xrf-protocols{grid-template-columns:1fr}
   .main-grid{grid-template-columns:1fr}
   .sidebar{position:static}
   .figure-row{grid-template-columns:1fr 1fr}
@@ -140,6 +156,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <span class="tag">Gourd-Form · Húlu 葫芦</span>
         <span class="tag">Fěnqīng Glaze 粉青</span>
         <span class="tag">Dronova GOM Method</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -269,6 +286,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
             <tr><td>Huo hong oxidation</td><td>Reddish-brown concentric zones on base</td><td>Yuan: prominent ring marks, Fe₂O₃</td><td>✓</td></tr>
             <tr><td>Throwing marks</td><td>Concentric rings on base</td><td>Wheel-thrown; consistent with kiln production</td><td>✓</td></tr>
             <tr><td>Handle type</td><td>Small closed loop at waist junction</td><td>Documented for Yuan Longquan vases</td><td>✓</td></tr>
+            <tr><td>pXRF glaze vs body</td><td>Ca 7.95 vs 0.32 wt.%; Fe 1.06 vs 1.89 wt.%</td><td>Calcium-fluxed glaze over calcium-poor Longquan body</td><td>✓</td></tr>
             <tr><td>Absence of crazing</td><td>No crackle on body</td><td>Distinguishes standard Longquan from Ge-type</td><td>✓</td></tr>
           </tbody>
         </table>
@@ -285,6 +303,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li class="diagnostic-item">Small closed-loop handles at waist junction — typologically specific to Yuan Longquan; rarer than animal-head handles of export wares</li>
           <li class="diagnostic-item">Absence of crazing on body — distinguishes standard Longquan from Ge-kiln and crackled black-body Longquan traditions</li>
           <li class="diagnostic-item">Glaze pooling at carved ribs creating tonal variation — skilled exploitation of glaze thickness differentials as decorative tool</li>
+          <li class="diagnostic-item">pXRF: calcium-bearing glaze (Ca 7.95 wt.%) over a calcium-poor, iron-richer body (Ca 0.32, Fe 1.89 wt.%) &mdash; glaze/body Ca ratio &asymp; 25, the technological arrangement of historical Longquan celadon</li>
           <li class="diagnostic-item">No evidence of modern restoration, reglaze, artificial staining, or reproduction characteristics</li>
         </ul>
 
@@ -312,6 +331,90 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         </div>
       </section>
 
+      <section class="section" id="xrf">
+        <h2 class="section-title">X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the vase was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s per measurement, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample No.&nbsp;1</strong>. Two areas were measured separately: <strong>G</strong> &mdash; the grey-green glaze (measurement ID&nbsp;1), and <strong>B</strong> &mdash; the exposed unglazed ceramic body on the base (measurement ID&nbsp;2). The results and their comparison with published analyses of excavated Longquan glazes and bodies are set out in the research article by Professor Nona Dronova (<a href="ro-yuan-021-xrf-study.html">full text</a>).</p>
+
+        <div class="xrf-table-wrap">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">G &mdash; glaze</th><th class="num">&plusmn;3&sigma;</th><th class="num">B &mdash; unglazed body</th><th class="num">&plusmn;3&sigma;</th><th class="num">Ratio</th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">40.22</td><td class="num">0.21</td><td class="num">23.56</td><td class="num">0.24</td><td class="num">&mdash;</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">7.09</td><td class="num">0.15</td><td class="num">10.11</td><td class="num">0.24</td><td class="num">B/G 1.4</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>7.954</strong></td><td class="num">0.058</td><td class="num"><strong>0.316</strong></td><td class="num">0.014</td><td class="num"><strong>G/B &asymp; 25.2</strong></td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.975</td><td class="num">0.037</td><td class="num">3.875</td><td class="num">0.052</td><td class="num">&asymp; 1.0</td></tr>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num"><strong>1.059</strong></td><td class="num">0.018</td><td class="num"><strong>1.890</strong></td><td class="num">0.032</td><td class="num"><strong>B/G &asymp; 1.8</strong></td></tr>
+              <tr><td>Ti, ppm</td><td class="num">1,280</td><td class="num">370</td><td class="num">1,340</td><td class="num">430</td><td class="num">&asymp; 1.0</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">324</td><td class="num">52</td><td class="num">1,011</td><td class="num">85</td><td class="num">B/G 3.1</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">527</td><td class="num">9</td><td class="num">317</td><td class="num">9</td><td class="num">G/B 1.7</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">95</td><td class="num">4</td><td class="num">31</td><td class="num">3</td><td class="num">G/B 3.1</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">107</td><td class="num">5</td><td class="num">108</td><td class="num">6</td><td class="num">&asymp; 1.0</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">310</td><td class="num">73</td><td class="num">149</td><td class="num">44</td><td class="num">G/B 2.1</td></tr>
+              <tr><td>Ni, ppm</td><td class="num">48</td><td class="num">11</td><td class="num">63</td><td class="num">15</td><td class="num">&mdash;</td></tr>
+              <tr><td>Cu, ppm</td><td class="num">43</td><td class="num">14</td><td class="num">61</td><td class="num">18</td><td class="num">&mdash;</td></tr>
+              <tr><td>Zn, ppm</td><td class="num">16</td><td class="num">7</td><td class="num">95</td><td class="num">13</td><td class="num">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="xrf-caption">Selected values transcribed from the original instrument protocols (28 October 2026). Ca in the body is reported by the instrument as 3,160&nbsp;ppm and shown here in wt.%. Also detected &mdash; glaze: S 3,980, Cr 81, Y 21, Nb 39, Sn 43, La 130, Ce 200, Nd 430, Hf 13, W 23, Th 20&nbsp;ppm; body: P 1,070, S 6,290, Y 50, Nb 16, Mo 11, La 141, Ce 161, Nd 300, W 25, Pb 128, Th 50&nbsp;ppm. Light-element balance: 38.93&nbsp;wt.% (glaze), 59.11&nbsp;wt.% (body). Values close to their uncertainty should not be over-interpreted.</p>
+
+        <h3 class="xrf-h3">Calculated oxide equivalents</h3>
+        <div class="xrf-table-wrap">
+          <table class="sci-table">
+            <thead><tr><th>Oxide</th><th class="num">Glaze</th><th class="num">Unglazed body</th></tr></thead>
+            <tbody>
+              <tr><td>SiO&#8322;</td><td class="num">86.04</td><td class="num">50.40</td></tr>
+              <tr><td>Al&#8322;O&#8323;</td><td class="num">13.40</td><td class="num">19.10</td></tr>
+              <tr><td>CaO</td><td class="num">11.13</td><td class="num">0.44</td></tr>
+              <tr><td>K&#8322;O</td><td class="num">4.79</td><td class="num">4.67</td></tr>
+              <tr><td>Fe&#8322;O&#8323;</td><td class="num">1.51</td><td class="num">2.70</td></tr>
+              <tr><td>TiO&#8322;</td><td class="num">0.21</td><td class="num">0.22</td></tr>
+              <tr><td>MnO</td><td class="num">0.042</td><td class="num">0.131</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="xrf-caption">Stoichiometric equivalents (wt.%) calculated independently from the elemental pXRF readings. They are not normalised to 100% and must not be read as measured bulk oxide compositions; they serve only for qualitative comparison with published ceramic analyses.</p>
+
+        <h3 class="xrf-h3">What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. A calcium-bearing glaze over a calcium-poor body.</strong> The glaze contains 7.954&nbsp;wt.% calcium, the exposed body only 0.316&nbsp;wt.% &mdash; about 25 times less. This sharp contrast shows a deliberately formulated calcium-fluxed celadon glaze applied over a separate body material, the basic technological arrangement of historical Longquan celadon production.
+        </div>
+
+        <div class="note">
+          <strong>2. An iron-richer, alumina-richer body.</strong> Iron shows the opposite distribution: 1.890&nbsp;wt.% in the body against 1.059&nbsp;wt.% in the glaze (about 1.8 times). Aluminium (10.11 vs 7.09&nbsp;wt.%) and manganese (1,011 vs 324&nbsp;ppm) are also higher in the body. The iron-bearing body agrees with the reddish-brown <em>huo hong</em> oxidation visible on the unglazed foot. The glaze iron is compatible with an iron-coloured grey-green celadon; the Fe&#178;&#8314;/Fe&#179;&#8314; ratio cannot be determined by pXRF.
+        </div>
+
+        <div class="note">
+          <strong>3. Correspondence with excavated Yuan Longquan material.</strong> Compared with published analyses of individual Yuan-period Longquan specimens from the Dayao kiln area, the glaze oxide equivalents of the vase fall within the archaeological ranges for Fe&#8322;O&#8323; (&asymp;&nbsp;1.51; published 1.10&ndash;2.02&nbsp;wt.%), Al&#8322;O&#8323; (&asymp;&nbsp;13.40) and K&#8322;O (&asymp;&nbsp;4.79). The body CaO equivalent (&asymp;&nbsp;0.44&nbsp;wt.%) lies within the published body range of 0.17&ndash;0.55&nbsp;wt.%. The body Fe&#8322;O&#8323; equivalent (&asymp;&nbsp;2.70&nbsp;wt.%) is somewhat higher than in the listed specimens. Potassium is almost equal in glaze and body (3.975 / 3.875&nbsp;wt.%), and titanium and zirconium are practically identical; rubidium, strontium and barium are enriched in the glaze.
+        </div>
+
+        <div class="note">
+          <strong>4. Limits of the measurement.</strong> The readings are single-point surface measurements made with a geochemical calibration. Si and Ca values in particular show the limits of direct numerical comparison with normalised laboratory oxide analyses, so the original elemental data remain the primary evidence. Phosphorus and sulfur appear mainly on the unglazed base and are best treated as possible surface contributions rather than properties of the fired body.
+        </div>
+
+        <div class="xrf-protocol-block">
+          <p class="xrf-protocol-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div>
+              <span class="xrf-label">G &mdash; Grey-green glaze &middot; ID 1</span>
+              <a href="images/ro-yuan-021-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-021-xrf-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 1, measurement ID 1 — grey-green glaze of the Yuan Longquan gourd vase ro-yuan-021, 28 October 2026, 45 s. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="xrf-caption"><strong>Fig. 4.</strong> Olympus pXRF protocol, Sample No.&nbsp;1, measurement ID&nbsp;1 &mdash; grey-green glaze, 28 October 2026, 45&nbsp;s. Click to open full size.</p>
+            </div>
+            <div>
+              <span class="xrf-label">B &mdash; Unglazed body on the base &middot; ID 2</span>
+              <a href="images/ro-yuan-021-xrf-body.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-021-xrf-body.jpg" alt="Olympus pXRF protocol, Sample No. 1, measurement ID 2 — exposed unglazed ceramic body on the base of ro-yuan-021, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="xrf-caption"><strong>Fig. 5.</strong> Olympus pXRF protocol, Sample No.&nbsp;1, measurement ID&nbsp;2 &mdash; exposed unglazed ceramic body on the base, 28 October 2026, 45&nbsp;s. Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-yuan-021-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-yuan-021-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
+        </div>
+      </section>
+
       <section class="section" id="cross-references">
         <h2 class="section-title">Cross-References</h2>
         <div class="crossref-block">
@@ -333,6 +436,8 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 
       <div class="bibliography">
         <h2>Bibliography</h2>
+        <p class="bib-item">Dronova, N. (2026). <em>A Yuan-Dynasty Longquan Celadon Vase with Twin Loop Handles and a Lobed Body: Comparative Portable X-Ray Fluorescence Analysis of the Glaze and Ceramic Body.</em> Zenodo (DOI to be assigned). <a href="ro-yuan-021-xrf-study.html" style="color:var(--muted2)">Full text on this site</a>.</p>
+        <p class="bib-item">Feng, S. et al. (2008). Nondestructive analysis on ancient porcelain of Longquan kiln by WDXRF. <em>Chinese Physics C</em> 32, 284–288.</p>
         <p class="bib-item">Dronova, N. (2025). <em>GOM Diagnostics of Yuan Dynasty Longquan Celadon: Gourd-Form Vessels and Phase-Separation Microstructure.</em> Global Archive of Antique Chinese Porcelain Authentication, Working Paper 21.</p>
         <p class="bib-item">Li, W. et al. (2025). "Microstructural and colorimetric analysis of plum-green celadon glazes from Longquan kilns across the Song and Yuan dynasties." <em>npj Heritage Science</em> 13, 47.</p>
         <p class="bib-item">Zhu, B. (朱伯謙) (1998). <em>Longquan yao qingci / Celadons from Longquan Kilns.</em> Taipei.</p>
@@ -361,7 +466,9 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <div class="meta-row"><span class="meta-label">Body</span><span class="meta-value">Buff-pink stoneware</span></div>
         <div class="meta-row"><span class="meta-label">Huo hong</span><span class="meta-value">Present — diagnostic</span></div>
         <div class="meta-row"><span class="meta-label">Rarity</span><span class="meta-value">High — rare Yuan type</span></div>
-        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova GOM Method</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova GOM Method &middot; <a href="#xrf" style="color:var(--muted2)">pXRF</a></span></div>
+        <div class="meta-row"><span class="meta-label">pXRF</span><span class="meta-value">28 Oct 2026 &middot; Sample No. 1 (glaze + body)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF article</span><span class="meta-value"><a href="ro-yuan-021-xrf-study.html" style="color:var(--muted2)">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Prof. N. Dronova, D.Tech.Sci.</span></div>
       </div>
 
@@ -371,6 +478,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li data-section="description"><a href="#description">Object Description</a></li>
           <li data-section="microscopy"><a href="#microscopy">Microscopic Analysis</a></li>
           <li data-section="interpretation"><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li data-section="xrf"><a href="#xrf">XRF Analysis</a></li>
           <li data-section="cross-references"><a href="#cross-references">Cross-References</a></li>
         </ul>
       </nav>
@@ -401,7 +509,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 </footer>
 
 <script>
-const sections = ['description','microscopy','interpretation','cross-references'];
+const sections = ['description','microscopy','interpretation','xrf','cross-references'];
 const navItems = document.querySelectorAll('#sidebar-nav li[data-section]');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

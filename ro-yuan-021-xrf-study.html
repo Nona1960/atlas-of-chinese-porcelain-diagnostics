@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Yuan Longquan Gourd Vase — ro-yuan-021 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: paired portable XRF measurements (28 October 2026) of the glaze and unglazed body of a Yuan-dynasty Longquan celadon gourd vase with twin loop handles, compared with published Longquan kiln analyses." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="A Yuan-Dynasty Longquan Celadon Vase with Twin Loop Handles and a Lobed Body: Comparative Portable X-Ray Fluorescence Analysis of the Glaze and Ceramic Body" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/10/31" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .col-main p.formula{text-align:center;font-family:var(--font-heading);font-size:1.15rem;margin:1rem 0}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-yuan-021.html">ro-yuan-021 — Longquan Gourd Vase</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-yuan-021</span></p>
+      <h1>A Yuan-Dynasty Longquan Celadon Vase with Twin Loop Handles and a Lobed Body: Comparative Portable X-Ray Fluorescence Analysis of the Glaze and Ceramic Body</h1>
+      <p class="object-subtitle">Nona Dronova &mdash; Independent Researcher &mdash; 2026 &mdash; Research Article &middot; Chinese Ceramic Archaeometry &middot; Yuan Dynasty &middot; Longquan Celadon</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-yuan-021.html">&larr; Back to the Atlas entry ro-yuan-021</a>
+        <a class="xrf-btn primary" href="ro-yuan-021-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>This article presents a non-destructive archaeometric investigation of a Yuan-dynasty Longquan celadon vase distinguished by a tall, outward-flaring neck, two small loop handles at the shoulders, a vertically lobed globular body, and a smooth grey-green glaze.</p>
+<p>The study combines morphological and photographic documentation with two original portable X-ray fluorescence (pXRF) measurements conducted separately on the glazed surface and the unglazed ceramic body at the base.</p>
+<p>The glaze measurement recorded Si 40.22 wt%, Al 7.09 wt%, Ca 7.954 wt%, K 3.975 wt%, and Fe 1.059 wt%. The unglazed body recorded Si 23.56 wt%, Al 10.11 wt%, Ca 0.316 wt%, K 3.875 wt%, and Fe 1.890 wt%.</p>
+<p>The results reveal pronounced chemical differentiation between glaze and ceramic body. Calcium is approximately 25.2 times more concentrated in the measured glaze than in the exposed body, while iron is approximately 1.8 times more concentrated in the body than in the glaze.</p>
+<p>Comparative analysis incorporates published wavelength-dispersive X-ray fluorescence (WDXRF) results from the Dayao, Xikou, and Jincun kiln areas, together with archaeological data from Yuan-period Longquan celadons.</p>
+<p>The analytical findings demonstrate the use of a calcium-bearing silicate glaze over an iron-containing aluminosilicate ceramic body. This technological arrangement corresponds to a major characteristic of historical Longquan celadon production.</p>
+<p>The study establishes an original compositional record for the investigated vase and contributes to the comparative archaeometry of Yuan-dynasty Longquan ceramics.</p>
+<p><strong>Keywords:</strong> Yuan dynasty; Longquan celadon; Chinese porcelain; celadon vase; loop handles; lobed vessel; portable X-ray fluorescence; pXRF; WDXRF; calcium-rich glaze; ceramic body; archaeometry; Dayao; Fengdongyan.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>Longquan celadon occupies a distinguished position in the history of Chinese ceramic production. Manufactured in the Longquan region of Zhejiang Province, its development reached remarkable technical and artistic sophistication during the Southern Song and Yuan dynasties.</p>
+<p>The Yuan period (1279–1368) was particularly important for the expansion of Longquan ceramic production and the development of a diverse range of vessel forms, including large jars, bottles, vases, dishes, and ritual or decorative objects.</p>
+<p>Longquan ceramics are renowned for their high-fired stoneware or porcelain bodies and carefully formulated celadon glazes. The distinctive green to grey-green coloration results from interactions among iron-bearing compounds, glaze composition, firing conditions, and microstructure.</p>
+<p>Modern archaeometric investigations have established that the relationship between glaze and ceramic body is central to understanding Longquan manufacturing technology.</p>
+<p>The present article examines a Yuan-dynasty Longquan celadon vase from a private research collection, designated Sample No. 1.</p>
+<p>The vase is characterized by a tall, flaring neck, two loop handles positioned symmetrically on the shoulders, and a globular body articulated by vertical lobes.</p>
+<p>Its surface is covered by a smooth, lustrous grey-green glaze.</p>
+<p>The investigation focuses on two separate pXRF measurements: one taken directly from the glazed surface and the second from the exposed ceramic body at the base.</p>
+<p>This paired analytical approach allows the chemical characteristics of the glaze and body to be evaluated independently and compared with published archaeological material.</p>
+<h2 id="object-description">2. Object Description</h2>
+<h3 id="general-morphology">2.1. General morphology</h3>
+<p>The investigated vessel is a tall ceramic vase with a distinctive architectural silhouette.</p>
+<p>The neck rises from the shoulders in a relatively narrow cylindrical form before expanding outward toward the mouth.</p>
+<p>The upper rim is broad and slightly flared.</p>
+<p>The body is globular, with its maximum diameter located below the shoulder.</p>
+<p>The exterior is divided into pronounced vertical lobes extending downward from the shoulder region and creating a rhythmic, flower-like profile.</p>
+<p>Two small loop handles are positioned symmetrically on opposite sides of the neck–shoulder junction.</p>
+<p>Each handle is pierced, forming an oval opening.</p>
+<p>The handles are integrated into the vessel’s overall profile and provide a characteristic decorative accent.</p>
+<h3 id="glaze-characteristics">2.2. Glaze characteristics</h3>
+<p>The vase is covered by a smooth grey-green celadon glaze.</p>
+<p>The surface displays a continuous, softly reflective finish, with subtle variation in tone caused by lighting, curvature, and glaze thickness.</p>
+<p>The vertical lobes are emphasized by changes in reflected light.</p>
+<p>The visible glaze is relatively uniform and lacks the conspicuous large-scale crackle associated with some other Chinese ceramic traditions.</p>
+<p>Its appearance is consistent with the restrained aesthetic of historical Longquan celadons.</p>
+<h3 id="ceramic-body">2.3. Ceramic body</h3>
+<p>The unglazed ceramic body was examined at the base of the vessel.</p>
+<p>The exposed surface provided a separate analytical area for portable XRF measurement.</p>
+<p>This distinction is particularly important because the composition of a celadon glaze differs substantially from that of the ceramic body beneath it.</p>
+<p>The present study therefore treats the glaze and body as two technologically distinct ceramic materials.</p>
+<h2 id="materials-and-methods">3. Materials and Methods</h2>
+<h3 id="investigated-object">3.1. Investigated object</h3>
+<p>The vase was designated:</p>
+<p><strong>Sample ID:</strong> 1<br />
+<strong>Object:</strong> Yuan-dynasty Longquan celadon vase<br />
+<strong>Research collection:</strong> Private collection<br />
+<strong>Analytical date:</strong> 28 October 2026</p>
+<p>Two measurement areas were selected:</p>
+<ul>
+<li>Grey-green glazed surface.</li>
+<li>Unglazed ceramic body at the base.</li>
+</ul>
+<h3 id="portable-x-ray-fluorescence-analysis">3.2. Portable X-ray fluorescence analysis</h3>
+<p>The measurements were performed using a portable X-ray fluorescence instrument.</p>
+<p><strong>Table 1. Analytical conditions.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Glaze measurement</th>
+<th>Body measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample ID</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Project designation</td>
+<td>ваза</td>
+<td>ваза niz</td>
+</tr>
+<tr class="odd">
+<td>Daily measurement ID</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td>28 October 2026</td>
+<td>28 October 2026</td>
+</tr>
+<tr class="odd">
+<td>Time</td>
+<td>13:57:51</td>
+<td>14:00:48</td>
+</tr>
+<tr class="even">
+<td>Instrument serial number</td>
+<td>940487</td>
+<td>940487</td>
+</tr>
+<tr class="odd">
+<td>Analytical method</td>
+<td>Geochem (3-Beam) Extra</td>
+<td>Geochem (3-Beam) Extra</td>
+</tr>
+<tr class="even">
+<td>Acquisition duration</td>
+<td>45 s</td>
+<td>45 s</td>
+</tr>
+<tr class="odd">
+<td>Measurement type</td>
+<td>In situ</td>
+<td>In situ</td>
+</tr>
+<tr class="even">
+<td>Analyzed material</td>
+<td>Glaze</td>
+<td>Unglazed body</td>
+</tr>
+</tbody>
+</table></div>
+<p>The original analytical reports provide elemental concentrations and instrumental uncertainties expressed as three standard deviations.</p>
+<p>The measurements were performed without removing material from the object.</p>
+<h3 id="analytical-considerations">3.3. Analytical considerations</h3>
+<p>Portable XRF provides valuable non-destructive elemental information but requires careful interpretation when applied to glazed ceramics.</p>
+<p>The measured signal can be influenced by glaze thickness, surface curvature, substrate contribution, and matrix effects.</p>
+<p>The instrument’s Geochem mode reports elemental concentrations rather than a fully calibrated and normalized ceramic oxide composition.</p>
+<p>Accordingly, the present study preserves the original elemental measurements as the primary analytical data.</p>
+<p>Theoretical oxide equivalents are provided only as secondary calculations for contextual comparison with published ceramic-science literature.</p>
+<h3 id="comparative-archaeological-data">3.4. Comparative archaeological data</h3>
+<p>The original measurements were compared with published analytical investigations of Longquan ceramics.</p>
+<p>Particular attention was given to studies employing X-ray fluorescence spectroscopy on excavated materials from the Dayao, Xikou, Jincun, and Fengdongyan kiln areas.</p>
+<p>These archaeological datasets provide a technological reference for the distribution of calcium, iron, aluminium, potassium, and other elements between glaze and ceramic body.</p>
+<h2 id="original-analytical-results">4. Original Analytical Results</h2>
+<h3 id="major-elemental-composition">4.1. Major elemental composition</h3>
+<p><strong>Table 2. Major and selected minor elements measured by pXRF.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">Grey-green glaze</th>
+<th class="num">Unglazed body</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Silicon (Si)</td>
+<td class="num">40.22 wt%</td>
+<td class="num">23.56 wt%</td>
+</tr>
+<tr class="even">
+<td>Aluminium (Al)</td>
+<td class="num">7.09 wt%</td>
+<td class="num">10.11 wt%</td>
+</tr>
+<tr class="odd">
+<td>Calcium (Ca)</td>
+<td class="num">7.954 wt%</td>
+<td class="num">0.316 wt%</td>
+</tr>
+<tr class="even">
+<td>Potassium (K)</td>
+<td class="num">3.975 wt%</td>
+<td class="num">3.875 wt%</td>
+</tr>
+<tr class="odd">
+<td>Iron (Fe)</td>
+<td class="num">1.059 wt%</td>
+<td class="num">1.890 wt%</td>
+</tr>
+<tr class="even">
+<td>Titanium (Ti)</td>
+<td class="num">1,280 ppm</td>
+<td class="num">1,340 ppm</td>
+</tr>
+<tr class="odd">
+<td>Manganese (Mn)</td>
+<td class="num">324 ppm</td>
+<td class="num">1,011 ppm</td>
+</tr>
+<tr class="even">
+<td>Rubidium (Rb)</td>
+<td class="num">527 ppm</td>
+<td class="num">317 ppm</td>
+</tr>
+<tr class="odd">
+<td>Strontium (Sr)</td>
+<td class="num">95 ppm</td>
+<td class="num">31 ppm</td>
+</tr>
+<tr class="even">
+<td>Zirconium (Zr)</td>
+<td class="num">107 ppm</td>
+<td class="num">108 ppm</td>
+</tr>
+<tr class="odd">
+<td>Barium (Ba)</td>
+<td class="num">310 ppm</td>
+<td class="num">149 ppm</td>
+</tr>
+<tr class="even">
+<td>Nickel (Ni)</td>
+<td class="num">48 ppm</td>
+<td class="num">63 ppm</td>
+</tr>
+<tr class="odd">
+<td>Copper (Cu)</td>
+<td class="num">43 ppm</td>
+<td class="num">61 ppm</td>
+</tr>
+<tr class="even">
+<td>Zinc (Zn)</td>
+<td class="num">16 ppm</td>
+<td class="num">95 ppm</td>
+</tr>
+</tbody>
+</table></div>
+<p>The elemental data demonstrate clear differences between the two measured ceramic surfaces.</p>
+<div class="micro-block">
+  <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+  <div class="xrf-protocols">
+    <div class="micro-item">
+      <span class="micro-mag">Measurement ID 1 &mdash; grey-green glaze</span>
+      <a href="images/ro-yuan-021-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-021-xrf-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 1, measurement ID 1 — glaze, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Figure 6.</span> Original portable X-ray fluorescence report for the grey-green glaze, measurement ID&nbsp;1, 28 October 2026. Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">Measurement ID 2 &mdash; unglazed body</span>
+      <a href="images/ro-yuan-021-xrf-body.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-021-xrf-body.jpg" alt="Olympus pXRF protocol, Sample No. 1, measurement ID 2 — unglazed body, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Figure 7.</span> Original portable X-ray fluorescence report for the unglazed ceramic body, measurement ID&nbsp;2, 28 October 2026. Click to open full size.</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="calcium-distribution">4.2. Calcium distribution</h3>
+<p>The most pronounced contrast concerns calcium.</p>
+<p>The glazed surface contains 7.954 wt% Ca, compared with only 0.316 wt% in the unglazed body.</p>
+<p>The concentration ratio is:</p>
+<p class="formula">
+Ca<sub>glaze</sub> / Ca<sub>body</sub> = 7.954 / 0.316 ≈ 25.2
+</p>
+<p>Thus, the measured glaze contains approximately 25.2 times more calcium than the exposed ceramic body.</p>
+<p>This substantial enrichment is characteristic of a glaze formulation incorporating a significant calcium-bearing flux component.</p>
+<p>Historical Longquan celadon technology employed calcium-containing glaze systems whose chemistry differs markedly from the underlying ceramic body.</p>
+<p>The result therefore provides a particularly informative technological observation.</p>
+<h3 id="iron-distribution">4.3. Iron distribution</h3>
+<p>Iron displays the opposite distribution.</p>
+<p>The glazed surface contains 1.059 wt% Fe, while the unglazed body contains 1.890 wt% Fe.</p>
+<p>The body-to-glaze concentration ratio is:</p>
+<p class="formula">
+Fe<sub>body</sub> / Fe<sub>glaze</sub> = 1.890 / 1.059 ≈ 1.78
+</p>
+<p>The exposed ceramic body is therefore approximately 1.8 times richer in iron than the measured glaze.</p>
+<p>Iron-bearing compounds are important both in the coloration of celadon glazes and in the firing behavior and appearance of ceramic bodies.</p>
+<p>The observed distribution provides an additional characteristic for comparison with archaeological Longquan materials.</p>
+<h3 id="aluminium-and-silicon">4.4. Aluminium and silicon</h3>
+<p>Aluminium is more concentrated in the unglazed body than in the glaze:</p>
+<ul>
+<li>Glaze: 7.09 wt% Al.</li>
+<li>Body: 10.11 wt% Al.</li>
+</ul>
+<p>This is consistent with a relatively alumina-rich ceramic body compared with the glaze.</p>
+<p>Silicon is reported at 40.22 wt% in the glaze and 23.56 wt% in the body.</p>
+<p>Because pXRF measurements in geochemical mode are affected by matrix composition and the treatment of light elements, these values should not be interpreted as complete bulk ceramic compositions.</p>
+<p>Nevertheless, they establish an independently recorded contrast between the two measured surfaces.</p>
+<h3 id="potassium-and-trace-elements">4.5. Potassium and trace elements</h3>
+<p>Potassium concentrations are relatively similar in the two measurements:</p>
+<ul>
+<li>Glaze: 3.975 wt%.</li>
+<li>Body: 3.875 wt%.</li>
+</ul>
+<p>Rubidium and strontium are more concentrated in the glaze than in the body.</p>
+<p>Manganese displays the opposite pattern, with 324 ppm in the glaze and 1,011 ppm in the body.</p>
+<p>These trace-element relationships provide additional comparative information relevant to studies of ceramic raw materials and technological traditions.</p>
+<h2 id="theoretical-oxide-equivalents">5. Theoretical Oxide Equivalents</h2>
+<p>Selected elemental values were converted into theoretical oxide equivalents using stoichiometric conversion factors.</p>
+<p><strong>Table 3. Calculated oxide equivalents of the measured surfaces.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">Glaze</th>
+<th class="num">Unglazed body</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">86.04 wt%</td>
+<td class="num">50.40 wt%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">13.40 wt%</td>
+<td class="num">19.10 wt%</td>
+</tr>
+<tr class="odd">
+<td>CaO</td>
+<td class="num">11.13 wt%</td>
+<td class="num">0.44 wt%</td>
+</tr>
+<tr class="even">
+<td>K₂O</td>
+<td class="num">4.79 wt%</td>
+<td class="num">4.67 wt%</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">1.51 wt%</td>
+<td class="num">2.70 wt%</td>
+</tr>
+<tr class="even">
+<td>TiO₂</td>
+<td class="num">0.21 wt%</td>
+<td class="num">0.22 wt%</td>
+</tr>
+<tr class="odd">
+<td>MnO</td>
+<td class="num">0.042 wt%</td>
+<td class="num">0.131 wt%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Methodological note:</strong> These values are theoretical equivalents calculated independently from the elemental pXRF readings. They are not normalized to 100%, and they must not be treated as directly measured bulk oxide compositions. Their purpose is to facilitate qualitative comparison with published ceramic analyses.</p>
+<h2 id="comparative-archaeometry-of-longquan-celadons">6. Comparative Archaeometry of Longquan Celadons</h2>
+<h3 id="published-wdxrf-investigations">6.1. Published WDXRF investigations</h3>
+<p>Feng and colleagues (2008) investigated ancient Longquan ceramics using wavelength-dispersive X-ray fluorescence.</p>
+<p>Their research included ceramic materials from the Dayao, Xikou, and Jincun kiln areas.</p>
+<p>The study provided separate chemical analyses of ceramic glazes and bodies.</p>
+<p>This distinction is especially relevant to the present investigation because the Yuan vase was likewise examined through paired measurements of the glaze and exposed body.</p>
+<h3 id="published-glaze-compositions">6.2. Published glaze compositions</h3>
+<p><strong>Table 4. Mean compositions of archaeological Longquan glazes reported by Feng et al. (2008).</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">Dayao, Southern Song–Yuan</th>
+<th class="num">Xikou, Southern Song–Yuan</th>
+<th class="num">Jincun, Northern Song</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">72.20%</td>
+<td class="num">73.80%</td>
+<td class="num">71.60%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">17.90%</td>
+<td class="num">17.60%</td>
+<td class="num">18.30%</td>
+</tr>
+<tr class="odd">
+<td>K₂O</td>
+<td class="num">3.42%</td>
+<td class="num">3.14%</td>
+<td class="num">2.12%</td>
+</tr>
+<tr class="even">
+<td>CaO</td>
+<td class="num">4.54%</td>
+<td class="num">4.00%</td>
+<td class="num">6.63%</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">0.87%</td>
+<td class="num">0.85%</td>
+<td class="num">0.73%</td>
+</tr>
+<tr class="even">
+<td>TiO₂</td>
+<td class="num">0.049%</td>
+<td class="num">0.055%</td>
+<td class="num">0.092%</td>
+</tr>
+<tr class="odd">
+<td>MnO</td>
+<td class="num">0.32%</td>
+<td class="num">0.17%</td>
+<td class="num">0.41%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The published results demonstrate that calcium, potassium, and iron are important constituents of historical Longquan glazes.</p>
+<p>The investigated vase likewise exhibits a calcium-bearing glaze containing measurable potassium and iron.</p>
+<p>The absolute oxide values cannot be compared as though obtained by identical analytical methods, but the elemental relationships are technologically informative.</p>
+<h3 id="published-ceramic-body-compositions">6.3. Published ceramic body compositions</h3>
+<p><strong>Table 5. Mean compositions of archaeological Longquan ceramic bodies reported by Feng et al. (2008).</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">Dayao, Southern Song–Yuan</th>
+<th class="num">Xikou, Southern Song–Yuan</th>
+<th class="num">Jincun, Northern Song</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">67.40%</td>
+<td class="num">68.20%</td>
+<td class="num">73.00%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">28.20%</td>
+<td class="num">25.70%</td>
+<td class="num">23.80%</td>
+</tr>
+<tr class="odd">
+<td>K₂O</td>
+<td class="num">3.09%</td>
+<td class="num">2.04%</td>
+<td class="num">1.86%</td>
+</tr>
+<tr class="even">
+<td>CaO</td>
+<td class="num">0.028%</td>
+<td class="num">0.033%</td>
+<td class="num">0.024%</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">0.86%</td>
+<td class="num">1.03%</td>
+<td class="num">0.97%</td>
+</tr>
+<tr class="even">
+<td>TiO₂</td>
+<td class="num">0.068%</td>
+<td class="num">0.172%</td>
+<td class="num">0.186%</td>
+</tr>
+<tr class="odd">
+<td>MnO</td>
+<td class="num">0.048%</td>
+<td class="num">0.023%</td>
+<td class="num">0.013%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The low calcium concentrations reported for archaeological Longquan ceramic bodies provide a useful parallel to the relatively calcium-poor unglazed base of the investigated vase.</p>
+<p>The original pXRF measurement of the vase’s exposed body recorded 0.316 wt% Ca, equivalent to approximately 0.44 wt% CaO.</p>
+<p>Although this calculated value is higher than the means reported by Feng et al., it is much lower than the calcium concentration of the vase’s glaze.</p>
+<p>The strong glaze–body calcium contrast is therefore consistent with a central technological distinction documented in historical Longquan production.</p>
+<h2 id="individual-yuan-period-archaeological-comparisons">7. Individual Yuan-Period Archaeological Comparisons</h2>
+<p>A recent archaeometric study, <em>Compositional and Microstructural Evolution of Longquan Celadon from the Southern Song to Ming Periods</em> (2026), provides individual glaze and body analyses from Yuan-period archaeological contexts.</p>
+<p>These data are particularly valuable because they permit comparison with specific excavated specimens rather than only broad chronological averages.</p>
+<h3 id="yuan-period-glaze-compositions">7.1. Yuan-period glaze compositions</h3>
+<p><strong>Table 6. Published compositions of selected Yuan-period Longquan glazes.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Archaeological sample</th>
+<th class="num">SiO₂</th>
+<th class="num">Al₂O₃</th>
+<th class="num">K₂O</th>
+<th class="num">CaO</th>
+<th class="num">Fe₂O₃</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DYSTC-1</td>
+<td class="num">74.27</td>
+<td class="num">12.18</td>
+<td class="num">5.33</td>
+<td class="num">4.80</td>
+<td class="num">1.31</td>
+</tr>
+<tr class="even">
+<td>DYSTC-2</td>
+<td class="num">68.50</td>
+<td class="num">14.95</td>
+<td class="num">5.21</td>
+<td class="num">6.85</td>
+<td class="num">1.10</td>
+</tr>
+<tr class="odd">
+<td>DYSTC-3</td>
+<td class="num">69.41</td>
+<td class="num">12.19</td>
+<td class="num">5.54</td>
+<td class="num">6.81</td>
+<td class="num">2.02</td>
+</tr>
+<tr class="even">
+<td>DYSTC-4</td>
+<td class="num">72.97</td>
+<td class="num">12.43</td>
+<td class="num">4.80</td>
+<td class="num">6.15</td>
+<td class="num">1.50</td>
+</tr>
+<tr class="odd">
+<td>DYSTC-5</td>
+<td class="num">72.10</td>
+<td class="num">11.93</td>
+<td class="num">5.28</td>
+<td class="num">5.04</td>
+<td class="num">1.70</td>
+</tr>
+<tr class="even">
+<td>DYMLY-1</td>
+<td class="num">70.30</td>
+<td class="num">13.33</td>
+<td class="num">4.03</td>
+<td class="num">7.66</td>
+<td class="num">1.70</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>All values are reported in wt% oxide.</em></p>
+<p>The archaeological samples demonstrate variability within the Yuan-period Longquan glaze tradition.</p>
+<p>Their iron oxide concentrations range from approximately 1.10 to 2.02 wt%, while calcium oxide ranges from approximately 4.80 to 7.66 wt%.</p>
+<p>The investigated vase has a theoretical Fe₂O₃ equivalent of approximately 1.51 wt%, falling within the reported archaeological range.</p>
+<p>Its theoretical Al₂O₃ equivalent of approximately 13.40 wt% also falls within the published range.</p>
+<p>The theoretical K₂O equivalent of approximately 4.79 wt% likewise lies within the reported interval.</p>
+<p>These correspondences are notable, although the methodological difference between the original pXRF results and published normalized oxide analyses must remain explicit.</p>
+<h3 id="yuan-period-ceramic-body-compositions">7.2. Yuan-period ceramic body compositions</h3>
+<p><strong>Table 7. Published compositions of selected Yuan-period Longquan ceramic bodies.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Archaeological sample</th>
+<th class="num">SiO₂</th>
+<th class="num">Al₂O₃</th>
+<th class="num">K₂O</th>
+<th class="num">CaO</th>
+<th class="num">Fe₂O₃</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DYSTC-1</td>
+<td class="num">66.05</td>
+<td class="num">23.20</td>
+<td class="num">5.28</td>
+<td class="num">0.19</td>
+<td class="num">2.15</td>
+</tr>
+<tr class="even">
+<td>DYSTC-2</td>
+<td class="num">65.80</td>
+<td class="num">23.03</td>
+<td class="num">6.09</td>
+<td class="num">0.55</td>
+<td class="num">2.00</td>
+</tr>
+<tr class="odd">
+<td>DYSTC-3</td>
+<td class="num">68.91</td>
+<td class="num">20.57</td>
+<td class="num">6.92</td>
+<td class="num">0.17</td>
+<td class="num">1.54</td>
+</tr>
+<tr class="even">
+<td>DYSTC-4</td>
+<td class="num">64.19</td>
+<td class="num">24.47</td>
+<td class="num">6.73</td>
+<td class="num">0.18</td>
+<td class="num">2.23</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>All values are reported in wt% oxide.</em></p>
+<p>The investigated vase’s theoretical CaO equivalent for the unglazed body is approximately 0.44 wt%.</p>
+<p>This value falls within the range of the four selected archaeological samples, approximately 0.17–0.55 wt%.</p>
+<p>The iron oxide equivalent of the vase’s body, approximately 2.70 wt%, is higher than the values of the four listed specimens, while its calculated aluminium and silicon oxide equivalents are lower.</p>
+<p>These differences demonstrate the importance of preserving analytical method distinctions and considering variation in ceramic raw materials.</p>
+<p>The comparison nevertheless establishes a meaningful framework for the study of the vase’s ceramic body.</p>
+<h2 id="technological-interpretation">8. Technological Interpretation</h2>
+<h3 id="calcium-bearing-celadon-glaze">8.1. Calcium-bearing celadon glaze</h3>
+<p>The substantial calcium concentration recorded in the glaze is one of the strongest technological findings of the present study.</p>
+<p>Calcium-bearing fluxes were important in the development of historical Chinese high-temperature glazes.</p>
+<p>The measured glaze contains approximately 25 times more calcium than the exposed ceramic body.</p>
+<p>Such differentiation is consistent with the use of a deliberately formulated glaze distinct from the underlying body material.</p>
+<h3 id="iron-and-grey-green-coloration">8.2. Iron and grey-green coloration</h3>
+<p>The vase’s grey-green color is characteristic of the celadon aesthetic.</p>
+<p>Iron-bearing compounds contribute to celadon coloration, with the final hue influenced by oxidation state, firing atmosphere, and glaze structure.</p>
+<p>The glaze contains 1.059 wt% elemental iron.</p>
+<p>This concentration is compatible with an iron-bearing celadon glaze system.</p>
+<p>The present pXRF analysis does not determine the proportions of Fe²⁺ and Fe³⁺. Those oxidation states would require additional spectroscopic investigation.</p>
+<h3 id="iron-rich-ceramic-body">8.3. Iron-rich ceramic body</h3>
+<p>The unglazed base contains 1.890 wt% iron, exceeding the concentration measured in the glaze.</p>
+<p>This contrast demonstrates that the ceramic body and glaze possess distinct iron concentrations.</p>
+<p>The difference may reflect the use of different raw material mixtures and the distribution of iron-bearing minerals in the ceramic body.</p>
+<h3 id="trace-element-relationships">8.4. Trace-element relationships</h3>
+<p>The measured titanium, manganese, rubidium, strontium, and zirconium concentrations provide additional information relevant to ceramic provenance studies.</p>
+<p>In the investigated vase:</p>
+<ul>
+<li>Titanium concentrations are similar in glaze and body.</li>
+<li>Manganese is substantially higher in the body.</li>
+<li>Rubidium is higher in the glaze.</li>
+<li>Strontium is higher in the glaze.</li>
+<li>Zirconium is almost identical in the two measured surfaces.</li>
+</ul>
+<p>These patterns may be compared with future datasets from excavated Longquan kiln materials.</p>
+<h2 id="morphological-context-and-yuan-dynasty-longquan-production">9. Morphological Context and Yuan-Dynasty Longquan Production</h2>
+<p>The investigated vase combines several distinctive formal features:</p>
+<ol type="1">
+<li>A tall, outward-flaring neck.</li>
+<li>Two small pierced loop handles.</li>
+<li>A rounded, vertically lobed body.</li>
+<li>A smooth grey-green celadon glaze.</li>
+</ol>
+<p>These elements situate the vessel within the broader visual and technological vocabulary of Yuan-dynasty Longquan ceramics.</p>
+<p>A particularly relevant museum comparison is the <em>Bottle Vase with Ornamental Ring Handles: Longquan Ware</em>, dated to the fourteenth century and preserved in the Cleveland Museum of Art (accession no. 1964.184).</p>
+<p>The Cleveland vessel shares the general arrangement of a tall neck, rounded body, and paired shoulder ornaments.</p>
+<p>The comparison is especially useful for understanding the formal development of Yuan-period Longquan vases.</p>
+<p>The present vase has its own distinctive combination of lobed body articulation, integrated loop handles, and smooth monochrome glaze.</p>
+<h2 id="discussion">10. Discussion</h2>
+<p>The combined morphological and compositional evidence provides a substantial foundation for understanding the investigated vessel as a Yuan-dynasty Longquan celadon vase.</p>
+<p>The most important analytical observation is the pronounced difference between the glaze and ceramic body.</p>
+<p>Calcium is highly concentrated in the glaze, while iron, aluminium, and manganese are more abundant in the exposed body.</p>
+<p>This distribution is consistent with the technological separation of glaze and body materials documented in historical Chinese celadon manufacture.</p>
+<p>Published archaeological studies provide relevant comparisons, particularly through the compositional variability recorded among Yuan-period Longquan glazes and bodies.</p>
+<p>The theoretical oxide equivalents calculated for the investigated vase show numerical correspondences with published Yuan-period specimens for several important constituents, including aluminium, potassium, and iron in the glaze and calcium in the body.</p>
+<p>At the same time, the silicon and calcium values demonstrate the limits of direct numerical comparison between surface pXRF readings and normalized laboratory oxide compositions.</p>
+<p>The original elemental measurements therefore remain the primary evidence presented in this study.</p>
+<p>The vessel’s formal characteristics, smooth grey-green surface, and paired shoulder handles complement the analytical findings and provide an integrated basis for technological and art-historical discussion.</p>
+<h2 id="conclusions">11. Conclusions</h2>
+<p>The present study documents the elemental composition of a Yuan-dynasty Longquan celadon vase through two original non-destructive portable X-ray fluorescence measurements.</p>
+<p>The investigation establishes five principal findings.</p>
+<p><strong>First</strong>, the glaze is characterized by a substantial calcium concentration of 7.954 wt%, together with silicon, aluminium, potassium, and iron.</p>
+<p><strong>Second</strong>, the exposed ceramic body contains only 0.316 wt% calcium, approximately 25 times less than the measured glaze.</p>
+<p><strong>Third</strong>, iron is more concentrated in the body than in the glaze, at 1.890 wt% and 1.059 wt%, respectively.</p>
+<p><strong>Fourth</strong>, the chemical distinction between glaze and body is consistent with the technological organization of historical Longquan celadon production, as documented in published archaeological studies.</p>
+<p><strong>Fifth</strong>, the vessel’s tall flaring neck, paired loop handles, vertically lobed body, and smooth grey-green glaze provide important morphological characteristics for comparison with Yuan-dynasty Longquan ceramics.</p>
+<p>The study contributes an original paired pXRF dataset and a comparative archaeological framework for the continued investigation of Yuan-period Longquan ceramic technology.</p>
+<p>The planned inclusion of macroscopic photographs, base documentation, and microphotographs will further strengthen the visual record accompanying the chemical analysis.</p>
+<h2 id="figures">12. Figures</h2>
+<p><strong>Figure 1.</strong> Yuan-dynasty Longquan celadon vase, Sample No. 1. General frontal view showing the flaring neck, twin loop handles, vertically lobed globular body, and smooth grey-green glaze.</p>
+<p><strong>Figure 2.</strong> Detail of the vase’s shoulder and loop handles, showing their integration into the neck–body transition.</p>
+<p><strong>Figure 3.</strong> Base of the vase, showing the exposed unglazed ceramic body analyzed by pXRF.</p>
+<p><strong>Figure 4.</strong> Microphotograph of the grey-green celadon glaze, documenting surface texture and optical characteristics.</p>
+<p><strong>Figure 5.</strong> Microphotograph of the ceramic body at the base, documenting the exposed ceramic material.</p>
+<p><strong>Figure 6.</strong> Original portable X-ray fluorescence report for the grey-green glaze, measurement ID 1, 28 October 2026.</p>
+<p><strong>Figure 7.</strong> Original portable X-ray fluorescence report for the unglazed ceramic body, measurement ID 2, 28 October 2026.</p>
+<p><strong>Figure 8.</strong> Comparative diagram of calcium, iron, aluminium, and potassium concentrations in the glaze and ceramic body.</p>
+<h2 id="references">13. References</h2>
+<ol type="1">
+<li><p>Feng, S. et al. (2008). Nondestructive analysis on ancient porcelain of Longquan kiln by WDXRF. <em>Chinese Physics C</em>, 32, 284–288. <a class="uri" href="https://csnsdoc.ihep.ac.cn/article/id/ed035228-b6ad-4356-ab40-46b6e2efc1bf" target="_blank" rel="noopener">https://csnsdoc.ihep.ac.cn/article/id/ed035228-b6ad-4356-ab40-46b6e2efc1bf</a></p></li>
+<li><p>Li, et al. (2012). Study on elemental features of Longquan celadon at Fengdongyan kiln site in Yuan and Ming dynasties by EDXRF. <em>Nuclear Instruments and Methods in Physics Research Section B</em>. <a class="uri" href="https://doi.org/10.1016/j.nimb.2012.09.034" target="_blank" rel="noopener">https://doi.org/10.1016/j.nimb.2012.09.034</a></p></li>
+<li><p>Li, et al. (2011). Study on the chemical composition features of Longquan celadon excavated from the Chuzhou site of Huai’an City in Jiangsu Province by EDXRF. <em>Chinese Physics C</em>, 35(7). <a class="uri" href="https://doi.org/10.1088/1674-1137/35/7/016" target="_blank" rel="noopener">https://doi.org/10.1088/1674-1137/35/7/016</a></p></li>
+<li><p><em>Compositional and Microstructural Evolution of Longquan Celadon from the Southern Song to Ming Periods</em>. (2026). <em>Inorganics</em>, 14(6), Article 151. <a class="uri" href="https://doi.org/10.3390/inorganics14060151" target="_blank" rel="noopener">https://doi.org/10.3390/inorganics14060151</a></p></li>
+<li><p>Kerr, R., &amp; Wood, N. (2004). <em>Science and Civilisation in China, Volume 5: Chemistry and Chemical Technology, Part 12: Ceramic Technology</em>. Cambridge University Press.</p></li>
+<li><p>Cleveland Museum of Art. <em>Bottle Vase with Ornamental Ring Handles: Longquan Ware</em>. Yuan dynasty, 14th century. Accession no. 1964.184. <a class="uri" href="https://www.clevelandart.org/art/1964.184" target="_blank" rel="noopener">https://www.clevelandart.org/art/1964.184</a></p></li>
+</ol>
+<h2 id="data-availability">14. Data Availability</h2>
+<p>The original analytical records comprise two portable X-ray fluorescence measurements performed on 28 October 2026.</p>
+<p>Both measurements were obtained using instrument serial number 940487 and the Geochem (3-Beam) Extra method with an acquisition duration of 45 seconds.</p>
+<p>The first measurement was performed on the grey-green glaze.</p>
+<p>The second measurement was performed on the exposed ceramic body at the base.</p>
+<p>The original analytical reports and accompanying photographic documentation are intended for inclusion as supplementary research materials in the Zenodo deposit.</p>
+<h2 id="author-contributions">15. Author Contributions</h2>
+<p><strong>Nona Dronova:</strong> Research conception, selection of the investigated object, photographic documentation, coordination of portable X-ray fluorescence measurements, comparative archaeometric research, and interpretation of the findings.</p>
+<h2 id="image-credits">16. Image Credits</h2>
+<p>Photographs and microphotographs of the investigated Yuan-dynasty Longquan celadon vase: Nona Dronova, private research collection.</p>
+<h2 id="suggested-citation">17. Suggested Citation</h2>
+<p>Dronova, N. (2026). <em>A Yuan-Dynasty Longquan Celadon Vase with Twin Loop Handles and a Lobed Body: Comparative Portable X-Ray Fluorescence Analysis of the Glaze and Ceramic Body</em>. Zenodo. DOI to be assigned upon publication.</p>
+<hr />
+<p><strong>Suggested Zenodo resource type:</strong> Publication — Preprint</p>
+<p><strong>Suggested license:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0).</p>
+<p><strong>Suggested subjects:</strong> Chinese ceramics; Yuan dynasty; Longquan celadon; Archaeometry; X-ray fluorescence; Ceramic technology; Cultural heritage science.</p>
+<p><strong>Supplementary materials:</strong> Original pXRF reports; general object photographs; base photographs; glaze and ceramic body microphotographs.</p>
+
+      <nav class="pagination">
+        <a href="ro-yuan-021.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">ro-yuan-021 — Yuan Longquan Gourd Vase</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-yuan-021.html">ro-yuan-021</a></span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 1 &mdash; glaze (ID 1) and unglazed body (ID 2)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Olympus, Geochem 3-Beam Extra, 45 s)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">28 October 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Comparison</span><span class="meta-value">Published XRF analyses of Longquan kiln material (Dayao, Xikou, Jincun)</span></div>
+        <div class="meta-row"><span class="meta-label">Zenodo DOI</span><span class="meta-value">To be assigned upon publication</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#object-description">2. Object Description</a></li><li><a href="#materials-and-methods">3. Materials and Methods</a></li><li><a href="#original-analytical-results">4. Original Analytical Results</a></li><li><a href="#theoretical-oxide-equivalents">5. Theoretical Oxide Equivalents</a></li><li><a href="#comparative-archaeometry-of-longquan-celadons">6. Comparative Archaeometry of Longquan Celadons</a></li><li><a href="#individual-yuan-period-archaeological-comparisons">7. Individual Yuan-Period Archaeological Comparisons</a></li><li><a href="#technological-interpretation">8. Technological Interpretation</a></li><li><a href="#morphological-context-and-yuan-dynasty-longquan-production">9. Morphological Context and Yuan-Dynasty Longquan Production</a></li><li><a href="#discussion">10. Discussion</a></li><li><a href="#conclusions">11. Conclusions</a></li><li><a href="#figures">12. Figures</a></li><li><a href="#references">13. References</a></li><li><a href="#data-availability">14. Data Availability</a></li><li><a href="#author-contributions">15. Author Contributions</a></li><li><a href="#image-credits">16. Image Credits</a></li><li><a href="#suggested-citation">17. Suggested Citation</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-yuan-021 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
