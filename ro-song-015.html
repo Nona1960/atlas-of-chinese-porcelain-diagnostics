@@ -139,6 +139,21 @@
     .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
     .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
 
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .xrf-summary{background:var(--stone);border:1px solid var(--border2);padding:var(--space-lg);justify-content:center}
+    .col-main .xrf-kv{display:flex;justify-content:space-between;border-bottom:1px solid var(--border2);padding:.45rem 0;margin:0;font-size:1rem;font-variant-numeric:tabular-nums}
+    .xrf-kv span{font-family:var(--font-heading);font-size:1.2rem;color:var(--gold)}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .sci-table thead th.num{white-space:normal}
+    .col-main p a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+
     @media(max-width:1099px){
       .layout-article{grid-template-columns:1fr}
       .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
@@ -147,7 +162,7 @@
     @media(max-width:767px){
       :root{--gutter:1.25rem}
       h1{font-size:1.75rem}h2{font-size:1.35rem}
-      .micro-grid-2,.figure-row,.method-grid,.col-sidebar{grid-template-columns:1fr}
+      .xrf-protocols,.micro-grid-2,.figure-row,.method-grid,.col-sidebar{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
@@ -200,6 +215,7 @@
         <span class="tag">Kou Tie</span>
         <span class="tag">Dronova Method</span>
         <span class="tag">DEE · SDE · LIE · PLIC</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -362,6 +378,7 @@
               <tr><td><strong>DEE</strong> &mdash; Dry Earth Effect</td><td>Mineralised crackle channels, differential ageing, iron foot oxidation, consistent long-term environmental history</td></tr>
               <tr><td><strong>SDE</strong> &mdash; Structural Decorative Effect</td><td>Asymmetric lobed form, glaze pooling in petal valleys, Kou Tie, glaze draw-bead &mdash; all consistent with hand manufacture</td></tr>
               <tr><td><strong>LIE</strong> &mdash; Luminescence&ndash;Interference Effect</td><td>Internal jade-like luminosity, thickness-dependent colour variation, bubble-rich glaze, nanoscale phase separation</td></tr>
+              <tr><td><strong>pXRF</strong> &mdash; grey glaze, 28 Oct 2026</td><td>Calcium-bearing silicate glaze (Ca 6.95 wt.%, CaO eq. &asymp;&nbsp;9.7), low iron (Fe 0.40 wt.%), Ti below detection &mdash; consistent with the calcium-alkali Guan glaze family</td></tr>
               <tr><td><strong>PLIC</strong> &mdash; Polychrome Layer and Inclusion Complex</td><td>Jinsi Tiexian double crackle with sequential depth differentiation, mineral infill, ancient micro-pits</td></tr>
             </tbody>
           </table>
@@ -380,8 +397,80 @@
           <div class="diagnostic-item">PLIC: Jinsi Tiexian double crackle (金絲鐵線) &mdash; full morphology</div>
           <div class="diagnostic-item">PLIC: Sequential depth differentiation of two crack generations</div>
           <div class="diagnostic-item">Tie Zu (鐵足) &mdash; dark iron-rich stoneware foot ring</div>
+          <div class="diagnostic-item">pXRF: calcium-bearing low-iron glaze (Ca 6.95, Fe 0.40 wt.%); Al&#8322;O&#8323; equivalent close to Laohudong Guan mean</div>
           <div class="diagnostic-item">High internal consistency across all four diagnostic categories</div>
           <p class="diagnostic-confidence">Diagnostic Confidence: <span class="confidence-value">Very High &mdash; Catalogue No. GY-CHR-12-S-01</span></p>
+        </div>
+      </section>
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the bowl was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s, <em>in situ</em>, measurement ID&nbsp;13). In the measurement series it is recorded as <strong>Sample No.&nbsp;7</strong> (project designation <em>tarelka seraya</em>, &ldquo;grey dish&rdquo;; the vessel is morphologically a bowl). One measurement was taken on the grey crackled glaze. The narrow dark band of the foot ring was too narrow to be measured reliably with the available instrument, so its composition is not reported. The results and their comparison with published analyses of Southern Song Guan glazes from Laohudong are set out in the research article by Professor Nona Dronova (<a href="ro-song-015-xrf-study.html">full text</a>).</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">Grey glaze</th><th class="num">&plusmn;3&sigma;</th><th class="num">Oxide equivalent, wt.%</th><th class="num">Laohudong Guan glaze, mean (wt.%)</th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">38.46</td><td class="num">0.28</td><td class="num">SiO&#8322; 82.28</td><td class="num">67.6</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>6.954</strong></td><td class="num">0.068</td><td class="num">CaO <strong>9.73</strong></td><td class="num">11.5</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">6.40</td><td class="num">0.16</td><td class="num">Al&#8322;O&#8323; 12.09</td><td class="num">12.8</td></tr>
+              <tr><td>K, wt.%</td><td class="num">4.147</td><td class="num">0.047</td><td class="num">K&#8322;O 5.00</td><td class="num">3.9</td></tr>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num"><strong>0.404</strong></td><td class="num">0.011</td><td class="num">Fe&#8322;O&#8323; <strong>0.58</strong></td><td class="num">1.0</td></tr>
+              <tr><td>Mg, ppm</td><td class="num">8,400</td><td class="num">3,900</td><td class="num">MgO 1.39</td><td class="num">1.5</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">629</td><td class="num">63</td><td class="num">MnO 0.081</td><td class="num">&mdash;</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">ND (&lt;190)</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">572</td><td class="num">10</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">121</td><td class="num">4</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">350</td><td class="num">66</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">60</td><td class="num">4</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Nb, ppm</td><td class="num">48</td><td class="num">4</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>S, ppm</td><td class="num">4,330</td><td class="num">150</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Values transcribed from the original instrument protocol, 28 October 2026 (Fe reported as 4,040&nbsp;ppm). Also detected: P 200, Cr 77, Ni 35, Cu 67, Zn 11, Y 13, Mo 9, Sn 42, La 150, Ce 130, Hf 11, W 24, Th 17&nbsp;ppm; light-element balance 42.11&nbsp;wt.%. Not detected: Sc, Ti, V, Co, As, Se, Ag, Cd, Sb, Pr, Nd, Au, Hg; no quantified lead value is reported. Oxide equivalents are stoichiometric conversions, not normalised to 100% and not a measured glaze composition. Published Laohudong Guan glaze means as cited in the research article (after Wood &amp; Li 2015).</p>
+
+        <h3>What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. A calcium-bearing silicate glaze.</strong> The grey surface carries a strong calcium signal (6.954&nbsp;wt.%; CaO equivalent &asymp;&nbsp;9.73&nbsp;wt.%), together with potassium, aluminium and magnesium. This places the glaze in the calcium-bearing / calcium-alkali silicate family to which historical Guan glazes belong. The CaO equivalent lies within the broad calcium range described for Guan glazes, and the Al&#8322;O&#8323; equivalent (&asymp;&nbsp;12.09&nbsp;wt.%) is numerically close to the published Laohudong mean of 12.8&nbsp;wt.%.
+        </div>
+
+        <div class="note">
+          <strong>2. Low iron, a pale grey-blue glaze.</strong> Iron is only 0.404&nbsp;wt.% (Fe&#8322;O&#8323; equivalent &asymp;&nbsp;0.58&nbsp;wt.%), close to the lower end of the values reported for historical Guan glazes and far below dark iron-rich glazes. Titanium is below the detection limit. Such a low-iron, low-titanium glaze is consistent with the pale grey-blue (<em>tianqing</em>) colour; the actual hue also depends on the Fe&#178;&#8314;/Fe&#179;&#8314; balance, firing atmosphere and microstructure (phase separation and light scattering), which pXRF cannot resolve.
+        </div>
+
+        <div class="note">
+          <strong>3. Crackle and the dark foot.</strong> The pronounced polygonal crackle extends over the whole glazed surface, including the recessed base, as expected of a glaze-wide stress phenomenon arising from the thermal-expansion mismatch between glaze and body. The dark foot-ring band recalls the <em>zi kou tie zu</em> (紫口鐵足) of Guan ware, but because it was not measured, its darkness is recorded as a visual feature rather than chemical proof of iron enrichment.
+        </div>
+
+        <div class="note">
+          <strong>4. Limits of the measurement.</strong> This is a single surface reading with a geochemical calibration; the high SiO&#8322; equivalent in particular shows why the oxide figures cannot be read as a normalised glaze analysis. Still to be determined: the composition of the dark foot and of the body, glaze thickness, iron oxidation states, crystalline phases and bubble or phase-separated domains. Further pXRF points on the lobed walls and recessed base, microscopy and Raman spectroscopy are the planned next steps.
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocol &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">Sample No. 7 &mdash; grey glaze &middot; ID 13</span>
+              <a href="images/ro-song-015-xrf-grey-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-015-xrf-grey-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 7 (tarelka seraya), measurement ID 13 — grey crackled glaze of the chrysanthemum-lobed bowl ro-song-015, 28 October 2026, 45 s. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 8.</span> Olympus pXRF protocol, Sample No.&nbsp;7 (<em>tarelka seraya</em>), measurement ID&nbsp;13 &mdash; grey crackled glaze, 28 October 2026, 45&nbsp;s. Click to open full size.</p>
+            </div>
+            <div class="micro-item xrf-summary">
+              <p class="micro-header">Key values</p>
+              <p class="xrf-kv"><span>Ca</span> 6.954 wt.%</p>
+              <p class="xrf-kv"><span>Fe</span> 0.404 wt.%</p>
+              <p class="xrf-kv"><span>Si</span> 38.46 wt.%</p>
+              <p class="xrf-kv"><span>Al</span> 6.40 wt.%</p>
+              <p class="xrf-kv"><span>K</span> 4.147 wt.%</p>
+              <p class="xrf-kv"><span>Ti</span> &lt;190 ppm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-015-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-song-015-xrf-protocol.pdf" target="_blank" rel="noopener">Download the XRF protocol (PDF)</a>
         </div>
       </section>
 
@@ -426,12 +515,16 @@
           <p class="crossref-title">Methodology Applied</p>
           <div class="crossref-list">
             <a href="../methodology/gom.html" class="crossref-link">GOM &mdash; Dronova Method (DEE / SDE / LIE / PLIC)</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 28 Oct 2026</a>
+            <a href="ro-song-015-xrf-study.html" class="crossref-link">pXRF research article</a>
           </div>
         </div>
       </section>
 
       <div class="bibliography" id="bibliography">
         <p class="bibliography-title">References</p>
+        <p class="biblio-entry">Dronova, N. A Chrysanthemum-Lobed Chinese Bowl with Grey Crackle Glaze: Portable X-Ray Fluorescence Characterization and Archaeometric Comparison with Southern Song&ndash;Yuan Guan and Ge Wares. <em>Zenodo</em>, published 30 October 2026, version v1. <a href="ro-song-015-xrf-study.html">Full text on this site</a>.</p>
+        <p class="biblio-entry">Wood, N., &amp; Li, H. A study of the techniques used to make Laohudong Guan ware in China in the Southern Song Dynasty. <em>Archaeometry</em>, 57(4), 2015, 617&ndash;635. doi:10.1111/arcm.12105.</p>
         <p class="biblio-entry">Palace Museum, Beijing &mdash; Guan ware chrysanthemum-lobed bowls, published catalogue descriptions and authenticated comparanda.</p>
         <p class="biblio-entry">Laohudong kiln excavation reports, Hangzhou &mdash; Tianqing glaze fragments with double crackle morphology.</p>
         <p class="biblio-entry">Published archaeometric studies of Southern Song Guan ware including multi-method analysis of calcium-alkali glaze microstructure, phase separation, and Jinsi Tiexian crackle formation.</p>
@@ -462,7 +555,9 @@
         <div class="meta-row"><span class="meta-label">Kiln Site</span><span class="meta-value">Laohudong, Hangzhou</span></div>
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Tianqing &mdash; 天青釉</span></div>
         <div class="meta-row"><span class="meta-label">Crackle</span><span class="meta-value">Jinsi Tiexian &mdash; 金絲鐵線</span></div>
-        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method &mdash; DEE/SDE/LIE/PLIC</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method &mdash; DEE/SDE/LIE/PLIC &middot; <a href="#xrf">pXRF</a> (28 Oct 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 7 &mdash; <em>tarelka seraya</em>, grey glaze</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-015-xrf-study.html">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
       </div>
 
@@ -472,6 +567,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Dronova Method Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>

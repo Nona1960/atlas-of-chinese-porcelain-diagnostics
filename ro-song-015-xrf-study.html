@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Chrysanthemum-Lobed Guan Bowl — ro-song-015 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: portable XRF (28 October 2026) of the grey crackled glaze of a chrysanthemum-lobed bowl, compared with Southern Song Laohudong Guan glazes and the Guan and Ge traditions." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="A Chrysanthemum-Lobed Chinese Bowl with Grey Crackle Glaze: Portable X-Ray Fluorescence Characterization and Archaeometric Comparison with Southern Song&ndash;Yuan Guan and Ge Wares" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/10/30" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .xrf-protocols.xrf-one{grid-template-columns:minmax(0,420px)}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-song-015.html">ro-song-015 — Chrysanthemum Bowl</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-song-015</span></p>
+      <h1>A Chrysanthemum-Lobed Chinese Bowl with Grey Crackle Glaze: Portable X-Ray Fluorescence Characterization and Archaeometric Comparison with Southern Song&ndash;Yuan Guan and Ge Wares</h1>
+      <p class="object-subtitle">Nona Dronova &mdash; Independent Researcher &mdash; Zenodo, published 30 October 2026 (v1) &mdash; Chinese Ceramic Archaeometry &middot; Guan and Ge Wares</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-song-015.html">&larr; Back to the Atlas entry ro-song-015</a>
+        <a class="xrf-btn primary" href="ro-song-015-xrf-protocol.pdf" target="_blank" rel="noopener">XRF protocol (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>This study presents a non-destructive analysis of a Chinese ceramic bowl with chrysanthemum-shaped lobes, distinguished by a smooth grey-blue crackled glaze and a narrow dark unglazed band around the foot ring. The investigation combines macroscopic photographic documentation, visual analysis of glaze morphology, and portable X-ray fluorescence (pXRF) measurement with a comparative review of published archaeometric studies of the Southern Song and Yuan Guan and Ge ceramic traditions.</p>
+<p>The pXRF analysis of the grey glaze recorded silicon at 38.46 wt%, calcium at 6.954 wt%, aluminium at 6.40 wt%, potassium at 4.147 wt%, and iron at 0.404 wt%. The corresponding theoretical oxide equivalents are approximately 82.28 wt% SiO₂, 9.73 wt% CaO, 12.09 wt% Al₂O₃, 5.00 wt% K₂O, and 0.58 wt% Fe₂O₃. These equivalents are stoichiometric conversions of the measured elemental concentrations, not a normalised bulk glaze composition.</p>
+<p>The combination of high calcium, low iron, a smooth grey-blue surface, a pronounced polygonal crackle network, and a contrasting dark foot establishes a meaningful technological and morphological link with Chinese crackled celadon traditions, especially Guan and Ge wares.</p>
+<p>Comparative archaeological studies of the Laohudong and Jiaotanxia sites provide a framework for interpreting the chemical composition and appearance of the glaze. The present study provides an independently documented analytical record of the chrysanthemum-lobed vessel and identifies characteristic chemical and technological features for future comparative research.</p>
+<p><strong>Keywords:</strong> Chinese ceramics; chrysanthemum-lobed bowl; Guan ware; Ge ware; Southern Song; Yuan dynasty; crackle glaze; celadon; portable X-ray fluorescence; calcium-rich glaze; Laohudong; Jiaotanxia; ceramic archaeometry.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Chinese celadon ceramics represent one of the most sophisticated achievements in the history of ceramic technology. Their distinctive features include carefully controlled glaze colour, smooth or jade-like surfaces, deliberately emphasised crackle patterns, and contrasting exposed ceramic elements.</p>
+<p>The Southern Song (1127–1279) Guan tradition is particularly associated with refined grey-green and blue-green glazes, complex glaze microstructures, and characteristic crackle. The later development and adaptation of related technologies under the Yuan (1279–1368) contributed to a broader body of ceramics traditionally described as Guan-type and Ge-type wares.</p>
+<p>This study examines a ceramic bowl with chrysanthemum-shaped lobes, designated Sample No. 7. The vessel is distinguished by a pale grey-blue glaze, a pronounced network of irregular cracks, and a narrow, almost black, unglazed foot ring.</p>
+<p>The principal aim is to document the chemical composition of the surface and to determine how the observed composition and morphology relate to published studies of historical crackle-glazed ceramics.</p>
+<p>The study is significant because it combines original non-destructive elemental measurement with a targeted comparative review of archaeological materials and published explanations of glaze colour, opacity, and crackle.</p>
+<h2 id="description-of-the-investigated-bowl">2. Description of the Investigated Bowl</h2>
+<h3 id="vessel-morphology">2.1. Vessel morphology</h3>
+<p>The investigated object is a ceramic bowl with a lobed profile forming chrysanthemum petals.</p>
+<p>The exterior shows finely articulated lobes that create a rhythmic floral silhouette. The vessel rests on a circular foot ring, inside which the glaze continues over the recessed base.</p>
+<p>The combination of the floral form and the compact foot ring gives the vessel a refined, carefully balanced appearance.</p>
+<h3 id="glaze-appearance">2.2. Glaze appearance</h3>
+<p>The glaze is smooth and lustrous, with a soft grey or grey-blue tone. As the light moves across the surface, a subtle glow appears, resembling the jade-like quality often discussed in studies of historical Chinese celadons.</p>
+<p>The visible glazed surface is covered by a network of intersecting cracks. The cracks form irregular polygonal fields of varying size.</p>
+<p>The crackle network continues across the whole recessed part of the base inside the foot ring, showing that crackle is a general characteristic of the glazed surface rather than an isolated decorative element.</p>
+<p>The visible crackle pattern corresponds to a crazed glaze surface in which cracks can form through mismatched coefficients of thermal expansion and the associated stresses between glaze and ceramic body.</p>
+<h3 id="the-dark-foot-ring">2.3. The dark foot ring</h3>
+<p>A particularly notable feature is the narrow dark band surrounding the edge of the foot ring.</p>
+<p>This band is dark brown or almost black and contrasts sharply with the pale grey glaze.</p>
+<p>Its appearance invites comparison with the historically recognised dark foot characteristic of some Guan wares, often discussed under the Chinese expression <em>zi kou tie zu</em> (紫口鐵足), “purple mouth and iron foot”.</p>
+<p>However, the band was too narrow to be measured reliably with the available portable X-ray fluorescence instrument. Its elemental composition is therefore not reported in this study.</p>
+<p>The dark colour is documented as a visual feature rather than as direct chemical evidence of iron-rich material.</p>
+<h2 id="materials-and-methods">3. Materials and Methods</h2>
+<h3 id="investigated-sample">3.1. Investigated sample</h3>
+<p>The object was recorded as:</p>
+<ul>
+<li><strong>Sample ID:</strong> 7</li>
+<li><strong>Project designation:</strong> <em>tarelka seraya</em> (“grey dish”)</li>
+<li><strong>Object identification:</strong> ceramic bowl with chrysanthemum-shaped lobes</li>
+<li><strong>Analysed area:</strong> grey glazed surface</li>
+</ul>
+<p>The original instrument designation is retained as part of the analytical documentation, while the vessel is identified morphologically as a bowl.</p>
+<h3 id="portable-x-ray-fluorescence">3.2. Portable X-ray fluorescence</h3>
+<p>The elemental composition was measured with a portable X-ray fluorescence spectrometer.</p>
+<p><strong>Instrument and analytical parameters:</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Recorded value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Instrument serial number</td>
+<td>940487</td>
+</tr>
+<tr class="even">
+<td>Analytical method</td>
+<td>Geochem (3-Beam) Extra</td>
+</tr>
+<tr class="odd">
+<td>Date</td>
+<td>28 October 2026</td>
+</tr>
+<tr class="even">
+<td>Measurement time</td>
+<td>14:18:40</td>
+</tr>
+<tr class="odd">
+<td>Daily measurement ID</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>Acquisition time</td>
+<td>45 seconds</td>
+</tr>
+<tr class="odd">
+<td>Sample ID</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>Measurement type</td>
+<td>In situ</td>
+</tr>
+<tr class="odd">
+<td>Measured area</td>
+<td>Grey glaze</td>
+</tr>
+</tbody>
+</table></div>
+<p>The analytical report gives elemental concentrations and the associated instrumental uncertainties.</p>
+<p>The measurement is treated as a surface-sensitive, non-destructive compositional examination. Because pXRF analyses an interaction volume affected by surface geometry, glaze thickness, and substrate composition, the reported values are not automatically equivalent to the composition of an isolated glaze layer.</p>
+<h3 id="optical-documentation">3.3. Optical documentation</h3>
+<p>Macroscopic photographs were examined to characterise:</p>
+<ul>
+<li>The lobed, chrysanthemum-like form.</li>
+<li>The grey-blue glaze colour and lustre.</li>
+<li>The morphology and distribution of the crackle.</li>
+<li>The dark exposed foot ring.</li>
+<li>The continuation of glaze and crackle inside the recessed base.</li>
+</ul>
+<p>No microscopic phase identification was carried out in this study.</p>
+<h3 id="oxide-equivalent-calculations">3.4. Oxide-equivalent calculations</h3>
+<p>For comparison with data from the ceramic literature, selected elemental concentrations were converted into theoretical oxide equivalents using stoichiometric conversion factors.</p>
+<p>These calculations are intended to assist compositional interpretation.</p>
+<p>They are not independently measured oxide concentrations, and their sum should not be interpreted as a normalised glaze recipe.</p>
+<h2 id="experimental-results">4. Experimental Results</h2>
+<h3 id="elemental-composition-of-the-grey-glaze">4.1. Elemental composition of the grey glaze</h3>
+<p><strong>Table 1. Portable X-ray fluorescence results for Sample No. 7.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">Concentration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Silicon (Si)</td>
+<td class="num">38.46 wt%</td>
+</tr>
+<tr class="even">
+<td>Aluminium (Al)</td>
+<td class="num">6.40 wt%</td>
+</tr>
+<tr class="odd">
+<td>Calcium (Ca)</td>
+<td class="num">6.954 wt%</td>
+</tr>
+<tr class="even">
+<td>Potassium (K)</td>
+<td class="num">4.147 wt%</td>
+</tr>
+<tr class="odd">
+<td>Magnesium (Mg)</td>
+<td class="num">8400 ppm</td>
+</tr>
+<tr class="even">
+<td>Iron (Fe)</td>
+<td class="num">4040 ppm</td>
+</tr>
+<tr class="odd">
+<td>Manganese (Mn)</td>
+<td class="num">629 ppm</td>
+</tr>
+<tr class="even">
+<td>Rubidium (Rb)</td>
+<td class="num">572 ppm</td>
+</tr>
+<tr class="odd">
+<td>Strontium (Sr)</td>
+<td class="num">121 ppm</td>
+</tr>
+<tr class="even">
+<td>Barium (Ba)</td>
+<td class="num">350 ppm</td>
+</tr>
+<tr class="odd">
+<td>Phosphorus (P)</td>
+<td class="num">200 ppm</td>
+</tr>
+<tr class="even">
+<td>Sulfur (S)</td>
+<td class="num">4330 ppm</td>
+</tr>
+<tr class="odd">
+<td>Chromium (Cr)</td>
+<td class="num">77 ppm</td>
+</tr>
+<tr class="even">
+<td>Nickel (Ni)</td>
+<td class="num">35 ppm</td>
+</tr>
+<tr class="odd">
+<td>Copper (Cu)</td>
+<td class="num">67 ppm</td>
+</tr>
+<tr class="even">
+<td>Zinc (Zn)</td>
+<td class="num">11 ppm</td>
+</tr>
+<tr class="odd">
+<td>Yttrium (Y)</td>
+<td class="num">13 ppm</td>
+</tr>
+<tr class="even">
+<td>Zirconium (Zr)</td>
+<td class="num">60 ppm</td>
+</tr>
+<tr class="odd">
+<td>Niobium (Nb)</td>
+<td class="num">48 ppm</td>
+</tr>
+</tbody>
+</table></div>
+<p>The iron content of 4040 ppm is equivalent to 0.404 wt%.</p>
+<p>Titanium was below the reported detection limit of 190 ppm. Cobalt was not detected above 53 ppm. Arsenic was not detected above 6 ppm.</p>
+<p>No quantified lead concentration was reported in the analytical protocol.</p>
+<div class="micro-block">
+  <p class="micro-header">Original pXRF Protocol &mdash; Olympus analyser, 28 October 2026</p>
+  <div class="xrf-protocols xrf-one">
+    <div class="micro-item">
+      <span class="micro-mag">Sample No. 7 &mdash; grey glaze &middot; ID 13</span>
+      <a href="images/ro-song-015-xrf-grey-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-015-xrf-grey-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 7, measurement ID 13 — grey glaze, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Original portable X-ray fluorescence report for Sample No.&nbsp;7, grey glaze, measurement ID&nbsp;13. Click to open full size.</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="theoretical-oxide-equivalents">4.2. Theoretical oxide equivalents</h3>
+<p><strong>Table 2. Selected theoretical oxide equivalents calculated from the pXRF elemental results.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">Calculated equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">82.28 wt%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">12.09 wt%</td>
+</tr>
+<tr class="odd">
+<td>CaO</td>
+<td class="num">9.73 wt%</td>
+</tr>
+<tr class="even">
+<td>K₂O</td>
+<td class="num">5.00 wt%</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">0.58 wt%</td>
+</tr>
+<tr class="even">
+<td>MgO</td>
+<td class="num">1.39 wt%</td>
+</tr>
+<tr class="odd">
+<td>MnO</td>
+<td class="num">0.081 wt%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note: these are independent conversions of the elemental values into oxide equivalents. They are not normalised to 100%, and the unusually high total shows why they cannot be treated as a complete oxide analysis of the bulk glaze.</em></p>
+<h3 id="chemical-characteristics">4.3. Chemical characteristics</h3>
+<p>Three features of the elemental results are particularly informative.</p>
+<p>First, the grey surface carries a substantial calcium signal, indicating an important calcium-bearing component in the analysed ceramic surface.</p>
+<p>Second, the iron concentration is relatively low compared with that usually found in dark, iron-rich ceramic glazes.</p>
+<p>Third, the surface contains measurable potassium, aluminium, magnesium, and trace elements, providing a multi-element dataset for comparison with published data on Chinese glaze systems.</p>
+<p>This combination is compatible with the tradition of calcium-bearing silicate glazes, although the full glaze composition cannot be reconstructed from the present pXRF measurement alone.</p>
+<h2 id="comparative-archaeometry-southern-song-and-yuan-guan-and-ge-traditions">5. Comparative Archaeometry: Southern Song and Yuan Guan and Ge Traditions</h2>
+<h3 id="archaeological-context">5.1. Archaeological context</h3>
+<p>The Laohudong and Jiaotanxia kiln sites in Hangzhou are central to research on Southern Song Guan ware.</p>
+<p>Excavated material from these sites has been studied through chemical analysis, microscopy, and experimental reconstruction.</p>
+<p>These studies show that the visual qualities of Guan ware are closely linked to glaze chemistry, glaze thickness, the distribution of bubbles and crystalline phases, and firing conditions.</p>
+<h3 id="published-compositional-reference-data">5.2. Published compositional reference data</h3>
+<p>Wood and Li (2015) investigated the manufacturing technology of Laohudong Guan ware and discussed the relationship between glaze composition, processing, and the formation of jade-like surfaces.</p>
+<p>A published comparative dataset for Southern Song Laohudong Guan glazes gives the following mean oxide composition:</p>
+<p><strong>Table 3. Published reference composition of Southern Song Laohudong Guan glazes.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">Mean composition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">67.6 wt%</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">12.8 wt%</td>
+</tr>
+<tr class="odd">
+<td>CaO</td>
+<td class="num">11.5 wt%</td>
+</tr>
+<tr class="even">
+<td>K₂O</td>
+<td class="num">3.9 wt%</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">1.0 wt%</td>
+</tr>
+<tr class="even">
+<td>MgO</td>
+<td class="num">1.5 wt%</td>
+</tr>
+</tbody>
+</table></div>
+<p>These values provide a useful archaeological reference framework.</p>
+<p>The theoretical CaO content of Sample No. 7, approximately 9.73 wt%, lies within the broad range of calcium contents described for historical Guan glazes. The theoretical Fe₂O₃ content, approximately 0.58 wt%, is close to the lower limit of the values reported for historical Guan glaze compositions.</p>
+<p>The calculated Al₂O₃ equivalent, approximately 12.09 wt%, is numerically close to the published mean of 12.8 wt%.</p>
+<p>However, these numerical correspondences must be interpreted in the context of different analytical methods and reporting conventions. The elevated theoretical SiO₂ equivalent of Sample No. 7 particularly emphasises the need for future measurements capable of yielding a normalised oxide composition of the glaze alone.</p>
+<h3 id="technological-comparison">5.3. Technological comparison</h3>
+<p>Studies of materials from Laohudong and related kilns have demonstrated the technological importance of calcium-bearing fluxes and a carefully controlled glazing process.</p>
+<p>The grey glaze of Sample No. 7 has several characteristics relevant to this research tradition:</p>
+<ul>
+<li>A substantial calcium signal.</li>
+<li>A relatively low iron concentration.</li>
+<li>A smooth, lustrous grey-blue surface.</li>
+<li>A well-developed crackle network.</li>
+<li>A dark exposed foot contrasting with the glaze.</li>
+</ul>
+<p>These features create a coherent basis for comparison with Guan-type and Ge-type ceramic technology.</p>
+<p>They cannot, individually or together, identify a specific kiln without additional evidence.</p>
+<h2 id="glaze-colour-and-the-role-of-iron">6. Glaze Colour and the Role of Iron</h2>
+<p>The grey-blue colour of the investigated bowl is an important feature of its appearance.</p>
+<p>In Chinese celadon glazes, iron can influence colour through differences in oxidation state and local chemical environment. The balance between Fe²⁺ and Fe³⁺, together with firing atmosphere and glaze composition, can strongly affect the resulting hue.</p>
+<p>Cheng and colleagues (2025) investigated the colouring mechanisms of celadons produced at the Southern Song official kilns. Their study linked glaze colour to the oxidation state of iron and to microstructural effects, including phase separation and light scattering.</p>
+<p>A more recent study by Ren and colleagues (2026) examined colour, opacity, and crack formation in Southern Song Guan glazes using several analytical methods.</p>
+<p>These studies provide important scientific context for the appearance of Sample No. 7.</p>
+<p>The measured iron concentration of 0.404 wt% demonstrates the presence of iron in the examined grey surface.</p>
+<p>Its oxidation state, coordination environment, and contribution to the observed colour remain subjects for future spectroscopic study.</p>
+<h2 id="crackle-formation-and-glazebody-interaction">7. Crackle Formation and Glaze–Body Interaction</h2>
+<p>One of the most characteristic features of Sample No. 7 is its pronounced polygonal crackle network.</p>
+<p>Crackle forms when stresses within the glaze exceed its fracture resistance. The principal mechanism is related to differences in the thermal expansion and contraction of glaze and ceramic body during cooling.</p>
+<p>The resulting cracks can form networks of varying width, density, and spatial distribution.</p>
+<p>In historical Chinese ceramics, crackle became an important aesthetic feature and was sometimes deliberately emphasised by subsequent staining.</p>
+<p>The investigated bowl has broad, irregular cracks across the entire glazed surface, including the recessed base.</p>
+<p>This distribution corresponds to a mechanical phenomenon affecting the whole glaze.</p>
+<p>The available photographs do not establish whether the crackle represents a single network or several superimposed generations of cracks.</p>
+<p>Nevertheless, its morphology makes the bowl particularly suitable for future study by optical microscopy and cross-section.</p>
+<p>The 2026 study by Ren and colleagues provides an important framework for understanding the relationship between calcium-bearing glaze chemistry, glaze structure, thermal behaviour, and crackle.</p>
+<h2 id="the-dark-foot-as-a-technological-feature">8. The Dark Foot as a Technological Feature</h2>
+<p>The narrow dark foot-ring band of Sample No. 7 has considerable visual significance.</p>
+<p>Historical Guan-type ceramics are often discussed in connection with the expression <em>zi kou tie zu</em>, denoting a darkened rim and an iron-coloured foot.</p>
+<p>Such visual characteristics can result from the interaction of body composition, glaze thickness, firing atmosphere, and exposed body surfaces.</p>
+<p>On the present specimen the foot band is exceptionally narrow.</p>
+<p>During the investigation the operator could not reliably position the portable X-ray fluorescence instrument on this band. The chemical composition of the dark part of the foot therefore remains unexamined.</p>
+<p>This limitation is important, because the visual darkness of the foot should not be treated as a direct indicator of iron enrichment.</p>
+<p>Nevertheless, the feature is valuable for morphological comparison with museum and archaeological specimens.</p>
+<h2 id="morphological-comparison-with-museum-collections">9. Morphological Comparison with Museum Collections</h2>
+<p>The chrysanthemum-lobed form of the bowl invites comparison with Chinese flower-shaped and lobed ceramics in major museum collections.</p>
+<p>Particularly important comparative categories include Southern Song Guan ware, Yuan ceramics associated with the Guan tradition, and Ge-type crackle-glazed vessels.</p>
+<p>The British Museum collections include Guan-type vessels with lobed forms, grey or grey-green crackled glazes, and exposed dark foot rings.</p>
+<p>Such objects provide useful morphological context for the present specimen.</p>
+<p>The comparison is based on the combined arrangement of the lobed vessel profile, the glazed recessed base, the crackle network, and the contrasting foot ring.</p>
+<p>Because flower-shaped vessels and crackle-glazed wares were produced or reproduced in different periods, morphological similarity is best assessed together with technological evidence.</p>
+<h2 id="discussion">10. Discussion</h2>
+<h3 id="principal-analytical-contribution">10.1. Principal analytical contribution</h3>
+<p>The principal contribution of this study is the documentation of an original pXRF dataset obtained from the grey glazed surface of a Chinese chrysanthemum-lobed bowl.</p>
+<p>The results establish measurable concentrations of silicon, calcium, aluminium, potassium, iron, and a range of trace elements.</p>
+<p>The calcium and iron values are particularly important for comparison with historical Chinese celadon technology.</p>
+<h3 id="relationship-to-guan-and-ge-glaze-systems">10.2. Relationship to Guan and Ge glaze systems</h3>
+<p>Published studies show that historical Guan glazes generally belong to calcium-bearing or calcium-alkali silicate systems.</p>
+<p>The chemical composition of Sample No. 7 corresponds to this broad technological family.</p>
+<p>The observed grey-blue colour, smooth surface, and pronounced crackle network reinforce the relevance of comparison with Guan-type and Ge-type ceramics.</p>
+<p>The dark foot ring adds an important morphological parallel.</p>
+<p>Taken together, these observations justify treating the bowl as a meaningful object for comparative Guan/Ge archaeometry.</p>
+<h3 id="scope-of-the-analysis">10.3. Scope of the analysis</h3>
+<p>The present study comprises one documented X-ray fluorescence measurement of the grey glaze and a photographic examination of the vessel.</p>
+<p>The following properties have not yet been determined:</p>
+<ul>
+<li>The elemental composition of the dark foot.</li>
+<li>The bulk chemical composition of the ceramic body.</li>
+<li>Glaze thickness.</li>
+<li>The oxidation states of iron.</li>
+<li>Crystalline phases within the glaze.</li>
+<li>The internal distribution of bubbles or phase-separated domains.</li>
+<li>The date and kiln of manufacture, as confirmed by independent archaeological or provenance evidence.</li>
+</ul>
+<p>These questions define the next stage of research rather than diminishing the value of the available analytical data.</p>
+<h3 id="future-analytical-programme">10.4. Future analytical programme</h3>
+<p>A particularly productive next step would combine additional pXRF measurements at several glaze locations with microscopy, Raman spectroscopy, and, where ethically and practically appropriate, microstructural analysis.</p>
+<p>Repeated measurements would establish whether the elemental composition is uniform across the lobed walls and the recessed base.</p>
+<p>Detailed microscopy could also determine whether the crackle consists of one or several networks and whether the smooth glaze contains bubbles, crystalline inclusions, or phase-separated structures.</p>
+<p>Characterising the narrow dark foot without contamination from the adjacent glaze would require a sufficiently small analytical beam.</p>
+<h2 id="conclusions">11. Conclusions</h2>
+<p>This study describes a Chinese ceramic bowl with chrysanthemum-shaped lobes, distinguished by a smooth grey-blue crackled glaze and a narrow dark foot ring.</p>
+<p>The portable X-ray fluorescence results for the grey glaze are:</p>
+<ul>
+<li>Silicon: 38.46 wt%</li>
+<li>Calcium: 6.954 wt%</li>
+<li>Aluminium: 6.40 wt%</li>
+<li>Potassium: 4.147 wt%</li>
+<li>Iron: 0.404 wt%</li>
+</ul>
+<p>The substantial calcium concentration and relatively low iron content support the interpretation of the examined surface as a calcium-bearing silicate glaze.</p>
+<p>The visual qualities of the glaze and the morphology of the vessel establish meaningful technological and stylistic parallels with the Chinese Guan and Ge ceramic traditions, especially those investigated through archaeological research at Laohudong and Jiaotanxia.</p>
+<p>The pronounced crackle network corresponds to the glaze–body stress phenomena described in modern studies of ceramic materials.</p>
+<p>The dark exposed foot is an additional diagnostic feature for comparative study, although its chemical composition remains unmeasured.</p>
+<p>The principal conclusion is the agreement between independently recorded glaze chemistry and characteristic morphological features with the established technological framework of historical Chinese crackle-glazed celadons.</p>
+<p>This combination provides a sound basis for further archaeometric research and comparative analysis.</p>
+<h2 id="references">12. References</h2>
+<ol type="1">
+<li><p>Wood, N., &amp; Li, H. (2015). A study of the techniques used to make Laohudong Guan ware in China in the Southern Song Dynasty. <em>Archaeometry</em>, 57(4), 617–635. <a class="uri" href="https://doi.org/10.1111/arcm.12105" target="_blank" rel="noopener">https://doi.org/10.1111/arcm.12105</a></p></li>
+<li><p>Cheng, Z., Zhang, Z., Yu, H., Liu, K., Xu, Y., Dong, W., Zhou, J., &amp; Bao, Q. (2025). Chromogenic mechanisms of celadon glaze from the Southern Song official kilns. <em>Journal of Ceramic Processing Research</em>, 26(2), 248–256. <a class="uri" href="https://doi.org/10.36410/jcpr.2025.26.2.248" target="_blank" rel="noopener">https://doi.org/10.36410/jcpr.2025.26.2.248</a></p></li>
+<li><p>Ren, Z., Wang, H., Liu, Z., Zhang, M., Wang, F., Zhu, J., Zhang, B., &amp; Shi, P. (2026). The mechanisms of color, opacifying, and cracks in celadon glazes from the Southern Song Guan Kiln. <em>npj Heritage Science</em>, 14, Article 187. <a class="uri" href="https://doi.org/10.1038/s40494-026-02383-0" target="_blank" rel="noopener">https://doi.org/10.1038/s40494-026-02383-0</a></p></li>
+<li><p>Li, J., et al. (2001). Technical study and manufacture of Guan ware, an ancient Chinese ceramic art. <em>MRS Bulletin</em>. <a class="uri" href="https://doi.org/10.1557/mrs2001.16" target="_blank" rel="noopener">https://doi.org/10.1557/mrs2001.16</a></p></li>
+<li><p>Kerr, R., &amp; Wood, N. (2004). <em>Science and Civilisation in China, Volume 5: Chemistry and Chemical Technology, Part 12: Ceramic Technology</em>. Cambridge University Press.</p></li>
+</ol>
+<h2 id="suggested-citation">Suggested Citation</h2>
+<p>Dronova, N. (2026). <em>A Chrysanthemum-Lobed Chinese Bowl with Grey Crackle Glaze: Portable X-Ray Fluorescence Characterization and Archaeometric Comparison with Southern Song–Yuan Guan and Ge Wares</em>. Zenodo. Published 30 October 2026, version v1.</p>
+
+      <nav class="pagination">
+        <a href="ro-song-015.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">ro-song-015 — Guan Yao Chrysanthemum-Lobed Bowl</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-song-015.html">ro-song-015</a></span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 7 &mdash; <em>tarelka seraya</em>, grey glaze (ID 13)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Olympus, Geochem 3-Beam Extra, 45 s)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">28 October 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Comparison</span><span class="meta-value">Laohudong Guan glazes (Wood &amp; Li 2015)</span></div>
+        <div class="meta-row"><span class="meta-label">Zenodo DOI</span><span class="meta-value">Published 30 Oct 2026, v1</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#description-of-the-investigated-bowl">2. Description of the Investigated Bowl</a></li><li><a href="#materials-and-methods">3. Materials and Methods</a></li><li><a href="#experimental-results">4. Experimental Results</a></li><li><a href="#comparative-archaeometry-southern-song-and-yuan-guan-and-ge-traditions">5. Comparative Archaeometry: Southern Song and Yuan Guan and Ge Traditions</a></li><li><a href="#glaze-colour-and-the-role-of-iron">6. Glaze Colour and the Role of Iron</a></li><li><a href="#crackle-formation-and-glazebody-interaction">7. Crackle Formation and Glaze–Body Interaction</a></li><li><a href="#the-dark-foot-as-a-technological-feature">8. The Dark Foot as a Technological Feature</a></li><li><a href="#morphological-comparison-with-museum-collections">9. Morphological Comparison with Museum Collections</a></li><li><a href="#discussion">10. Discussion</a></li><li><a href="#conclusions">11. Conclusions</a></li><li><a href="#references">12. References</a></li><li><a href="#suggested-citation">Suggested Citation</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-song-015 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
