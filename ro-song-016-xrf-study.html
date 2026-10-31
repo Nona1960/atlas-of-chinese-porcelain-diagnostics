@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Jian Hare&rsquo;s-Fur Tea Bowl — ro-song-016 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: portable XRF (28 October 2026) of the brown glaze, black glaze and unglazed body of a Song-dynasty Jian hare&rsquo;s-fur tea bowl, compared with published studies of Jian iron-rich glazes." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="Iron-Rich Hare&rsquo;s-Fur Glaze on a Song-Dynasty Jian Tea Bowl: Comparative Portable X-Ray Fluorescence Analysis of the Brown and Black Glaze Areas and the Ceramic Body" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/10/30" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-song-016.html">ro-song-016 — Jian Tea Bowl</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-song-016</span></p>
+      <h1>Iron-Rich Hare&rsquo;s-Fur Glaze on a Song-Dynasty Jian Tea Bowl: Comparative Portable X-Ray Fluorescence Analysis of the Brown and Black Glaze Areas and the Ceramic Body</h1>
+      <p class="object-subtitle">Nona Dronova &mdash; Independent Researcher &mdash; Zenodo, published 30 October 2026 (v1) &mdash; Research Article &middot; Chinese Ceramic Archaeometry &middot; Glaze Technology</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-song-016.html">&larr; Back to the Atlas entry ro-song-016</a>
+        <a class="xrf-btn primary" href="ro-song-016-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>This article presents a comparative archaeometric study of a Chinese Jian-type tea bowl of the Song dynasty, distinguished by a characteristic iron-rich hare’s-fur glaze (<em>tuhao</em>, 兔毫). The vessel has a warm brown exterior, a dark interior, and fine blue-black to greenish-black radial streaks extending from the central well towards the upper walls.</p>
+<p>Three areas of the bowl were examined by portable X-ray fluorescence spectroscopy (pXRF): the brown glaze, the black glaze, and the unglazed ceramic base. The measurements recorded elemental iron concentrations of 4.134 wt%, 3.692 wt%, and 3.166 wt%, respectively. The corresponding theoretical Fe₂O₃ equivalents are 5.91 wt%, 5.28 wt%, and 4.53 wt%.</p>
+<p>The brown glaze is enriched in iron relative to the black glaze, whereas the black glaze contains more silicon. Calcium is strongly concentrated in the glazed areas, reaching 4.180–4.319 wt%, compared with only 0.220 wt% in the unglazed ceramic body.</p>
+<p>The results are compared with published studies of the composition and microstructure of historical Jian hare’s-fur glazes. Of particular significance is the correspondence with research demonstrating iron enrichment in brown-yellow streaks and relatively higher silicon concentrations in the adjacent black glaze.</p>
+<p>Together, the elemental and photographic data provide a detailed characterisation of the bowl’s iron-rich glaze and make an original comparative contribution to the study of Chinese high-temperature tea ceramics.</p>
+<p><strong>Keywords:</strong> Jian ware; Song dynasty; tenmoku; hare’s-fur glaze; tuhao; iron-rich glaze; tea bowl; pXRF; Fe₂O₃; calcium-rich glaze; ceramic archaeometry; Chinese ceramics.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Black-glazed tea bowls produced at the Jian kilns in Fujian Province occupy a prominent place in the history of Chinese ceramic technology and tea culture.</p>
+<p>During the Song dynasty (960–1279), Jian tea bowls were especially valued for their dark glaze, which created a visual contrast with the pale froth produced by the contemporary method of whisking tea.</p>
+<p>Among the best-known Jian glaze effects is “hare’s fur” (<em>tuhao</em>, 兔毫), characterised by fine, elongated streaks running down the glazed inner surface of the vessel.</p>
+<p>These streaks result from complex high-temperature processes involving iron-rich glaze compositions, melt flow, phase separation, and crystallisation during firing and cooling.</p>
+<p>Modern archaeometric studies have identified crystalline iron-oxide phases, including ε-Fe₂O₃, in historical Jian glazes. These studies show that the characteristic hare’s-fur appearance reflects complex interactions between glaze chemistry, firing atmosphere, and cooling.</p>
+<p>The present article examines a Song-dynasty Jian tea bowl with a characteristic radial hare’s-fur pattern.</p>
+<p>The study combines three portable X-ray fluorescence measurements with photographic documentation of the vessel’s glaze and ceramic body.</p>
+<p>The principal aim is to compare the elemental composition of the brown glaze, the black glaze, and the unglazed base, and to relate the results to the existing scientific literature on Jian ceramic technology.</p>
+<h2 id="description-of-the-investigated-tea-bowl">2. Description of the Investigated Tea Bowl</h2>
+<p>The investigated object is a Chinese Jian-type tea bowl belonging to the Song-dynasty tradition of iron-rich black-glazed ceramics.</p>
+<p>The bowl has a wide, smoothly flaring profile, a slightly everted rim, and a comparatively small circular foot.</p>
+<p>Its surface is covered with a warm reddish-brown glaze that gradually darkens towards the lower body.</p>
+<p>Near the foot the glaze acquires a deep blue-black tone, while the lower part of the base remains unglazed.</p>
+<p>The interior displays a striking radial pattern.</p>
+<p>Fine dark blue-black and greenish-black streaks radiate outward and upward from the central well over a warm brown ground.</p>
+<p>The streaks vary in width, length, and density, creating the characteristic visual effect traditionally described as hare’s fur.</p>
+<p>A dark, glossy pool of glaze has accumulated in the central well.</p>
+<p>Under magnification, numerous small rounded dark features can be seen within the glaze.</p>
+<p>These characteristics provide the visual and morphological context for the elemental analysis.</p>
+<h2 id="materials-and-methods">3. Materials and Methods</h2>
+<h3 id="portable-x-ray-fluorescence-analysis">3.1. Portable X-ray fluorescence analysis</h3>
+<p>The elemental composition of the bowl was examined by portable X-ray fluorescence spectroscopy.</p>
+<p>The measurements were carried out on 28 October 2026 using the instrument with serial number 940487.</p>
+<p>The Geochem (3-Beam) Extra analytical program was used, with an acquisition time of 45 seconds per measurement.</p>
+<p>The investigated vessel was designated Sample No. 6.</p>
+<p>Three successive measurements were performed:</p>
+<ul>
+<li>Measurement No. 10: brown glaze (<em>tarelka korich</em>).</li>
+<li>Measurement No. 11: black glaze (<em>tarelka cher</em>).</li>
+<li>Measurement No. 12: unglazed ceramic base (<em>tarelka niz</em>).</li>
+</ul>
+<p>These measurements were selected to characterise the chemical differences between the two glazed areas and the exposed ceramic body.</p>
+<h3 id="optical-documentation">3.2. Optical documentation</h3>
+<p>Four photographs were used to document the bowl:</p>
+<ul>
+<li>A magnified image of the radial hare’s-fur pattern.</li>
+<li>A magnified image of the glaze surface showing rounded dark features.</li>
+<li>A general view of the interior and its radial decoration.</li>
+<li>A side view showing the vessel profile, exterior glaze, and unglazed base.</li>
+</ul>
+<p>The photographs provide direct visual evidence of the glaze distribution, decorative pattern, and surface morphology of the bowl.</p>
+<h3 id="conversion-of-elements-to-oxides">3.3. Conversion of elements to oxides</h3>
+<p>For comparison with published ceramic compositions, selected elemental concentrations were converted into theoretical oxide equivalents using standard stoichiometric factors:</p>
+<ul>
+<li>Fe × 1.4297 = Fe₂O₃ equivalent.</li>
+<li>Si × 2.1393 = SiO₂ equivalent.</li>
+<li>Al × 1.8895 = Al₂O₃ equivalent.</li>
+<li>Ca × 1.3992 = CaO equivalent.</li>
+<li>K × 1.2046 = K₂O equivalent.</li>
+</ul>
+<p>These conversions express the measured elemental concentrations in the conventional ceramic oxide format.</p>
+<h2 id="experimental-results">4. Experimental Results</h2>
+<h3 id="elemental-composition-of-the-three-areas">4.1. Elemental composition of the three areas</h3>
+<p><strong>Table 1. Comparative pXRF measurements of the Song-dynasty Jian tea bowl (Sample No. 6).</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">Brown glaze, No. 10</th>
+<th class="num">Black glaze, No. 11</th>
+<th class="num">Unglazed base, No. 12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Si (wt%)</td>
+<td class="num">30.14</td>
+<td class="num">34.31</td>
+<td class="num">25.08</td>
+</tr>
+<tr class="even">
+<td>Al (wt%)</td>
+<td class="num">7.89</td>
+<td class="num">8.10</td>
+<td class="num">12.66</td>
+</tr>
+<tr class="odd">
+<td>K (wt%)</td>
+<td class="num">3.899</td>
+<td class="num">4.360</td>
+<td class="num">2.922</td>
+</tr>
+<tr class="even">
+<td>Ca (wt%)</td>
+<td class="num">4.180</td>
+<td class="num">4.319</td>
+<td class="num">0.220</td>
+</tr>
+<tr class="odd">
+<td>Fe (wt%)</td>
+<td class="num">4.134</td>
+<td class="num">3.692</td>
+<td class="num">3.166</td>
+</tr>
+<tr class="even">
+<td>Ti (ppm)</td>
+<td class="num">3030</td>
+<td class="num">3010</td>
+<td class="num">3250</td>
+</tr>
+<tr class="odd">
+<td>Mn (ppm)</td>
+<td class="num">311</td>
+<td class="num">268</td>
+<td class="num">238</td>
+</tr>
+<tr class="even">
+<td>Co (ppm)</td>
+<td class="num">212</td>
+<td class="num">193</td>
+<td class="num">147</td>
+</tr>
+<tr class="odd">
+<td>Cu (ppm)</td>
+<td class="num">64</td>
+<td class="num">72</td>
+<td class="num">89</td>
+</tr>
+<tr class="even">
+<td>Zn (ppm)</td>
+<td class="num">96</td>
+<td class="num">97</td>
+<td class="num">57</td>
+</tr>
+<tr class="odd">
+<td>As (ppm)</td>
+<td class="num">24</td>
+<td class="num">20</td>
+<td class="num">ND, &lt;10</td>
+</tr>
+<tr class="even">
+<td>Pb (ppm)</td>
+<td class="num">47</td>
+<td class="num">47</td>
+<td class="num">72</td>
+</tr>
+<tr class="odd">
+<td>S (ppm)</td>
+<td class="num">3710</td>
+<td class="num">3840</td>
+<td class="num">5060</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Source: original portable X-ray fluorescence report, instrument No. 940487, 28 October 2026, Sample No. 6, measurements 10–12. ND denotes a value below the reported detection limit.</em></p>
+<h3 id="iron-distribution">4.2. Iron distribution</h3>
+<p>Iron is a major constituent of all three examined areas.</p>
+<p>The brown glaze contains 4.134 wt% Fe, the black glaze 3.692 wt% Fe, and the unglazed ceramic base 3.166 wt% Fe.</p>
+<p>The brown glaze therefore contains approximately 12.0% more elemental iron than the black glaze, relative to the iron content of the black glaze.</p>
+<p>The absolute difference is 0.442 percentage points.</p>
+<p>The brown glaze also contains approximately 30.6% more iron than the unglazed base.</p>
+<p>The black glaze contains approximately 16.6% more iron than the unglazed base.</p>
+<p>These measurements establish a systematic variation of iron concentration across the three analysed areas.</p>
+<div class="micro-block">
+  <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+  <div class="xrf-protocols xrf-3">
+    <div class="micro-item">
+      <span class="micro-mag">ID 10 &mdash; brown glaze</span>
+      <a href="images/ro-song-016-xrf-brown-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-brown-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 6 — ID 10 &mdash; brown glaze, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Measurement No.&nbsp;10, brown glaze. Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">ID 11 &mdash; black glaze</span>
+      <a href="images/ro-song-016-xrf-black-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-black-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 6 — ID 11 &mdash; black glaze, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Measurement No.&nbsp;11, black glaze. Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">ID 12 &mdash; unglazed base</span>
+      <a href="images/ro-song-016-xrf-body.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-body.jpg" alt="Olympus pXRF protocol, Sample No. 6 — ID 12 &mdash; unglazed base, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Measurement No.&nbsp;12, unglazed ceramic base. Click to open full size.</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="theoretical-iron-oxide-equivalents">4.3. Theoretical iron-oxide equivalents</h3>
+<p><strong>Table 2. Elemental iron content and theoretical Fe₂O₃ equivalent.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Area</th>
+<th class="num">Fe (wt%)</th>
+<th class="num">Fe₂O₃ equivalent (wt%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Brown glaze</td>
+<td class="num">4.134</td>
+<td class="num">5.91</td>
+</tr>
+<tr class="even">
+<td>Black glaze</td>
+<td class="num">3.692</td>
+<td class="num">5.28</td>
+</tr>
+<tr class="odd">
+<td>Unglazed base</td>
+<td class="num">3.166</td>
+<td class="num">4.53</td>
+</tr>
+</tbody>
+</table></div>
+<p>The calculated Fe₂O₃ equivalents lie within the range relevant to the study of historical iron-rich Chinese ceramic glazes.</p>
+<p>The brown glaze has the highest measured iron concentration, although it is lighter than the black glaze.</p>
+<p>This result is of particular importance for understanding the coloration of Jian ware.</p>
+<p>It demonstrates that visual darkness does not simply correspond to total elemental iron concentration.</p>
+<p>The appearance of the glaze also depends on iron-bearing phases, local chemistry, optical absorption, microstructure, and firing history.</p>
+<h3 id="calcium-enrichment-of-the-glaze">4.4. Calcium enrichment of the glaze</h3>
+<p>The calcium concentrations reveal a particularly pronounced difference between the glazed areas and the ceramic body.</p>
+<p>The brown glaze contains 4.180 wt% Ca.</p>
+<p>The black glaze contains 4.319 wt% Ca.</p>
+<p>The unglazed base contains only 0.220 wt% Ca.</p>
+<p>The brown glaze is therefore approximately 19 times richer in calcium than the unglazed ceramic base.</p>
+<p>The black glaze is approximately 19.6 times richer in calcium than the base.</p>
+<p>This substantial difference indicates that calcium is an important component of the glaze recipe.</p>
+<p>The result is consistent with the use of calcium-bearing fluxes in traditional Chinese high-temperature ceramic glazes.</p>
+<h3 id="distribution-of-silicon-and-aluminium">4.5. Distribution of silicon and aluminium</h3>
+<p>The black glaze contains 34.31 wt% Si, compared with 30.14 wt% Si in the brown glaze.</p>
+<p>The black glaze is therefore relatively enriched in silicon.</p>
+<p>The aluminium concentration is approximately the same in both glazed areas:</p>
+<ul>
+<li>Brown glaze: 7.89 wt% Al.</li>
+<li>Black glaze: 8.10 wt% Al.</li>
+</ul>
+<p>The unglazed ceramic body contains considerably more aluminium, reaching 12.66 wt% Al.</p>
+<p>These differences distinguish the aluminosilicate ceramic body from the calcium-rich glaze system.</p>
+<h3 id="comparative-oxide-equivalents">4.6. Comparative oxide equivalents</h3>
+<p><strong>Table 3. Selected theoretical oxide equivalents calculated from the pXRF elemental concentrations.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Oxide equivalent</th>
+<th class="num">Brown glaze (wt%)</th>
+<th class="num">Black glaze (wt%)</th>
+<th class="num">Unglazed base (wt%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SiO₂</td>
+<td class="num">64.48</td>
+<td class="num">73.40</td>
+<td class="num">53.65</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃</td>
+<td class="num">14.91</td>
+<td class="num">15.30</td>
+<td class="num">23.92</td>
+</tr>
+<tr class="odd">
+<td>Fe₂O₃</td>
+<td class="num">5.91</td>
+<td class="num">5.28</td>
+<td class="num">4.53</td>
+</tr>
+<tr class="even">
+<td>CaO</td>
+<td class="num">5.85</td>
+<td class="num">6.04</td>
+<td class="num">0.31</td>
+</tr>
+<tr class="odd">
+<td>K₂O</td>
+<td class="num">4.70</td>
+<td class="num">5.25</td>
+<td class="num">3.52</td>
+</tr>
+</tbody>
+</table></div>
+<p>The values given are theoretical oxide equivalents calculated from the measured elemental concentrations; they do not represent independently measured mineral phases or a normalised bulk oxide composition.</p>
+<p>The table shows the chemical difference between the calcium-rich glazed areas and the aluminium-rich ceramic body.</p>
+<h2 id="optical-and-morphological-observations">5. Optical and Morphological Observations</h2>
+<h3 id="the-radial-hares-fur-pattern">5.1. The radial hare’s-fur pattern</h3>
+<p>Numerous fine radial streaks are visible inside the bowl, extending from the central well towards the upper wall.</p>
+<p>The streaks are dark blue-black or greenish-black and lie on a warm brown ground.</p>
+<p>Their density is greatest around the central well.</p>
+<p>Individual streaks vary in length and thickness.</p>
+<p>Some remain narrow and sharply defined, while others merge into broader dark areas.</p>
+<p>The resulting pattern is characteristic of the decorative phenomenon known as hare’s fur.</p>
+<h3 id="glaze-pooling-in-the-central-well">5.2. Glaze pooling in the central well</h3>
+<p>A dark, glossy accumulation of glaze lies in the central well.</p>
+<p>A circular boundary is visible around the central area, separating the darker zone from the surrounding radial streaks.</p>
+<p>This feature provides an important visual record of the relationship between glaze flow, local thickness, and the development of the decorative pattern.</p>
+<h3 id="rounded-surface-features">5.3. Rounded surface features</h3>
+<p>The magnified photograph shows numerous small rounded dark features distributed across the glaze surface.</p>
+<p>Some appear as isolated dots, while others form irregular clusters.</p>
+<p>The photograph also shows local variation in transparency, colour intensity, and surface texture.</p>
+<p>These features are relevant to the study of phase separation and gas-related phenomena in high-temperature glazes.</p>
+<h3 id="exterior-glaze-and-unglazed-foot">5.4. Exterior glaze and unglazed foot</h3>
+<p>The side view shows the flaring profile of the bowl and its comparatively small foot.</p>
+<p>The exterior surface is covered with a warm brown glaze that gradually darkens towards the lower body.</p>
+<p>The boundary between the dark blue-black glaze and the exposed part of the foot runs above the base.</p>
+<p>The base remains unglazed, providing direct access to the ceramic body for the third pXRF measurement.</p>
+<h2 id="comparison-with-published-archaeometric-studies">6. Comparison with Published Archaeometric Studies</h2>
+<h3 id="microstructure-of-hares-fur-glaze">6.1. Microstructure of hare’s-fur glaze</h3>
+<p>Particular attention in the present study is given to Tao et al. (2022), <em>Microstructural and compositional study of ε-Fe₂O₃ crystals in Jian hare’s-fur ware</em>.</p>
+<p>The authors examined historical Jian wares using complementary analytical techniques, including X-ray fluorescence, electron microscopy, Raman spectroscopy, X-ray diffraction, and synchrotron-based methods.</p>
+<p>The study identified iron-rich crystalline structures associated with the characteristic streaked hare’s-fur glaze.</p>
+<p>Importantly, the authors documented compositional differences between the brown-yellow streaks and the adjacent black glaze.</p>
+<p>The brown-yellow areas were enriched in iron, whereas the black glaze contained relatively more silicon.</p>
+<p>The bowl presented here shows the same directional relationship.</p>
+<p><strong>Table 4. Comparison of elemental trends in the investigated bowl and in published Jian ware samples.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Compositional feature</th>
+<th>This bowl</th>
+<th>Published Jian hare’s-fur study</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Iron in the brown area</td>
+<td>Higher</td>
+<td>Higher in brown-yellow streaks</td>
+</tr>
+<tr class="even">
+<td>Iron in the black area</td>
+<td>Lower</td>
+<td>Lower in the adjacent black glaze</td>
+</tr>
+<tr class="odd">
+<td>Silicon in the brown area</td>
+<td>Lower</td>
+<td>Lower</td>
+</tr>
+<tr class="even">
+<td>Silicon in the black area</td>
+<td>Higher</td>
+<td>Higher</td>
+</tr>
+<tr class="odd">
+<td>Calcium-bearing glaze</td>
+<td>Present</td>
+<td>Present</td>
+</tr>
+<tr class="even">
+<td>Iron-related radial decoration</td>
+<td>Present</td>
+<td>Present</td>
+</tr>
+</tbody>
+</table></div>
+<p>This correspondence is one of the most significant results of the present study.</p>
+<h3 id="quantitative-comparison-with-tao-et-al-2022">6.2. Quantitative comparison with Tao et al. (2022)</h3>
+<p>The published oxide compositions of the Jian ware examined by Tao and colleagues provide a useful reference for the pXRF results of the present study.</p>
+<p><strong>Table 5. Comparison with published Jian hare’s-fur glaze compositions.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Oxide</th>
+<th class="num">This bowl: brown</th>
+<th class="num">This bowl: black</th>
+<th class="num">Tao et al.: brown-yellow</th>
+<th class="num">Tao et al.: black</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fe₂O₃ (wt%)</td>
+<td class="num">5.91</td>
+<td class="num">5.28</td>
+<td class="num">8.35</td>
+<td class="num">4.10</td>
+</tr>
+<tr class="even">
+<td>CaO (wt%)</td>
+<td class="num">5.85</td>
+<td class="num">6.04</td>
+<td class="num">6.97</td>
+<td class="num">3.85</td>
+</tr>
+<tr class="odd">
+<td>SiO₂ (wt%)</td>
+<td class="num">64.48</td>
+<td class="num">73.40</td>
+<td class="num">62.20</td>
+<td class="num">77.07</td>
+</tr>
+<tr class="even">
+<td>Al₂O₃ (wt%)</td>
+<td class="num">14.91</td>
+<td class="num">15.30</td>
+<td class="num">16.43</td>
+<td class="num">10.61</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Values for this bowl are oxide equivalents calculated from elemental pXRF analysis. Comparative published values for the examined Jian glaze areas are given in Tao et al. (2022).</em></p>
+<p>The comparison demonstrates several important relationships.</p>
+<p>First, both studies show a higher iron concentration in the brown or brown-yellow area than in the black glaze.</p>
+<p>Second, both studies show a higher silicon concentration in the black glaze.</p>
+<p>Third, the silica and calcium contents of this bowl are comparable in magnitude to the published Jian glaze compositions.</p>
+<p>These relationships allow the bowl to be considered within the technological tradition of iron-rich Jian hare’s-fur glazes.</p>
+<h3 id="ε-fe₂o₃-in-historical-jian-ware">6.3. ε-Fe₂O₃ in historical Jian ware</h3>
+<p>A study published in <em>Scientific Reports</em> in 2014 identified the rare iron-oxide polymorph ε-Fe₂O₃ in ancient Jian ware.</p>
+<p>This discovery demonstrated that historical ceramic firing technology could produce complex crystalline iron-oxide structures under particular high-temperature conditions.</p>
+<p>Subsequent studies further examined the morphology, composition, and growth of the iron-bearing crystals associated with Jian glaze decoration.</p>
+<p>The characteristic streaks on the present bowl are considered within this established model of iron-rich glaze crystallisation.</p>
+<h3 id="experimental-reconstruction-of-hares-fur-glazes">6.4. Experimental reconstruction of hare’s-fur glazes</h3>
+<p>A 2024 study published in the <em>Journal of the European Ceramic Society</em> examined the manufacturing technology of historical hare’s-fur glazed bowls.</p>
+<p>The authors combined analytical investigation with experimental firing and simulation.</p>
+<p>Their results emphasised the importance of iron concentration, glaze chemistry, firing atmosphere, and controlled cooling for the formation of the decorative streaks.</p>
+<p>The reported iron-oxide concentrations are comparable in magnitude to the theoretical Fe₂O₃ equivalents calculated for the present bowl.</p>
+<h3 id="the-role-of-calcium-and-aluminium">6.5. The role of calcium and aluminium</h3>
+<p>The calcium enrichment measured in this bowl is of considerable technological significance.</p>
+<p>Calcium-bearing fluxes influence the melting behaviour, viscosity, and crystallisation processes of high-temperature ceramic glazes.</p>
+<p>Aluminium content affects the structural properties of the silicate melt.</p>
+<p>Recent studies of iron-rich Chinese glazes have further demonstrated the potential role of aluminium in stabilising particular crystalline iron-oxide structures.</p>
+<p>The combined presence of iron, calcium, silicon, and aluminium therefore provides an important chemical basis for understanding the observed glaze effects.</p>
+<h2 id="discussion">7. Discussion</h2>
+<p>The three pXRF measurements show that the investigated Jian tea bowl has a chemically differentiated, iron-rich glaze system.</p>
+<p>The brown glaze contains the highest concentration of elemental iron, 4.134 wt%.</p>
+<p>The black glaze contains 3.692 wt% iron.</p>
+<p>The unglazed ceramic base contains 3.166 wt% iron.</p>
+<p>The brown glaze therefore contains more iron than the black glaze.</p>
+<p>This relationship is particularly important because it corresponds to published observations of historical Jian hare’s-fur ware, in which brown-yellow streaks can show greater iron enrichment than the adjacent black glaze.</p>
+<p>The silicon distribution shows the opposite trend.</p>
+<p>The black glaze contains 34.31 wt% silicon, compared with 30.14 wt% in the brown glaze.</p>
+<p>This inverse relationship between iron and silicon is consistent with compositional differentiation during the formation of decorative iron-rich glazes.</p>
+<p>Calcium concentration is the second important result of the study.</p>
+<p>Both glazed areas contain approximately 4.2–4.3 wt% calcium, whereas the unglazed ceramic base contains only 0.220 wt%.</p>
+<p>The approximately nineteen- to twentyfold calcium enrichment of the glaze demonstrates a substantial difference between the glaze composition and the ceramic body.</p>
+<p>The photographic characteristics of the bowl complement these analytical results.</p>
+<p>The interior shows dense, elongated radial streaks resembling hare’s fur.</p>
+<p>A dark layer of glaze has pooled in the central well, and the exterior shows a transition from brown to black towards the foot.</p>
+<p>These visual features correspond to the behaviour of iron-bearing ceramic glazes at high temperatures as described in the scientific literature.</p>
+<p>The present study is of particular value because it documents the chemical composition of three distinct technological areas of the same object using the same analytical instrument and acquisition conditions.</p>
+<p>The resulting dataset allows a direct comparison of the brown glaze, the black glaze, and the ceramic body.</p>
+<h2 id="conclusions">8. Conclusions</h2>
+<p>This study presents original portable X-ray fluorescence data and photographic documentation of a Song-dynasty Jian-type tea bowl decorated with an iron-rich hare’s-fur glaze.</p>
+<p>The principal findings are as follows:</p>
+<ul>
+<li>The brown glaze contains 4.134 wt% Fe, corresponding to a theoretical Fe₂O₃ equivalent of 5.91 wt%.</li>
+<li>The black glaze contains 3.692 wt% Fe, corresponding to a theoretical Fe₂O₃ equivalent of 5.28 wt%.</li>
+<li>The unglazed ceramic base contains 3.166 wt% Fe, corresponding to a theoretical Fe₂O₃ equivalent of 4.53 wt%.</li>
+<li>The brown glaze contains approximately 12% more elemental iron than the black glaze.</li>
+<li>The black glaze is relatively enriched in silicon compared with the brown glaze.</li>
+<li>The glaze is markedly enriched in calcium, at a concentration approximately 19–20 times higher than in the unglazed ceramic body.</li>
+<li>The bowl shows characteristic radial streaks resembling hare’s fur, accompanied by a dark pool of glaze in the centre and a transition from brown to black glaze on the exterior.</li>
+</ul>
+<p>The distribution of elements corresponds closely to published archaeometric observations of historical Jian hare’s-fur glazes, in particular the iron enrichment of brown-yellow areas and the silicon enrichment of the adjacent black glaze.</p>
+<p>The combined analytical and photographic results provide original data for the study of high-temperature iron-rich glaze technology in Chinese tea ceramics.</p>
+<p>This study demonstrates the value of comparative X-ray fluorescence analysis for characterising compositional relationships between decorative glaze areas and the underlying ceramic body.</p>
+<h2 id="figure-captions">Figure Captions</h2>
+<p><strong>Figure 1.</strong> Song-dynasty Jian tea bowl, interior view, showing the radial hare’s-fur glaze pattern extending from the central well to the rim.</p>
+<p><strong>Figure 2.</strong> Magnified image of the interior glaze, showing dense blue-black and greenish-black radial streaks on a brown ground.</p>
+<p><strong>Figure 3.</strong> Magnified detail of the surface, showing rounded dark features and variations in glaze texture.</p>
+<p><strong>Figure 4.</strong> Side view of the bowl, showing the flaring profile, brown exterior glaze, dark lower glaze transition, and exposed unglazed base.</p>
+<p><strong>Figure 5.</strong> Comparative iron concentrations in the brown glaze, black glaze, and unglazed ceramic base.</p>
+<p><strong>Figure 6.</strong> Comparative calcium concentrations, showing the substantial calcium enrichment of the glazed areas relative to the ceramic body.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p>Tao et al. (2022). Microstructural and compositional study of ε-Fe₂O₃ crystals in Jian hare’s-fur ware. <em>Crystals</em>, 12(3), 367. <a class="uri" href="https://doi.org/10.3390/cryst12030367" target="_blank" rel="noopener">https://doi.org/10.3390/cryst12030367</a></p></li>
+<li><p>Lessons from the past: rare ε-Fe₂O₃ in the ancient black-glazed Jian (Tenmoku) wares. (2014). <em>Scientific Reports</em>. <a class="uri" href="https://www.nature.com/articles/srep04941" target="_blank" rel="noopener">https://www.nature.com/articles/srep04941</a></p></li>
+<li><p>Millimetre-scale flower-like aggregates composed of mullite and ε-Fe₂O₃ on hare’s-fur ware. (2020). <em>Journal of the European Ceramic Society</em>. <a class="uri" href="https://doi.org/10.1016/j.jeurceramsoc.2020.04.047" target="_blank" rel="noopener">https://doi.org/10.1016/j.jeurceramsoc.2020.04.047</a></p></li>
+<li><p>Scientific and simulation study of the manufacturing technology of the ancient Chinese rare hare’s-fur glazed bowl. (2024). <em>Journal of the European Ceramic Society</em>. <a class="uri" href="https://doi.org/10.1016/j.jeurceramsoc.2023.10.035" target="_blank" rel="noopener">https://doi.org/10.1016/j.jeurceramsoc.2023.10.035</a></p></li>
+<li><p>Unveiling the mystery of Al(III) doping of ε-Fe₂O₃ in ancient high-iron black-brown glaze. (2024). <em>Journal of the American Ceramic Society</em>, 107(1), 522–533. <a class="uri" href="https://doi.org/10.1111/jace.19437" target="_blank" rel="noopener">https://doi.org/10.1111/jace.19437</a></p></li>
+<li><p>Comparative study of the composition and firing atmosphere of hare’s-fur and oil-spot glazes from the Song-dynasty Jian kiln. (2025). <em>Journal of Ceramic Processing Research</em>, 26(3), 463–471. <a class="uri" href="https://doi.org/10.36410/jcpr.2025.26.3.463" target="_blank" rel="noopener">https://doi.org/10.36410/jcpr.2025.26.3.463</a></p></li>
+<li><p>Kerr, R., &amp; Wood, N. (2004). <em>Science and Civilisation in China, Volume 5, Part 12: Ceramic Technology</em>. Cambridge University Press.</p></li>
+<li><p>Medley, M. (1989). <em>The Chinese Potter: A Practical History of Chinese Ceramics</em>. Phaidon.</p></li>
+</ol>
+<h2 id="data-availability">Data Availability</h2>
+<p>The primary elemental data derive from portable X-ray fluorescence report No. 940487 of 28 October 2026, Sample No. 6, measurements 10–12.</p>
+<p>These measurements correspond to the brown glaze, the black glaze, and the unglazed ceramic base.</p>
+<p>The original analytical report and photographic documentation form part of the author’s research archive and may be deposited as supplementary files with the Zenodo publication.</p>
+<h2 id="image-credits">Image Credits</h2>
+<p>All photographs of the investigated tea bowl are from the author’s collection and research archive.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p><strong>Nona Dronova</strong> provided the investigated ceramic object, the primary X-ray fluorescence data, photographic documentation, comparative observations, and research materials.</p>
+
+      <nav class="pagination">
+        <a href="ro-song-016.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">ro-song-016 — Jian Tea Bowl with Hare&rsquo;s Fur Glaze</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-song-016.html">ro-song-016</a></span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 6 &mdash; brown glaze (ID 10), black glaze (ID 11), unglazed base (ID 12)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Olympus, Geochem 3-Beam Extra, 45 s)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">28 October 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Comparison</span><span class="meta-value">Tao et al. 2022 &mdash; Jian hare&rsquo;s-fur glaze regions</span></div>
+        <div class="meta-row"><span class="meta-label">Zenodo DOI</span><span class="meta-value">Published 30 Oct 2026, v1</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#description-of-the-investigated-tea-bowl">2. Description of the Investigated Tea Bowl</a></li><li><a href="#materials-and-methods">3. Materials and Methods</a></li><li><a href="#experimental-results">4. Experimental Results</a></li><li><a href="#optical-and-morphological-observations">5. Optical and Morphological Observations</a></li><li><a href="#comparison-with-published-archaeometric-studies">6. Comparison with Published Archaeometric Studies</a></li><li><a href="#discussion">7. Discussion</a></li><li><a href="#conclusions">8. Conclusions</a></li><li><a href="#figure-captions">Figure Captions</a></li><li><a href="#references">References</a></li><li><a href="#data-availability">Data Availability</a></li><li><a href="#image-credits">Image Credits</a></li><li><a href="#author-contributions">Author Contributions</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-song-016 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

@@ -131,6 +131,18 @@
     .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
     .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
 
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .sci-table thead th.num{white-space:normal}
+    .col-main p a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+
     @media(max-width:1099px){
       .layout-article{grid-template-columns:1fr}
       .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
@@ -139,7 +151,7 @@
     @media(max-width:767px){
       :root{--gutter:1.25rem}
       h1{font-size:1.75rem}h2{font-size:1.35rem}
-      .micro-grid-2,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .xrf-protocols,.micro-grid-2,.figure-row,.col-sidebar{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
@@ -192,6 +204,7 @@
         <span class="tag">&epsilon;-Fe&#8322;O&#8323;</span>
         <span class="tag">Seal Mark</span>
         <span class="tag">GOM Examined</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -322,6 +335,8 @@
               <tr><td>Iron-rich body (Fujian clay)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
               <tr><td>Hare&rsquo;s Fur streak morphology</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
               <tr><td>Natural glaze skirt</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+              <tr><td>pXRF: Fe enriched in brown vs black glaze; Si higher in black glaze</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+              <tr><td>pXRF: calcium-bearing glaze over calcium-poor iron-rich body</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
               <tr><td>Rough trimmed foot ring</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             </tbody>
           </table>
@@ -340,8 +355,100 @@
           <div class="diagnostic-item">Natural glaze skirt with sharp irregular termination</div>
           <div class="diagnostic-item">Impressed seal mark integrated in pre-firing body</div>
           <div class="diagnostic-item">Kiln oxidation deposits on foot surface</div>
+          <div class="diagnostic-item">pXRF: iron-rich glaze (Fe 4.13 / 3.69 wt.%) &mdash; brown zone richer in iron, black zone richer in silica, as in excavated Jian hare&rsquo;s-fur ware</div>
+          <div class="diagnostic-item">pXRF: glaze Ca 4.2&ndash;4.3 wt.% vs body 0.22 wt.% (&asymp;&nbsp;19&ndash;20&times;)</div>
           <div class="diagnostic-item">No restoration detected</div>
           <p class="diagnostic-confidence">Diagnostic Confidence: <span class="confidence-value">Very High &mdash; Catalogue No. SS-JIAN-BWL-001-R</span></p>
+        </div>
+      </section>
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the bowl was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s per measurement, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample No.&nbsp;6</strong>. Three areas were measured in succession: <strong>BR</strong> &mdash; the warm brown glaze (measurement ID&nbsp;10), <strong>BK</strong> &mdash; the black glaze zone (ID&nbsp;11), and <strong>B</strong> &mdash; the exposed unglazed ceramic body on the underside (ID&nbsp;12). The results and their comparison with published studies of Jian hare&rsquo;s-fur glazes are set out in the research article by Professor Nona Dronova (<a href="ro-song-016-xrf-study.html">full text</a>).</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">BR &mdash; brown glaze</th><th class="num">BK &mdash; black glaze</th><th class="num">B &mdash; unglazed body</th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">30.14 &plusmn; 0.29</td><td class="num"><strong>34.31</strong> &plusmn; 0.31</td><td class="num">25.08 &plusmn; 0.22</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">7.89 &plusmn; 0.19</td><td class="num">8.10 &plusmn; 0.19</td><td class="num">12.66 &plusmn; 0.22</td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.899 &plusmn; 0.051</td><td class="num">4.360 &plusmn; 0.055</td><td class="num">2.922 &plusmn; 0.037</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>4.180</strong> &plusmn; 0.051</td><td class="num"><strong>4.319</strong> &plusmn; 0.052</td><td class="num"><strong>0.220</strong> &plusmn; 0.011</td></tr>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num"><strong>4.134</strong> &plusmn; 0.055</td><td class="num"><strong>3.692</strong> &plusmn; 0.050</td><td class="num"><strong>3.166</strong> &plusmn; 0.040</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">3,030 &plusmn; 420</td><td class="num">3,010 &plusmn; 450</td><td class="num">3,250 &plusmn; 410</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">311 &plusmn; 59</td><td class="num">268 &plusmn; 59</td><td class="num">238 &plusmn; 52</td></tr>
+              <tr><td>Co, ppm</td><td class="num">212 &plusmn; 96</td><td class="num">193 &plusmn; 95</td><td class="num">147 &plusmn; 83</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">246 &plusmn; 7</td><td class="num">248 &plusmn; 7</td><td class="num">216 &plusmn; 6</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">93 &plusmn; 4</td><td class="num">114 &plusmn; 5</td><td class="num">15 &plusmn; 3</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">191 &plusmn; 7</td><td class="num">185 &plusmn; 7</td><td class="num">214 &plusmn; 7</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">268 &plusmn; 67</td><td class="num">451 &plusmn; 71</td><td class="num">122 &plusmn; 55</td></tr>
+              <tr><td>Cu, ppm</td><td class="num">64 &plusmn; 17</td><td class="num">72 &plusmn; 18</td><td class="num">89 &plusmn; 17</td></tr>
+              <tr><td>Zn, ppm</td><td class="num">96 &plusmn; 12</td><td class="num">97 &plusmn; 12</td><td class="num">57 &plusmn; 10</td></tr>
+              <tr><td>As, ppm</td><td class="num">24 &plusmn; 6</td><td class="num">20 &plusmn; 6</td><td class="num">ND (&lt;10)</td></tr>
+              <tr><td>Pb, ppm</td><td class="num">47 &plusmn; 6</td><td class="num">47 &plusmn; 6</td><td class="num">72 &plusmn; 7</td></tr>
+              <tr><td>S, ppm</td><td class="num">3,710 &plusmn; 160</td><td class="num">3,840 &plusmn; 170</td><td class="num">5,060 &plusmn; 180</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Values (&plusmn;3&sigma;) transcribed from the original instrument protocols, 28 October 2026. Ca in the body is reported by the instrument as 2,200&nbsp;ppm and shown here in wt.%. Light-element balance: 48.34 (BR), 43.42 (BK), 54.85&nbsp;wt.% (B). Mg is reported only near its detection limit in the glazes (4,700 &plusmn; 4,700 and 8,300 &plusmn; 4,700&nbsp;ppm) and is not interpreted. Values close to their uncertainty should not be over-interpreted.</p>
+
+        <h3>Calculated oxide equivalents</h3>
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Oxide, wt.%</th><th class="num">Brown glaze</th><th class="num">Black glaze</th><th class="num">Unglazed body</th><th class="num">Tao 2022 brown-yellow</th><th class="num">Tao 2022 black</th></tr></thead>
+            <tbody>
+              <tr><td>Fe&#8322;O&#8323;</td><td class="num"><strong>5.91</strong></td><td class="num">5.28</td><td class="num">4.53</td><td class="num">8.35</td><td class="num">4.10</td></tr>
+              <tr><td>CaO</td><td class="num">5.85</td><td class="num">6.04</td><td class="num">0.31</td><td class="num">6.97</td><td class="num">3.85</td></tr>
+              <tr><td>SiO&#8322;</td><td class="num">64.48</td><td class="num"><strong>73.40</strong></td><td class="num">53.65</td><td class="num">62.20</td><td class="num">77.07</td></tr>
+              <tr><td>Al&#8322;O&#8323;</td><td class="num">14.91</td><td class="num">15.30</td><td class="num">23.92</td><td class="num">16.43</td><td class="num">10.61</td></tr>
+              <tr><td>K&#8322;O</td><td class="num">4.70</td><td class="num">5.25</td><td class="num">3.52</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Stoichiometric equivalents calculated from the elemental pXRF readings (Fe&times;1.4297, Si&times;2.1393, Al&times;1.8895, Ca&times;1.3992, K&times;1.2046). They are not normalised to 100% and are not measured bulk oxide compositions. Published values for Jian hare&rsquo;s-fur glaze regions from Tao et al. (2022).</p>
+
+        <h3>What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. A highly iron-rich glaze system.</strong> Iron is a major constituent in all three areas: 4.134&nbsp;wt.% in the brown glaze, 3.692 in the black glaze and 3.166 in the body (Fe&#8322;O&#8323; equivalents 5.91, 5.28 and 4.53&nbsp;wt.%). Such levels belong to the iron-rich black-glazed tradition of the Jian kilns, in which both glaze and body are made from local iron-bearing Fujian raw materials.
+        </div>
+
+        <div class="note">
+          <strong>2. More iron in the brown, more silica in the black.</strong> The brown glaze contains about 12% more iron than the black glaze (difference 0.442 percentage points), while the black glaze is richer in silicon (34.31 vs 30.14&nbsp;wt.%). This is exactly the direction documented by Tao et al. (2022) for excavated Jian hare&rsquo;s-fur ware: iron enrichment in the brown-yellow streaks and relatively more silica in the adjacent black glaze. It also shows that visual darkness does not simply follow total iron content: the colour depends on the iron-bearing phases, local chemistry, microstructure and firing history.
+        </div>
+
+        <div class="note">
+          <strong>3. Calcium marks the glaze.</strong> Both glazed areas contain 4.2&ndash;4.3&nbsp;wt.% calcium, against only 0.220&nbsp;wt.% in the unglazed body &mdash; an enrichment of about 19&ndash;20 times. The calcium-bearing flux is therefore a component of the glaze recipe, not of the body. The body, by contrast, is the most aluminous area (Al 12.66&nbsp;wt.%, Al&#8322;O&#8323; equivalent 23.92), an iron-rich aluminosilicate stoneware.
+        </div>
+
+        <div class="note">
+          <strong>4. Limits of the measurement.</strong> These are single-point surface readings made with a geochemical calibration; they characterise the measured areas rather than bulk compositions. pXRF cannot identify the iron-oxide phases themselves (such as &epsilon;-Fe&#8322;O&#8323; or hematite), which require Raman, XRD or electron microscopy. The higher sulfur and phosphorus on the unglazed underside are best treated as possible surface contributions.
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">BR &mdash; Brown glaze &middot; ID 10</span>
+              <a href="images/ro-song-016-xrf-brown-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-brown-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 6, measurement ID 10 — brown glaze of the Jian hare's-fur tea bowl ro-song-016, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 8.</span> Measurement ID&nbsp;10 &mdash; brown glaze (<em>tarelka korich</em>). Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">BK &mdash; Black glaze &middot; ID 11</span>
+              <a href="images/ro-song-016-xrf-black-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-black-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 6, measurement ID 11 — black glaze zone of ro-song-016, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 9.</span> Measurement ID&nbsp;11 &mdash; black glaze zone (<em>tarelka cher</em>). Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">B &mdash; Unglazed body &middot; ID 12</span>
+              <a href="images/ro-song-016-xrf-body.jpg" target="_blank" rel="noopener"><img src="images/ro-song-016-xrf-body.jpg" alt="Olympus pXRF protocol, Sample No. 6, measurement ID 12 — unglazed ceramic body on the underside of ro-song-016, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 10.</span> Measurement ID&nbsp;12 &mdash; unglazed body on the underside (<em>tarelka niz</em>). Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-016-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-song-016-xrf-protocols.pdf" target="_blank" rel="noopener">Download all three XRF protocols (PDF)</a>
         </div>
       </section>
 
@@ -387,12 +494,16 @@
             <a href="../methodology/gom.html" class="crossref-link">Gemmological Optical Microscopy &mdash; GOM</a>
             <a href="../methodology/sem-eds.html" class="crossref-link">SEM&ndash;EDS (comparative)</a>
             <a href="../methodology/xrd.html" class="crossref-link">XRD &mdash; &epsilon;-Fe&#8322;O&#8323; (comparative)</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 28 Oct 2026</a>
+            <a href="ro-song-016-xrf-study.html" class="crossref-link">pXRF research article</a>
           </div>
         </div>
       </section>
 
       <div class="bibliography" id="bibliography">
         <p class="bibliography-title">References</p>
+        <p class="biblio-entry">Dronova, N. Iron-Rich Hare&rsquo;s-Fur Glaze on a Song-Dynasty Jian Tea Bowl: Comparative Portable X-Ray Fluorescence Analysis of the Brown and Black Glaze Areas and the Ceramic Body. <em>Zenodo</em>, published 30 October 2026, version v1. <a href="ro-song-016-xrf-study.html">Full text on this site</a>.</p>
+        <p class="biblio-entry">Tao, S. et al. Microstructural and compositional study of &epsilon;-Fe&#8322;O&#8323; crystals in Jian hare&rsquo;s-fur ware. <em>Crystals</em>, 12(3), 2022, 367. doi:10.3390/cryst12030367.</p>
         <p class="biblio-entry">Published XRD and Raman spectroscopy studies confirming &epsilon;-Fe&#8322;O&#8323; as the principal crystalline phase in authentic Song Dynasty Jian ware Hare&rsquo;s Fur streaks were consulted for comparative calibration of GOM observations.</p>
         <p class="biblio-entry">Published SEM investigations of Jian ware glaze microstructure including bubble population, multilayer glaze stratification, and crystal aggregate morphology were used as comparative reference.</p>
         <p class="biblio-entry">Jianyang kiln excavation reports, Fujian Province &mdash; impressed seal marks, clay body composition, and firing evidence from authenticated kiln material.</p>
@@ -424,7 +535,9 @@
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Hare&rsquo;s Fur &mdash; 兔毫 (Tuhao)</span></div>
         <div class="meta-row"><span class="meta-label">Firing Temp.</span><span class="meta-value">1280&ndash;1320&deg;C</span></div>
         <div class="meta-row"><span class="meta-label">Crystal Phase</span><span class="meta-value">&epsilon;-Fe&#8322;O&#8323;</span></div>
-        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a></span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a> &middot; <a href="#xrf">pXRF</a> (28 Oct 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 6 &mdash; brown glaze, black glaze, unglazed body</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-016-xrf-study.html">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
       </div>
 
@@ -434,6 +547,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Microscopic Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>
