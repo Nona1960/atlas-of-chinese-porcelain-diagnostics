@@ -116,7 +116,24 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 .footer-col p,.footer-col a{font-size:.78rem;color:var(--muted);text-decoration:none;line-height:1.7;display:block}
 .footer-bottom{max-width:1100px;margin:.8rem auto 0;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border2);padding-top:.8rem}
 
+.xrf-table-wrap{overflow-x:auto;border:1px solid var(--border);margin:1.2rem 0}
+.xrf-table-wrap .sci-table{margin:0}
+.num{text-align:right!important;font-variant-numeric:tabular-nums;white-space:nowrap}
+.xrf-caption{font-size:.78rem!important;font-style:italic;color:var(--muted)!important;line-height:1.55}
+.section h3.xrf-h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin:1.8rem 0 .6rem}
+.section p a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+.xrf-protocol-block{background:var(--parchment);border:1px solid var(--border);padding:1.2rem;margin:1.8rem 0}
+.xrf-protocol-header{font-size:.72rem!important;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)!important;border-bottom:1px solid var(--border2);padding-bottom:.5rem}
+.xrf-protocols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.xrf-protocols.xrf-3{grid-template-columns:repeat(3,1fr)}
+.xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff;display:block}
+.xrf-label{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ink);padding:.2rem .5rem}
+.xrf-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.xrf-btn{display:inline-block;font-size:.8rem;font-weight:500;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);text-decoration:none}
+.xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+.xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
 @media(max-width:800px){
+  .xrf-protocols,.xrf-protocols.xrf-3{grid-template-columns:1fr}
   .main-grid{grid-template-columns:1fr}
   .sidebar{position:static}
   .figure-row{grid-template-columns:1fr 1fr}
@@ -159,6 +176,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <span class="tag">Double-Gourd Ewer · Húlu 葫芦</span>
         <span class="tag">Underglaze Iron Oxide</span>
         <span class="tag">Dronova Method Applied</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -252,6 +270,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
             <tr><td>Body (footring)</td><td>Warm buff-orange stoneware, dark iron specks</td><td>Southern high-fired stoneware paste</td><td>✓ Consistent</td></tr>
             <tr><td>Footring treatment</td><td>Unglazed, wheel-trimmed, firing traces</td><td>Unglazed footring, natural firing evidence</td><td>✓ Consistent</td></tr>
             <tr><td>Glaze edge (base)</td><td>Natural thinning and crystallisation, no secondary glaze layer</td><td>Single-firing glaze termination</td><td>✓ Consistent</td></tr>
+            <tr><td>pXRF iron distribution</td><td>Fe 0.91 (pale) / 5.72 (black spot) / 1.16 wt.% (rust-brown)</td><td>Local iron enrichment in dark decoration</td><td>✓ Consistent</td></tr>
             <tr><td>Handle construction</td><td>Arched strap with applied loop terminal — slip-luted</td><td>Southern Yuan ewer handle convention</td><td>✓ Consistent</td></tr>
           </tbody>
         </table>
@@ -265,6 +284,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li class="diagnostic-item">Warm buff-orange stoneware body with dark iron specks at footring — consistent with southern high-fired stoneware paste tradition</li>
           <li class="diagnostic-item">Natural glaze thinning and crystallisation at base edge — single-firing signature, no evidence of reglaze or secondary layer</li>
           <li class="diagnostic-item">Applied loop terminal on handle — constructional detail specific to Yuan southern kiln ewer production</li>
+          <li class="diagnostic-item">pXRF: black spot Fe 5.72 wt.% vs pale glaze 0.91 wt.% (&asymp;&nbsp;6.3&times;) &mdash; the dark decoration is iron-rich; rust-brown zone intermediate (1.16 wt.%)</li>
           <li class="diagnostic-item">No evidence of modern restoration, artificial ageing, post-firing pigment addition, or reglaze</li>
         </ul>
 
@@ -292,6 +312,82 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         </div>
       </section>
 
+      <section class="section" id="xrf">
+        <h2 class="section-title">X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the ewer was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s per measurement, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample No.&nbsp;10</strong>. Three visually distinct areas were measured: <strong>W</strong> &mdash; the pale glaze (measurement ID&nbsp;16), <strong>BK</strong> &mdash; a black decorative iron spot (ID&nbsp;17), and <strong>R</strong> &mdash; a rust-brown area of the surface (ID&nbsp;18). The results and their comparison with published studies of iron spots on Jingdezhen <em>qingbai</em> porcelain are set out in the research article by Professor Nona Dronova (<a href="ro-yuan-019-xrf-study.html">full text</a>).</p>
+
+        <div class="xrf-table-wrap">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">W &mdash; pale glaze</th><th class="num">BK &mdash; black spot</th><th class="num">R &mdash; rust-brown area</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num">0.913 &plusmn; 0.016</td><td class="num"><strong>5.722</strong> &plusmn; 0.063</td><td class="num">1.161 &plusmn; 0.018</td></tr>
+              <tr><td>Fe&#8322;O&#8323; equivalent, wt.%</td><td class="num">1.305</td><td class="num"><strong>8.181</strong></td><td class="num">1.660</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">997 &plusmn; 67</td><td class="num"><strong>1,208</strong> &plusmn; 67</td><td class="num">799 &plusmn; 61</td></tr>
+              <tr><td>Si, wt.%</td><td class="num">39.00 &plusmn; 0.21</td><td class="num">28.45 &plusmn; 0.24</td><td class="num">33.52 &plusmn; 0.20</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">6.96 &plusmn; 0.15</td><td class="num">5.57 &plusmn; 0.15</td><td class="num">5.89 &plusmn; 0.14</td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.769 &plusmn; 0.037</td><td class="num">2.435 &plusmn; 0.031</td><td class="num">3.322 &plusmn; 0.034</td></tr>
+              <tr><td>Ca, wt.%</td><td class="num">2.864 &plusmn; 0.028</td><td class="num">2.442 &plusmn; 0.029</td><td class="num">2.926 &plusmn; 0.029</td></tr>
+              <tr><td>Mg, ppm</td><td class="num">ND (&lt;4,200)</td><td class="num">4,000 &plusmn; 3,700</td><td class="num">ND (&lt;4,500)</td></tr>
+              <tr><td>P, ppm</td><td class="num">198 &plusmn; 99</td><td class="num">291 &plusmn; 85</td><td class="num">342 &plusmn; 96</td></tr>
+              <tr><td>S, ppm</td><td class="num">3,400 &plusmn; 150</td><td class="num">2,840 &plusmn; 120</td><td class="num">4,170 &plusmn; 150</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">664 &plusmn; 10</td><td class="num">561 &plusmn; 10</td><td class="num">621 &plusmn; 10</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">78 &plusmn; 3</td><td class="num">85 &plusmn; 4</td><td class="num">87 &plusmn; 3</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">52 &plusmn; 4</td><td class="num">46 &plusmn; 4</td><td class="num">50 &plusmn; 4</td></tr>
+              <tr><td>Nb, ppm</td><td class="num">27 &plusmn; 4</td><td class="num">22 &plusmn; 4</td><td class="num">24 &plusmn; 4</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">133 &plusmn; 53</td><td class="num">136 &plusmn; 61</td><td class="num">147 &plusmn; 52</td></tr>
+              <tr><td>Zn, ppm</td><td class="num">36 &plusmn; 8</td><td class="num">16 &plusmn; 7</td><td class="num">29 &plusmn; 7</td></tr>
+              <tr><td>Ni / Cu, ppm</td><td class="num">36 / 26</td><td class="num">44 / 35</td><td class="num">30 / 28</td></tr>
+              <tr><td>Pb, ppm</td><td class="num">8 &plusmn; 4</td><td class="num">9 &plusmn; 4</td><td class="num">9 &plusmn; 4</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="xrf-caption">Values (&plusmn;3&sigma;) transcribed from the original instrument protocols, 28 October 2026 (Fe in the pale glaze reported as 9,130&nbsp;ppm). Titanium is below the detection limit in all three areas (&lt;210&ndash;300&nbsp;ppm). Light-element balance: 45.92 (W), 54.43 (BK), 52.50&nbsp;wt.% (R). The Fe&#8322;O&#8323; equivalent (Fe &times; 1.4297) is a conventional conversion, not an identification of hematite or any other iron phase. Values close to their uncertainty should not be over-interpreted.</p>
+
+        <h3 class="xrf-h3">What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. The black spots are iron-rich.</strong> The black decorative spot contains 5.722&nbsp;wt.% iron (Fe&#8322;O&#8323; equivalent &asymp;&nbsp;8.18&nbsp;wt.%) &mdash; about <strong>6.27 times</strong> more than the pale glaze (0.913&nbsp;wt.%) and 4.93 times more than the rust-brown area (1.161&nbsp;wt.%). Iron is therefore the principal measured element behind the black colour of the decoration.
+        </div>
+
+        <div class="note">
+          <strong>2. Manganese accompanies iron, but iron dominates.</strong> Manganese is highest in the black spot (1,208&nbsp;ppm, against 997 in the pale glaze and 799 in the rust-brown area), so it rises together with iron; but the iron contrast is far larger. The black spot also gives lower silicon, potassium and aluminium readings than the pale glaze &mdash; the expected effect of an iron-rich material concentrated in the measured spot.
+        </div>
+
+        <div class="note">
+          <strong>3. The rust-brown zone is only slightly iron-enriched.</strong> With 1.161&nbsp;wt.% Fe the rust-brown area sits between the pale glaze and the black spot, although its colour differs strongly from the pale ground. Its hue thus depends not only on total iron, but on the oxidation state of the iron, its local chemical environment and the glaze microstructure. The irregular, wavy boundaries between pale and brown zones, with clusters of small dark inclusions along them, are documented photographically.
+        </div>
+
+        <div class="note">
+          <strong>4. Comparison and limits.</strong> The link between local iron enrichment and dark colour parallels the iron spots on Song <em>qingbai</em> porcelain from Jingdezhen studied by Hu et al. (2021), where complex iron-oxide structures were identified, and the magnetite and iron-bearing silicates found in iron spots on later Jingdezhen blue-and-white. pXRF gives elemental concentrations of the measured surface areas only; it cannot identify the iron-bearing crystalline phases, which require Raman spectroscopy, XRD or electron microscopy.
+        </div>
+
+        <div class="xrf-protocol-block">
+          <p class="xrf-protocol-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols xrf-3">
+            <div>
+              <span class="xrf-label">W &mdash; Pale glaze &middot; ID 16</span>
+              <a href="images/ro-yuan-019-xrf-pale-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-019-xrf-pale-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 10 (kuvshin bel), measurement ID 16 — pale qingbai glaze of the double-gourd ewer ro-yuan-019, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="xrf-caption"><strong>Fig. 5.</strong> ID&nbsp;16 &mdash; pale glaze (<em>kuvshin bel</em>). Click to open full size.</p>
+            </div>
+            <div>
+              <span class="xrf-label">BK &mdash; Black iron spot &middot; ID 17</span>
+              <a href="images/ro-yuan-019-xrf-black-spot.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-019-xrf-black-spot.jpg" alt="Olympus pXRF protocol, Sample No. 10 (kuvshin chern), measurement ID 17 — black iron-rich decorative spot of ro-yuan-019, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="xrf-caption"><strong>Fig. 6.</strong> ID&nbsp;17 &mdash; black decorative spot (<em>kuvshin chern</em>). Click to open full size.</p>
+            </div>
+            <div>
+              <span class="xrf-label">R &mdash; Rust-brown area &middot; ID 18</span>
+              <a href="images/ro-yuan-019-xrf-rust-brown.jpg" target="_blank" rel="noopener"><img src="images/ro-yuan-019-xrf-rust-brown.jpg" alt="Olympus pXRF protocol, Sample No. 10 (kuvshin rzhav), measurement ID 18 — rust-brown surface area of ro-yuan-019, 28 October 2026, 45 s." loading="lazy" /></a>
+              <p class="xrf-caption"><strong>Fig. 7.</strong> ID&nbsp;18 &mdash; rust-brown area (<em>kuvshin rzhav</em>). Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-yuan-019-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-yuan-019-xrf-protocols.pdf" target="_blank" rel="noopener">Download all three XRF protocols (PDF)</a>
+        </div>
+      </section>
+
       <section class="section" id="cross-references">
         <h2 class="section-title">Cross-References</h2>
         <div class="crossref-block">
@@ -313,6 +409,8 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 
       <div class="bibliography">
         <h2>Bibliography</h2>
+        <p class="bib-item">Dronova, N. (2026). <em>Iron-Rich Black Spots and Rust-Brown Glaze Transitions on a Yuan-Dynasty Qingbai Double-Gourd Ewer: Portable X-Ray Fluorescence Analysis and Optical Documentation.</em> Zenodo, published 30 October 2026, v1. <a href="ro-yuan-019-xrf-study.html" style="color:var(--muted2)">Full text on this site</a>.</p>
+        <p class="bib-item">Hu et al. (2021). Microstructure and coloring mechanism of iron spots on Song-dynasty bluish-white (qingbai) porcelain from Jingdezhen.</p>
         <p class="bib-item">Dronova, N. (2025). <em>GOM Diagnostics of Yuan Dynasty Iron-Splash Glazed Stonewares: Southern Kiln Corpus.</em> Global Archive of Antique Chinese Porcelain Authentication, Working Paper 19.</p>
         <p class="bib-item">Kerr, R. &amp; Wood, N. (2004). <em>Science and Civilisation in China, Vol. 5, Part 12: Ceramic Technology.</em> Cambridge University Press.</p>
         <p class="bib-item">Wood, N. (1999). <em>Chinese Glazes: Their Origins, Chemistry and Recreation.</em> A&amp;C Black / University of Pennsylvania Press.</p>
@@ -339,7 +437,9 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <div class="meta-row"><span class="meta-label">Body</span><span class="meta-value">Buff-orange stoneware</span></div>
         <div class="meta-row"><span class="meta-label">Glaze</span><span class="meta-value">Pale ochre + iron-black splashes</span></div>
         <div class="meta-row"><span class="meta-label">Decoration</span><span class="meta-value">Underglaze iron oxide</span></div>
-        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method &middot; <a href="#xrf" style="color:var(--muted2)">pXRF</a></span></div>
+        <div class="meta-row"><span class="meta-label">pXRF</span><span class="meta-value">28 Oct 2026 &middot; Sample No. 10 (3 areas)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF article</span><span class="meta-value"><a href="ro-yuan-019-xrf-study.html" style="color:var(--muted2)">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Prof. N. Dronova, D.Tech.Sci.</span></div>
       </div>
 
@@ -349,6 +449,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li data-section="description"><a href="#description">Object Description</a></li>
           <li data-section="microscopy"><a href="#microscopy">Microscopic Analysis</a></li>
           <li data-section="interpretation"><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li data-section="xrf"><a href="#xrf">XRF Analysis</a></li>
           <li data-section="cross-references"><a href="#cross-references">Cross-References</a></li>
         </ul>
       </nav>
@@ -379,7 +480,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 </footer>
 
 <script>
-const sections = ['description','microscopy','interpretation','cross-references'];
+const sections = ['description','microscopy','interpretation','xrf','cross-references'];
 const navItems = document.querySelectorAll('#sidebar-nav li[data-section]');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
