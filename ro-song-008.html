@@ -148,10 +148,21 @@
       .tech-step:last-child{border-bottom:none}
       .footer-inner{grid-template-columns:1fr 1fr}
     }
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .col-main p a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+
     @media(max-width:767px){
       :root{--gutter:1.25rem}
       h1{font-size:1.75rem}h2{font-size:1.35rem}
-      .micro-grid-2,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .xrf-protocols,.micro-grid-2,.figure-row,.col-sidebar{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
@@ -204,6 +215,7 @@
         <span class="tag">Anorthite</span>
         <span class="tag">Wenrun Ruyu</span>
         <span class="tag">GOM Examined</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -351,6 +363,7 @@
               <tr><td>Bubble-rich glaze microstructure</td><td><span class="check">✓</span> Present</td></tr>
               <tr><td>Fine age-consistent crackle with mineral infill</td><td><span class="check">✓</span> Present</td></tr>
               <tr><td>Iron-rich Zijin clay stoneware body</td><td><span class="check">✓</span> Present</td></tr>
+              <tr><td>pXRF: calcium-bearing silicate glaze (Ca 8.94 wt.%); no Cu&ndash;Sn bronze surface</td><td><span class="check">✓</span> Confirmed</td></tr>
               <tr><td>Natural ageing</td><td><span class="check">✓</span> Present</td></tr>
               <tr><td>Restoration</td><td>None observed</td></tr>
             </tbody>
@@ -369,8 +382,80 @@
           <div class="diagnostic-item">Bubble population (10&ndash;30 &mu;m) and phase separation</div>
           <div class="diagnostic-item">Age-consistent crackle with crystalline channel walls</div>
           <div class="diagnostic-item">Dense iron-rich stoneware body &mdash; no casting texture</div>
+          <div class="diagnostic-item">pXRF: calcium-bearing silicate glaze, profile closely matching Sample No.&nbsp;8</div>
           <div class="diagnostic-item">No restoration detected</div>
           <p class="diagnostic-confidence">Diagnostic Confidence: <span class="confidence-value">Very High</span></p>
+        </div>
+      </section>
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the vase was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s acquisition, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample No.&nbsp;9</strong> (project designation <em>vaza poloska</em>, &ldquo;ribbed vase&rdquo;). The reading was taken on a visually mottled area of the glazed surface. The results and their comparison with Sample No.&nbsp;8, a bamboo-neck celadon vase measured in the same session, are set out in the research article by Professor Nona Dronova (<a href="ro-song-008-xrf-study.html">full text</a>).</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">No.&nbsp;9 &mdash; this vase</th><th class="num">&plusmn;3&sigma;</th><th class="num">No.&nbsp;8 &mdash; bamboo-neck vase</th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">35.23</td><td class="num">0.23</td><td class="num">36.54</td></tr>
+              <tr><td>Ca, wt.%</td><td class="num"><strong>8.943</strong></td><td class="num">0.076</td><td class="num"><strong>8.953</strong></td></tr>
+              <tr><td>Al, wt.%</td><td class="num">6.69</td><td class="num">0.17</td><td class="num">6.52</td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.826</td><td class="num">0.042</td><td class="num">3.914</td></tr>
+              <tr><td>Fe, wt.%</td><td class="num"><strong>0.662</strong></td><td class="num">0.016</td><td class="num"><strong>0.673</strong></td></tr>
+              <tr><td>S, ppm</td><td class="num">4,490</td><td class="num">180</td><td class="num">4,160</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">690</td><td class="num">420</td><td class="num">680</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">556</td><td class="num">70</td><td class="num">523</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">629</td><td class="num">12</td><td class="num">660</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">117</td><td class="num">5</td><td class="num">117</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">81</td><td class="num">5</td><td class="num">76</td></tr>
+              <tr><td>Nb, ppm</td><td class="num">46</td><td class="num">5</td><td class="num">46</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">317</td><td class="num">64</td><td class="num">356</td></tr>
+              <tr><td>Cu, ppm</td><td class="num">76</td><td class="num">17</td><td class="num">59</td></tr>
+              <tr><td>Sn, ppm</td><td class="num">ND (&lt;57)</td><td class="num">&mdash;</td><td class="num">50</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Selected values transcribed from the original instrument protocols (28 October 2026). Fe is reported by the instrument in ppm (6,620 and 6,730&nbsp;ppm) and shown here in wt.%. Also detected in No.&nbsp;9: P 440, Cr 73, Ni 48, Y 17, Mo 7, Cd 21, La 120, Hf 15, W 44, Au 14, Pb 6, Th 30&nbsp;ppm; light-element balance 43.86&nbsp;wt.%. Not detected: Mg, Sc, V, Co, Zn, As, Se, Ag, Sn, Sb, Ce, Pr, Nd. Values close to their uncertainty should not be over-interpreted.</p>
+
+        <h3>Calculated oxide equivalents</h3>
+        <p>For orientation within the glaze literature, the principal elements of Sample No.&nbsp;9 were converted to stoichiometric oxide equivalents: <strong>SiO&#8322; 75.37</strong>, <strong>Al&#8322;O&#8323; 12.64</strong>, <strong>CaO 12.51</strong>, <strong>K&#8322;O 4.61</strong>, <strong>Fe&#8322;O&#8323; 0.95&nbsp;wt.%</strong>. These are independent conversions, not normalised to 100% (their sum exceeds 100%), and they must not be read as a measured bulk oxide composition of isolated glaze.</p>
+
+        <h3>What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. A calcium-bearing silicate glaze.</strong> The surface is silicon-rich with substantial calcium (8.943&nbsp;wt.%), aluminium and potassium. This places it within the broad technological family of calcium-bearing celadon glazes. Archaeometric work on Laohudong Guan ware links such glazes to mixtures of porcelain stone and calcareous wood ash, and links their subdued jade-like optics to layered application and fine bubbles. Iron (0.662&nbsp;wt.%) is a plausible contributor to the grey-olive colour, although its oxidation state cannot be established by pXRF alone.
+        </div>
+
+        <div class="note">
+          <strong>2. The &ldquo;bronze&rdquo; look is ceramic, not metallic.</strong> Copper is low (76&nbsp;ppm) and tin is below the detection limit (&lt;57&nbsp;ppm). The analysed surface is therefore not a copper&ndash;tin bronze layer. The patinated-metal impression of the vessel comes from its archaistic design &mdash; the <em>hu</em>-type profile, horizontal ribs and fixed ceramic ring handles &mdash; and from the satin-matte glaze, whose raised ribs catch soft highlights while the recessed grooves appear darker.
+        </div>
+
+        <div class="note">
+          <strong>3. A close analytical twin: Sample No.&nbsp;8.</strong> Although the two vessels follow entirely different design ideas &mdash; one evokes an ancient bronze, the other a bamboo stem &mdash; their measured profiles are remarkably close. Calcium differs by only 0.010 percentage points (8.943 vs 8.953&nbsp;wt.%), well inside the uncertainty of either reading; iron differs by 0.011 points (0.662 vs 0.673&nbsp;wt.%). Strontium is identical (117&nbsp;ppm), and rubidium (629 / 660), zirconium (81 / 76), niobium (46 / 46), potassium and aluminium are also close. The two vases therefore form a closely related analytical comparison group, consistent with similar raw-material systems or technological practice. Compositional similarity is not, by itself, proof of a common workshop or archaeological provenance.
+        </div>
+
+        <div class="note">
+          <strong>4. Limits of the measurement.</strong> This is a single-point reading made with a geochemical calibration rather than a ceramic-specific one; the values are a comparative fingerprint, not a laboratory bulk glaze analysis. Whether the spot lies on a raised rib or a recessed groove has not been independently established, and the dark foot ring was not measured. Paired readings on ribs and grooves, a separate reading of the exposed body, repeated measurements and comparison with securely excavated Guan and Longquan kiln material are planned as next steps.
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">Sample No. 9 &mdash; this vase</span>
+              <a href="images/ro-song-008-xrf-sample9.jpg" target="_blank" rel="noopener"><img src="images/ro-song-008-xrf-sample9.jpg" alt="Olympus pXRF protocol for Sample No. 9 (vaza poloska) — ribbed vase ro-song-008, 28 October 2026, 45 s acquisition. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 7.</span> Olympus pXRF protocol, Sample No.&nbsp;9 (<em>vaza poloska</em>) &mdash; this vase, 28 October 2026, 45&nbsp;s. Element table with &plusmn;3&sigma;, spectrum and aiming image of the measured mottled glaze area. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">Sample No. 8 &mdash; comparison</span>
+              <a href="images/ro-song-008-xrf-sample8-comparison.jpg" target="_blank" rel="noopener"><img src="images/ro-song-008-xrf-sample8-comparison.jpg" alt="Olympus pXRF protocol for Sample No. 8 (vaza bambuk) — bamboo-neck celadon vase used for comparison, 28 October 2026, 45 s acquisition." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 8.</span> Olympus pXRF protocol, Sample No.&nbsp;8 (<em>vaza bambuk</em>) &mdash; bamboo-neck celadon vase measured in the same session, used for comparison. Click to open full size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-008-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-song-008-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
         </div>
       </section>
 
@@ -418,6 +503,8 @@
             <a href="../methodology/gom.html" class="crossref-link">GOM &mdash; Dronova Protocol</a>
             <a href="../methodology/sem-eds.html" class="crossref-link">SEM&ndash;EDS (comparative)</a>
             <a href="../methodology/xrd.html" class="crossref-link">XRD (comparative)</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 28 Oct 2026</a>
+            <a href="ro-song-008-xrf-study.html" class="crossref-link">pXRF research article</a>
           </div>
         </div>
       </section>
@@ -425,6 +512,8 @@
       <div class="bibliography" id="bibliography">
         <p class="bibliography-title">References</p>
         <p class="biblio-entry">Dronova, N. D. Gemmological Optical Microscopy of an Anorthite-Glazed Vase from the Southern Song Dynasty (1127&ndash;1279): Microstructural Evidence of High-Calcium Glaze Crystallisation. <em>Zenodo</em>, 2026.</p>
+        <p class="biblio-entry">Dronova, N. An Archaistic Bronze-Inspired Chinese Hu-Type Vase with Fixed Ring Handles: Original Portable X-Ray Fluorescence Data, Satin-Matte Glaze, Horizontal Ribbing, and a Comparative Reference Dataset for Guan&ndash;Longquan Celadon Research. <em>Zenodo</em>, 2026 (DOI to be assigned). <a href="ro-song-008-xrf-study.html">Full text on this site</a>.</p>
+        <p class="biblio-entry">Wood, N., &amp; Li, H. A study of the techniques used to make Laohudong Guan ware in China in the Southern Song Dynasty. <em>Archaeometry</em>, 57(4), 2015, 617&ndash;635. doi:10.1111/arcm.12105.</p>
         <p class="biblio-entry">Palace Museum, Beijing &mdash; dragon-handle Guan ware vases, published catalogue descriptions.</p>
         <p class="biblio-entry">National Palace Museum, Taipei &mdash; Guan glaze reference specimens.</p>
         <p class="biblio-entry">Laohudong and Jiaotanxia excavation reports &mdash; anorthite-rich glaze fragments, comparable foot-ring morphology.</p>
@@ -456,7 +545,9 @@
         <div class="meta-row"><span class="meta-label">Kiln Site</span><span class="meta-value">Laohudong / Jiaotanxia</span></div>
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Grey-green celadon, multi-layer</span></div>
         <div class="meta-row"><span class="meta-label">Firing Temp.</span><span class="meta-value">1220&ndash;1270&deg;C</span></div>
-        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM &mdash; Dronova Protocol</a></span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM &mdash; Dronova Protocol</a> &middot; <a href="#xrf">pXRF</a> (28 Oct 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 9 &mdash; <em>vaza poloska</em></span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-008-xrf-study.html">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
       </div>
 
@@ -466,6 +557,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Microscopic Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>
