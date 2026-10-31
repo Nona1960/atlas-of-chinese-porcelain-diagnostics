@@ -143,6 +143,21 @@
     .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
     .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
 
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .xrf-summary{background:var(--stone);border:1px solid var(--border2);padding:var(--space-lg);justify-content:center}
+    .col-main .xrf-kv{display:flex;justify-content:space-between;border-bottom:1px solid var(--border2);padding:.45rem 0;margin:0;font-size:1rem;font-variant-numeric:tabular-nums}
+    .xrf-kv span{font-family:var(--font-heading);font-size:1.2rem;color:var(--gold)}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .sci-table thead th.num{white-space:normal}
+    .col-main p a,.note a,.sci-table th a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px}
+
     @media(max-width:1099px){
       .layout-article{grid-template-columns:1fr}
       .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
@@ -152,7 +167,7 @@
     @media(max-width:767px){
       :root{--gutter:1.25rem}
       h1{font-size:1.75rem}h2{font-size:1.35rem}
-      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .xrf-protocols,.micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
@@ -205,6 +220,7 @@
         <span class="tag">Phase Separation</span>
         <span class="tag">Dust-Matte Texture</span>
         <span class="tag">GOMP-2025</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -401,6 +417,7 @@
               <tr><td>Iron-rich body</td><td><span class="check">✓</span> Present</td></tr>
               <tr><td>Bubble-rich glaze</td><td><span class="check">✓</span> Present</td></tr>
               <tr><td>Phase separation</td><td><span class="check">✓</span> Present</td></tr>
+              <tr><td>pXRF: calcium-rich, low-iron glaze (Ca 8.95, Fe 0.67 wt.%)</td><td><span class="check">✓</span> Confirmed</td></tr>
               <tr><td>Restoration</td><td>None observed</td></tr>
             </tbody>
           </table>
@@ -416,9 +433,96 @@
           <div class="diagnostic-item">Multi-layer thick grey-green celadon glaze</div>
           <div class="diagnostic-item">Jade-like optical depth with opalescence</div>
           <div class="diagnostic-item">Phase separation and microbubble population</div>
+          <div class="diagnostic-item">pXRF: Al&#8322;O&#8323;, CaO and Fe&#8322;O&#8323; equivalents close to the Laohudong Guan glaze reference</div>
           <div class="diagnostic-item">No restoration detected</div>
           <div class="diagnostic-item">High internal diagnostic consistency</div>
           <p class="diagnostic-confidence">GOMP-2025 Score: <span class="confidence-value">89 / 100 &mdash; High Attribution Confidence</span></p>
+        </div>
+      </section>
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 28 October 2026 the vase was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s, <em>in situ</em>, measurement ID&nbsp;14). In the measurement series it is recorded as <strong>Sample No.&nbsp;8</strong> (project designation <em>vaza bambuk</em>, &ldquo;bamboo vase&rdquo;). The reading was taken on the grey-olive glaze of the body, not on the dark foot ring or the exposed ceramic body. The results and their comparison with Southern Song Guan glazes from Laohudong are set out in the research article by Professor Nona Dronova (<a href="ro-song-007-xrf-study.html">full text</a>).</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">Grey-olive glaze</th><th class="num">&plusmn;3&sigma;</th><th class="num">Oxide equivalent, wt.%</th><th class="num">Laohudong Guan glaze, reference (wt.%)</th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">36.54</td><td class="num">0.22</td><td class="num">SiO&#8322; 78.17</td><td class="num">67.6</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>8.953</strong></td><td class="num">0.071</td><td class="num">CaO <strong>12.53</strong></td><td class="num">11.5</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">6.52</td><td class="num">0.16</td><td class="num">Al&#8322;O&#8323; <strong>12.32</strong></td><td class="num">12.8</td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.914</td><td class="num">0.040</td><td class="num">K&#8322;O 4.72</td><td class="num">3.9</td></tr>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num"><strong>0.673</strong></td><td class="num">0.015</td><td class="num">Fe&#8322;O&#8323; <strong>0.96</strong></td><td class="num">1.0</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">680</td><td class="num">380</td><td class="num">TiO&#8322; 0.113</td><td class="num">&mdash;</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">523</td><td class="num">64</td><td class="num">MnO 0.0675</td><td class="num">&mdash;</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">660</td><td class="num">11</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">117</td><td class="num">5</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">76</td><td class="num">5</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">356</td><td class="num">66</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+              <tr><td>S, ppm</td><td class="num">4,160</td><td class="num">150</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Values transcribed from the original instrument protocol, 28 October 2026 (Fe reported as 6,730&nbsp;ppm). Also detected: P 230, Cr 67, Ni 43, Cu 59, Y 13, Nb 46, Mo 7, Sn 50, Sb 38, La 110, Hf 14, W 22, Pb 6, Th 29&nbsp;ppm; light-element balance 42.66&nbsp;wt.%. Not detected: Mg, Sc, V, Co, Zn, As, Se, Ag, Cd, Ce, Pr, Nd, Au. Oxide equivalents are stoichiometric conversions, not normalised to 100% and not a measured glaze composition. Laohudong reference values as cited in the research article (after Wood &amp; Li 2015).</p>
+
+        <h3>What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. A calcium-rich Guan-type glaze.</strong> The grey-olive glaze is a calcium-bearing silicate with 8.953&nbsp;wt.% calcium (CaO equivalent &asymp;&nbsp;12.53&nbsp;wt.%), plus aluminium and potassium. The equivalents for aluminium (12.32 vs 12.8), calcium (12.53 vs 11.5) and iron (0.96 vs 1.0&nbsp;wt.%) lie close to the published Laohudong Guan glaze reference; potassium is somewhat higher and silica considerably higher, as expected when a surface pXRF reading is set against laboratory oxide analyses. The comparison therefore shows technological comparability, not quantitative chemical identity. Wood &amp; Li (2015) linked the Laohudong glazes to porcelain stone with calcareous wood ash (about 20&ndash;30% in some mixtures) and a final firing near 1215&nbsp;&deg;C.
+        </div>
+
+        <div class="note">
+          <strong>2. Low iron and a semi-matte surface.</strong> Iron is only 0.673&nbsp;wt.%, well below the main glaze-forming elements. The soft, broad highlights and fine-grained optical texture seen under magnification agree with light scattering in or on the glaze &mdash; bubbles, compositional heterogeneity, phase separation or surface roughness &mdash; the mechanisms that give Guan ware its jade-like, subdued look. Which of them dominates, and the oxidation state of the iron, cannot be determined by pXRF or photographs alone.
+        </div>
+
+        <div class="note">
+          <strong>3. Fine crackle and the dark foot.</strong> A fine, locally visible crackle network appears in the instrument&rsquo;s aiming image and more clearly in the recessed base, where intersecting lines form irregular polygons; it is less conspicuous than the wide stained crackle of some other Guan-type vessels. The dark ring zone on the underside visually corresponds to the <em>zi kou tie zu</em> (紫口鐵足) tradition, but it was not measured separately, so it is recorded as a morphological feature rather than a proven iron concentration.
+        </div>
+
+        <div class="note">
+          <strong>4. Three glazes, one instrument.</strong> Among the three glazes measured in the same session and mode, the bamboo-neck vase has the <strong>highest calcium</strong> and an <strong>intermediate iron</strong> content. Aluminium is especially close to the chrysanthemum bowl, and potassium varies only within a narrow range. These are measurable differences within the research collection; they do not show that the objects come from the same kiln or workshop. The vase is also analytically almost identical to the archaistic ribbed vase <a href="ro-song-008.html">ro-song-008</a> (Sample No.&nbsp;9: Ca 8.943, Fe 0.662&nbsp;wt.%, Sr 117&nbsp;ppm).
+        </div>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">No.&nbsp;8 &mdash; this vase</th><th class="num">No.&nbsp;7 &mdash; <a href="ro-song-015.html">chrysanthemum bowl</a></th><th class="num">No.&nbsp;1 &mdash; <a href="ro-yuan-021.html">Yuan Longquan vase</a></th></tr></thead>
+            <tbody>
+              <tr><td>Si, wt.%</td><td class="num">36.54</td><td class="num">38.46</td><td class="num">40.22</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">6.52</td><td class="num">6.40</td><td class="num">7.09</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>8.953</strong></td><td class="num">6.954</td><td class="num">7.954</td></tr>
+              <tr><td>K, wt.%</td><td class="num">3.914</td><td class="num">4.147</td><td class="num">3.975</td></tr>
+              <tr><td><strong>Fe, wt.%</strong></td><td class="num"><strong>0.673</strong></td><td class="num">0.404</td><td class="num">1.059</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">523</td><td class="num">629</td><td class="num">324</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">660</td><td class="num">572</td><td class="num">527</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">117</td><td class="num">121</td><td class="num">95</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">76</td><td class="num">60</td><td class="num">107</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocol &mdash; Olympus analyser, 28 October 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">Sample No. 8 &mdash; grey-olive glaze &middot; ID 14</span>
+              <a href="images/ro-song-007-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-007-xrf-glaze.jpg" alt="Olympus pXRF protocol, Sample No. 8 (vaza bambuk), measurement ID 14 — grey-olive glaze of the bamboo-neck Guan vase ro-song-007, 28 October 2026, 45 s. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 8.</span> Olympus pXRF protocol, Sample No.&nbsp;8 (<em>vaza bambuk</em>), measurement ID&nbsp;14 &mdash; grey-olive glaze of the body, 28 October 2026, 45&nbsp;s. The blue aiming circle marks the analysed area and records fine linear surface features. Click to open full size.</p>
+            </div>
+            <div class="micro-item xrf-summary">
+              <p class="micro-header">Key values</p>
+              <p class="xrf-kv"><span>Ca</span> 8.953 wt.%</p>
+              <p class="xrf-kv"><span>Fe</span> 0.673 wt.%</p>
+              <p class="xrf-kv"><span>Si</span> 36.54 wt.%</p>
+              <p class="xrf-kv"><span>Al</span> 6.52 wt.%</p>
+              <p class="xrf-kv"><span>K</span> 3.914 wt.%</p>
+              <p class="xrf-kv"><span>Sr</span> 117 ppm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-007-xrf-study.html">Read the full research article &rarr;</a>
+          <a class="xrf-btn" href="ro-song-007-xrf-protocol.pdf" target="_blank" rel="noopener">Download the XRF protocol (PDF)</a>
         </div>
       </section>
 
@@ -456,6 +560,9 @@
           <div class="crossref-list">
             <a href="ro-song-005.html" class="crossref-link">ro-song-005 &mdash; Guan-type Brush Washer</a>
             <a href="ro-song-009.html" class="crossref-link">ro-song-009 &mdash; Guan Yao Bottle Vase</a>
+            <a href="ro-song-008.html" class="crossref-link">ro-song-008 &mdash; Ribbed Vase (pXRF twin, Sample No. 9)</a>
+            <a href="ro-song-015.html" class="crossref-link">ro-song-015 &mdash; Chrysanthemum Bowl (Sample No. 7)</a>
+            <a href="ro-yuan-021.html" class="crossref-link">ro-yuan-021 &mdash; Yuan Longquan Vase (Sample No. 1)</a>
           </div>
         </div>
 
@@ -463,12 +570,16 @@
           <p class="crossref-title">Methodology Applied</p>
           <div class="crossref-list">
             <a href="../methodology/gom.html" class="crossref-link">GOM &mdash; GOMP-2025 Protocol</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 28 Oct 2026</a>
+            <a href="ro-song-007-xrf-study.html" class="crossref-link">pXRF research article</a>
           </div>
         </div>
       </section>
 
       <div class="bibliography" id="bibliography">
         <p class="bibliography-title">Comparative References</p>
+        <p class="biblio-entry">Dronova, N. A Southern Song Guan-Type Bamboo-Neck Vase: Portable X-Ray Fluorescence Analysis, Semi-Matte Celadon Glaze, Fine Crackle, and Comparative Archaeometry of the Imperial Kilns of Hangzhou. <em>Zenodo</em>, 2026. <a href="ro-song-007-xrf-study.html">Full text on this site</a>.</p>
+        <p class="biblio-entry">Wood, N., &amp; Li, H. A study of the techniques used to make Laohudong Guan ware in China in the Southern Song Dynasty. <em>Archaeometry</em>, 57(4), 2015, 617&ndash;635. doi:10.1111/arcm.12105.</p>
         <p class="biblio-entry">National Palace Museum, Taipei &mdash; authenticated Southern Song Guan ware, ribbed-neck vase forms.</p>
         <p class="biblio-entry">Palace Museum, Beijing &mdash; Laohudong / Jiaotanxia kiln material, grey-green celadon with Zi Kou Tie Zu complex.</p>
         <p class="biblio-entry">Freer Gallery of Art, Washington &mdash; Southern Song official ware comparanda.</p>
@@ -499,7 +610,9 @@
         <div class="meta-row"><span class="meta-label">Date</span><span class="meta-value">12th&ndash;13th century CE</span></div>
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Grey-green celadon, multi-layer</span></div>
         <div class="meta-row"><span class="meta-label">Key Feature</span><span class="meta-value">Zi Kou Tie Zu &mdash; 紫口铁足</span></div>
-        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOMP-2025</a></span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOMP-2025</a> &middot; <a href="#xrf">pXRF</a> (28 Oct 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 8 &mdash; <em>vaza bambuk</em>, grey-olive glaze</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-007-xrf-study.html">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">GOMP Score</span><span class="meta-value">89 / 100</span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">High</span></div>
       </div>
@@ -510,6 +623,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Microscopic Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>
