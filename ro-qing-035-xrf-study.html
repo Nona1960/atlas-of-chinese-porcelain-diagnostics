@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Kangxi Peach-Bloom Brush Washer — ro-qing-035 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: portable XRF (28 October 2026) of the red copper area and the base of a Kangxi peach-bloom (jiangdouhong) brush washer with green moss-like specks." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="Kangxi Peach-Bloom Copper-Red Glaze: Green Moss-Like Specks and X-Ray Fluorescence Analysis of a Scholar&rsquo;s Brush Washer" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/10/30" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .col-main p.formula{text-align:center;font-family:var(--font-heading);font-size:1.15rem;margin:1rem 0}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-qing-035.html">ro-qing-035 — Peach-Bloom Brush Washer</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-qing-035</span></p>
+      <h1>Kangxi Peach-Bloom Copper-Red Glaze: Green Moss-Like Specks and X-Ray Fluorescence Analysis of a Scholar&rsquo;s Brush Washer</h1>
+      <p class="object-subtitle">Professor Nona Dronova &mdash; Zenodo, published 30 October 2026 (v1) &mdash; Chinese Ceramic Archaeometry &middot; Copper-Red Glaze Technology</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-qing-035.html">&larr; Back to the Atlas entry ro-qing-035</a>
+        <a class="xrf-btn primary" href="ro-qing-035-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<p><strong>Object:</strong> Chinese porcelain brush washer, Kangxi period (1662–1722), Qing dynasty.</p>
+<h2 id="abstract">Abstract</h2>
+<p>This study presents a non-destructive elemental analysis of a small Chinese porcelain brush washer belonging to the tradition of the scholar’s desk and attributed to the Kangxi period (1662–1722). Particular attention is given to its peach-bloom copper-red glaze (豇豆红, <em>jiangdouhong</em>), characterised by red areas, greenish transitions, and distinctive specks resembling moss or lichen.</p>
+<p>Portable X-ray fluorescence spectroscopy (pXRF) was used to examine the red decorative area and the base of the vessel. A copper concentration of 7360 ppm was detected in the red area, compared with 585 ppm in the analysed area of the base, corresponding to an approximately 12.6-fold copper enrichment.</p>
+<p>The red area also contained sulfur (2550 ppm), arsenic (60 ppm), and tin (153 ppm). These results are discussed in the context of published studies of historical Chinese copper-red glazes, in particular the study by Sun Jing and colleagues (1991) on the colouring mechanisms of peach-bloom glaze and a 2025 study of copper-red pigment recipes published in the <em>Journal of the European Ceramic Society</em>.</p>
+<p>The results demonstrate a pronounced compositional heterogeneity between the decorative red surface and the base. The observed copper enrichment provides an experimental basis for studying the relationship between copper-bearing glaze technology and the characteristic red-and-green visual effects of Kangxi peach-bloom porcelain.</p>
+<p><strong>Keywords:</strong> Kangxi period; peach-bloom glaze; jiangdouhong; copper-red glaze; underglaze copper; green moss-like specks; scholar’s brush washer; portable X-ray fluorescence; Chinese porcelain; archaeometry.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>The Kangxi reign (1662–1722) represents an important period in the technological and artistic development of Chinese porcelain. During this era the imperial kilns at Jingdezhen achieved remarkable perfection in the production of high-temperature copper-red glazes.</p>
+<p>Among the most notable types is peach-bloom, known in China as 豇豆红 (<em>jiangdouhong</em>), a glaze celebrated for its delicate pinkish-red tone, deeper crimson areas, greenish transitions, and small moss-like specks.</p>
+<p>These visual characteristics are especially typical of small porcelain objects made for the scholar’s desk, including water pots, brush washers, and other implements used in calligraphy and painting.</p>
+<p>The Metropolitan Museum of Art holds several Kangxi-period brush washers decorated with peach-bloom glaze. One example, accession number 29.100.352, shows the characteristic combination of reddish and greenish surface effects.</p>
+<p>The coexistence of red and green is therefore a documented feature of this historical ceramic tradition.</p>
+<p>This study examines the elemental composition of a small brush washer with similar visual characteristics. It focuses on the relationship between copper concentration, red colouring, and the formation of green specks resembling moss or lichen.</p>
+<h2 id="description-of-the-object">2. Description of the Object</h2>
+<p>The investigated object is a small Chinese porcelain brush washer belonging to the material culture of the scholar’s desk and dated to the Kangxi period.</p>
+<p>Its decorative surface has several characteristic features:</p>
+<ul>
+<li>Areas of pinkish-red and deeper copper-red colour.</li>
+<li>Greenish transitions between the red areas.</li>
+<li>Irregular green specks resembling moss or lichen.</li>
+<li>A grey base with a reticulated pattern of glaze cracks.</li>
+</ul>
+<p>The combination of red and green areas within a single decorative system is of particular importance.</p>
+<p>In the Chinese ceramic literature, the green features characteristic of peach-bloom glaze are described as 绿苔点 (<em>lütaidian</em>), literally “green moss-like spots”.</p>
+<p>These features are central to the technological interpretation of the vessel.</p>
+<h2 id="analytical-methodology">3. Analytical Methodology</h2>
+<p>The elemental composition of the vessel was examined by portable X-ray fluorescence spectroscopy (pXRF), a non-destructive analytical method.</p>
+<p>The measurements are recorded in analytical report No. 940487 of 28 October 2026.</p>
+<p><strong>Instrument parameters:</strong></p>
+<ul>
+<li>Analytical mode: Geochem (3-Beam) Extra.</li>
+<li>Acquisition time: 45 seconds per measurement.</li>
+<li>Sampling procedure: in situ, non-destructive.</li>
+<li>Measurement No. 19: red decorative area (<em>miska kras</em>).</li>
+<li>Measurement No. 20: base of the vessel (<em>miska niz</em>).</li>
+</ul>
+<p>Elemental concentrations are given as reported by the instrument, in parts per million (ppm) and per cent.</p>
+<p>The measurements reflect the elemental response of the analysed surface areas under the stated instrumental conditions.</p>
+<h2 id="experimental-results">4. Experimental Results</h2>
+<h3 id="elemental-composition">4.1. Elemental composition</h3>
+<p><strong>Table 1. Comparative pXRF results for the red decorative area and the base of the brush washer.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr class="header">
+<th>Element</th>
+<th class="num">Red area, No. 19</th>
+<th class="num">Base, No. 20</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cu (ppm)</td>
+<td class="num">7360</td>
+<td class="num">585</td>
+</tr>
+<tr class="even">
+<td>Fe (ppm)</td>
+<td class="num">8270</td>
+<td class="num">4200</td>
+</tr>
+<tr class="odd">
+<td>S (ppm)</td>
+<td class="num">2550</td>
+<td class="num">4640</td>
+</tr>
+<tr class="even">
+<td>As (ppm)</td>
+<td class="num">60</td>
+<td class="num">ND, &lt;8</td>
+</tr>
+<tr class="odd">
+<td>Sn (ppm)</td>
+<td class="num">153</td>
+<td class="num">62</td>
+</tr>
+<tr class="even">
+<td>Pb (ppm)</td>
+<td class="num">11</td>
+<td class="num">21</td>
+</tr>
+<tr class="odd">
+<td>Ca (%)</td>
+<td class="num">11.21</td>
+<td class="num">2.897</td>
+</tr>
+<tr class="even">
+<td>K (%)</td>
+<td class="num">1.569</td>
+<td class="num">3.318</td>
+</tr>
+<tr class="odd">
+<td>Si (%)</td>
+<td class="num">27.93</td>
+<td class="num">33.91</td>
+</tr>
+<tr class="even">
+<td>Al (%)</td>
+<td class="num">7.04</td>
+<td class="num">5.81</td>
+</tr>
+<tr class="odd">
+<td>Mn (ppm)</td>
+<td class="num">414</td>
+<td class="num">697</td>
+</tr>
+<tr class="even">
+<td>Zn (ppm)</td>
+<td class="num">77</td>
+<td class="num">172</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>ND = not detected above the stated instrumental detection limit.</em></p>
+<div class="micro-block">
+  <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+  <div class="xrf-protocols">
+    <div class="micro-item">
+      <span class="micro-mag">ID 19 &mdash; red area</span>
+      <a href="images/ro-qing-035-xrf-red-area.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-035-xrf-red-area.jpg" alt="Olympus pXRF protocol, Sample No. 11 — ID 19 &mdash; red area, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Measurement No.&nbsp;19, red decorative area (<em>miska kras</em>). Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">ID 20 &mdash; base</span>
+      <a href="images/ro-qing-035-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-035-xrf-base.jpg" alt="Olympus pXRF protocol, Sample No. 11 — ID 20 &mdash; base, 28 October 2026" loading="lazy" /></a>
+      <p class="micro-caption">Measurement No.&nbsp;20, base of the vessel (<em>miska niz</em>). Click to open full size.</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="copper-enrichment-of-the-red-area">4.2. Copper enrichment of the red area</h3>
+<p>The most significant analytical observation is the pronounced copper enrichment of the red decorative area.</p>
+<p>The measured copper concentrations are:</p>
+<ul>
+<li>Red decorative area: 7360 ppm (0.736%).</li>
+<li>Base: 585 ppm (0.0585%).</li>
+</ul>
+<p>The concentration ratio is:</p>
+<p class="formula">
+7360 / 585 = 12.58
+</p>
+<p>The red decorative area therefore shows approximately 12.6 times more copper than was recorded on the base.</p>
+<p>This substantial difference indicates local copper enrichment in the red decorative area.</p>
+<p>The results establish a direct analytical relationship between the visibly red area and an elevated copper content, consistent with the use of copper-bearing materials in historical red-glaze technology.</p>
+<h3 id="associated-elements">4.3. Associated elements</h3>
+<p>In addition to copper, the red decorative area contains sulfur, arsenic, and tin.</p>
+<p>The principal concentrations are:</p>
+<ul>
+<li>Copper (Cu): 7360 ppm.</li>
+<li>Sulfur (S): 2550 ppm.</li>
+<li>Arsenic (As): 60 ppm.</li>
+<li>Tin (Sn): 153 ppm.</li>
+</ul>
+<p>The presence of these elements is particularly important for studies of historical Chinese copper-red pigments and glazes, in which copper-bearing particles associated with sulfur and arsenic have been investigated.</p>
+<p>A further notable feature is the calcium concentration of the red area, 11.21%, compared with 2.897% on the base.</p>
+<p>The differences in calcium, potassium, silicon, and aluminium reflect the compositional heterogeneity of the examined ceramic surfaces.</p>
+<h2 id="colouring-mechanisms-of-the-red-and-green-areas-of-peach-bloom">5. Colouring Mechanisms of the Red and Green Areas of Peach-Bloom</h2>
+<h3 id="the-study-by-sun-jing-and-colleagues-1991">5.1. The study by Sun Jing and colleagues (1991)</h3>
+<p>Of particular importance is a scientific study published in China:</p>
+<p>Sun Jing, Chen Xianqiu, Ruan Meiling, and Zhao Dafeng. 桃花片铜红釉的着色机理 (<em>The colouring mechanism of peach-bloom copper-red glaze</em>). <em>Journal of the Chinese Ceramic Society</em>, 1991, No. 6, pp. 549–555.</p>
+<p>The authors examined three characteristic areas of peach-bloom glaze:</p>
+<ul>
+<li>Red zones.</li>
+<li>Green moss-like specks.</li>
+<li>Red areas with a greenish tinge.</li>
+</ul>
+<p>The study identified different mechanisms associated with the different visual areas.</p>
+<p>The red colour was attributed to finely dispersed particles of metallic copper smaller than 2 µm.</p>
+<p>The green moss-like specks were associated with a local enrichment of Cu²⁺ ions in the glassy glaze matrix.</p>
+<p>Many microscopic copper-sulfide-bearing particles were found in the greenish transitional zones.</p>
+<p>These results are highly relevant to the interpretation of the brush washer.</p>
+<p>Its visual structure, comprising red fields, green transitions, and moss-like specks, corresponds to the principal colour areas examined in the 1991 study.</p>
+<p>This publication thus provides a scientific basis for understanding the complex red-green appearance of historical peach-bloom glazes.</p>
+<h3 id="copper-and-reduction-firing">5.2. Copper and reduction firing</h3>
+<p>The formation of copper-red colour in high-temperature ceramic glazes is closely linked to the oxidation-reduction processes that take place during firing.</p>
+<p>Under reducing conditions copper can form metallic particles, which produce the red colour.</p>
+<p>Local differences in the oxidation state of copper, the distribution of particles, and the surrounding glassy matrix can lead to colour variation.</p>
+<p>The result is a decorative surface that can contain red, pink, and green areas within a single glaze system.</p>
+<p>In peach-bloom technology the distribution of copper through the thickness of the glaze is also important.</p>
+<p>Historical examples can show a complex layered structure comprising transparent glaze and copper-bearing material.</p>
+<p>The final visual effect is formed by the interaction of glaze composition, firing atmosphere, temperature, and copper distribution.</p>
+<h2 id="comparison-with-historical-copper-red-pigment-studies">6. Comparison with Historical Copper-Red Pigment Studies</h2>
+<p>A recent study published in the <em>Journal of the European Ceramic Society</em> provides further technological context:</p>
+<p><em>A new interpretation of the recipe and technological origin of Chinese copper-red pigment of the 14th–18th centuries.</em> DOI: 10.1016/j.jeurceramsoc.2025.117535.</p>
+<p>The researchers examined 27 samples of historical Chinese ceramics with underglaze copper-red painting and selected copper-red glazes.</p>
+<p>The analytical methods included scanning electron microscopy with energy-dispersive X-ray spectroscopy (SEM-EDS), electron probe microanalysis with wavelength-dispersive spectroscopy (EPMA-WDS), and laser ablation inductively coupled plasma mass spectrometry (LA-ICP-MS).</p>
+<p>The study identified copper-bearing microphases containing sulfur and arsenic.</p>
+<p>The authors also discussed historical recipes using copper oxide and realgar.</p>
+<p>The study of Kangxi-period material considered previously identified elemental associations, including As–Cu and Sn–Pb–Cu.</p>
+<p>The present pXRF results are relevant to this discussion, because the red area of the investigated brush washer contains Cu, As, S, and Sn.</p>
+<p>This correspondence of elements provides a useful basis for comparing the object with published historical copper-red technologies.</p>
+<p>Elemental pXRF data establish the presence and relative abundance of elements, while the identification of specific compounds and microscopic phases requires complementary microstructural methods.</p>
+<h2 id="museum-comparisons-kangxi-scholars-brush-washers">7. Museum Comparisons: Kangxi Scholar’s Brush Washers</h2>
+<p>Museum collections provide important comparative material for understanding the investigated vessel within the Kangxi ceramic tradition.</p>
+<h3 id="the-metropolitan-museum-of-art-accession-number-29100352">7.1. The Metropolitan Museum of Art, accession number 29.100.352</h3>
+<p>Brush washer, China, Jingdezhen, Kangxi mark and period (1662–1722).</p>
+<p>Porcelain with peach-bloom glaze.</p>
+<p>Diameter 11.4 cm; height 3.2 cm.</p>
+<p>The museum records the characteristic reddish and greenish tones on the glazed surface.</p>
+<p>This example shows the use of peach-bloom copper-red glaze on a small vessel intended for the scholar’s desk.</p>
+<h3 id="the-metropolitan-museum-of-art-accession-number-1440385">7.2. The Metropolitan Museum of Art, accession number 14.40.385</h3>
+<p>Brush washer, Kangxi mark and period, dated 1678–1688.</p>
+<p>Diameter 12.1 cm.</p>
+<p>This piece provides an important chronological reference within the Kangxi reign; its dating is based on the calligraphic features of the six-character Kangxi mark.</p>
+<h3 id="the-metropolitan-museum-of-art-accession-number-29100355">7.3. The Metropolitan Museum of Art, accession number 29.100.355</h3>
+<p>Brush washer, Kangxi period (1662–1722).</p>
+<p>Porcelain with crackled peach-bloom glaze.</p>
+<p>Diameter 12.2 cm; height 4.1 cm.</p>
+<p>This museum example is particularly relevant because it shows a crackle effect within the peach-bloom glaze tradition.</p>
+<p>The investigated vessel also has a grey base with a crackled surface.</p>
+<p>Together, these museum objects demonstrate the established use of peach-bloom glaze for Kangxi scholar’s brush washers, including examples with complex red-green colouring and crackled glaze surfaces.</p>
+<h2 id="discussion">8. Discussion</h2>
+<p>The analytical results place the investigated brush washer within the technological context of Chinese high-temperature copper-red ceramics.</p>
+<p>The first important finding is the substantial copper enrichment of the red decorative area, where the measured concentration is approximately 12.6 times higher than in the analysed base area.</p>
+<p>The second finding is the presence of sulfur, arsenic, and tin in the red area, elements that have been discussed in scientific studies of historical Chinese copper-red pigment recipes.</p>
+<p>The third point concerns the visual characteristics of the vessel. The combination of red areas, greenish transitions, and moss-like specks corresponds very closely to the characteristic surface effects examined by Sun Jing and colleagues in their 1991 study of peach-bloom glaze.</p>
+<p>The fourth point concerns the cultural and functional context. Kangxi peach-bloom porcelain was closely associated with small objects made for the scholar’s desk, including brush washers.</p>
+<p>The investigated object therefore represents a valuable example combining the study of surface morphology, non-destructive elemental analysis, and comparison with established ceramic research.</p>
+<p>A further stage of photographic and microscopic documentation will illustrate more clearly the relationship between the red and green areas, the morphology of the moss-like specks, and the crackled surface of the base.</p>
+<h2 id="conclusions">9. Conclusions</h2>
+<p>Portable X-ray fluorescence analysis was carried out on a small Chinese porcelain brush washer of the Kangxi period (1662–1722), showing peach-bloom copper-red colouring and green moss-like specks.</p>
+<p>The investigation established the following results:</p>
+<ul>
+<li>The red decorative area contains 7360 ppm copper.</li>
+<li>The analysed base area contains 585 ppm copper.</li>
+<li>The copper enrichment of the red area is approximately 12.6 times relative to the base.</li>
+<li>Sulfur, arsenic, and tin were also detected in the red area.</li>
+<li>The visual combination of red colour, green transitions, and moss-like specks corresponds to the features described in scientific studies of peach-bloom glaze.</li>
+<li>Kangxi-period museum objects confirm the historical use of this glaze tradition on scholar’s brush washers.</li>
+</ul>
+<p>This study makes an original contribution to the comparative study of Chinese copper-red glaze technology by providing non-destructive elemental data.</p>
+<p>The combination of pXRF results with published studies of copper colouring mechanisms and museum comparanda presents a documented example of the characteristic red-green effects associated with peach-bloom porcelain.</p>
+<p>Further microscopic and photographic documentation will complement the present study by recording the morphology of the green specks, the transitions between coloured areas, and the crackled base.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p>Sun, J., Chen, X., Ruan, M., &amp; Zhao, D. (1991). 桃花片铜红釉的着色机理 [The colouring mechanism of peach-bloom copper-red glaze]. <em>Journal of the Chinese Ceramic Society</em>, No. 6, 549–555. <a class="uri" href="https://jccsoc.cbpt.cnki.net/portal/journal/portal/client/paper/844eb0efd60bd44ee44fdbb867f813ab" target="_blank" rel="noopener">https://jccsoc.cbpt.cnki.net/portal/journal/portal/client/paper/844eb0efd60bd44ee44fdbb867f813ab</a></p></li>
+<li><p>A new interpretation of the recipe and technological origin of Chinese copper-red pigment of the 14th–18th centuries. (2025). <em>Journal of the European Ceramic Society</em>, 45(14), Article 117535. <a class="uri" href="https://doi.org/10.1016/j.jeurceramsoc.2025.117535" target="_blank" rel="noopener">https://doi.org/10.1016/j.jeurceramsoc.2025.117535</a></p></li>
+<li><p>The Metropolitan Museum of Art. <em>Brush washer</em>. Kangxi mark and period (1662–1722). Accession number 29.100.352. <a class="uri" href="https://www.metmuseum.org/art/collection/search/49349" target="_blank" rel="noopener">https://www.metmuseum.org/art/collection/search/49349</a></p></li>
+<li><p>The Metropolitan Museum of Art. <em>Brush washer</em>. Kangxi mark and period, 1678–1688. Accession number 14.40.385. <a class="uri" href="https://www.metmuseum.org/art/collection/search/42230" target="_blank" rel="noopener">https://www.metmuseum.org/art/collection/search/42230</a></p></li>
+<li><p>The Metropolitan Museum of Art. <em>Brush washer</em>. Porcelain with crackled peach-bloom glaze. Kangxi period. Accession number 29.100.355. <a class="uri" href="https://www.metmuseum.org/art/collection/search/50930" target="_blank" rel="noopener">https://www.metmuseum.org/art/collection/search/50930</a></p></li>
+<li><p>Author’s analytical archive. (2026). Portable X-ray fluorescence analytical report No. 940487, 28 October 2026: Measurements 19 and 20. Unpublished primary analytical data.</p></li>
+</ol>
+<h2 id="data-availability-statement">Data Availability Statement</h2>
+<p>The primary analytical data are documented in portable X-ray fluorescence report No. 940487 of 28 October 2026, measurements 19 and 20. The report can be provided as supplementary material to this publication.</p>
+
+      <nav class="pagination">
+        <a href="ro-qing-035.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">ro-qing-035 — Peach-Bloom Brush Washer</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-qing-035.html">ro-qing-035</a></span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">No. 11 &mdash; red area (ID 19), base (ID 20)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Olympus, Geochem 3-Beam Extra, 45 s)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">28 October 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Comparison</span><span class="meta-value">Sun et al. 1991; J. Eur. Ceram. Soc. 2025; Met Museum brush washers</span></div>
+        <div class="meta-row"><span class="meta-label">Zenodo DOI</span><span class="meta-value">Published 30 Oct 2026, v1</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#description-of-the-object">2. Description of the Object</a></li><li><a href="#analytical-methodology">3. Analytical Methodology</a></li><li><a href="#experimental-results">4. Experimental Results</a></li><li><a href="#colouring-mechanisms-of-the-red-and-green-areas-of-peach-bloom">5. Colouring Mechanisms of the Red and Green Areas of Peach-Bloom</a></li><li><a href="#comparison-with-historical-copper-red-pigment-studies">6. Comparison with Historical Copper-Red Pigment Studies</a></li><li><a href="#museum-comparisons-kangxi-scholars-brush-washers">7. Museum Comparisons: Kangxi Scholar’s Brush Washers</a></li><li><a href="#discussion">8. Discussion</a></li><li><a href="#conclusions">9. Conclusions</a></li><li><a href="#references">References</a></li><li><a href="#data-availability-statement">Data Availability Statement</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-qing-035 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

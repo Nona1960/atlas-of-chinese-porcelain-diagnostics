@@ -158,7 +158,7 @@
   .meta-value{ font-size:.87rem; color:var(--ink); margin-top:.15rem; }
 
   .sidebar-nav{
-    position:sticky; top:calc(56px + 2rem + 460px);
+    position:sticky; top:calc(56px + 2rem + 500px);
     border-left:1px solid var(--border2);
   }
   .sidebar-nav a{
@@ -183,7 +183,24 @@
     font-size:.78rem; color:var(--muted);
   }
 
+  .xrf-table-wrap{ overflow-x:auto; margin:1.5rem 0; }
+  .xrf-table-wrap .sci-table{ margin:0; }
+  .num{ text-align:right !important; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .xrf-caption{ font-size:.8rem; font-style:italic; color:var(--muted); line-height:1.55; }
+  #xrf h3{ font-size:1.25rem; margin:1.8rem 0 .6rem; }
+  #xrf p a{ text-decoration:underline; text-underline-offset:3px; }
+  .xrf-protocol-block{ background:var(--parchment); border:1px solid var(--border); border-radius:3px; padding:1.2rem; margin:1.8rem 0; }
+  .xrf-protocol-header{ font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border2); padding-bottom:.5rem; margin:0 0 1rem; }
+  .xrf-protocols{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .xrf-protocols img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:top left; border:1px solid var(--border2); background:#fff; }
+  .xrf-label{ display:inline-block; font-size:.65rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--ink); padding:.2rem .5rem; }
+  .xrf-actions{ display:flex; flex-wrap:wrap; gap:.5rem; margin:1.2rem 0; }
+  .xrf-btn{ display:inline-block; font-size:.8rem; font-weight:500; padding:.55rem 1rem; border:1px solid var(--border); background:var(--parchment); color:var(--muted2); }
+  .xrf-btn:hover{ border-color:var(--gold); color:var(--ink); text-decoration:none; }
+  .xrf-btn.primary{ background:var(--ink); color:var(--stone); border-color:var(--ink); }
+
   @media (max-width: 860px){
+    .xrf-protocols{ grid-template-columns:1fr; }
     .shell{ grid-template-columns:1fr; }
     .figure-row{ grid-template-columns:1fr; }
     .sidebar-nav{ display:none; }
@@ -221,6 +238,7 @@
       <span class="tag">Scholar's Desk Object</span>
       <span class="tag">Jingdezhen</span>
       <span class="tag">GOM Authentication</span>
+      <span class="tag">pXRF Analysed</span>
     </div>
 
     <div class="hero-figure">
@@ -290,6 +308,7 @@
         <li class="diagnostic-item">Irregular, polydisperse bubble population with devitrification haloes.</li>
         <li class="diagnostic-item">Natural craquelure of the base glaze, with mineral staining along cracks.</li>
         <li class="diagnostic-item">Golden-brown contact ring at the glaze/body boundary of the base.</li>
+        <li class="diagnostic-item">pXRF: copper enriched about 12.6&times; in the red area (7,360 vs 585 ppm), with As, Sn and S &mdash; a copper-red glaze chemistry.</li>
       </ul>
       <p>These features correspond to the group of canonical peach-bloom-glazed objects of the Kangxi period associated with scholar's-desk culture (<i>wenfang</i>) and imperial Jingdezhen production.</p>
 
@@ -302,9 +321,79 @@
           <tr><td>Bubble population</td><td>Polydisperse, 0.05–0.3 mm, irregular</td><td class="confirmed">Confirmed — recorded at ×60–100</td></tr>
           <tr><td>Devitrification</td><td>Clouded haloes on some bubbles</td><td class="confirmed">Confirmed — present in green passages</td></tr>
           <tr><td>Base craquelure</td><td>Natural, irregular, mineral-stained</td><td class="confirmed">Confirmed — moderate natural craquelure</td></tr>
+          <tr><td>pXRF copper distribution</td><td>Copper concentrated in red zones</td><td class="confirmed">Confirmed — Cu 7,360 ppm (red) vs 585 ppm (base)</td></tr>
           <tr><td>Glaze/body contact</td><td>Golden-brown reduction ring at base</td><td class="confirmed">Confirmed — ring present at contact zone</td></tr>
         </tbody>
       </table>
+    </section>
+
+    <section id="xrf">
+      <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+      <p>On 28 October 2026 the washer was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 45&nbsp;s per measurement, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample No.&nbsp;11</strong>. Two areas were measured: <strong>R</strong> &mdash; a red copper-red area of the peach-bloom glaze (measurement ID&nbsp;19, <em>miska kras</em>), and <strong>B</strong> &mdash; the base of the vessel, grey with dark crackle (ID&nbsp;20, <em>miska niz</em>). The results and their comparison with published studies of peach-bloom and copper-red technology are set out in the research article by Professor Nona Dronova (<a href="ro-qing-035-xrf-study.html">full text</a>).</p>
+
+      <div class="xrf-table-wrap">
+        <table class="sci-table">
+          <thead><tr><th>Element</th><th class="num">R &mdash; red area</th><th class="num">B &mdash; base</th><th class="num">Ratio R / B</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cu, ppm</strong></td><td class="num"><strong>7,360</strong> &plusmn; 130</td><td class="num">585 &plusmn; 32</td><td class="num"><strong>&asymp; 12.6</strong></td></tr>
+            <tr><td>As, ppm</td><td class="num"><strong>60</strong> &plusmn; 6</td><td class="num">ND (&lt;8)</td><td class="num">&mdash;</td></tr>
+            <tr><td>Sn, ppm</td><td class="num"><strong>153</strong> &plusmn; 27</td><td class="num">62 &plusmn; 27</td><td class="num">2.5</td></tr>
+            <tr><td>S, ppm</td><td class="num">2,550 &plusmn; 150</td><td class="num">4,640 &plusmn; 200</td><td class="num">0.55</td></tr>
+            <tr><td>Fe, ppm</td><td class="num">8,270 &plusmn; 180</td><td class="num">4,200 &plusmn; 120</td><td class="num">2.0</td></tr>
+            <tr><td>Pb, ppm</td><td class="num">11 &plusmn; 4</td><td class="num">21 &plusmn; 5</td><td class="num">&mdash;</td></tr>
+            <tr><td>Co, ppm</td><td class="num">128 &plusmn; 50</td><td class="num">ND (&lt;59)</td><td class="num">&mdash;</td></tr>
+            <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>11.21</strong> &plusmn; 0.12</td><td class="num">2.897 &plusmn; 0.034</td><td class="num">3.9</td></tr>
+            <tr><td>K, wt.%</td><td class="num">1.569 &plusmn; 0.026</td><td class="num">3.318 &plusmn; 0.041</td><td class="num">0.47</td></tr>
+            <tr><td>Si, wt.%</td><td class="num">27.93 &plusmn; 0.28</td><td class="num">33.91 &plusmn; 0.24</td><td class="num">&mdash;</td></tr>
+            <tr><td>Al, wt.%</td><td class="num">7.04 &plusmn; 0.17</td><td class="num">5.81 &plusmn; 0.17</td><td class="num">&mdash;</td></tr>
+            <tr><td>Mg, wt.%</td><td class="num">1.21 &plusmn; 0.47</td><td class="num">ND (&lt;0.68)</td><td class="num">&mdash;</td></tr>
+            <tr><td>P, ppm</td><td class="num">2,100 &plusmn; 170</td><td class="num">1,330 &plusmn; 150</td><td class="num">&mdash;</td></tr>
+            <tr><td>Mn, ppm</td><td class="num">414 &plusmn; 59</td><td class="num">697 &plusmn; 71</td><td class="num">&mdash;</td></tr>
+            <tr><td>Zn, ppm</td><td class="num">77 &plusmn; 16</td><td class="num">172 &plusmn; 14</td><td class="num">&mdash;</td></tr>
+            <tr><td>Rb / Sr, ppm</td><td class="num">207 / 79</td><td class="num">292 / 97</td><td class="num">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="xrf-caption">Values (&plusmn;3&sigma;) transcribed from the original instrument protocols, 28 October 2026 (Cu 7,360&nbsp;ppm = 0.736&nbsp;wt.%; 585&nbsp;ppm = 0.0585&nbsp;wt.%). Light-element balance: 48.83 (R), 52.82&nbsp;wt.% (B). Values close to their uncertainty should not be over-interpreted.</p>
+
+      <h3>What the analysis shows</h3>
+
+      <div class="note">
+        <strong>1. The red colour is a copper colour.</strong> The red area contains 7,360&nbsp;ppm copper, against 585&nbsp;ppm on the base &mdash; a local copper enrichment of about <strong>12.6 times</strong>. This links the visibly red zone directly to elevated copper, as expected for a high-temperature copper-red glaze fired in reduction.
+      </div>
+
+      <div class="note">
+        <strong>2. Arsenic, sulfur and tin with the copper.</strong> Alongside copper, the red area contains arsenic (60&nbsp;ppm; not detected on the base), tin (153&nbsp;ppm) and sulfur (2,550&nbsp;ppm). These are the elements discussed in recent studies of historical Chinese copper-red recipes: copper-bearing microphases with sulfur and arsenic, historical recipes using copper oxide and realgar, and As&ndash;Cu and Sn&ndash;Pb&ndash;Cu associations reported for Kangxi material (<em>Journal of the European Ceramic Society</em>, 2025). pXRF shows which elements are present; the actual compounds and phases require microstructural methods.
+      </div>
+
+      <div class="note">
+        <strong>3. Red, green and the &ldquo;moss&rdquo; specks.</strong> The red fields, greenish transitions and green moss- or lichen-like specks (<em>l&uuml;taidian</em> 绿苔点) correspond closely to the three colour areas studied by Sun Jing and colleagues (1991): red zones coloured by fine metallic copper particles under 2&nbsp;&mu;m, green moss-like specks linked to local Cu&#178;&#8314; enrichment in the glassy matrix, and greenish-red transitions containing many copper-sulfide microparticles. Comparable red-and-green and crackled peach-bloom brush washers of the Kangxi period are held by the Metropolitan Museum of Art (29.100.352, 14.40.385, 29.100.355).
+      </div>
+
+      <div class="note">
+        <strong>4. A different base surface.</strong> The grey, crackled base differs clearly in composition from the red area: far less copper and calcium (Ca 2.90 vs 11.21&nbsp;wt.%), but more potassium and silicon. The differences in calcium, potassium, silicon and aluminium reflect the compositional heterogeneity of the two measured ceramic surfaces. The green specks themselves have not yet been measured separately; microscopy and further measurements are planned.
+      </div>
+
+      <div class="xrf-protocol-block">
+        <p class="xrf-protocol-header">Original pXRF Protocols &mdash; Olympus analyser, 28 October 2026</p>
+        <div class="xrf-protocols">
+          <div>
+            <span class="xrf-label">R &mdash; Red copper area &middot; ID 19</span>
+            <a href="images/ro-qing-035-xrf-red-area.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-035-xrf-red-area.jpg" alt="Olympus pXRF protocol, Sample No. 11 (miska kras), measurement ID 19 — red copper area of the peach-bloom brush washer ro-qing-035, 28 October 2026, 45 s." loading="lazy" /></a>
+            <p class="xrf-caption"><b>Fig. 3.</b> ID&nbsp;19 &mdash; red area of the peach-bloom glaze (<em>miska kras</em>). Click to open full size.</p>
+          </div>
+          <div>
+            <span class="xrf-label">B &mdash; Grey crackled base &middot; ID 20</span>
+            <a href="images/ro-qing-035-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-035-xrf-base.jpg" alt="Olympus pXRF protocol, Sample No. 11 (miska niz), measurement ID 20 — grey crackled base of ro-qing-035, 28 October 2026, 45 s." loading="lazy" /></a>
+            <p class="xrf-caption"><b>Fig. 4.</b> ID&nbsp;20 &mdash; base of the vessel (<em>miska niz</em>). Click to open full size.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="xrf-actions">
+        <a class="xrf-btn primary" href="ro-qing-035-xrf-study.html">Read the full research article &rarr;</a>
+        <a class="xrf-btn" href="ro-qing-035-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
+      </div>
     </section>
 
     <section id="cross-references">
@@ -354,7 +443,7 @@
       <div class="meta-row"><span class="meta-label">Type</span><span class="meta-value">Brush washer / <i>shuicheng</i> 水丞</span></div>
       <div class="meta-row"><span class="meta-label">Form</span><span class="meta-value"><i>Tangluoxi</i> 膛鑼洗</span></div>
       <div class="meta-row"><span class="meta-label">Function</span><span class="meta-value">Scholar's desk object (<i>wenfang</i>)</span></div>
-      <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Gemological Optical Microscopy</span></div>
+      <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Gemological Optical Microscopy · <a href="#xrf">pXRF</a> (28 Oct 2026, Sample No. 11) · <a href="ro-qing-035-xrf-study.html">XRF article</a></span></div>
       <div class="meta-row"><span class="meta-label">Authenticity</span><span class="meta-value">Confirmed</span></div>
     </div>
     <nav class="sidebar-nav" id="sidebarNav">
@@ -362,6 +451,7 @@
       <a href="#technology" class="nav-link">Glaze Technology</a>
       <a href="#microscopy" class="nav-link">Microscopic Analysis</a>
       <a href="#interpretation" class="nav-link">Diagnostic Interpretation</a>
+      <a href="#xrf" class="nav-link">XRF Analysis</a>
       <a href="#cross-references" class="nav-link">Comparanda</a>
       <a href="#bibliography" class="nav-link">Conclusion</a>
     </nav>
