@@ -190,6 +190,18 @@
     .sidebar-nav{ display:none; }
     .footer-grid{ grid-template-columns:1fr; }
   }
+  .xrf-wrap{ overflow-x:auto; margin:1.25rem 0 .5rem; }
+  .xrf-wrap .sci-table{ margin:0; }
+  .sci-table .num{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .sci-table tr.art td{ color:var(--muted); }
+  .xrf-caption{ font-size:.78rem !important; color:var(--muted) !important; font-style:italic; line-height:1.55; }
+  .xrf-protocols{ display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:1.5rem 0; }
+  .xrf-protocols img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:top left; border:1px solid var(--border2); background:#fff; }
+  .xrf-actions{ display:flex; flex-wrap:wrap; gap:.5rem; margin:1.25rem 0; }
+  .xrf-btn{ display:inline-block; font-size:.82rem; font-weight:500; padding:.55rem 1rem; border:1px solid var(--border); background:var(--parchment); color:var(--muted2); }
+  .xrf-btn:hover{ border-color:var(--gold); color:var(--ink); text-decoration:none; }
+  .xrf-btn.primary{ background:var(--ink); color:var(--stone); border-color:var(--ink); }
+  @media (max-width:800px){ .xrf-protocols{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -221,6 +233,7 @@
       <span class="tag">Jingdezhen Zhushan</span>
       <span class="tag">Copper-Green Enamel</span>
       <span class="tag">GOM Authentication</span>
+      <span class="tag">pXRF Analysed</span>
     </div>
 
     <div class="hero-figure">
@@ -320,6 +333,92 @@
       <div class="note warn">If the green spots appear flat, without thin-film interference, and the yellow glaze shows a uniform synthetic structure, this constitutes a serious argument against an early-Ming Hongzhi attribution.</div>
     </section>
 
+    <section id="xrf">
+      <h2>X-Ray Fluorescence Analysis (pXRF, 2026)</h2>
+      <p>On 3 November 2026 the vase was analysed non-destructively by portable X-ray fluorescence (analyser no. 940487, Geochem 3-Beam Extra mode, 30 s per spot, <i>in situ</i>). In the measurement series it is <b>Sample ID 3</b>, “Vase 3” (archive reference DRN-MING-YG-2025-HZ). Two spots were measured: <b>ID 4</b> on a green area and <b>ID 5</b> on the yellow ground. The results are set out in the research article by Professor Nona Dronova (<a href="ro-ming-030-xrf-study.html">full text</a>).</p>
+
+      <div class="xrf-wrap">
+      <table class="sci-table">
+        <thead><tr><th>Element</th><th class="num">Green area (ID 4)</th><th class="num">Yellow ground (ID 5)</th><th>Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>Pb</td><td class="num">49.40% ± 0.16</td><td class="num">52.03% ± 0.18</td><td>Genuine</td></tr>
+          <tr><td>Si</td><td class="num">14.98% ± 0.14</td><td class="num">13.39% ± 0.15</td><td>Genuine (absolute values inaccurate)</td></tr>
+          <tr><td>Cu</td><td class="num">4,280 ± 260</td><td class="num">ND (&lt;39)</td><td>Genuine — green colourant</td></tr>
+          <tr><td>K</td><td class="num">5,960 ± 390</td><td class="num">4,720 ± 410</td><td>Genuine, probably underestimated</td></tr>
+          <tr><td>Al</td><td class="num">4,100 ± 1,300</td><td class="num">4,200 ± 1,300</td><td>Genuine, inaccurate</td></tr>
+          <tr><td>Fe</td><td class="num">1,500 ± 200</td><td class="num">1,730 ± 210</td><td>Genuine, probably underestimated</td></tr>
+          <tr><td>P</td><td class="num">670 ± 160</td><td class="num">800 ± 170</td><td>Genuine</td></tr>
+          <tr><td>Mn</td><td class="num">260 ± 200</td><td class="num">320 ± 200</td><td>At detection limit</td></tr>
+          <tr><td>Ca</td><td class="num">370 ± 270</td><td class="num">ND (&lt;540)</td><td>Low</td></tr>
+          <tr><td>Cr</td><td class="num">1,540 ± 250</td><td class="num">1,640 ± 260</td><td><b>Unresolved</b></td></tr>
+          <tr><td>Sb</td><td class="num">ND (&lt;12)</td><td class="num">ND (&lt;11)</td><td>Not detected</td></tr>
+          <tr><td>Zr</td><td class="num">ND (&lt;3)</td><td class="num">ND (&lt;3)</td><td>Not detected</td></tr>
+          <tr><td>Ti</td><td class="num">ND (&lt;530)</td><td class="num">ND (&lt;590)</td><td>Not detected</td></tr>
+          <tr><td>V</td><td class="num">ND (&lt;66)</td><td class="num">ND (&lt;67)</td><td>Not detected</td></tr>
+          <tr><td>Co / Ni</td><td class="num">ND (&lt;21 / &lt;11)</td><td class="num">ND (&lt;21 / &lt;12)</td><td>Not detected</td></tr>
+          <tr class="art"><td>As</td><td class="num">3.234%</td><td class="num">3.421%</td><td>Predominantly artefactual (Pb Lα overlap)</td></tr>
+          <tr class="art"><td>S</td><td class="num">28.93%</td><td class="num">27.92%</td><td>Artefact (Pb M overlap)</td></tr>
+          <tr class="art"><td>Cd</td><td class="num">1,420 ± 300</td><td class="num">1,450 ± 310</td><td>Artefact (Pb pile-up)</td></tr>
+          <tr class="art"><td>Sn</td><td class="num">960 ± 330</td><td class="num">810 ± 330</td><td>Artefact (Pb pile-up)</td></tr>
+          <tr class="art"><td>Zn</td><td class="num">3,670 ± 140</td><td class="num">3,840 ± 140</td><td>Probably artefactual</td></tr>
+          <tr class="art"><td>Se</td><td class="num">256 ± 88</td><td class="num">307 ± 93</td><td>Probably artefactual</td></tr>
+          <tr class="art"><td>Nb / Mo / Hf / W</td><td class="num">1,274 / 296 / 2,990 / 4,340</td><td class="num">1,388 / 333 / 3,130 / 4,420</td><td>Artefacts</td></tr>
+          <tr class="art"><td>Pr / Nd</td><td class="num">ND</td><td class="num">1,360 ± 880 / 1,900 ± 1,300</td><td>Artefacts</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="xrf-caption">Instrument readings in ppm unless stated (±3σ), as assessed in the research article; grey rows are spectral artefacts of the high-lead matrix. As oxides: PbO ≈ 53% (green) and 56% (yellow), CuO ≈ 0.54% in the green, Fe₂O₃ ≈ 0.21–0.25%. The Geochem mode assumes a light silicate matrix and was not calibrated against high-lead standards, so the values are semi-quantitative.</p>
+
+      <h3>What the analysis shows</h3>
+      <div class="note"><b>Two high-lead glazes, one copper green.</b> Both colours are high-lead, low-melting glazes. The green area differs from the yellow ground essentially only by copper (Cu 4,280 ppm, ≈ 0.5% CuO), which is absent from the yellow (&lt;39 ppm); Fe, Cr, K, P and Pb are close in both — consistent with a copper-green glaze applied over the yellow.</div>
+      <div class="note"><b>Cadmium, tin, arsenic and sulphur are lead artefacts.</b> Pb Lα + Lβ pile-up falls on Cd Kα (23.2 keV) and Lβ + Lβ on Sn Kα (25.2 keV); Pb Lα overlaps As Kα and Pb Mα overlaps S Kα. Three different ~50% Pb glazes in the same series give almost identical “Cd” (1,420, 1,450, 1,420 ppm) and the same As/Pb ratio (0.065–0.066), whereas a glaze with 7.4% Pb shows no Cd. Read uncritically, a Cd value of 1,450 ppm would wrongly suggest modern cadmium yellow.</div>
+
+      <h3>Markers of later yellow and green pigments</h3>
+      <div class="xrf-wrap">
+      <table class="sci-table">
+        <thead><tr><th>Colourant type</th><th>Period of use</th><th>Marker</th><th class="num">Result</th><th>Conclusion</th></tr></thead>
+        <tbody>
+          <tr><td>Antimony-tin yellow</td><td>Early Republican</td><td>Sb</td><td class="num">ND (&lt;11)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Lead-antimonate (Naples) yellow</td><td>From late Kangxi</td><td>Sb</td><td class="num">ND (&lt;11)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Praseodymium-zircon yellow</td><td>20th century</td><td>Zr</td><td class="num">ND (&lt;3)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Vanadium-zircon yellow / turquoise</td><td>20th century</td><td>V, Zr</td><td class="num">ND (&lt;67; &lt;3)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Rutile yellows (Ti–Sb–Ni/Cr)</td><td>20th century</td><td>Ti, Sb</td><td class="num">ND (&lt;590; &lt;11)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Cadmium yellow</td><td>From 19th century</td><td>Cd</td><td class="num">Pile-up artefact</td><td class="confirmed">Not confirmed</td></tr>
+          <tr><td>Cobalt / chromium-cobalt pigments</td><td>—</td><td>Co</td><td class="num">ND (&lt;21)</td><td class="confirmed">Excluded</td></tr>
+          <tr><td>Chromium yellow / green</td><td>From 19th century</td><td>Cr</td><td class="num">1,540–1,640 ppm</td><td class="warn">Unresolved</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="note warn"><b>Two open questions.</b> (1) <b>Iron</b> in the yellow ground reads 1,730 ppm (≈ 0.25% Fe₂O₃), 7–20 times below the 1.81–4.87% published for Ming yellow glazes; Fe Kα does not overlap lead lines, and a leached surface layer, the wrong matrix model and curved geometry together would be needed to explain it. (2) <b>Chromium</b> reads ≈ 1,600 ppm in both colours (Cr/Fe ≈ 1) — either a modern chromium pigment or an instrument artefact (a possible Pb M + Rh L sum peak). Genuine Cr would show both Kα (5.41 keV) and Kβ (5.95 keV). Until both are resolved, the pXRF results are consistent with the Hongzhi attribution but do not independently establish it.</div>
+
+      <h3>Proposed verification</h3>
+      <ul class="diagnostic-checklist">
+        <li class="diagnostic-item">Repeat XRF in a heavy-matrix mode (Mining/Alloy), tube current reduced 3–4×, 90–120 s, three spots, cleaned surface — Cd, Sn, As should disappear and Cr fall below detection</li>
+        <li class="diagnostic-item">Check the raw spectra for Cr Kβ at 5.95 keV</li>
+        <li class="diagnostic-item">Measure a Ming yellow sherd or lead glass of known Fe under identical conditions</li>
+        <li class="diagnostic-item">Measure where iridescence is weaker, analyse the unglazed body and base, and examine the iridescence and glaze layers microscopically</li>
+        <li class="diagnostic-item">If available, Raman spectroscopy and LIBS — iron colourant, no chromates</li>
+      </ul>
+
+      <div class="xrf-protocols">
+        <div class="figure">
+          <a href="images/ro-ming-030-xrf-green.jpg" target="_blank" rel="noopener"><img src="images/ro-ming-030-xrf-green.jpg" alt="pXRF protocol, Sample ID 3 (vaza zel), measurement ID 4 — green area of the Hongzhi yellow-green vase RO-MING-030, 3 November 2026, 30 s" loading="lazy" /></a>
+          <p class="figure-caption"><b>Fig. 5.</b> pXRF protocol, measurement ID 4 — green area, 3 November 2026, 30 s. Click to open full size.</p>
+        </div>
+        <div class="figure">
+          <a href="images/ro-ming-030-xrf-yellow.jpg" target="_blank" rel="noopener"><img src="images/ro-ming-030-xrf-yellow.jpg" alt="pXRF protocol, Sample ID 3 (vaza zhelt), measurement ID 5 — yellow ground of the Hongzhi yellow-green vase RO-MING-030, 3 November 2026, 30 s" loading="lazy" /></a>
+          <p class="figure-caption"><b>Fig. 6.</b> pXRF protocol, measurement ID 5 — yellow ground, 3 November 2026, 30 s. Both spectra are dominated by the Pb L lines. Click to open full size.</p>
+        </div>
+      </div>
+
+      <div class="xrf-actions">
+        <a class="xrf-btn primary" href="ro-ming-030-xrf-study.html">Read the full research article →</a>
+        <!--ZENODO-BTN-->
+        <a class="xrf-btn" href="ro-ming-030-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
+      </div>
+    </section>
+
     <section id="cross-references">
       <h2>Comparanda &amp; Cross-References</h2>
       <div class="crossref-block">
@@ -356,6 +455,8 @@
           <li>Technical literature on lead-silicate glaze phase separation and liquid–liquid immiscibility on cooling.</li>
           <li>Technical literature on thin-film interference and iridescence in aged lead-copper enamels.</li>
           <li>Comparative epigraphic material on six-character Hongzhi reign marks in kaishu script.</li>
+          <li>Dronova, N. (2026). <i>A Yellow-Green Vase with Handles Attributed to the Hongzhi Period: Results of Portable XRF Analysis.</i> Zenodo, 4 November 2026. <a href="ro-ming-030-xrf-study.html">Full text on this site</a>.</li>
+          <li>Dronova, N. <i>Scientific Authentication of a Yellow-Green Lead Glazed Vase Attributed to the Hongzhi Period (1488–1505) of the Ming Dynasty.</i> Zenodo. <a href="https://zenodo.org/records/16754235" target="_blank" rel="noopener">zenodo.org/records/16754235</a>.</li>
         </ol>
       </div>
     </section>
@@ -375,7 +476,8 @@
       <div class="meta-row"><span class="meta-label">Material</span><span class="meta-value">Porcelain; yellow lead-silicate glaze; green copper enamel</span></div>
       <div class="meta-row"><span class="meta-label">Form</span><span class="meta-value">Large <i>hu</i>-form vase with loop handles</span></div>
       <div class="meta-row"><span class="meta-label">Mark</span><span class="meta-value">大明弘治年製, kaishu, two columns, underglaze blue</span></div>
-      <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Gemological Optical Microscopy, 10×–50×</span></div>
+      <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Gemological Optical Microscopy, 10×–50× · <a href="#xrf">pXRF</a> (3 Nov 2026)</span></div>
+      <div class="meta-row"><span class="meta-label">pXRF</span><span class="meta-value">High-Pb glazes; Cu green; no Sb, Zr, V, Ti; Fe and Cr unresolved</span></div>
       <div class="meta-row"><span class="meta-label">Authenticity</span><span class="meta-value">Confirmed</span></div>
       <div class="meta-row"><span class="meta-label">Attribution</span><span class="meta-value">Jingdezhen imperial production, Hongzhi period</span></div>
     </div>
@@ -384,6 +486,7 @@
       <a href="#technology" class="nav-link">Glaze Technology</a>
       <a href="#microscopy" class="nav-link">Microscopic Analysis</a>
       <a href="#interpretation" class="nav-link">Diagnostic Interpretation</a>
+      <a href="#xrf" class="nav-link">XRF Analysis</a>
       <a href="#cross-references" class="nav-link">Comparanda</a>
       <a href="#bibliography" class="nav-link">Bibliography</a>
     </nav>
