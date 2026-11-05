@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the Chenghua Yellow Tianqiuping — ro-ming-028 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: portable XRF and microscopy of a yellow-glazed tianqiuping with anhua decoration and a Chenghua mark, including high-lead spectral artefacts." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="A Yellow Tianqiuping Bottle Vase with Anhua Decoration and a Chenghua Mark: XRF Analysis and Microscopy" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/11/04" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .xrf-protocols.xrf-one{grid-template-columns:minmax(0,420px)}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+    .col-main ul,.col-main ol{margin:0 0 1rem 1.25rem;font-size:.9375rem;line-height:1.7}
+  .col-main ul{list-style:disc}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-ming-028.html">RO-MING-028 — Chenghua Yellow Tianqiuping</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-ming-028</span></p>
+      <h1>A Yellow Tianqiuping Bottle Vase with Anhua Decoration and a Chenghua Mark: XRF Analysis and Microscopy</h1>
+      <p class="object-subtitle">Nona Dronova &mdash; Zenodo, 4 November 2026 &mdash; Ming Imperial Yellow &middot; pXRF and Optical Microscopy</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-ming-028.html">&larr; Back to the Atlas entry RO-MING-028</a>
+        <!--ZENODO-BTN-->
+        <a class="xrf-btn primary" href="ro-ming-028-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>A yellow porcelain vase of the <em>tianqiuping</em> (天球瓶) form, featuring concealed <em>anhua</em> incised decoration (dragon, phoenix, and clouds) and a six-character Chenghua mark (object CHENGHUA-YEL-001), was examined using portable X-ray fluorescence (pXRF) and optical microscopy. The yellow coating is a high-lead, low-temperature glaze (Pb: 48.97 wt.% according to the instrument readings), with no detectable antimony, zirconium, vanadium, titanium, cobalt, or copper. The base, which bears the cobalt mark, exhibits a geochemical profile tentatively consistent with Jingdezhen materials (Rb/Sr ≈ 5) and contains no identified modern technological markers. The readings for Cd, Sn, Zn, Se, As, S, and other elements are interpreted as known artefacts associated with a high-lead matrix.</p>
+<p>Microscopy revealed a multilayer coating structure, including a stepped glaze edge, angular delamination of the upper layer along the crazing network, and bubbles in the underlying layer visible through the yellow coating. Ochre-brown darkening of the yellow glaze within the incised lines and pronounced iridescence were also observed. These features are consistent with published descriptions of early Ming imperial yellow glazes. Several questions remain unresolved: the low iron content measured at the surface (Fe: 820 ppm), the chromium reading (approximately 1,000 ppm), and the typological uniqueness of the vase form. The analytical and microscopic findings are consistent with the proposed Chenghua-period attribution but do not prove it. A programme of non-destructive verification is proposed.</p>
+<p><strong>Keywords:</strong> Ming dynasty; Chenghua period; imperial yellow; <em>anhua</em>; <em>tianqiuping</em>; lead glaze; multilayer structure; iridescence; portable X-ray fluorescence; spectral artefacts.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Yellow monochrome porcelain of the Chenghua period (1465–1487) is documented by museum and archaeological evidence, although only a very small number of complete objects have survived.</p>
+<ul>
+<li><strong>Museum corpus.</strong> No more than approximately twenty yellow monochrome dishes bearing Chenghua marks and attributed to the period are known; most are held in museums (Bonhams, 2020; Krahl, Sotheby's, 2017).</li>
+<li><strong>Archaeological evidence.</strong> According to R. Krahl, Liu Xinyuan, director of the excavations at the imperial kilns in Jingdezhen, showed J. Thompson a box full of yellow sherds from a Chenghua-period archaeological layer and reportedly stated that there were many such boxes. Yellow coatings used in complex decorative programmes of the Chenghua period are illustrated in <em>A Legacy of Chenghua</em> (1993).</li>
+<li><strong>The closest technological parallel.</strong> A pair of dishes decorated with incised <em>anhua</em> dragons, dated to the late Tianshun–early Chenghua period, features an egg-yolk-yellow glaze applied over a transparent crazed glaze (Bonhams, 2020).</li>
+<li><strong>Archaeometric evidence.</strong> The colourant in Ming imperial yellow glaze is Fe₂O₃ dissolved in a lead-glass matrix, at concentrations of 1.81–4.87 wt.% (Hao et al., 2024). A transparent high-temperature layer, 150–450 μm thick and containing numerous bubbles, lies between the yellow glaze and the ceramic body (Hou et al., 2022). A slip layer has been described in Chenghua-, Hongzhi-, and Zhengde-period samples on the basis of TEM and EPMA analyses. Early Republican-period imitations also employed a slip layer, but their yellow colour was produced using antimony and tin (Zheng, Wu, Wu, 2008).</li>
+</ul>
+<p>The aim of this study is to determine whether the chemical and microstructural characteristics of the vase are consistent with these criteria and to identify what further evidence is required to substantiate the proposed attribution.</p>
+<h2 id="2-object">2. Object</h2>
+<p>The object is a porcelain vase of the <em>tianqiuping</em> form, with a globular body and a tall cylindrical neck, covered with a yellow lead glaze. The <em>anhua</em> decoration, incised beneath the glaze, consists of a dragon, a phoenix, clouds, and a <em>ruyi</em> band around the neck. The base has an unglazed foot band and a white high-temperature glaze bearing a six-character Chenghua mark in underglaze cobalt blue.</p>
+<p>The archival reference is CHENGHUA-YEL-001; within the measurement series, the object is designated “Vase 4”.</p>
+<ul>
+<li><strong>Surface condition:</strong> dense crazing across the yellow surface, pronounced iridescence, and a concentration of the yellow colour to an ochre-brown tone within the incised lines.</li>
+<li>The object was previously described by the author on the basis of gemmological microscopy (Dronova, Zenodo 20785217). The present study adds elemental data for the first time.</li>
+</ul>
+<h2 id="3-materials-and-methods">3. Materials and Methods</h2>
+<p>Measurements were carried out in situ on 3 November 2026 using a portable XRF analyser (serial number 940487). Optical observations were made using macro- and microphotographs of the surface and glaze edge.</p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analytical mode</td>
+<td>Geochem (3-Beam) Extra; 30 seconds per point</td>
+</tr>
+<tr>
+<td>Point 1 (Daily ID 6, 13:59:53)</td>
+<td>Yellow glaze on the broad body; Sample ID 4, “vase yellow side”</td>
+</tr>
+<tr>
+<td>Point 2 (Daily ID 7, 14:00:51)</td>
+<td>Unglazed band at the base, with part of the white high-temperature glaze and the edge of the cobalt mark included; Sample ID 4, “vase yellow bottom”</td>
+</tr>
+</tbody>
+</table></div>
+<p>Measurement No. 5 in the same report (“vase yellow”) belongs, according to its Sample ID, to a different object (Sample ID 3) and was excluded from the present analysis.</p>
+<p>The reported values are elemental concentrations calculated by the instrument's built-in algorithm; uncertainties are given as ±3σ. The Geochem mode is based on a light-element matrix model and therefore provides semi-quantitative data when applied to high-lead glaze compositions. Spectra and readings from other glazes measured during the same session (12 objects, 19 measurement points) were used to assess possible spectral artefacts.</p>
+<h2 id="4-xrf-results">4. XRF Results</h2>
+<p>The yellow coating is a high-lead glass containing no detectable antimony or industrial pigment elements. The measurement at the base produced a composition tentatively consistent with Jingdezhen materials and showed no identified modern markers.</p>
+<p><strong>Table 1. Instrument readings (ppm unless otherwise indicated; ±3σ) and assessment of reliability</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr>
+<th>Element</th>
+<th class="num">Yellow glaze (ID 6)</th>
+<th class="num">Base, mixed measurement point (ID 7)</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pb</td>
+<td class="num">48.97% ± 0.15</td>
+<td class="num">450 ± 21</td>
+<td>Genuine signal</td>
+</tr>
+<tr>
+<td>Si</td>
+<td class="num">16.53%</td>
+<td class="num">23.39%</td>
+<td>Genuine; absolute values are inaccurate</td>
+</tr>
+<tr>
+<td>Al</td>
+<td class="num">4,500 ± 1,200</td>
+<td class="num">3.68%</td>
+<td>Genuine</td>
+</tr>
+<tr>
+<td>K</td>
+<td class="num">4,440 ± 360</td>
+<td class="num">1.740%</td>
+<td>Genuine; underestimated in the yellow glaze (Section 6.4)</td>
+</tr>
+<tr>
+<td>Ca</td>
+<td class="num">ND (&lt;460)</td>
+<td class="num">2.106%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Fe</td>
+<td class="num">820 ± 170</td>
+<td class="num">4,600 ± 170</td>
+<td>Genuine; low value in yellow glaze remains unresolved (Section 8)</td>
+</tr>
+<tr>
+<td>Mn</td>
+<td class="num">230 ± 180</td>
+<td class="num">749 ± 98</td>
+<td>Genuine</td>
+</tr>
+<tr>
+<td>Co</td>
+<td class="num">ND (&lt;19)</td>
+<td class="num">63 ± 53</td>
+<td>At the detection limit; measurement includes the edge of the mark</td>
+</tr>
+<tr>
+<td>Rb / Sr</td>
+<td class="num">ND / ND</td>
+<td class="num">397 / 81</td>
+<td>Genuine signals</td>
+</tr>
+<tr>
+<td>Cr</td>
+<td class="num">1,020 ± 220</td>
+<td class="num">ND (&lt;110)</td>
+<td>Unresolved</td>
+</tr>
+<tr>
+<td>Cu</td>
+<td class="num">ND (&lt;37)</td>
+<td class="num">25 ± 22</td>
+<td>No copper detected</td>
+</tr>
+<tr>
+<td>Sb</td>
+<td class="num">ND (&lt;10)</td>
+<td class="num">ND (&lt;93)</td>
+<td>Not detected</td>
+</tr>
+<tr>
+<td>Zr</td>
+<td class="num">ND (&lt;3)</td>
+<td class="num">65 ± 7</td>
+<td>Not detected in the yellow glaze</td>
+</tr>
+<tr>
+<td>Ti</td>
+<td class="num">ND (&lt;510)</td>
+<td class="num">770 ± 560</td>
+<td>Not detected / at the detection limit</td>
+</tr>
+<tr>
+<td>V</td>
+<td class="num">ND (&lt;62)</td>
+<td class="num">ND (&lt;210)</td>
+<td>Not detected</td>
+</tr>
+<tr>
+<td>As</td>
+<td class="num">3.249%</td>
+<td class="num">142 ± 20</td>
+<td>Predominantly an artefact in the yellow glaze</td>
+</tr>
+<tr>
+<td>S</td>
+<td class="num">28.58%</td>
+<td class="num">9,080</td>
+<td>Artefact in the yellow glaze</td>
+</tr>
+<tr>
+<td>Cd</td>
+<td class="num">1,420 ± 290</td>
+<td class="num">30 ± 27</td>
+<td>Artefact</td>
+</tr>
+<tr>
+<td>Sn</td>
+<td class="num">850 ± 320</td>
+<td class="num">55 ± 35</td>
+<td>Artefact</td>
+</tr>
+<tr>
+<td>Zn / Se</td>
+<td class="num">2,960 / 290</td>
+<td class="num">65 / ND</td>
+<td>Probably artefacts</td>
+</tr>
+<tr>
+<td>Nb / Mo / Hf / W</td>
+<td class="num">1,264 / 287 / 2,820 / 4,510</td>
+<td class="num">21 / 9 / 40 / 44</td>
+<td>Artefacts</td>
+</tr>
+</tbody>
+</table></div>
+<p>At measurement point 2, the close-up photograph shows that the measurement field includes both the rough ceramic body and the glossy white glaze (LE 67%; poor contact). Consequently, the composition of the ceramic body itself cannot be determined from this measurement. The Pb reading of 450 ppm and As reading of 142 ppm at this point are most likely traces originating from the yellow glaze.</p>
+<h2 id="5-spectral-artefacts-associated-with-the-high-lead-matrix">5. Spectral Artefacts Associated with the High-Lead Matrix</h2>
+<p>An uncritical reading of Table 1 — for example, interpreting Cd at 1,420 ppm, Se at 290 ppm, and Zn at 2,960 ppm as genuine concentrations — could lead to the false conclusion that the object contains modern cadmium yellow. Examination of the spectrum indicates that these readings are artefacts.</p>
+<h3>5.1. Pulse Pile-Up Peaks: Cd and Sn</h3>
+<p>At count rates of approximately 20,000 counts per second on the lead lines, the spectrum contains a triplet of sum peaks at approximately 21.1, 23.2, and 25.3 keV, with the middle peak being the most intense. These correspond to Pb Lα + Lα, Pb Lα + Lβ, and Pb Lβ + Lβ, respectively.</p>
+<p>The second peak coincides with Cd Kα (23.2 keV), while the third coincides with Sn Kα (25.2 keV). Such peaks disappear when the X-ray tube current is reduced (Lee, 2016; WAAC, 2009).</p>
+<p>In three different glazes measured during the same session and containing approximately 50% Pb, the apparent “cadmium” concentration is nearly identical (1,420–1,450 ppm). In contrast, cadmium was not detected in a glaze containing 7.4% Pb (below 19 ppm).</p>
+<h3>5.2. Sulphur and Arsenic</h3>
+<ul>
+<li><strong>Sulphur (S: 28.58%).</strong> The apparent sulphur signal results from overlap between the Pb M lines (2.35 keV) and S Kα (2.31 keV). A comparable case was reported for high-lead Corning C reference glass, where portable XRF incorrectly indicated approximately 30% SO₃ while underestimating light elements.</li>
+<li><strong>Arsenic (As: 3.25%).</strong> This reading results from the overlap of Pb Lα (10.55 keV) and As Kα (10.54 keV) (Rowe et al., 2015). The As/Pb ratio is 0.066, matching the ratios in two other glazes containing approximately 50% Pb (0.065 and 0.066), which is characteristic of a lead-related artefact. The small peak at approximately 11.35 keV is Pb Lη, not As Kβ.</li>
+</ul>
+<h3>5.3. Other Lead-Related Signals</h3>
+<p>The readings for Zn, Se, Mo, Nb, Hf, and W are consistently reproduced in all glazes containing approximately 50% Pb and are explained by escape and sum peaks. A hafnium reading of 2,820 ppm in the presence of zirconium below 3 ppm is physically implausible for a genuine material composition.</p>
+<p>A high-lead matrix distorts the pXRF determination of trace elements and requires dedicated calibration. This limitation is also documented in comparisons of pXRF and LA-ICP-MS analyses of lead-rich glass tesserae.</p>
+<h2 id="6-optical-microscopy">6. Optical Microscopy</h2>
+<p>Microscopy provides some of the strongest evidence in this study: the coating is multilayered, and its structure corresponds to features described in published studies of Ming imperial yellow glaze.</p>
+<h3>6.1. Stepped Glaze Edge</h3>
+<p>At the boundary with the unglazed foot band, the yellow coating forms several parallel, wavy “shorelines”, each set back from the preceding edge. This appearance is consistent with several successively applied layers, each terminating along its own boundary. Near the edge, the yellow area breaks up into polygonal cells of varying tone.</p>
+<h3>6.2. Angular Delamination Along the Crazing Network</h3>
+<p>The yellow surface displays dark olive-ochre areas with straight boundary segments and sharp angles. These appear as plates rather than diffuse clouds.</p>
+<p>Such angular geometry is not characteristic of liquid-phase separation (which typically produces droplets or worm-like structures). It is more readily explained by mechanical delamination of the upper layer along the crazing network.</p>
+<p>A similar mechanism is described by the Palace Museum (Gugong) for lead enamels applied over transparent glaze: differences in thermal expansion cause the upper layer to crack and locally detach, exposing the transparent glaze beneath. In the macro photographs, the crazing cells appear as slightly convex “pillows”, consistent with partial lifting of the plates.</p>
+<h3>6.3. Bubbles in the Underlying Layer</h3>
+<p>Numerous small, rounded bubbles with light-coloured rims are visible on both the light and dark plates. This indicates that the bubbles and the tonal boundaries occur at different depths.</p>
+<p>The observation is consistent with the model proposed by Hou et al. (2022): a transparent lower layer containing numerous bubbles, covered by a transparent yellow layer without visible secondary phases, through which the bubbles remain visible.</p>
+<h3>6.4. Ochre-Brown Darkening in the Incisions and Iridescence</h3>
+<ul>
+<li>Within the incised <em>anhua</em> lines, the yellow colour becomes concentrated and darkens to an ochre-brown tone. This behaviour is consistent with an iron-based colourant in lead glass. Chromium yellow tends towards orange when viewed through a greater thickness, whereas cadmium yellow generally remains bright yellow. This is a visual observation and requires spectrophotometric confirmation.</li>
+<li>The pronounced iridescence is interpreted as interference in a layered weathering film formed through the gradual leaching of lead and alkalis. It is consistent with the low K reading (0.44%) and undetected Ca in the surface layer, combined with the high Pb content. The natural origin of the iridescence requires microscopic confirmation (Section 9), since artificial iridescence is also known.</li>
+</ul>
+<h2 id="7-comparison-with-published-scientific-data">7. Comparison with Published Scientific Data</h2>
+<p>On the basis of eight lines of evidence, the vase is consistent with published data on early Ming imperial yellow glaze. None of the tested markers corresponds to later or industrial technologies.</p>
+<p><strong>Table 2. Evidence relevant to the proposed attribution</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead>
+<tr>
+<th class="num">No.</th>
+<th>Feature observed on the vase</th>
+<th>Published scientific reference</th>
+<th>Strength of evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">1</td>
+<td>High-lead, low-temperature glaze (PbO ≈ 53% according to the instrument)</td>
+<td>Ming imperial yellow is a high-lead, low-temperature glaze system (Hou et al., 2022)</td>
+<td>Moderate: lead-based yellow glazes continued to be produced in later periods</td>
+</tr>
+<tr>
+<td class="num">2</td>
+<td>Antimony not detected (&lt;10 ppm)</td>
+<td>Early Republican-period yellow glazes used Sb and Sn (Zheng, Wu, Wu, 2008); Qing-period imported yellow pigments included Pb–Sb compositions</td>
+<td>High: excludes a key recipe used in later imitations</td>
+</tr>
+<tr>
+<td class="num">3</td>
+<td>Zr &lt;3, V &lt;62, Ti &lt;510 ppm</td>
+<td>Twentieth-century industrial yellows were based on zircon and rutile</td>
+<td>High</td>
+</tr>
+<tr>
+<td class="num">4</td>
+<td>Multilayer coating with bubbles in the lower layer</td>
+<td>A transparent bubble-rich layer, 150–450 μm thick, beneath the yellow glaze (Hou et al., 2022); slip reported in Chenghua–Zhengde samples (Zheng, Wu, Wu, 2008)</td>
+<td>Moderate: the sequence of layers requires confirmation</td>
+</tr>
+<tr>
+<td class="num">5</td>
+<td>Angular delamination of the upper layer along the crazing network</td>
+<td>Delamination of a lead-containing layer over transparent glaze due to differences in thermal expansion (Palace Museum / Gugong)</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td class="num">6</td>
+<td>Ochre-brown darkening of the yellow glaze within the incisions</td>
+<td>Iron is identified as the colourant in Ming yellow glaze (Hao et al., 2024)</td>
+<td>Low to moderate: based on visual observation</td>
+</tr>
+<tr>
+<td class="num">7</td>
+<td>Iridescence, convex crazing cells, and a leached surface</td>
+<td>Long-term weathering of lead glazes</td>
+<td>Moderate: artificial iridescence must be excluded</td>
+</tr>
+<tr>
+<td class="num">8</td>
+<td>Base: Rb/Sr ≈ 5, no modern markers; elevated Mn near the cobalt mark</td>
+<td>Jingdezhen raw materials; cobalt used in imperial kilns after Xuande associated with Mn/Fe &gt;0.3 (Du Feng et al.)</td>
+<td>Low: mixed measurement point; Co at the detection limit</td>
+</tr>
+</tbody>
+</table></div>
+<p>Additionally, the technique of applying yellow glaze over transparent glaze in combination with an incised <em>anhua</em> dragon is documented for the late Tianshun–early Chenghua period (Bonhams, 2020).</p>
+<p>Evidence items 1–3 are based on instrumental measurements; items 4–7 are based on optical observations; item 8 is based on a mixed measurement point.</p>
+<h2 id="10-conclusion">10. Conclusion</h2>
+<p>Taken together, the instrumental and optical data for the yellow <em>tianqiuping</em> vase CHENGHUA-YEL-001 are consistent with the technology of early Ming imperial yellow glaze. No reliable markers of modern or early Republican-period manufacture have been identified.</p>
+<p>The relevant features include a high-lead glaze without detectable antimony, zirconium, vanadium, or titanium; a multilayer structure with a bubble-rich underlying layer; angular delamination of the upper layer along the crazing network; ochre-brown darkening within the incised decoration; iridescence and a leached surface; and a base composition tentatively consistent with Jingdezhen materials.</p>
+<p>These observations provide several mutually relevant lines of evidence, none of which contradicts the proposed attribution. However, they do not establish a Chenghua-period date conclusively. The low iron reading, the chromium signal, the mixed nature of the base measurement, and the typological uniqueness of the <em>tianqiuping</em> form remain issues requiring further investigation.</p>
+<h2 id="original-pxrf-protocols">Original pXRF Protocols</h2>
+<div class="micro-block">
+  <p class="micro-header">Portable XRF analyser, serial no. 940487 &mdash; 3 November 2026</p>
+  <div class="xrf-protocols">
+    <div class="micro-item">
+      <span class="micro-mag">ID 6 &middot; Yellow glaze</span>
+      <a href="images/ro-ming-028-xrf-yellow-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-ming-028-xrf-yellow-glaze.jpg" alt="pXRF protocol, measurement ID 6 — yellow glaze, 3 November 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Fig. 1.</span> Measurement ID&nbsp;6 &mdash; yellow glaze on the body. Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">ID 7 &middot; Base, mixed</span>
+      <a href="images/ro-ming-028-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-ming-028-xrf-base.jpg" alt="pXRF protocol, measurement ID 7 — base, mixed point, 3 November 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Fig. 2.</span> Measurement ID&nbsp;7 &mdash; foot band with white glaze and edge of the mark. Click to open full size.</p>
+    </div>
+  </div>
+</div>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p>Hao, M., Zhang, M., Weng, Y., &amp; Xiong, Z. (2024). “Chromogenic mechanisms of overglaze yellow pigment produced in Jingdezhen imperial kilns during the Ming dynasty.” <em>Heritage Science</em>. <a class="uri" href="https://doi.org/10.1186/s40494-024-01458-0" target="_blank" rel="noopener">https://doi.org/10.1186/s40494-024-01458-0</a></p>
+</li>
+<li>
+<p>Hou, J. Y., Li, H., Kang, B. Q., Wood, N., Wang, G. Y., Jiang, J. X., Wang, Z. Y., &amp; Zou, F. A. (2022). “The origins of imperial yellow glazed porcelain in the Ming Dynasty (1368 to 1644) China: Technical comparison to low-fired tile with yellow glaze.” <em>Archaeometry</em>, 64(1), 59–70. <a class="uri" href="https://doi.org/10.1111/arcm.12692" target="_blank" rel="noopener">https://doi.org/10.1111/arcm.12692</a></p>
+</li>
+<li>
+<p>Zheng, Nai-zhang, Wu, Jun-ming, &amp; Wu, Juan. (2008). “Preliminary Studies of Jingdezhen's Low Temperature Yellow-Glaze from Ming and Qing Dynasty.” <em>Journal of Building Materials</em>. [Link to be added.]</p>
+</li>
+<li>
+<p>“明初琉璃技术的传承与发展” [The Transmission and Development of Glazed Ceramic Technology in the Early Ming Period]. Discussion of the work by Hou et al. [Link to be added.]</p>
+</li>
+<li>
+<p>Wood, N. et al. (2021). “An AAS study of Chinese imperial yellow porcelain bodies and their place in the history of Jingdezhen's porcelain development.” <em>Advances in Archaeomaterials</em>. [Link to be added.]</p>
+</li>
+<li>
+<p>“故宫博物院藏康熙、雍正朝两件珐琅彩瓷无损分析” [Non-destructive Analysis of Two Enamelled Porcelain Objects from the Kangxi and Yongzheng Reigns in the Collection of the Palace Museum]. <em>Palace Museum Journal</em>. [Link to be added.]</p>
+</li>
+<li>
+<p>Du, Feng, et al. “两种不同的进口钴料：‘苏麻离青’与‘苏渤泥青’” [Two Different Types of Imported Cobalt: “Sumaliqing” and “Subonijing”]. [Link to be added.]</p>
+</li>
+<li>
+<p>Shen, J. Y., Henderson, J., Evans, J., Chenery, S., &amp; Zhao, F. Y. (2019). “A study of the glazing techniques and provenances of Tang sancai glazes.” <em>Archaeometry</em>, 61, 358–373. [Link to be added.]</p>
+</li>
+<li>
+<p>Krahl, R. (2017). “Chenghua Imperial Yellow.” Sotheby's, <em>Yellow-Ground Wares from the Collection of Maureen Pilkington</em>. [Link to be added.]</p>
+</li>
+<li>
+<p>Bonhams. (2020). “A Very Rare Yellow-Glazed Anhua ‘Dragon’ Saucer-Dish, Late Tianshun/Early Chenghua.” [Link to be added.]</p>
+</li>
+<li>
+<p>Christie's. “Chenghua Yellow Dish.” Lot essay. [Link to be added.]</p>
+</li>
+<li>
+<p>Lee, L. (2016). “XRF in Cultural Heritage.” IIC-ITCC lecture. [Link to be added.]</p>
+</li>
+<li>
+<p><em>WAAC Newsletter</em>. (2009). Vol. 31(3). [Link to be added.]</p>
+</li>
+<li>
+<p>Rowe, M. W., Cole, S. J., &amp; Yousuf, M. (2015). “pXRF Analysis of Arsenic When Lead Is Present: A Cautionary Tale.” [Publication details and link to be added.]</p>
+</li>
+<li>
+<p>“Comparison of pXRF and LA-ICP-MS Analysis of Lead-Rich Glass Mosaic Tesserae.” [Publication details and link to be added.]</p>
+</li>
+<li>
+<p>Supplementary analytical appendix: “pXRF of Lead-Rich Glass (Corning C).” [Link to be added.]</p>
+</li>
+<li>
+<p>Dronova, N. “Imperial Yellow Glaze of the Ming Dynasty: … a Chenghua-Period Tianqiu Bottle Vase with Anhua Incised Dragon and Phoenix Decoration.” Zenodo. DOI: <a class="uri" href="https://doi.org/10.5281/zenodo.20785217" target="_blank" rel="noopener">10.5281/zenodo.20785217</a>. Previous study of the object. In that publication, the work by Zheng et al. was incorrectly dated to 2022; the correct year is 2008.</p>
+</li>
+<li>
+<p>Portable XRF analytical report, “Chemical Composition,” analyser No. 940487, 3 November 2026, measurements Nos. 6 and 7 (Sample ID 4).</p>
+</li>
+</ol>
+<h2 id="suggested-citation">Suggested Citation</h2>
+<p>Dronova, N. (2026). <em>A Yellow Tianqiuping Bottle Vase with Anhua Decoration and a Chenghua Mark: XRF Analysis and Microscopy</em>. Zenodo. Published 4 November 2026.</p>
+
+      <nav class="pagination">
+        <a href="ro-ming-028.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">RO-MING-028 — Chenghua Yellow Tianqiuping</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-ming-028.html">ro-ming-028</a> &middot; CHENGHUA-YEL-001</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">ID 4 &mdash; yellow glaze (ID 6), base mixed (ID 7)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Geochem 3-Beam Extra, 30 s) &middot; optical microscopy</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">3 November 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Published</span><span class="meta-value">Zenodo, 4 November 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Previous study</span><span class="meta-value"><a href="https://doi.org/10.5281/zenodo.20785217" target="_blank" rel="noopener">doi:10.5281/zenodo.20785217</a></span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#1-introduction">1. Introduction</a></li><li><a href="#2-object">2. Object</a></li><li><a href="#3-materials-and-methods">3. Materials and Methods</a></li><li><a href="#4-xrf-results">4. XRF Results</a></li><li><a href="#5-spectral-artefacts-associated-with-the-high-lead-matrix">5. Spectral Artefacts Associated with the High-Lead Matrix</a></li><li><a href="#6-optical-microscopy">6. Optical Microscopy</a></li><li><a href="#7-comparison-with-published-scientific-data">7. Comparison with Published Scientific Data</a></li><li><a href="#10-conclusion">10. Conclusion</a></li><li><a href="#original-pxrf-protocols">Original pXRF Protocols</a></li><li><a href="#references">References</a></li><li><a href="#suggested-citation">Suggested Citation</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-ming-028 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
