@@ -98,6 +98,21 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
   .obj-header h1{font-size:1.7rem;}
   .footer-grid{grid-template-columns:1fr; gap:1.8rem;}
 }
+.xrf-table{width:100%; border-collapse:collapse; font-size:.85rem; margin:1rem 0 .4rem;}
+.xrf-table th{background:var(--parchment2); color:var(--muted2); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; text-align:left; padding:.5rem .7rem; border-bottom:2px solid var(--border);}
+.xrf-table td{padding:.45rem .7rem; border-bottom:1px solid var(--border2); color:var(--ink);}
+.xrf-table tr:nth-child(even) td{background:var(--parchment);}
+.xrf-table .num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+.xrf-cap{font-size:.78rem !important; color:var(--muted) !important; font-style:italic;}
+.xrf-note{border-left:3px solid var(--gold); background:var(--parchment); padding:.8rem 1rem; margin:1rem 0; font-size:.88rem; color:var(--muted2);}
+.figure-row.three{grid-template-columns:repeat(3,1fr);}
+.figure-row.three img{aspect-ratio:3/4; object-fit:cover;}
+.figure-row.three figure:last-child img{object-fit:cover; object-position:top left; background:#fff;}
+.xrf-actions{display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0;}
+.xrf-btn{display:inline-block; font-size:.84rem; font-weight:500; padding:.5rem 1rem; border:1px solid var(--border); background:var(--parchment); color:var(--muted2);}
+.xrf-btn:hover{border-color:var(--gold); color:var(--ink); text-decoration:none;}
+.xrf-btn.primary{background:var(--ink); color:var(--stone); border-color:var(--ink);}
+@media (max-width:860px){ .figure-row.three{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -128,6 +143,7 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
     <span class="tag">Clair-de-Lune / Yuebai</span>
     <span class="tag">Underglaze-Blue Seal Mark</span>
     <span class="tag">Qing Dynasty</span>
+    <span class="tag">Companion Glaze pXRF-Analysed</span>
   </div>
 </div>
 
@@ -203,12 +219,61 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
       </div>
     </section>
 
+    <section class="section" id="companion-xrf">
+      <h2 class="section-title">Companion Vase with the Same Glaze — pXRF Analysis</h2>
+      <p>The collection also holds a <strong>small vase covered with the same lavender-blue monochrome glaze</strong>, decorated with a poetic inscription in black calligraphy and birds on a branch, and bearing an underglaze-blue seal-form mark on the base. It was this glaze — on the companion vase, not on the yuhuchunping described above — that was analysed by portable X-ray fluorescence. Because the two vessels share the same glaze, the results are presented here as a chemical reference for the glaze type of RO-QING-083.</p>
+
+      <div class="figure-row three">
+        <figure>
+          <a href="images/ro-qing-083-lavender-vase.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-083-lavender-vase.jpg" alt="Small vase with the same lavender-blue monochrome glaze, poetic inscription in black calligraphy and red seals" loading="lazy"></a>
+          <figcaption>Fig. 3. Companion vase: the same lavender-blue glaze, with a poetic inscription and red seals; birds on a branch on the reverse.</figcaption>
+        </figure>
+        <figure>
+          <a href="images/ro-qing-083-lavender-base.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-083-lavender-base.jpg" alt="Base of the companion vase with underglaze-blue seal-form mark and unglazed foot ring" loading="lazy"></a>
+          <figcaption>Fig. 4. Companion vase, base: glazed field with underglaze-blue seal-form mark; unglazed foot ring.</figcaption>
+        </figure>
+        <figure>
+          <a href="images/ro-qing-083-lavender-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-qing-083-lavender-xrf-glaze.jpg" alt="pXRF protocol, Sample ID 12 (vaza lavanda), measurement ID 19 — lavender glaze of the companion vase, 3 November 2026, 30 s" loading="lazy"></a>
+          <figcaption>Fig. 5. pXRF protocol, Sample ID 12 (“vaza lavanda”), measurement ID 19 — lavender glaze, 3 November 2026, 30 s. Click to open full size.</figcaption>
+        </figure>
+      </div>
+
+      <p>Measurement: analyser no. 940487, Geochem 3-Beam Extra mode, 30 s, <em>in situ</em>, one point on the glazed surface of the companion vase (3 November 2026).</p>
+      <table class="xrf-table">
+        <thead><tr><th>Element</th><th class="num">Lavender glaze (ID 19)</th><th class="num">±3σ</th></tr></thead>
+        <tbody>
+          <tr><td>Si, wt.%</td><td class="num">20.35</td><td class="num">0.28</td></tr>
+          <tr><td>Ca, wt.%</td><td class="num">4.162</td><td class="num">0.067</td></tr>
+          <tr><td>Al, wt.%</td><td class="num">2.83</td><td class="num">0.20</td></tr>
+          <tr><td>K, wt.%</td><td class="num">1.270</td><td class="num">0.031</td></tr>
+          <tr><td>S, wt.%</td><td class="num">2.371</td><td class="num">0.052</td></tr>
+          <tr><td><strong>Co, ppm</strong></td><td class="num"><strong>563</strong></td><td class="num">67</td></tr>
+          <tr><td>Mn, ppm</td><td class="num">990</td><td class="num">120</td></tr>
+          <tr><td>Fe, ppm</td><td class="num">3,370</td><td class="num">150</td></tr>
+          <tr><td><strong>Ba, ppm</strong></td><td class="num"><strong>4,220</strong></td><td class="num">140</td></tr>
+          <tr><td>Sr, ppm</td><td class="num">180</td><td class="num">8</td></tr>
+          <tr><td>Rb, ppm</td><td class="num">226</td><td class="num">9</td></tr>
+          <tr><td>Pb, ppm</td><td class="num">803</td><td class="num">29</td></tr>
+        </tbody>
+      </table>
+      <p class="xrf-cap">Values transcribed from the original instrument protocol, 3 November 2026. Also detected: P 280, Cr 270, Ni 73, Cu 32, Zn 13, As 231, Y 41, Zr 34, Nb 14, Mo 10, Sn 52, Ce 170, Hf 40, W 54, Th 27, U 11 ppm; light-element balance 67.85 wt.%. Not detected: Mg (&lt;1.4 wt.%), Sc, Ti (&lt;780), V, Se, Ag, Cd, Sb, La, Pr, Nd.</p>
+
+      <div class="xrf-note"><strong>What the analysis shows.</strong> A silica-rich glaze with calcium as the main flux (Ca 4.162 wt.%) and relatively little aluminium. The lavender tone is attributed to a combined colouring system: <strong>cobalt</strong> (563 ppm) together with <strong>manganese</strong> (990 ppm) and <strong>iron</strong> (3,370 ppm) dispersed in one glassy phase. The most unusual component is <strong>barium</strong> (4,220 ppm), which with calcium and strontium forms a distinctive alkaline-earth group and points to specific mineral raw materials or specialised glaze ingredients. Lead is relatively low (803 ppm). The article interprets the composition as a deliberately adjusted, multi-component monochrome glaze designed for a rare lavender effect.</div>
+
+      <div class="xrf-actions">
+        <a class="xrf-btn primary" href="ro-qing-083-lavender-xrf-study.html">Read the full research article →</a>
+        <!--ZENODO-BTN-->
+        <a class="xrf-btn" href="ro-qing-083-lavender-xrf-protocol.pdf" target="_blank" rel="noopener">Download the XRF protocol (PDF)</a>
+      </div>
+    </section>
+
     <div class="bibliography-block">
       <div class="bibliography-block__title">Bibliography</div>
       <div class="bibliography-block__list">
         <div>Dronova, N. "Что надо знать о старинном китайском фарфоре." Sunlight-supported edition.</div>
         <div>Jingdezhen imperial kiln comparative material, published Qing court collection catalogues.</div>
         <div>General reference literature on Qing monochrome glazes, including clair-de-lune / yuebai wares.</div>
+        <div>Dronova, N. (2026). <em>X-Ray Fluorescence Analysis of a Lavender-Glazed Vase with a Poetic Inscription and Bird Decoration: Chemical Composition of an Experimental Monochrome Glaze.</em> Zenodo. <a href="ro-qing-083-lavender-xrf-study.html">Full text on this site</a>.</div>
       </div>
     </div>
 
@@ -230,6 +295,7 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
           <dt>Glaze</dt><dd>Monochrome Blue (documented as clair-de-lune / yuebai)</dd>
           <dt>Base Mark</dt><dd>Underglaze Blue, Seal Form</dd>
           <dt>Examination</dt><dd>Macro-photography, optical microscopy (device unconfirmed)</dd>
+          <dt>pXRF</dt><dd><a href="#companion-xrf">Same glaze on companion vase</a> — Co · Mn · Fe · Ba (3 Nov 2026)</dd>
         </dl>
       </div>
       <div class="sidebar-author">
@@ -241,6 +307,7 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
       <ul>
         <li data-section="description"><a href="#description">Object Description</a></li>
         <li data-section="microscopy"><a href="#microscopy">Optical Microscopy</a></li>
+        <li data-section="companion-xrf"><a href="#companion-xrf">Companion Vase · pXRF</a></li>
       </ul>
     </nav>
   </aside>
@@ -268,7 +335,7 @@ footer{background:var(--parchment); color:var(--muted2); margin-top:2rem; border
 </footer>
 
 <script>
-const sections = ['description','microscopy'];
+const sections = ['description','microscopy','companion-xrf'];
 const navItems = document.querySelectorAll('#sidebar-nav li[data-section] a');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
