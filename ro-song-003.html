@@ -127,6 +127,15 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
   .footer-inner { grid-template-columns: 1fr; }
   h1 { font-size: 2.2rem; }
 }
+.xrf-wrap { overflow-x:auto; margin:1.25rem 0 .5rem; }
+.xrf-wrap .comparison-table { margin:0; }
+.comparison-table .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.xrf-note { font-size:.8rem; color:var(--muted); font-style:italic; line-height:1.55; margin-bottom:1.25rem; }
+.xrf-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin:1.25rem 0; }
+.xrf-btn { display:inline-block; font-size:.875rem; font-weight:500; padding:.55rem 1rem; border:1px solid var(--border); background:var(--parchment); color:var(--muted2); text-decoration:none; }
+.xrf-btn:hover { border-color:var(--gold); color:var(--ink); }
+.xrf-btn.primary { background:var(--ink); color:var(--stone); border-color:var(--ink); }
+.photo-grid-2.xrf img { aspect-ratio:1/1; object-fit:cover; object-position:top left; background:#fff; }
 </style>
 </head>
 <body>
@@ -173,7 +182,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
   <main class="main-content">
 
     <!-- GENERAL VIEW -->
-    <span class="section-label">Section 1</span>
+    <span class="section-label" id="section-1">Section 1</span>
     <h2>General Views</h2>
     <p>A baluster vase (瓶, píng) of classic Song–Jin profile: a full-bellied ovoid body on a low recessed foot-ring, rising through a constricted waist to a tall neck with a pronounced mid-shaft moulding (collar ring), terminating in a wide everted trumpet mouth. The ivory-white glaze is even and translucent with a soft diffuse sheen. Two decorative registers articulate the body: incised vegetal scrolls on the upper shoulder and a prominent lotus-lappet band on the lower body.</p>
 
@@ -183,7 +192,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     </div>
 
     <!-- DECORATION -->
-    <span class="section-label">Section 2</span>
+    <span class="section-label" id="section-2">Section 2</span>
     <h2>Decoration — Incised Scroll and Lotus-Lappet Band</h2>
     <p>Two canonical Ding ware decorative techniques are present. The upper body carries incised (劃花, huà huā) vegetal scrolls executed with a pointed stylus in fluid, confident single strokes on the leather-hard body — consistent with Song-period workshop practice. The lower body features deeply carved lotus-lappet panels (蓮瓣紋, liánbàn wén), a motif persisting from mid-Northern Song into the Jin period, documented on excavated kiln wasters from the Quyang site. Glaze pools naturally in the incised channels, creating tonal differentiation absent from moulded or transfer-printed decoration.</p>
 
@@ -193,7 +202,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     </div>
 
     <!-- BASE AND FOOT -->
-    <span class="section-label">Section 3</span>
+    <span class="section-label" id="section-3">Section 3</span>
     <h2>Base, Foot-Ring and Mouth</h2>
     <p>The base presents diagnostic features characteristic of authentic Northern Song–Jin Ding ware firing practice. The interior of the foot is glazed; the bearing edge of the foot-ring is left unglazed, showing the characteristic orange-blush oxidation produced by residual Fe₂O₃ in the paste during the cooling phase of high-temperature kiln firing at approximately 1250°C. Concentric wheel-throwing marks are clearly visible on the unglazed surface. The trumpet mouth is fully glazed — consistent with firing on setters or spacers rather than rim-firing, documented in certain Jin and early Yuan workshop contexts.</p>
 
@@ -203,7 +212,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     </div>
 
     <!-- MICROSCOPY -->
-    <span class="section-label">Section 4</span>
+    <span class="section-label" id="section-4">Section 4</span>
     <h2>Gemmological Optical Microscopy</h2>
     <p>Systematic examination was performed using a portable gemmological microscope (10×–40× objectives, reflected and transmitted LED illumination, darkfield capability) with photographic documentation. No surface preparation or sampling was undertaken — examination entirely non-invasive. Six zones were documented: glaze body, base/foot, mouth interior, incised decoration, unglazed foot texture, and glaze microstructure series.</p>
 
@@ -232,7 +241,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     <p>The unglazed foot-ring presents warm beige-to-orange surface colouration from oxidation of residual Fe₂O₃ during the cooling phase. Patchy mineral encrustation — calcium carbonate micro-deposits and siliceous soil adhesions — penetrates micro-fissures in the paste surface, consistent with slow, natural deposition rather than artificial ageing. Modern forgeries typically either omit the orange blush (producing uniformly white foot) or overstate it (brick-red colouration inconsistent with thin body walls).</p>
 
     <!-- COMPARISON TABLE -->
-    <span class="section-label">Section 5</span>
+    <span class="section-label" id="section-5">Section 5</span>
     <h2>Comparative Analysis with Museum Reference Objects</h2>
     <p>Seven diagnostic features compared with authenticated benchmark objects in major museum collections.</p>
 
@@ -293,7 +302,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     <p style="font-size:0.875rem;color:var(--muted);">All seven diagnostic criteria show high concordance with authenticated museum reference objects. No feature observed is inconsistent with the reference corpus.</p>
 
     <!-- DIAGNOSTIC FEATURES -->
-    <span class="section-label">Section 6</span>
+    <span class="section-label" id="section-6">Section 6</span>
     <h2>Diagnostic Features Present</h2>
     <ul class="feature-list">
       <li><span class="feature-marker"></span><span class="feature-name">Ivory-white glaze · 象牙白</span><span class="feature-desc">Warm cream tone; soft diffuse sheen; partially vitrified microcrystalline matrix; anorthite crystallisation during controlled cooling of high-lime glaze</span></li>
@@ -308,7 +317,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     </ul>
 
     <!-- ATTRIBUTION -->
-    <span class="section-label">Section 7</span>
+    <span class="section-label" id="section-7">Section 7</span>
     <h2>Attribution and Dating</h2>
     <p>The combined GOM evidence constitutes a coherent and consistent picture of a genuine high-temperature Song–Jin period white-bodied ceramic from the northern Ding tradition. No features indicative of modern manufacture were identified. A <strong>preliminary positive authenticity assessment</strong> is indicated.</p>
     <p>Based on morphological criteria — baluster form with everted trumpet rim, lotus-lappet band with internal incised fan markings, free-scrolling vegetal decoration — the vase is most plausibly dated to <strong>ca. 1100–1250 CE</strong>, spanning late Northern Song, the Jin dynasty, and the very early Yuan period. This range coincides with documentation of comparable objects at the Metropolitan Museum of Art (Accession 1975.268.140).</p>
@@ -319,13 +328,72 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
       <p><strong>UV fluorescence:</strong> to resolve whether the base crack is a firing crack (period-authentic kiln defect) or a post-manufacture stress fracture.</p>
     </div>
 
+    <!-- pXRF -->
+    <span class="section-label" id="section-8">Section 8</span>
+    <h2>X-Ray Fluorescence Analysis (pXRF, 2026)</h2>
+    <p>On 3 November 2026 the vase was analysed non-destructively by portable X-ray fluorescence (analyser no. 940487, Geochem 3-Beam Extra mode, 30 s per point, <em>in situ</em>) — the elemental fingerprinting recommended in Section 7. In the measurement series it is <strong>Sample ID 5</strong> (“vaza bel”, white vase). Two points were measured: <strong>ID 8</strong> on the glazed outer surface and <strong>ID 9</strong> on the unglazed foot ring. The results are set out in the research article by Professor Nona Dronova (<a href="ro-song-003-xrf-study.html" style="color:var(--gold)">full text</a>).</p>
+
+    <div class="xrf-wrap">
+    <table class="comparison-table">
+      <thead><tr><th>Element</th><th class="num">Glaze (ID 8)</th><th class="num">±3σ</th><th class="num">Foot ring (ID 9)</th><th class="num">±3σ</th></tr></thead>
+      <tbody>
+        <tr><td>Si, wt.%</td><td class="num">36.98</td><td class="num">0.36</td><td class="num">22.97</td><td class="num">0.27</td></tr>
+        <tr><td>Al, wt.%</td><td class="num">7.56</td><td class="num">0.20</td><td class="num"><strong>10.74</strong></td><td class="num">0.28</td></tr>
+        <tr><td>Ca, wt.%</td><td class="num"><strong>4.431</strong></td><td class="num">0.058</td><td class="num">0.861</td><td class="num">0.020</td></tr>
+        <tr><td>Mg, wt.%</td><td class="num"><strong>3.42</strong></td><td class="num">0.54</td><td class="num">ND (&lt;1.3)</td><td class="num">—</td></tr>
+        <tr><td>K, wt.%</td><td class="num">1.461</td><td class="num">0.027</td><td class="num">1.768</td><td class="num">0.035</td></tr>
+        <tr><td>Fe, ppm</td><td class="num">6,320</td><td class="num">160</td><td class="num">6,530</td><td class="num">190</td></tr>
+        <tr><td>Ti, ppm</td><td class="num">2,140</td><td class="num">430</td><td class="num"><strong>4,340</strong></td><td class="num">580</td></tr>
+        <tr><td>Mn, ppm</td><td class="num">118</td><td class="num">47</td><td class="num">179</td><td class="num">59</td></tr>
+        <tr><td>Rb, ppm</td><td class="num">62</td><td class="num">4</td><td class="num">65</td><td class="num">5</td></tr>
+        <tr><td>Sr, ppm</td><td class="num">147</td><td class="num">5</td><td class="num">138</td><td class="num">6</td></tr>
+        <tr><td>Y, ppm</td><td class="num">25</td><td class="num">4</td><td class="num">25</td><td class="num">5</td></tr>
+        <tr><td>Zr, ppm</td><td class="num">252</td><td class="num">7</td><td class="num">298</td><td class="num">9</td></tr>
+        <tr><td>Nb, ppm</td><td class="num">16</td><td class="num">4</td><td class="num">22</td><td class="num">5</td></tr>
+        <tr><td>Ba, ppm</td><td class="num">286</td><td class="num">72</td><td class="num">118</td><td class="num">52</td></tr>
+        <tr><td><strong>Pb, ppm</strong></td><td class="num">35</td><td class="num">6</td><td class="num">54</td><td class="num">8</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="xrf-note">Values transcribed from the original instrument protocols, 3 November 2026 (Ca in the foot ring reported as 8,610 ppm). Also detected — glaze: P 210, S 670, Ni 17, Cu 56, Zn 37, Mo 11, La 130, Ce 230, Hf 12, W 27, Th 14, U 5 ppm, light-element balance 45.06 wt.%; foot ring: P 430, S 1,550, Ni 25, Zn 33, Mo 16, Ce 140, Hf 26, Th 43, U 9 ppm, light-element balance 62.26 wt.%. Not detected in either reading: V, Cr, Co, As, Se, Cd, Sn, Sb. ND = not detected (detection limit in brackets).</p>
+
+    <div class="concept-box">
+      <div class="concept-box-title">What the analysis shows</div>
+      <p><strong>A calcium–magnesium glaze.</strong> The glaze is a silica-rich glass fluxed by calcium (4.431 wt.%, CaO eq. ≈ 6.2) together with magnesium (3.42 wt.%, MgO eq. ≈ 5.7) — the calcium–magnesium silicate system characteristic of traditional Ding white ware. Calcium in the glaze is more than five times that of the body.</p>
+      <p><strong>An aluminous, titanium-bearing body.</strong> The unglazed foot ring is richer in aluminium (10.74 wt.%) and titanium (4,340 ppm, about twice the glaze) and much poorer in calcium — a refractory aluminosilicate body distinct from the glassy glaze.</p>
+      <p><strong>Leadless high-fired technology.</strong> Lead is only 35 ppm in the glaze and 54 ppm in the body — trace levels, fundamentally different from low-fired lead-glazed wares. No cobalt, chromium, vanadium, tin or antimony was detected.</p>
+      <p><strong>Limits.</strong> Two single surface readings with a geochemical calibration. At ID 9 the light-element balance (62%) and the aiming image indicate incomplete contact on the rough foot ring, so absolute body values are approximate; Mg in the body is below a high detection limit (&lt;1.3 wt.%), not necessarily absent.</p>
+    </div>
+
+    <div class="photo-grid-2 xrf">
+      <div class="photo-item">
+        <a href="images/ro-song-003-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-003-xrf-glaze.jpg" alt="pXRF protocol, Sample ID 5 (vaza bel), measurement ID 8 — glazed surface of the Ding-type vase RO-SONG-003, 3 November 2026, 30 s" loading="lazy"></a>
+        <div class="fig-caption"><strong>Fig. 5.</strong> pXRF protocol, measurement ID 8 — ivory-white glaze, 3 November 2026, 30 s. Click to open full size.</div>
+      </div>
+      <div class="photo-item">
+        <a href="images/ro-song-003-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-song-003-xrf-base.jpg" alt="pXRF protocol, Sample ID 5 (vaza bel niz), measurement ID 9 — unglazed foot ring of the Ding-type vase RO-SONG-003, 3 November 2026, 30 s" loading="lazy"></a>
+        <div class="fig-caption"><strong>Fig. 6.</strong> pXRF protocol, measurement ID 9 — unglazed foot ring (body), 3 November 2026, 30 s. Click to open full size.</div>
+      </div>
+    </div>
+
+    <div class="xrf-actions">
+      <a class="xrf-btn primary" href="ro-song-003-xrf-study.html">Read the full research article →</a>
+      <!--ZENODO-BTN-->
+      <a class="xrf-btn" href="ro-song-003-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
+    </div>
+
     <!-- PUBLICATIONS -->
-    <span class="section-label">Section 8</span>
+    <span class="section-label" id="section-9">Section 9</span>
     <h2>Scientific Publication</h2>
     <div class="pub-card">
       <div class="pub-card-id">Primary Reference</div>
       <div class="pub-card-title">Gemmological Optical Microscopy as a Diagnostic Tool for Authentication of Chinese Ding-Ware Porcelain: A Case Study of a White Baluster Vase with Incised Floral Scroll and Lotus-Lappet Band (12th–13th Century)</div>
       <div class="pub-card-doi">Dronova N.N. · Zenodo Preprint · Submitted June 2026</div>
+    </div>
+    <div class="pub-card">
+      <div class="pub-card-id">pXRF Study · 2026</div>
+      <div class="pub-card-title"><a href="ro-song-003-xrf-study.html" style="color:inherit">X-Ray Fluorescence Analysis of a White Ding-Type Vase (定窯): Glaze and Body Composition in the Context of Twelfth-Century Northern Chinese Porcelain Technology</a></div>
+      <div class="pub-card-doi">Dronova N. · Zenodo · 2026 · DOI to be added</div>
     </div>
     <div class="pub-card">
       <div class="pub-card-id">Methodological Foundation</div>
@@ -334,7 +402,7 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
     </div>
 
     <!-- REFERENCES -->
-    <span class="section-label">Section 9</span>
+    <span class="section-label" id="section-10">Section 10</span>
     <h2>References</h2>
     <ul class="ref-list">
       <li><span class="ref-id">[1]</span><span>Vainker S.J. (1991). <em>Chinese Pottery and Porcelain.</em> British Museum Press. pp. 88–102.</span></li>
@@ -381,12 +449,13 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
       <div class="data-row"><span class="data-label">Mineral dep.</span><span class="data-value">CaCO₃ / SiO₂ · natural</span></div>
       <div class="data-row"><span class="data-label">Decoration</span><span class="data-value">Single-stroke stylus · Song manner</span></div>
       <div class="data-row"><span class="data-label">Modern signs</span><span class="data-value">None identified</span></div>
-      <div class="data-row"><span class="data-label">Method</span><span class="data-value">GOM · non-destructive</span></div>
+      <div class="data-row"><span class="data-label">Method</span><span class="data-value">GOM · pXRF · non-destructive</span></div>
+      <div class="data-row"><span class="data-label">pXRF</span><span class="data-value">Ca–Mg glaze · Al/Ti body · Pb trace</span></div>
     </div>
 
     <div class="sidebar-card">
       <div class="sidebar-card-title">Recommended Confirmation</div>
-      <div class="data-row"><span class="data-label">pXRF</span><span class="data-value">Elemental fingerprinting</span></div>
+      <div class="data-row"><span class="data-label">pXRF</span><span class="data-value"><a href="#section-8" style="color:var(--gold);text-decoration:none;">Done — 3 Nov 2026</a></span></div>
       <div class="data-row"><span class="data-label">TL / OSL</span><span class="data-value">Independent dating</span></div>
       <div class="data-row"><span class="data-label">UV fluor.</span><span class="data-value">Base crack assessment</span></div>
     </div>
@@ -408,8 +477,9 @@ footer { background: var(--parchment2); border-top: 1px solid var(--border); pad
         <li><a href="#section-5">5. Museum Comparison</a></li>
         <li><a href="#section-6">6. Diagnostic Features</a></li>
         <li><a href="#section-7">7. Attribution</a></li>
-        <li><a href="#section-8">8. Publications</a></li>
-        <li><a href="#section-9">9. References</a></li>
+        <li><a href="#section-8">8. pXRF Analysis</a></li>
+        <li><a href="#section-9">9. Publications</a></li>
+        <li><a href="#section-10">10. References</a></li>
       </ul>
     </div>
 

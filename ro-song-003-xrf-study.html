@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pXRF Study of the White Ding-Type Vase — ro-song-003 — Atlas of Chinese Porcelain Diagnostics</title>
+  <meta name="description" content="Research article by Professor Nona Dronova: portable XRF (3 November 2026) of the glaze and body of a carved white Ding-type vase — calcium–magnesium glaze, aluminous body, leadless technology." />
+  <meta name="author" content="Nona Dronova" />
+  <meta name="citation_title" content="X-Ray Fluorescence Analysis of a White Ding-Type Vase (定窯): Glaze and Body Composition in the Context of Twelfth-Century Northern Chinese Porcelain Technology" />
+  <meta name="citation_author" content="Dronova, Nona" />
+  <meta name="citation_publication_date" content="2026/11" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#1a1410;--stone:#f7f4ef;--parchment:#ede8df;--parchment2:#e4ddd1;
+      --gold:#b8860b;--gold-lt:#d4a843;--ru-blue:#7a9bab;--border:#ccc4b4;--border2:#ddd7cc;
+      --muted:#6b6255;--muted2:#3a342c;
+      --font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif;
+      --max-width:1100px;--gutter:2rem;--transition:0.2s ease;
+      --space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;
+      --space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--space-4xl:6rem;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{background:var(--stone);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;animation:fadeIn .3s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    .navbar{background:var(--stone);border-bottom:1px solid var(--border);height:56px;position:sticky;top:0;z-index:100}
+    .navbar-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:100%}
+    .navbar-logo{font-family:var(--font-heading);font-size:1rem;font-weight:400;letter-spacing:.06em}
+    .navbar-links{display:flex;gap:var(--space-xl)}
+    .navbar-links a{font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.05em;color:var(--muted);transition:color var(--transition)}
+    .navbar-links a:hover,.navbar-links a.active{color:var(--ink)}
+
+    .breadcrumb-wrap{border-bottom:1px solid var(--border2)}
+    .breadcrumb{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-sm);height:40px;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);transition:color var(--transition)}
+    .breadcrumb a:hover{color:var(--ink)}
+    .breadcrumb-sep{color:var(--border);font-size:.65rem}
+    .breadcrumb-current{color:var(--ink);font-weight:500}
+
+    .page-wrapper{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+    .layout-article{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding-top:var(--space-3xl);padding-bottom:var(--space-4xl)}
+    .col-main{min-width:0}
+    .col-sidebar{position:sticky;top:calc(56px + var(--space-xl))}
+
+    .object-id{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .object-id span{color:var(--gold)}
+    h1{font-family:var(--font-heading);font-size:2.4rem;font-weight:300;line-height:1.2;letter-spacing:.01em;color:var(--ink);margin-bottom:var(--space-sm)}
+    .object-subtitle{font-family:var(--font-heading);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:var(--space-2xl)}
+    .header-rule{border:none;border-top:1px solid var(--border);margin-bottom:var(--space-xl)}
+
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-xl)}
+    .tag{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment);border:1px solid var(--border2);padding:.2rem .6rem}
+
+    .hero-figure{margin-bottom:var(--space-2xl)}
+    .hero-figure img{width:100%;border:1px solid var(--border2)}
+    .figure{margin:var(--space-2xl) 0}
+    .figure img{width:100%;border:1px solid var(--border2)}
+    .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin:var(--space-2xl) 0}
+    .figure-caption{font-family:var(--font-body);font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border2)}
+    .figure-number{font-style:normal;font-weight:600;color:var(--muted2)}
+
+    h2{font-family:var(--font-heading);font-size:1.7rem;font-weight:400;line-height:1.3;color:var(--ink);margin-top:var(--space-3xl);margin-bottom:var(--space-md);padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:600;line-height:1.4;color:var(--muted2);margin-top:var(--space-xl);margin-bottom:var(--space-sm)}
+
+    .col-main p{font-family:var(--font-body);font-size:.9375rem;font-weight:400;line-height:1.75;color:var(--ink);margin-bottom:var(--space-md);max-width:68ch}
+
+    .micro-block{background:var(--parchment);border:1px solid var(--border);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .micro-header{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .micro-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+    .micro-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .micro-item{display:flex;flex-direction:column}
+    .micro-mag{display:inline-block;font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);background:var(--ink);padding:.2rem .5rem;align-self:flex-start;margin-bottom:-1px}
+    .micro-image{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--border2)}
+    .micro-image-tall{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2)}
+    .micro-caption{font-family:var(--font-body);font-size:.75rem;font-style:italic;color:var(--muted);line-height:1.5;margin-top:.4rem}
+
+    .note{border-left:3px solid var(--gold);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+    .note-ru{border-left:3px solid var(--ru-blue);background:var(--parchment);padding:var(--space-lg);margin:var(--space-xl) 0;font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink)}
+
+    .table-wrapper{overflow-x:auto;margin:var(--space-xl) 0;border:1px solid var(--border)}
+    .sci-table{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:.875rem}
+    .sci-table thead th{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--parchment2);padding:.75rem var(--space-md);border-bottom:2px solid var(--border);text-align:left;white-space:nowrap}
+    .sci-table tbody td{padding:.65rem var(--space-md);border-bottom:1px solid var(--border2);color:var(--ink);line-height:1.5;vertical-align:top}
+    .sci-table tbody tr:nth-child(even) td{background:var(--stone)}
+    .sci-table tbody tr:last-child td{border-bottom:none}
+    .sci-table tbody tr{transition:background var(--transition)}
+    .sci-table tbody tr:hover td{background:var(--parchment)}
+
+    .diagnostic-checklist{border:1px solid var(--border);background:var(--parchment);padding:var(--space-lg);margin:var(--space-2xl) 0}
+    .diagnostic-checklist-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .diagnostic-item{display:flex;align-items:baseline;gap:var(--space-sm);font-family:var(--font-body);font-size:.875rem;color:var(--ink);padding:.4rem 0;border-bottom:1px solid var(--border2)}
+    .diagnostic-item:last-of-type{border-bottom:none}
+    .diagnostic-item::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+    .diagnostic-confidence{margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .confidence-value{color:var(--ink)}
+
+    .crossref-block{border:1px solid var(--border2);background:var(--stone);padding:var(--space-lg);margin:var(--space-md) 0}
+    .crossref-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .crossref-list{display:flex;flex-wrap:wrap;gap:var(--space-sm)}
+    .crossref-link{font-family:var(--font-body);font-size:.8125rem;color:var(--muted2);border:1px solid var(--border2);padding:.3rem .75rem;background:var(--parchment);transition:border-color var(--transition),color var(--transition)}
+    .crossref-link:hover{border-color:var(--border);color:var(--ink)}
+
+    .bibliography{border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-3xl)}
+    .bibliography-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-lg)}
+    .biblio-entry{font-family:var(--font-body);font-size:.875rem;line-height:1.7;color:var(--ink);padding-left:2rem;text-indent:-2rem;margin-bottom:var(--space-md)}
+
+    .pagination{display:flex;align-items:center;justify-content:space-between;padding:var(--space-xl) 0;border-top:1px solid var(--border);margin-top:var(--space-3xl)}
+    .pagination-link{color:var(--muted);display:flex;flex-direction:column;gap:.2rem;transition:color var(--transition);max-width:45%}
+    .pagination-link:hover{color:var(--ink)}
+    .pagination-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .pagination-title{font-family:var(--font-heading);font-size:1rem;color:var(--ink)}
+    .pagination-link.next{text-align:right}
+
+    .sidebar-meta{border:1px solid var(--border2);background:var(--parchment);padding:var(--space-lg);margin-bottom:var(--space-xl)}
+    .sidebar-meta-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md);padding-bottom:var(--space-sm);border-bottom:1px solid var(--border2)}
+    .meta-row{display:flex;flex-direction:column;gap:.2rem;padding:.6rem 0;border-bottom:1px solid var(--border2)}
+    .meta-row:last-child{border-bottom:none}
+    .meta-label{font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .meta-value{font-family:var(--font-body);font-size:.875rem;color:var(--ink);line-height:1.4}
+    .meta-value a{color:var(--muted2);text-decoration:underline;text-underline-offset:3px;transition:color var(--transition)}
+    .meta-value a:hover{color:var(--ink)}
+    .sidebar-nav-title{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .sidebar-nav ul{border-left:1px solid var(--border)}
+    .sidebar-nav li a{display:block;font-family:var(--font-body);font-size:.8125rem;color:var(--muted);padding:.35rem 0 .35rem var(--space-md);border-left:2px solid transparent;margin-left:-1px;transition:color var(--transition),border-color var(--transition)}
+    .sidebar-nav li a:hover,.sidebar-nav li a.active{color:var(--ink);border-left-color:var(--gold)}
+
+    .footer{background:var(--parchment2);border-top:1px solid var(--border);padding:var(--space-3xl) 0}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-3xl)}
+    .footer-label{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--space-md)}
+    .footer-links{display:flex;flex-direction:column;gap:var(--space-sm)}
+    .footer-links a{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);transition:color var(--transition)}
+    .footer-links a:hover{color:var(--ink)}
+    .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-copy{max-width:var(--max-width);margin:var(--space-2xl) auto 0;padding:var(--space-lg) var(--gutter) 0;border-top:1px solid var(--border2);font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+
+    @media(max-width:1099px){
+      .layout-article{grid-template-columns:1fr}
+      .col-sidebar{position:static;border-top:1px solid var(--border);padding-top:var(--space-xl);margin-top:var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl)}
+      .micro-grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:767px){
+      :root{--gutter:1.25rem}
+      h1{font-size:1.75rem}h2{font-size:1.35rem}
+      .micro-grid-2,.micro-grid-3,.figure-row,.col-sidebar{grid-template-columns:1fr}
+      .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+      .navbar-links{display:none}
+    }
+
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
+    .xrf-protocols.xrf-one{grid-template-columns:minmax(0,420px)}
+    .col-main a.uri{overflow-wrap:anywhere;word-break:break-all;color:var(--muted2);text-decoration:underline}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">Atlas of Chinese Porcelain Diagnostics</a>
+    <ul class="navbar-links">
+      <li><a href="reference-collection.html" class="active">Reference Objects</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="author-profile.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb-wrap">
+  <nav class="breadcrumb">
+    <a href="reference-collection.html">Reference Objects</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="ro-song-003.html">RO-SONG-003 — White Ding-Type Vase</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">pXRF Research Article</span>
+  </nav>
+</div>
+<div class="page-wrapper">
+  <div class="layout-article">
+    <main class="col-main" id="main-content">
+      <p class="object-id">Research Article &middot; Reference Object <span>ro-song-003</span></p>
+      <h1>X-Ray Fluorescence Analysis of a White Ding-Type Vase (定窯): Glaze and Body Composition in the Context of Twelfth-Century Northern Chinese Porcelain Technology</h1>
+      <p class="object-subtitle">Nona Dronova &mdash; Zenodo, 2026 &mdash; Northern Song–Jin Ding White Ware &middot; pXRF</p>
+      <hr class="header-rule" />
+      <div class="xrf-actions">
+        <a class="xrf-btn" href="ro-song-003.html">&larr; Back to the Atlas entry RO-SONG-003</a>
+        <!--ZENODO-BTN-->
+        <a class="xrf-btn primary" href="ro-song-003-xrf-protocols.pdf" target="_blank" rel="noopener">XRF protocols (PDF)</a>
+      </div>
+<h2 id="abstract">Abstract</h2>
+<p>This article presents the results of portable X-ray fluorescence (pXRF) analysis of a carved white Ding-type vase from a private research collection of Chinese ceramics. The investigation was carried out on two areas of the vessel: the glazed outer surface and the unglazed base.</p>
+<p>The results reveal a clear chemical distinction between the glaze and the ceramic body. The glazed surface is characterised by elevated concentrations of calcium (4.431 wt% Ca), magnesium (3.42 wt% Mg) and silicon (36.98 wt% Si), whereas the unglazed base shows higher concentrations of aluminium (10.74 wt% Al) and titanium (4340 ppm Ti).</p>
+<p>Both analysed areas show extremely low lead concentrations (35 ppm and 54 ppm respectively), confirming the use of a leadless high-temperature ceramic technology.</p>
+<p>The glaze composition corresponds to the calcium–magnesium silicate system characteristic of traditional white Ding ware. The analytical data are consistent with published archaeometric studies of Ding kiln ceramics and demonstrate the technological features of high-fired porcelain production in northern China.</p>
+<p><strong>Keywords:</strong> Ding ware; Dingyao; Northern Song dynasty; Jin dynasty; Chinese porcelain; X-ray fluorescence analysis; archaeometry; ceramic technology; calcium glaze; white ware.</p>
+
+<h2 id="introduction">1. Introduction</h2>
+<p>Ding porcelain (定窯) represents one of the most important achievements of Chinese ceramic production during the Northern Song and Jin periods. Produced in the Dingzhou area of Hebei province, Ding ware is renowned for its refined white body, elegant ivory-toned glaze and delicate carved decoration.</p>
+<p>Among the most characteristic decorative motifs of Ding ware are lotus petals, peonies and finely executed foliate scrolls, carved before glazing. The technical perfection of these wares reflects a highly developed ceramic tradition based on carefully selected raw materials and controlled high-temperature firing.</p>
+<p>Recent archaeometric studies have demonstrated the importance of compositional analysis for understanding the technological basis of Ding production, in particular the relationship between the chemical composition of the glaze and that of the ceramic body.</p>
+<p>The present study examines the chemical composition of a carved white vase with lotus decoration by portable X-ray fluorescence spectroscopy in order to characterise the glaze and body materials and to document the technological features of the vessel.</p>
+
+<h2 id="object">2. Description of the Object</h2>
+<p>The vessel is registered in the research archive under the inventory number <strong>SS-DING-VAS-005-SN</strong>.</p>
+<p>The vase has the following morphological characteristics:</p>
+<ul>
+<li>a globular body;</li>
+<li>a tall flaring neck;</li>
+<li>two raised horizontal rings;</li>
+<li>deeply carved foliate-scroll decoration;</li>
+<li>a lower frieze of large lotus petals.</li>
+</ul>
+<p>The decorative motifs were executed before glazing and remain clearly visible beneath the glaze.</p>
+<p>The surface is covered with a creamy-white glaze of warm ivory tone. Slight variations in colour intensity are observed in the recesses of the decoration, corresponding to local variations in glaze thickness.</p>
+<p>The base consists of an unglazed foot ring exposing a light beige ceramic body.</p>
+<p>The overall morphology corresponds closely to the classic tradition of white Ding ware produced in the twelfth century.</p>
+
+<h2 id="materials-and-methods">3. Materials and Methods</h2>
+<p>The vessel was analysed by portable X-ray fluorescence spectroscopy (pXRF) in Geochem (3-Beam) Extra mode.</p>
+<div class="table-wrapper"><table class="sci-table">
+<thead><tr><th>Parameter</th><th class="num">Recorded value</th></tr></thead>
+<tbody>
+<tr><td>Instrument serial number</td><td class="num">940487</td></tr>
+<tr><td>Analytical mode</td><td class="num">Geochem (3-Beam) Extra</td></tr>
+<tr><td>Date</td><td class="num">3 November 2026</td></tr>
+<tr><td>Acquisition time</td><td class="num">30 seconds per point</td></tr>
+<tr><td>Sample ID</td><td class="num">5</td></tr>
+<tr><td>Measurement No. 8 (“white vase”)</td><td class="num">Glazed outer surface (14:02:00)</td></tr>
+<tr><td>Measurement No. 9 (“white vase, base”)</td><td class="num">Unglazed foot ring, ceramic body (14:02:59)</td></tr>
+<tr><td>Measurement type</td><td class="num">In situ, non-destructive</td></tr>
+</tbody>
+</table></div>
+<p>Two analytical points were examined:</p>
+<ul>
+<li><strong>Measurement No.&nbsp;8</strong> (“white vase”) &mdash; glazed outer surface of the vessel.</li>
+<li><strong>Measurement No.&nbsp;9</strong> (“white vase, base”) &mdash; unglazed foot ring, representing the ceramic body.</li>
+</ul>
+<p>Concentrations are reported in weight per cent and parts per million (ppm).</p>
+
+<h2 id="results">4. Results</h2>
+<p><strong>Table 1. Composition of the principal elements.</strong></p>
+<div class="table-wrapper"><table class="sci-table">
+<thead><tr><th>Element</th><th class="num">Glazed surface</th><th class="num">Unglazed base</th></tr></thead>
+<tbody>
+<tr><td>Si</td><td class="num">36.98%</td><td class="num">22.97%</td></tr>
+<tr><td>Al</td><td class="num">7.56%</td><td class="num">10.74%</td></tr>
+<tr><td>Ca</td><td class="num">4.431%</td><td class="num">0.861%</td></tr>
+<tr><td>K</td><td class="num">1.461%</td><td class="num">1.768%</td></tr>
+<tr><td>Mg</td><td class="num">3.42%</td><td class="num">ND</td></tr>
+<tr><td>Fe</td><td class="num">6320 ppm</td><td class="num">6530 ppm</td></tr>
+<tr><td>Ti</td><td class="num">2140 ppm</td><td class="num">4340 ppm</td></tr>
+<tr><td>Rb</td><td class="num">62 ppm</td><td class="num">65 ppm</td></tr>
+<tr><td>Sr</td><td class="num">147 ppm</td><td class="num">138 ppm</td></tr>
+<tr><td>Zr</td><td class="num">252 ppm</td><td class="num">298 ppm</td></tr>
+<tr><td>Pb</td><td class="num">35 ppm</td><td class="num">54 ppm</td></tr>
+</tbody>
+</table></div>
+<p>The results demonstrate a pronounced chemical contrast between the glaze and the ceramic body.</p>
+<p>The most marked difference is in the calcium concentration, which in the glazed area is more than five times higher than in the ceramic body.</p>
+
+<h2 id="glaze">5. Composition of the Glaze</h2>
+<p>The glazed surface is characterised by the following element concentrations:</p>
+<ul>
+<li>Si = 36.98%;</li>
+<li>Ca = 4.431%;</li>
+<li>Mg = 3.42%;</li>
+<li>K = 1.461%.</li>
+</ul>
+<p>This combination indicates a calcium–magnesium silicate glaze formed under high-temperature firing conditions.</p>
+<p>The simultaneous presence of calcium and magnesium as the principal fluxing agents of the glaze system is of particular significance. These components play an important role in promoting vitrification and the formation of a transparent glassy surface.</p>
+<p>The high silicon concentration reflects the predominance of the silicate glassy phase responsible for the characteristic appearance of the glaze.</p>
+
+<h2 id="body">6. Composition of the Ceramic Body</h2>
+<p>The unglazed base shows higher concentrations of aluminium and titanium than the glaze.</p>
+<p>Principal values:</p>
+<ul>
+<li>Al = 10.74%;</li>
+<li>Ti = 4340 ppm;</li>
+<li>Fe = 6530 ppm.</li>
+</ul>
+<p>Compared with the glaze, the ceramic body contains:</p>
+<ul>
+<li>higher concentrations of aluminium;</li>
+<li>higher concentrations of titanium;</li>
+<li>considerably lower concentrations of calcium.</li>
+</ul>
+<p>This distribution of elements reflects the technological distinction between the refractory ceramic body and the glassy glaze layer.</p>
+
+<h2 id="leadless">7. Leadless Ceramic Technology</h2>
+<p>One of the most significant results of the investigation is the extremely low lead concentration.</p>
+<p>Measured values:</p>
+<ul>
+<li>lead in the glaze: 35 ppm;</li>
+<li>lead in the ceramic body: 54 ppm.</li>
+</ul>
+<p>These concentrations are trace values and differ fundamentally from those of low-temperature lead-glazed ceramics.</p>
+<p>The data demonstrate the use of a leadless high-temperature porcelain technology.</p>
+
+<h2 id="interpretation">8. Technological Interpretation</h2>
+<p>The analytical data indicate a coherent ceramic technology comprising:</p>
+<ol>
+<li>A silica-enriched glaze.</li>
+<li>Calcium-based fluxes.</li>
+<li>Magnesium-bearing glaze components.</li>
+<li>An aluminosilicate ceramic body.</li>
+<li>A leadless glaze technology.</li>
+<li>High-temperature firing.</li>
+</ol>
+<p>The chemical separation between glaze and body indicates the deliberate use of technologically different materials in the manufacturing process.</p>
+<p>Particular attention should be paid to the lower titanium concentration in the glaze compared with the ceramic body, reflecting the selective enrichment and depletion of elements characteristic of high-quality porcelain production.</p>
+
+<h2 id="comparison">9. Comparison with Published Archaeometric Studies</h2>
+<p>The analytical characteristics observed in the vase correspond closely to the technological features documented in archaeometric studies of Ding ware:</p>
+<ul>
+<li>a calcium-rich glaze chemistry;</li>
+<li>the presence of magnesium as an important fluxing component;</li>
+<li>a lower titanium concentration in the glaze than in the body;</li>
+<li>a leadless high-temperature firing technology;</li>
+<li>a clear compositional distinction between glaze and ceramic body.</li>
+</ul>
+<p>The simultaneous presence of calcium and magnesium is of particular significance and corresponds to the compositional characteristics documented for historical northern Chinese white porcelain.</p>
+<p>The morphological features of the vase — the carved lotus decoration, the raised rings on the neck, the globular body and the ivory-toned glaze — are fully consistent with the technological profile established by X-ray fluorescence analysis.</p>
+
+<h2 id="conclusions">10. Conclusion</h2>
+<p>Portable X-ray fluorescence analysis of the carved white Ding-type vase SS-DING-VAS-005-SN established the following technological characteristics:</p>
+<ul>
+<li>The glaze contains elevated concentrations of calcium (4.431 wt%) and magnesium (3.42 wt%), forming a calcium–magnesium silicate glaze system.</li>
+<li>The ceramic body contains higher concentrations of aluminium (10.74 wt%) and titanium (4340 ppm).</li>
+<li>The calcium concentration in the glaze is more than five times that in the ceramic body.</li>
+<li>Lead is present only in trace amounts, confirming the use of a leadless high-temperature firing technology.</li>
+<li>The distribution of major and trace elements corresponds to the technological characteristics of traditional Ding ware production.</li>
+</ul>
+<p><strong>General conclusion.</strong> The X-ray fluorescence data demonstrate a technologically integrated ceramic system consisting of a calcium–magnesium silicate glaze, an aluminosilicate porcelain body and a leadless high-temperature firing technology. The results provide a comprehensive archaeometric characterisation of the vase and document the principal technological features of the Ding ceramic tradition.</p>
+
+<h2 id="original-pxrf-protocols">Original pXRF Protocols</h2>
+<div class="micro-block">
+  <p class="micro-header">Portable XRF analyser, serial no. 940487 &mdash; 3 November 2026</p>
+  <div class="xrf-protocols">
+    <div class="micro-item">
+      <span class="micro-mag">No. 8 &middot; Glaze</span>
+      <a href="images/ro-song-003-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-003-xrf-glaze.jpg" alt="pXRF protocol, measurement ID 8 — glazed surface of the Ding-type vase, 3 November 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Fig. 1.</span> Measurement No.&nbsp;8 &mdash; glazed outer surface. Click to open full size.</p>
+    </div>
+    <div class="micro-item">
+      <span class="micro-mag">No. 9 &middot; Foot ring</span>
+      <a href="images/ro-song-003-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-song-003-xrf-base.jpg" alt="pXRF protocol, measurement ID 9 — unglazed foot ring of the Ding-type vase, 3 November 2026" loading="lazy" /></a>
+      <p class="micro-caption"><span class="figure-number">Fig. 2.</span> Measurement No.&nbsp;9 &mdash; unglazed foot ring (ceramic body). Click to open full size.</p>
+    </div>
+  </div>
+</div>
+
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p>Cui, J., Wood, N., Qin, D., et al. (2012). Chemical analysis of white porcelains from the Ding Kiln site, Hebei Province, China. <em>Journal of Archaeological Science</em>, 39(4), 818–827.</p></li>
+<li><p>Cui, J., Qin, D., Li, X., Zhou, L. (2012). Chemical analysis and comparative study of white porcelain fragments from the Ding, Xing and Gongyi kiln sites. <em>Sciences of Conservation and Archaeology</em>, 24(4).</p></li>
+<li><p>Kingery, W. D., Vandiver, P. B., Prickett, M. (1988). The beginnings of pyrotechnology, Part II: production and use of lime and gypsum plaster in the Pre-Pottery Neolithic Near East. <em>Journal of Field Archaeology</em>.</p></li>
+<li><p>National Palace Museum, Taipei. <em>Decorated Dingzhou Porcelain: Ding White Wares in the Collection of the National Palace Museum</em>. Taipei.</p></li>
+<li><p>The Metropolitan Museum of Art. Bottle vase, Ding ware, Northern Song dynasty. Accession no. 1991.253.14.</p></li>
+<li><p>Christie's. A very rare Ding white-glazed vase with foliate rim, Song dynasty (960–1279).</p></li>
+<li><p>Sacke auction. A rare carved Dingyao vase with lotus rim (huakouping), Northern Song–Jin dynasty.</p></li>
+</ol>
+
+<h2 id="suggested-citation">Suggested Citation</h2>
+<p>Dronova, N. (2026). <em>X-Ray Fluorescence Analysis of a White Ding-Type Vase (定窯): Glaze and Body Composition in the Context of Twelfth-Century Northern Chinese Porcelain Technology</em>. Zenodo.</p>
+
+      <nav class="pagination">
+        <a href="ro-song-003.html" class="pagination-link prev">
+          <span class="pagination-label">&larr; Atlas entry</span>
+          <span class="pagination-title">RO-SONG-003 — White Ding-Type Vase</span>
+        </a>
+        <a href="publications.html" class="pagination-link next">
+          <span class="pagination-label">Publications &rarr;</span>
+          <span class="pagination-title">Index of research articles</span>
+        </a>
+      </nav>
+    </main>
+
+    <aside class="col-sidebar">
+      <div class="sidebar-meta">
+        <p class="sidebar-meta-title">Article Record</p>
+        <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Professor Nona Dronova</span></div>
+        <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value"><a href="ro-song-003.html">ro-song-003</a> &middot; SS-DING-VAS-005-SN</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">ID 5 &mdash; glaze (No. 8), foot ring (No. 9)</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">pXRF (Geochem 3-Beam Extra, 30 s)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF date</span><span class="meta-value">3 November 2026</span></div>
+        <div class="meta-row"><span class="meta-label">Published</span><span class="meta-value">Zenodo, 2026</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <p class="sidebar-nav-title">Contents</p>
+        <ul><li><a href="#abstract">Abstract</a></li><li><a href="#introduction">1. Introduction</a></li><li><a href="#object">2. Description of the Object</a></li><li><a href="#materials-and-methods">3. Materials and Methods</a></li><li><a href="#results">4. Results</a></li><li><a href="#glaze">5. Composition of the Glaze</a></li><li><a href="#body">6. Composition of the Ceramic Body</a></li><li><a href="#leadless">7. Leadless Ceramic Technology</a></li><li><a href="#interpretation">8. Technological Interpretation</a></li><li><a href="#comparison">9. Comparison with Published Archaeometric Studies</a></li><li><a href="#conclusions">10. Conclusion</a></li><li><a href="#original-pxrf-protocols">Original pXRF Protocols</a></li><li><a href="#references">References</a></li><li><a href="#suggested-citation">Suggested Citation</a></li></ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-label">Atlas of Chinese Porcelain Diagnostics</p>
+      <p class="footer-desc">A scientific reference system for the microscopic and analytical authentication of Chinese ceramics. Non-destructive GOM protocol.</p>
+    </div>
+    <div>
+      <p class="footer-label">Navigate</p>
+      <div class="footer-links">
+        <a href="reference-collection.html">Reference Objects</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="book.html">Book</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Project</p>
+      <div class="footer-links">
+        <a href="publications.html">Publications</a>
+        <a href="author-profile.html">About</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">Atlas of Chinese Porcelain Diagnostics &mdash; ro-song-003 &mdash; pXRF research article</p>
+</footer>
+<script>
+  const sections = document.querySelectorAll('h2[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-56px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
