@@ -146,6 +146,19 @@
       .footer-inner{grid-template-columns:1fr;gap:var(--space-xl)}
       .navbar-links{display:none}
     }
+    .xrf-actions{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin:var(--space-lg) 0}
+    .xrf-btn{display:inline-block;font-family:var(--font-body);font-size:.8125rem;font-weight:500;letter-spacing:.03em;padding:.55rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);transition:border-color var(--transition),color var(--transition)}
+    .xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+    .xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+    .xrf-btn.primary:hover{background:var(--muted2);color:var(--stone)}
+    .xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    .xrf-protocols a{display:block}
+    .xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff}
+    .xrf-summary{background:var(--stone);border:1px solid var(--border2);padding:var(--space-lg);justify-content:center}
+    .col-main .xrf-kv{display:flex;justify-content:space-between;gap:.5rem;border-bottom:1px solid var(--border2);padding:.45rem 0;margin:0;font-size:.8125rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .xrf-kv span{font-family:var(--font-heading);font-size:1.15rem;color:var(--gold)}
+    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    @media(max-width:767px){.xrf-protocols{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -194,6 +207,7 @@
         <span class="tag">Golden Wire Effect</span>
         <span class="tag">Firing Halo</span>
         <span class="tag">GOM Examined</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -342,6 +356,8 @@
               <tr><td>Jade-like optical depth</td><td>Optical phenomena</td><td>High</td></tr>
               <tr><td>Narrow Song foot-ring, cream-white body</td><td>Foot-rim morphology</td><td>High</td></tr>
               <tr><td>Gold-ochre foot-rim band (铁线口)</td><td>Golden Wire effect</td><td>Very High</td></tr>
+              <tr><td>pXRF: lime-dominant glaze (CaO/K&#8322;O &asymp;&nbsp;3), iron-only colouring, TiO&#8322; &lt;0.1&nbsp;wt.%, trace lead</td><td>Glaze chemistry</td><td>High</td></tr>
+              <tr><td>pXRF: wall and base glaze chemically identical &mdash; no reglazing or restoration</td><td>Glaze chemistry</td><td>High</td></tr>
               <tr><td>Embedded iron-oxide crystallites</td><td>Firing evidence</td><td>High</td></tr>
               <tr><td>Sand-pad firing halo</td><td>Firing evidence</td><td>Very High</td></tr>
               <tr><td>Uniform UV fluorescence</td><td>Condition / authenticity</td><td>High</td></tr>
@@ -361,8 +377,110 @@
           <div class="diagnostic-item">Embedded iron-oxide crystallites (fired, not superficial)</div>
           <div class="diagnostic-item">Sand-pad firing halo (circular, body-integrated)</div>
           <div class="diagnostic-item">Uniform UV fluorescence &mdash; no restoration</div>
+          <div class="diagnostic-item">pXRF: lime-dominant high-fired glaze (Ca 6.28 / 5.95 wt.%; CaO/K&#8322;O &asymp;&nbsp;3)</div>
+          <div class="diagnostic-item">pXRF: iron as the only colourant (Fe&#8322;O&#8323; &asymp;&nbsp;0.8 wt.%); Co, Cr, V, Cd, Se not detected</div>
+          <div class="diagnostic-item">pXRF: identical glaze on wall and base; lead at trace level only (13 / 20&nbsp;ppm)</div>
           <div class="diagnostic-item">High internal diagnostic consistency</div>
           <p class="diagnostic-confidence">Diagnostic Confidence: <span class="confidence-value">Very High</span></p>
+        </div>
+      </section>
+
+      <section id="xrf">
+        <h2>X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 3 November 2026 the brush washer was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no.&nbsp;940487, Geochem 3-Beam Extra mode, 30&nbsp;s per reading, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample ID&nbsp;1</strong> (project designations <em>miska bok</em>, &ldquo;bowl, side&rdquo;, and <em>miska niz</em>, &ldquo;bowl, base&rdquo;). Two glazed points were measured: <strong>ID&nbsp;1</strong> on the side wall and <strong>ID&nbsp;2</strong> on the glazed base. The results and their comparison with published analyses of the Southern Song Guan kilns at Jiaotanxia, Laohudong and Wansongling are set out in the research article by Professor Nona Dronova (<a href="ro-song-005-xrf-study.html">full text</a>).</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Element</th><th class="num">Side wall (ID&nbsp;1)</th><th class="num">&plusmn;3&sigma;</th><th class="num">Base (ID&nbsp;2)</th><th class="num">&plusmn;3&sigma;</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Si, wt.%</strong></td><td class="num"><strong>38.21</strong></td><td class="num">0.27</td><td class="num"><strong>38.74</strong></td><td class="num">0.37</td></tr>
+              <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>6.280</strong></td><td class="num">0.064</td><td class="num"><strong>5.951</strong></td><td class="num">0.076</td></tr>
+              <tr><td>Al, wt.%</td><td class="num">5.75</td><td class="num">0.18</td><td class="num">5.60</td><td class="num">0.19</td></tr>
+              <tr><td>K, wt.%</td><td class="num">2.336</td><td class="num">0.033</td><td class="num">2.378</td><td class="num">0.039</td></tr>
+              <tr><td><strong>Fe, ppm</strong></td><td class="num">6,020</td><td class="num">160</td><td class="num">6,160</td><td class="num">170</td></tr>
+              <tr><td>Ti, ppm</td><td class="num">520</td><td class="num">400</td><td class="num">420</td><td class="num">410</td></tr>
+              <tr><td>Mg, ppm</td><td class="num">ND (&lt;5,900)</td><td class="num">&mdash;</td><td class="num">9,700</td><td class="num">5,300</td></tr>
+              <tr><td>Mn, ppm</td><td class="num">255</td><td class="num">60</td><td class="num">340</td><td class="num">59</td></tr>
+              <tr><td>Ba, ppm</td><td class="num">289</td><td class="num">73</td><td class="num">259</td><td class="num">74</td></tr>
+              <tr><td>Rb, ppm</td><td class="num">199</td><td class="num">7</td><td class="num">211</td><td class="num">7</td></tr>
+              <tr><td>Sr, ppm</td><td class="num">101</td><td class="num">5</td><td class="num">96</td><td class="num">5</td></tr>
+              <tr><td>Zr, ppm</td><td class="num">38</td><td class="num">5</td><td class="num">37</td><td class="num">5</td></tr>
+              <tr><td>Y, ppm</td><td class="num">20</td><td class="num">5</td><td class="num">23</td><td class="num">5</td></tr>
+              <tr><td>Nb, ppm</td><td class="num">14</td><td class="num">4</td><td class="num">17</td><td class="num">4</td></tr>
+              <tr><td><strong>Pb, ppm</strong></td><td class="num">13</td><td class="num">5</td><td class="num">20</td><td class="num">5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Values transcribed from the original instrument protocols, 3 November 2026. Also detected &mdash; side wall: P 250, S 300, Ni 22, Cu 49, Zn 54, Ag 9, Sn 43, Hf 11, W 28, Th 13, U 7&nbsp;ppm, light-element balance 46.59&nbsp;wt.%; base: P 550, Ni 24, Cu 24, Zn 50, Sn 43, Sb 45, Pr 270, Hf 14, W 19, U 10&nbsp;ppm, light-element balance 45.49&nbsp;wt.%. Not detected in either reading: V, Cr, Co, As, Se, Mo, Cd, La, Ce, Nd. Ti values lie close to the detection limit (&plusmn;3&sigma; &asymp;&nbsp;400&nbsp;ppm). ND = not detected.</p>
+
+        <div class="table-wrapper">
+          <table class="sci-table">
+            <thead><tr><th>Oxide equivalent, wt.% (normalised)</th><th class="num">Side wall</th><th class="num">Base</th></tr></thead>
+            <tbody>
+              <tr><td>SiO&#8322;</td><td class="num">77.7</td><td class="num">77.2</td></tr>
+              <tr><td>Al&#8322;O&#8323;</td><td class="num">10.3</td><td class="num">9.9</td></tr>
+              <tr><td><strong>CaO</strong></td><td class="num"><strong>8.4</strong></td><td class="num"><strong>7.8</strong></td></tr>
+              <tr><td>K&#8322;O</td><td class="num">2.7</td><td class="num">2.7</td></tr>
+              <tr><td><strong>Fe&#8322;O&#8323;</strong></td><td class="num"><strong>0.8</strong></td><td class="num"><strong>0.8</strong></td></tr>
+              <tr><td>TiO&#8322;</td><td class="num">&lt;0.1</td><td class="num">&lt;0.1</td></tr>
+              <tr><td><strong>CaO / K&#8322;O</strong></td><td class="num"><strong>3.1</strong></td><td class="num"><strong>2.9</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="micro-caption">Stoichiometric oxide equivalents of the measured elements, normalised to 100% (as in the research article). They are calculated values, not a measured glaze analysis.</p>
+
+        <h3>What the analysis shows</h3>
+
+        <div class="note">
+          <strong>1. One homogeneous glaze.</strong> The side wall and the glazed base give almost identical results for every major and trace element &mdash; silicon, calcium, aluminium, potassium, iron, rubidium, strontium, zirconium, yttrium and niobium. Body and base were covered with one glaze batch fired in one system; there is no chemical sign of reglazing, restoration or later surface modification.
+        </div>
+
+        <div class="note">
+          <strong>2. A lime-dominant high-fired glaze.</strong> Calcium is the main flux (CaO &asymp;&nbsp;7.8&ndash;8.4&nbsp;wt.%), clearly exceeding potassium (CaO/K&#8322;O &asymp;&nbsp;3). This places the glaze in the high-lime family documented for the Southern Song Guan kilns at Jiaotanxia, Laohudong and Wansongling.
+        </div>
+
+        <div class="note">
+          <strong>3. Iron as the only colourant.</strong> Iron is about 6,000&nbsp;ppm (Fe&#8322;O&#8323; &asymp;&nbsp;0.8&nbsp;wt.%), while cobalt, chromium, vanadium, cadmium and selenium were not detected. The pale grey-bluish tone is therefore produced by iron dissolved in the glaze under reduction firing, as in traditional celadon and Guan glazes, not by added pigments.
+        </div>
+
+        <div class="note">
+          <strong>4. Very low titanium and trace lead.</strong> Titanium is close to the detection limit (TiO&#8322; &lt;0.1&nbsp;wt.%), pointing to very pure glaze raw materials, as reported for Laohudong and Wansongling Guan glazes. Lead is only 13&ndash;20&nbsp;ppm and plays no technological role: the glaze is leadless and high-fired.
+        </div>
+
+        <div class="note">
+          <strong>5. Limits of the measurement.</strong> Two surface readings with a geochemical calibration characterise the glaze surface only; the body was not measured. Oxide values are normalised calculations, and light elements (Mg, Al, Si) carry the largest uncertainty. Further points on the relief and the foot, and microscopy of the glaze cross-section, would complete the picture.
+        </div>
+
+        <div class="micro-block">
+          <p class="micro-header">Original pXRF Protocols &mdash; Olympus analyser, 3 November 2026</p>
+          <div class="xrf-protocols">
+            <div class="micro-item">
+              <span class="micro-mag">Side wall &middot; ID 1</span>
+              <a href="images/ro-song-005-xrf-side.jpg" target="_blank" rel="noopener"><img src="images/ro-song-005-xrf-side.jpg" alt="pXRF protocol, Sample ID 1 (miska bok), measurement ID 1 — glazed side wall of the brush washer ro-song-005, 3 November 2026, 30 s. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 9.</span> pXRF protocol, measurement ID&nbsp;1 &mdash; glazed side wall, 3 November 2026, 30&nbsp;s. Click to open full size.</p>
+            </div>
+            <div class="micro-item">
+              <span class="micro-mag">Base &middot; ID 2</span>
+              <a href="images/ro-song-005-xrf-base.jpg" target="_blank" rel="noopener"><img src="images/ro-song-005-xrf-base.jpg" alt="pXRF protocol, Sample ID 1 (miska niz), measurement ID 2 — glazed base of the brush washer ro-song-005, 3 November 2026, 30 s. Element table with ±3σ, spectrum and aiming image." loading="lazy" /></a>
+              <p class="micro-caption"><span class="figure-number">Fig. 10.</span> pXRF protocol, measurement ID&nbsp;2 &mdash; glazed base, 3 November 2026, 30&nbsp;s. Click to open full size.</p>
+            </div>
+            <div class="micro-item xrf-summary">
+              <p class="micro-header">Key values</p>
+              <p class="xrf-kv"><span>Ca</span> 6.28 / 5.95 wt.%</p>
+              <p class="xrf-kv"><span>Si</span> 38.21 / 38.74 wt.%</p>
+              <p class="xrf-kv"><span>Fe</span> 6,020 / 6,160 ppm</p>
+              <p class="xrf-kv"><span>K</span> 2.34 / 2.38 wt.%</p>
+              <p class="xrf-kv"><span>CaO/K&#8322;O</span> 3.1 / 2.9</p>
+              <p class="xrf-kv"><span>Pb</span> 13 / 20 ppm</p>
+              <p class="micro-caption">side wall / base</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-005-xrf-study.html">Read the full research article &rarr;</a>
+          <!--ZENODO-BTN-->
+          <a class="xrf-btn" href="ro-song-005-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
         </div>
       </section>
 
@@ -401,6 +519,8 @@
             <a href="../methodology/gom.html" class="crossref-link">Gemmological Optical Microscopy &mdash; GOM</a>
             <a href="../methodology/sem-eds.html" class="crossref-link">SEM&ndash;EDS (comparative)</a>
             <a href="../methodology/xrf.html" class="crossref-link">XRF (comparative)</a>
+            <a href="#xrf" class="crossref-link">pXRF &mdash; Olympus, 3 Nov 2026</a>
+            <a href="ro-song-005-xrf-study.html" class="crossref-link">pXRF research article</a>
           </div>
         </div>
       </section>
@@ -408,6 +528,7 @@
       <div class="bibliography" id="bibliography">
         <p class="bibliography-title">Comparative References</p>
         <p class="biblio-entry">Published instrumental studies of authenticated Southern Song official Guan ware including SEM&ndash;EDS analysis of multi-layer glaze microstructure and XRF mapping of iron distribution at foot-rim zones were consulted for comparative calibration of GOM observations. Full citations to be added.</p>
+        <p class="biblio-entry">Dronova, N. X-Ray Fluorescence Analysis of a Pale Grey-Bluish Brush Washer: Glaze Chemistry in the Context of Southern Song Guan Ware Technology. <em>Zenodo</em>, published 4 November 2026, version v1. <a href="ro-song-005-xrf-study.html">Full text on this site</a>.</p>
       </div>
 
       <nav class="pagination">
@@ -433,7 +554,9 @@
         <div class="meta-row"><span class="meta-label">Date</span><span class="meta-value">12th&ndash;13th century</span></div>
         <div class="meta-row"><span class="meta-label">Glaze Type</span><span class="meta-value">Multi-layer turquoise-celadon</span></div>
         <div class="meta-row"><span class="meta-label">Decoration</span><span class="meta-value">Moulded lotus relief</span></div>
-        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a>, UV</span></div>
+        <div class="meta-row"><span class="meta-label">Examination</span><span class="meta-value"><a href="../methodology/gom.html">GOM</a>, UV &middot; <a href="#xrf">pXRF</a> (3 Nov 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">ID 1 &mdash; <em>miska</em>: side wall (ID 1), base (ID 2)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-005-xrf-study.html">Full text</a> &middot; Zenodo, 4 Nov 2026</span></div>
         <div class="meta-row"><span class="meta-label">Confidence</span><span class="meta-value">Very High</span></div>
       </div>
 
@@ -443,6 +566,7 @@
           <li><a href="#description">Object Description</a></li>
           <li><a href="#microscopy">Microscopic Analysis</a></li>
           <li><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li><a href="#xrf">XRF Analysis</a></li>
           <li><a href="#cross-references">Related Entities</a></li>
           <li><a href="#bibliography">References</a></li>
         </ul>
