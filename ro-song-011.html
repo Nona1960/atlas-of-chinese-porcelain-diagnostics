@@ -115,6 +115,22 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
   .figure-row{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+.xrf-table td.num,.xrf-table th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.xrf-caption{font-size:.78rem;color:var(--muted);font-style:italic;line-height:1.55;margin:-.4rem 0 1.2rem}
+.xrf-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin:1.5rem 0 .7rem;color:var(--ink)}
+.xrf-protocols{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1rem 0}
+.xrf-protocols figure{margin:0}
+.xrf-protocols img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top left;border:1px solid var(--border2);background:#fff;display:block}
+.xrf-protocols figcaption{font-size:.75rem;color:var(--muted);font-style:italic;line-height:1.5;margin-top:.4rem}
+.xrf-summary{background:var(--parchment);border:1px solid var(--border2);padding:1rem}
+.xrf-summary h4{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.xrf-kv{display:flex;justify-content:space-between;gap:.5rem;font-size:.8rem;border-bottom:1px solid var(--border2);padding:.35rem 0;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted2)}
+.xrf-kv span{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold)}
+.xrf-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.xrf-btn{display:inline-block;font-size:.8rem;font-weight:500;padding:.5rem 1rem;border:1px solid var(--border);background:var(--parchment);color:var(--muted2);text-decoration:none}
+.xrf-btn:hover{border-color:var(--gold);color:var(--ink)}
+.xrf-btn.primary{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+@media(max-width:800px){.xrf-protocols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -150,6 +166,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <span class="tag">Hutian Kilns, Jingdezhen</span>
         <span class="tag">Ewer · Zhíhú 執壺</span>
         <span class="tag">Dronova Method Applied</span>
+        <span class="tag">pXRF Analysed</span>
       </div>
 
       <figure class="hero-figure">
@@ -246,6 +263,8 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
             <tr><td>Decorative technique</td><td>Hand-carved sub-glaze</td><td>Carved, combed or moulded</td><td>✓ Consistent</td></tr>
             <tr><td>Spout-rim alignment</td><td>Spout tip level with mouth rim</td><td>Northern Song convention</td><td>✓ N. Song indicator</td></tr>
             <tr><td>Applied boss at spout root</td><td>Present — floral knop</td><td>Common in N. Song ewers</td><td>✓ N. Song indicator</td></tr>
+            <tr><td>Glaze chemistry (pXRF)</td><td>Ca 9.093 wt.% (CaO eq. ≈ 12.7), Fe2O3 eq. ≈ 0.76, Pb 26 ppm</td><td>High-calcium leadless qingbai glaze</td><td>✓ Consistent</td></tr>
+            <tr><td>Body chemistry (pXRF)</td><td>Al 14.25 wt.% (Al2O3/SiO2 ≈ 0.43), Ca 1.013 wt.%</td><td>Alumina-rich porcelain body</td><td>✓ Consistent</td></tr>
           </tbody>
         </table>
 
@@ -259,11 +278,75 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li class="diagnostic-item">Applied floral boss at spout-shoulder junction — decorative convention specific to N. Song Jingdezhen ewers</li>
           <li class="diagnostic-item">Multi-component assembly with slip luting confirmed at handle and spout terminals</li>
           <li class="diagnostic-item">Jade-like optical translucency — luminous depth without surface sheen excess — hallmark of authentic Song qingbai</li>
+          <li class="diagnostic-item">pXRF: calcium-rich glaze (Ca 9.093 wt.%) — about nine times the calcium of the body (1.013 wt.%)</li>
+          <li class="diagnostic-item">pXRF: alumina-rich aluminosilicate body (Al 14.25 wt.%, Al₂O₃/SiO₂ ≈ 0.43) with higher Fe and Ti than the glaze</li>
+          <li class="diagnostic-item">pXRF: lead only at trace level in the glaze (26 ppm) — leadless high-fired porcelain technology</li>
           <li class="diagnostic-item">No evidence of reglaze, later repair, artificial ageing or false patination under optical examination</li>
         </ul>
 
         <div class="note">
           Сочетание совмещения носика с краем устья, прикладного бутона и низкой концентрации микропузырьков составляет ключевую триаду атрибуции кувшинов цинбай печей Хутянь периода Северной Сун по диагностической системе Дроновой. Все три критерия удовлетворяются в данном образце.
+        </div>
+      </section>
+
+      <section class="section" id="xrf">
+        <h2 class="section-title">X-Ray Fluorescence Analysis (pXRF)</h2>
+        <p>On 3 November 2026 the ewer was analysed non-destructively by portable X-ray fluorescence (Olympus analyser, serial no. 940487, Geochem 3-Beam Extra mode, 30 s per reading, <em>in situ</em>). In the measurement series it is recorded as <strong>Sample ID 9</strong> (project designations <em>kuvshin</em>, “ewer”, and <em>kuvshin niz</em>, “ewer, base”). Two points were measured: <strong>ID 14</strong> on the glazed outer surface and <strong>ID 15</strong> on the unglazed base, where the ceramic body is exposed. The results are set out in the research article by Professor Nona Dronova (<a href="ro-song-011-xrf-study.html" style="color:var(--gold)">full text</a>).</p>
+
+        <table class="sci-table xrf-table">
+          <thead><tr><th>Element</th><th class="num">Glaze (ID 14)</th><th class="num">±3σ</th><th class="num">Body (ID 15)</th><th class="num">±3σ</th><th class="num">Oxide eq., glaze / body (wt.%)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Si, wt.%</strong></td><td class="num">36.80</td><td class="num">0.25</td><td class="num">29.49</td><td class="num">0.26</td><td class="num">SiO₂ 78.72 / 63.10</td></tr>
+            <tr><td><strong>Al, wt.%</strong></td><td class="num">7.89</td><td class="num">0.19</td><td class="num"><strong>14.25</strong></td><td class="num">0.25</td><td class="num">Al₂O₃ 14.91 / 26.92</td></tr>
+            <tr><td><strong>Ca, wt.%</strong></td><td class="num"><strong>9.093</strong></td><td class="num">0.080</td><td class="num">1.013</td><td class="num">0.020</td><td class="num">CaO 12.72 / 1.42</td></tr>
+            <tr><td>K, wt.%</td><td class="num">2.072</td><td class="num">0.029</td><td class="num">2.768</td><td class="num">0.040</td><td class="num">K₂O 2.50 / 3.33</td></tr>
+            <tr><td><strong>Fe, ppm</strong></td><td class="num">5,290</td><td class="num">150</td><td class="num"><strong>10,730</strong></td><td class="num">230</td><td class="num">Fe₂O₃ 0.76 / 1.53</td></tr>
+            <tr><td>Ti, ppm</td><td class="num">570</td><td class="num">380</td><td class="num">1,300</td><td class="num">430</td><td class="num">TiO₂ 0.095 / 0.217</td></tr>
+            <tr><td>Mn, ppm</td><td class="num">1,057</td><td class="num">86</td><td class="num">677</td><td class="num">77</td><td class="num">—</td></tr>
+            <tr><td>Rb, ppm</td><td class="num">167</td><td class="num">6</td><td class="num">281</td><td class="num">8</td><td class="num">—</td></tr>
+            <tr><td>Sr, ppm</td><td class="num">126</td><td class="num">5</td><td class="num">29</td><td class="num">3</td><td class="num">—</td></tr>
+            <tr><td>Y, ppm</td><td class="num">100</td><td class="num">6</td><td class="num">125</td><td class="num">7</td><td class="num">—</td></tr>
+            <tr><td>Zr, ppm</td><td class="num">47</td><td class="num">5</td><td class="num">63</td><td class="num">5</td><td class="num">—</td></tr>
+            <tr><td>Nb, ppm</td><td class="num">19</td><td class="num">4</td><td class="num">23</td><td class="num">5</td><td class="num">—</td></tr>
+            <tr><td>Ba, ppm</td><td class="num">199</td><td class="num">73</td><td class="num">230</td><td class="num">66</td><td class="num">—</td></tr>
+            <tr><td>La, ppm</td><td class="num">160</td><td class="num">120</td><td class="num">ND (&lt;2,700)</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Ce, ppm</td><td class="num">140</td><td class="num">140</td><td class="num">ND (&lt;3,100)</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td><strong>Pb, ppm</strong></td><td class="num">26</td><td class="num">5</td><td class="num">103</td><td class="num">9</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+        <p class="xrf-caption">Values transcribed from the original instrument protocols, 3 November 2026 (glaze Fe reported as 5,290 ppm, body Fe as 1.073 wt.%). Also detected — glaze: P 970, S 210, Ni 18, Cu 39, Zn 19, Sn 33, Sb 40, Pr 200, W 20 ppm, light-element balance 43.20 wt.%; body: P 450, S 1,210, Ni 42, Cu 19, Zn 76, Mo 6, Hf 17, W 29, Th 27, U 9 ppm, light-element balance 50.94 wt.%. Mg, V, Cr, Co, As, Se, Cd were not detected in either reading. Oxide equivalents are stoichiometric conversions as given in the research article, not normalised to 100%. La and Ce in the glaze lie close to their detection limits.</p>
+
+        <h3 class="xrf-sub">What the analysis shows</h3>
+        <div class="note"><strong>1. A calcium glaze on an alumina-rich body.</strong> The glaze carries about nine times more calcium than the body (9.093 against 1.013 wt.%; CaO eq. ≈ 12.7 wt.%) in a silica-rich glass — the high-calcium glaze typical of high-fired qingbai. The body is a refractory aluminosilicate with Al₂O₃/SiO₂ ≈ 0.43, suited to high-temperature porcelain firing.</div>
+        <div class="note"><strong>2. Iron and colour.</strong> The glaze contains about 0.76 wt.% Fe₂O₃ equivalent — a level able to give the characteristic bluish-green qingbai tone when fired in reduction. The body has twice as much iron (Fe₂O₃ eq. ≈ 1.53 wt.%) and more titanium (1,300 against 570 ppm), in keeping with the scattered dark inclusions seen on the exposed base.</div>
+        <div class="note"><strong>3. Leadless high-fired technology.</strong> Lead is 26 ppm in the glaze and 103 ppm in the body — trace levels that rule out a lead-fluxed glaze.</div>
+        <div class="note"><strong>4. Trace elements.</strong> Strontium is markedly higher in the glaze (126 against 29 ppm), following its calcium; rubidium, zirconium, niobium, yttrium and barium are higher in the body. Together with La and Ce in the glaze, these values form a reference fingerprint for future provenance comparison with Jiangxi qingbai kilns.</div>
+        <div class="note"><strong>5. Limits of the measurement.</strong> Two single surface readings with a geochemical calibration. The oxide equivalents are calculated, not a normalised analysis, and light elements (Al, Si) are most affected by surface geometry; a small contribution of adjacent glaze to the body reading cannot be excluded. The values characterise this ewer but do not by themselves identify a specific kiln.</div>
+
+        <div class="xrf-protocols">
+          <figure>
+            <a href="images/ro-song-011-xrf-glaze.jpg" target="_blank" rel="noopener"><img src="images/ro-song-011-xrf-glaze.jpg" alt="pXRF protocol, Sample ID 9 (kuvshin), measurement ID 14 — glazed outer surface of the qingbai ewer ro-song-011, 3 November 2026, 30 s" loading="lazy"/></a>
+            <figcaption>pXRF protocol, measurement ID 14 — glazed outer surface, 3 November 2026, 30 s. Click to open full size.</figcaption>
+          </figure>
+          <figure>
+            <a href="images/ro-song-011-xrf-body.jpg" target="_blank" rel="noopener"><img src="images/ro-song-011-xrf-body.jpg" alt="pXRF protocol, Sample ID 9 (kuvshin niz), measurement ID 15 — unglazed base (ceramic body) of the qingbai ewer ro-song-011, 3 November 2026, 30 s" loading="lazy"/></a>
+            <figcaption>pXRF protocol, measurement ID 15 — unglazed base (ceramic body), 3 November 2026, 30 s. Click to open full size.</figcaption>
+          </figure>
+          <div class="xrf-summary">
+            <h4>Key values · glaze / body</h4>
+            <div class="xrf-kv"><span>Ca</span> 9.093 / 1.013 wt.%</div>
+            <div class="xrf-kv"><span>Al</span> 7.89 / 14.25 wt.%</div>
+            <div class="xrf-kv"><span>Si</span> 36.80 / 29.49 wt.%</div>
+            <div class="xrf-kv"><span>Fe</span> 0.529 / 1.073 wt.%</div>
+            <div class="xrf-kv"><span>Ti</span> 570 / 1,300 ppm</div>
+            <div class="xrf-kv"><span>Pb</span> 26 / 103 ppm</div>
+          </div>
+        </div>
+
+        <div class="xrf-actions">
+          <a class="xrf-btn primary" href="ro-song-011-xrf-study.html">Read the full research article →</a>
+          <!--ZENODO-BTN-->
+          <a class="xrf-btn" href="ro-song-011-xrf-protocols.pdf" target="_blank" rel="noopener">Download both XRF protocols (PDF)</a>
         </div>
       </section>
 
@@ -289,6 +372,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
       <div class="bibliography">
         <h2>Bibliography</h2>
         <p class="bib-item">Dronova, N. (2025). <em>Optical and Microscopic Diagnostics of Song-Period Qingbai Ware: The Hutian Kiln Corpus.</em> Global Archive of Antique Chinese Porcelain Authentication, Working Paper 11.</p>
+        <p class="bib-item">Dronova, N. (2026). <em>X-Ray Fluorescence Analysis of a Qingbai Ewer: Glaze and Body Composition in the Context of Song-Dynasty Ceramic Technology.</em> Zenodo. <a href="ro-song-011-xrf-study.html" style="color:var(--gold)">Full text on this site</a>.</p>
         <p class="bib-item">Kerr, R. &amp; Wood, N. (2004). <em>Science and Civilisation in China, Vol. 5, Part 12: Ceramic Technology.</em> Cambridge University Press.</p>
         <p class="bib-item">Pierson, S. (1996). <em>Qingbai Ware: Chinese Porcelain of the Song and Yuan Dynasties.</em> Percival David Foundation, London.</p>
         <p class="bib-item">Liu, X. (2007). "Compositional analysis of Hutian kiln qingbai glazes." <em>Journal of Archaeological Science</em> 34(8), 1412–1424.</p>
@@ -314,7 +398,9 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
         <div class="meta-row"><span class="meta-label">Object</span><span class="meta-value">Ewer (Zhíhú 執壺)</span></div>
         <div class="meta-row"><span class="meta-label">Decoration</span><span class="meta-value">Carved peonies, sub-glaze</span></div>
         <div class="meta-row"><span class="meta-label">Glaze</span><span class="meta-value">Calcium-rich, transparent</span></div>
-        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method</span></div>
+        <div class="meta-row"><span class="meta-label">Method</span><span class="meta-value">Dronova Method · <a href="#xrf" style="color:var(--gold)">pXRF</a> (3 Nov 2026)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Sample</span><span class="meta-value">ID 9 — glaze (ID 14), body (ID 15)</span></div>
+        <div class="meta-row"><span class="meta-label">XRF Article</span><span class="meta-value"><a href="ro-song-011-xrf-study.html" style="color:var(--gold)">Full text</a></span></div>
         <div class="meta-row"><span class="meta-label">Author</span><span class="meta-value">Prof. N. Dronova, D.Tech.Sci.</span></div>
       </div>
 
@@ -324,6 +410,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
           <li data-section="description"><a href="#description">Object Description</a></li>
           <li data-section="microscopy"><a href="#microscopy">Microscopic Analysis</a></li>
           <li data-section="interpretation"><a href="#interpretation">Diagnostic Interpretation</a></li>
+          <li data-section="xrf"><a href="#xrf">XRF Analysis</a></li>
           <li data-section="cross-references"><a href="#cross-references">Cross-References</a></li>
         </ul>
       </nav>
@@ -354,7 +441,7 @@ footer{background:var(--parchment2);border-top:1px solid var(--border);padding:2
 </footer>
 
 <script>
-const sections = ['description','microscopy','interpretation','cross-references'];
+const sections = ['description','microscopy','interpretation','xrf','cross-references'];
 const navItems = document.querySelectorAll('#sidebar-nav li[data-section]');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
